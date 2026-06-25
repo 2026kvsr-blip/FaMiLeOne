@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+ content="width=device-width,initial-scale=1">
+ <title>FaMiLeOne</title>
+<style>
+  *{
+  box-sizing:border-box;
+}
+   body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#eef3f8;
+  padding-top:65px;
+  padding-bottom:85px;
+}
+
+  /* =====================
+   TOP BAR
+===================== */
+
+.top-bar{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:60px;
+  background:#8fb0ff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 2px 8px rgba(0,0,0,0.15);
+  z-index:1000;
+}
+
+.menu-icon{
+  position:absolute;
+  left:5px;
+  border:none;
+  background:none;
+  font-size:30px;
+  color:#000;
+  cursor:pointer;
+}
+.page-title{
+  font-size:24px;
+  font-weight:700;
+  color:#000;
+}
+
+/* =====================
+   SIDE MENU
+===================== */
+
+.side-menu{
+  position:fixed;
+  top:0;
+  left:-250px;
+  width:220px;
+  height:100%;
+  background:#fff;
+  box-shadow:2px 0 12px rgba(0,0,0,0.20);
+  padding:20px;
+  transition:0.3s;
+  z-index:1100;
+}
+
+.side-menu.open{
+  left:0;
+}
+
+.exit-btn{
+  display:block;
+  margin-top:40px;
+  padding:14px;
+  background:#8fb0ff;
+  color:#000;
+  text-decoration:none;
+  text-align:center;
+  border-radius:15px;
+}
+
+/* =====================
+   POPUP
+===================== */
+
+.popup{
+  display:none;
+  position:fixed;
+  top:70px;
+  left:50%;
+  transform:translateX(-50%);
+  background:#5f84e8;
+  color:#fff;
+  padding:12px 20px;
+  border-radius:15px;
+  z-index:1200;
+}
+
+/* =====================
+   MAIN CONTAINER
+===================== */
+
+.container{
+  width:100%;
+  max-width:430px;
+  margin:0 auto;
+  padding:5px;
+}
+/* =====================
+   TOP 4 BUTTONS
+===================== */
+
+.rect-row{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:5px;
+  background:#dce7ff;
+  padding:6px;
+  border-radius:20px;
+  margin-bottom:8px;   /* 20px nundi 8px */
+  width:100%;
+}
+
+.rect-btn{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:3px;
+  padding:6px 2px;
+  border-radius:15px;
+
+  width:auto;
+  justify-self:center;
+}
+
+.rect-btn img{
+  width:20px;
+  height:20px;
+  object-fit:contain;
+}
+      .rect-btn,
+.rect-btn:link,
+.rect-btn:visited,
+.circle-item,
+.circle-item:link,
+.circle-item:visited{
+  text-decoration:none !important;
+}
+
+.rect-btn span,
+.circle-item span{
+  text-decoration:none !important;
+}
+
+.rect-btn span{
+  font-size:12px;   /* avasaramaithe 11px kuda pettavachu */
+}/* =====================
+   ACTIVE BUTTON
+===================== */
+
+.active{
+background:#5f84e8;
+  border-radius:18px;
+  box-shadow:0 2px 8px rgba(0,0,0,0.15);
+}
+.rect-btn.active{
+  background:#5f84e8;
+  border-radius:14px;
+  padding:6px 8px;
+}
+.active span,
+.active div{
+  color:#fff !important;
+}
+/* =====================
+   HOME MESSAGE
+===================== */
+
+.welcome-box{
+  display:block;
+  width:100%;
+  max-width:100%;
+  background:#fff;
+  padding:20px;
+  border-radius:20px;
+  box-shadow:0 2px 10px rgba(0,0,0,0.08);
+  line-height:1.5;
+  overflow-wrap:break-word;
+}
+.welcome-box h2{
+  text-align:center;
+  color:#5f84e8;
+  margin-top:0;
+  font-size:25px;
+  line-height:1.1;
+}
+.welcome-box p,
+.welcome-box ul{
+  margin-left:0;
+  padding-left:10px;
+}
+.welcome-box h3{
+  color:#5f84e8;
+  margin-top:15px;
+  margin-bottom:10px;
+  font-size:15px;
+  font-weight:600;
+}
+ .circle-grid{
+  display:none;
+  grid-template-columns:repeat(3,1fr);
+  justify-items:center;
+  align-items:start;
+  gap:25px 10px;
+  width:100%;
+  margin-top:20px;
+}
+.loan-tabs{
+  display:flex;
+  justify-content:center;
+  gap:8px;
+  margin-top:2px;      /* 15px nundi */
+  margin-bottom:10px;
+}
+
+.loan-tab-btn{
+  width:85px;      /* 140px nundi */
+  height:35px;      /* 55px nundi */
+  border:none;
+  border-radius:10px;
+  background:#dce7ff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:5px;
+  cursor:pointer;
+  font-size:11px;
+}
+
+.loan-tab-btn img{
+  width:16px;
+  height:16px;
+}
+.loan-tab-btn:hover{
+  background:#cfdcff;
+}
+.loan-tab-btn.active{
+  background:#5f84e8;
+  color:#fff;
+}
+
+
+ 
+/* Charts & Reports - 7 buttons layout */
+#g8,
+#g9{
+  grid-template-columns:repeat(3,90px);
+  justify-content:center;
+  justify-items:center;
+  gap:30px 20px;
+}
+
+#g8 .circle-item,
+#g9 .circle-item{
+  width:90px;
+}
+
+#g8 .circle,
+#g9 .circle{
+  width:60px;
+  height:60px;
+}
+
+#g8 .circle img,
+#g9 .circle img{
+  width:40px;
+  height:40px;
+}
+
+#g8 .circle-item span,
+#g9 .circle-item span{
+  width:90px;
+  font-size:12px;
+  text-align:center;
+}
+.circle-item{
+  width:110px;
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+.circle-item span{
+  display:block;
+  margin-top:12px;
+  width:120px;
+  text-align:center;
+  font-size:14px;
+  font-weight:500;
+}.circle{
+  width:100px;
+  height:100px;
+  background:#dce7ff;
+  border:1px solid #c4d4ff;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 3px 10px rgba(0,0,0,0.08);
+}
+
+.circle img{
+  width:55px;
+  height:55px;
+  object-fit:contain;
+}
+
+
+/* =====================
+   BOTTOM NAVIGATION
+===================== */
+
+.bottom-nav{
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  height:70px;
+  background:#8fb0ff;
+  display:flex;
+  justify-content:space-around;
+  align-items:center;
+  box-shadow:0 -2px 10px rgba(0,0,0,0.15);
+}
+
+.bottom-nav a{
+  text-decoration:none;
+  color:#000;
+  text-align:center;
+  font-size:11px;
+  padding:5px;
+  border-radius:12px;
+}
+
+.bottom-nav img{
+  width:26px;
+  height:26px;
+  display:block;
+  margin:auto auto 4px;
+}
+      .rect-btn,
+.circle-item,
+.bottom-nav a{
+  transition:transform 0.15s ease;
+}
+
+/* Optional Touch Effect */
+.rect-btn:active,
+.nav-btn:active,
+.circle-item:active{
+  transform:scale(0.96);
+}
+  .language-box{
+  width:100%;
+  display:none;
+  justify-content:center;
+  align-items:center;
+  margin:15px 0;
+}
+
+#langSelect{
+  width:125px;
+  height:30px;
+  padding:2px 6px;
+  border:1px solid #c4d4ff;
+  border-radius:8px;
+  background:#ffffff;
+  font-size:12px;
+  outline:none;
+}
+.language-box label{
+  margin-right:6px;
+  font-size:14px;
+} 
+ /* Loan Rectangle Buttons */
+#g4{
+  display:none;
+  width:100%;
+  margin-top:0px;      /* -10px remove */
+}
+#loanContent{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  justify-items:center;
+  gap:25px 10px;
+  margin-top:20px;
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- SIDE MENU -->
+
+<div id="menu"
+     class="side-menu">
+
+  <a href="#"
+     class="exit-btn"
+     onclick="showExit();return false;">
+     Exit
+  </a>
+
+</div>
+
+<!-- POPUP -->
+
+<div id="popup"
+     class="popup">
+
+  Scroll from bottom to top to close App
+
+</div>
+
+<!-- TOP BAR -->
+
+<div class="top-bar">
+
+  <button class="menu-icon"
+          onclick="toggleMenu()">
+          ☰
+  </button>
+
+  <div class="page-title">
+      oneFaMiLe
+  </div>
+
+</div>
+
+<div class="container">
+
+  <!-- TOP 4 BUTTONS -->
+
+  <div class="rect-row">
+
+  <a href="#" class="rect-btn"
+     onclick="showGroup('g1',this);return false;">
+    <img src="Expenses.png">
+    <span>Expenses</span>
+  </a>
+
+  <a href="#" class="rect-btn"
+     onclick="showGroup('g2',this);return false;">
+    <img src="Activities.png">
+    <span>Activities</span>
+  </a>
+
+  <a href="#" class="rect-btn"
+     onclick="showGroup('g3',this);return false;">
+    <img src="Health.png">
+    <span>Health</span>
+  </a>
+
+  <a href="#" class="rect-btn"
+     onclick="showGroup('g4',this);return false;">
+    <img src="Loans.png">
+    <span>Loans</span>
+  </a>
+
+ <a href="#"
+   class="rect-btn"
+   onclick="showGroup('g10',this);return false;">
+   <img src="Income1.png">
+   <span>Income</span>
+</a>
+
+</div>
+      <!-- Language Dropdown -->
+<!-- Language Dropdown -->
+<div id="languageSection" class="language-box">
+
+ <label for="langSelect"
+       style="
+       font-weight:normal;
+       color:#5f84e8;
+       margin-right:10px;
+       font-size:14px;">
+  Select Language
+</label>
+  <select id="langSelect"
+          onchange="changeLanguage()">
+
+    <option value="en">English</option>
+    <option value="te">తెలుగు</option>
+    <option value="hi">हिन्दी</option>
+    <option value="ta">தமிழ்</option>
+    <option value="kn">ಕನ್ನಡ</option>
+    <option value="ml">മലയാളം</option>
+
+
+  </select>
+
+</div>
+</div>
+<!-- HOME MESSAGE -->
+
+
+  <!-- HOME MESSAGE -->
+<div id="homeMessage" class="welcome-box">
+
+  <h2 id="welcomeTitle">
+    Welcome to oneFaMiLe
+  </h2>
+
+  <div id="welcomeContent">
+  </div>
+
+</div>   <!-- homeMessage close -->
+
+<!-- CIRCULAR BUTTON GROUPS -->
+<!-- CIRCULAR BUTTON GROUPS -->
+<div id="g1" class="circle-grid"></div>
+<div id="g2" class="circle-grid"></div>
+<div id="g3" class="circle-grid"></div>
+<div id="g4" style="display:none;">
+
+  <div class="loan-tabs">
+
+  <button id="loanBtn"
+          class="loan-tab-btn"
+          onclick="showLoanSection('g11',this)">
+    <img src="Loans1.png">
+    <span>Loans</span>
+  </button>
+
+  <button id="paymentBtn"
+          class="loan-tab-btn"
+          onclick="showLoanSection('g7',this)">
+    <img src="Payments1.png">
+    <span>Payments</span>
+  </button>
+
+</div>
+
+<div id="loanContent"></div>
+</div>
+<div id="g11" class="circle-grid"></div>  <!-- Loan buttons -->
+<div id="g7" class="circle-grid"></div>   <!-- Payment buttons -->
+<div id="g5" class="circle-grid"></div>
+<div id="g6" class="circle-grid"></div>
+<div id="g8" class="circle-grid"></div>
+<div id="g9" class="circle-grid"></div>
+<div id="g10" class="circle-grid"></div>
+</div>   <!-- container close -->
+  <!-- ======================
+     BOTTOM NAVIGATION
+====================== -->
+
+<div class="bottom-nav">
+
+  <a href="#"
+     class="nav-btn active"
+     onclick="showHome(this);return false;">
+    <img src="Home1.png">
+    <div>Home</div>
+  </a>
+
+  <a href="#"
+     class="nav-btn"
+     onclick="showGroup('g6',this);return false;">
+    <img src="FT1.png">
+    <div>FamilyTree</div>
+  </a>
+
+ 
+  <a href="#"
+     class="nav-btn"
+     onclick="showGroup('g8',this);return false;">
+    <img src="Charts1.png">
+    <div>Charts</div>
+  </a>
+
+<a href="#"
+   class="nav-btn"
+   onclick="showGroup('g5',this);return false;">
+   <img src="Memories1.png">
+   <div>Memories</div>
+</a>
+
+ 
+  <a href="#"
+     class="nav-btn"
+     onclick="showGroup('g9',this);return false;">
+    <img src="Reports1.png">
+    <div>Reports</div>
+  </a>
+
+</div>
+
+
+<script>
+
+/* =========================
+   CREATE CIRCULAR BUTTONS
+========================= */
+
+const data = {
+
+    g1:[
+    {text:"Add New Expense", img:"AddExpenses1.png"},
+    {text:"Reports", img:"Reports1.png"},
+     {text:"Sensitive Reports", img:"SensitiveReports1.png"},
+     {text:"All Reports", img:"All Reports1.png"},
+    {text:"Custom Search", img:"CustomSearch1.png"},
+    {text:"About", img:"About1.png"}  ],
+
+  g2:[
+    {text:"Add New Activity", img:"AddActivity1.png"},
+    {text:"Reports", img:"Reports1.png"},
+   {text:"Sensitive Reports", img:"SensitiveReports1.png"},
+     {text:"All Reports", img:"All Reports1.png"},
+
+    {text:"Custom Search", img:"CustomSearch1.png"},
+    {text:"About", img:"About1.png"}  ],
+
+
+  g3:[
+    {text:"Add New Medicine", img:"AddMedicine1.png"},
+        {text:"Reports", img:"Reports1.png"},
+   {text:"Sensitive Reports", img:"SensitiveReports1.png"},
+     {text:"All Reports", img:"All Reports1.png"},
+    {text:"Custom Search", img:"CustomSearch1.png"},
+    {text:"About", img:"About1.png"}  ],
+
+ 
+  g6:[
+{text:"Family", img:"Family3.png"},
+{text:"Add Member", img:"AddMember1.png"},
+{text:"Add Family", img:"AddFT2.png"},
+{text:"Family Tree", img:"FT1.png"},
+
+  ],
+
+  g7:[
+    {text:"Add New Payment", img:"AddPayments2.png"},
+        {text:"Reports", img:"Reports1.png"},
+   {text:"Sensitive Reports", img:"SensitiveReports1.png"},
+     {text:"All Reports", img:"All Reports1.png"},
+    {text:"Custom Search", img:"CustomSearch1.png"},
+    {text:"About", img:"About1.png"}  ],
+
+
+  g8:[
+    {text:"Expenses Charts", img:"ExpensesCharts1.png"},
+    {text:"Activities Chart", img:"ActivityCharts1.png"},
+    {text:"Loan Charts", img:"LoansCharts1.png"},
+    {text:"Income Charts", img:"IncomeCharts1.png"},
+    {text:"Payments Charts", img:"PaymentsCharts1.png"},
+    {text:"Memories Charts", img:"MemoriesCharts1.png"},
+    {text:"Health Charts", img:"HealthCharts1.png"},
+   
+
+  ],
+  g9:[
+    {text:"Memories Reports", img:"MemoriesReports1.png"},
+    {text:"Expenses Reports", img:"ExpensesReports1.png"},
+    {text:"Activities Reports", img:"ActivitiesReports1.png"},
+    {text:"Loan Reports", img:"LoansReports1.png"},
+    {text:"Income Reports", img:"IncomeReports1.png"},
+    {text:"Payments Reports", img:"PaymentsReports1.png"},
+    {text:"Health Reports", img:"MedicalReports1.png"},
+  
+  ],
+ g5:[
+{text:"Add New Memory", img:"AddMemories1.png"},
+    {text:"Reports", img:"Reports1.png"},
+  {text:"Sensitive Reports", img:"SensitiveReports1.png"},
+     {text:"All Reports", img:"All Reports1.png"},
+    {text:"Custom Search", img:"CustomSearch1.png"},
+    {text:"About", img:"About1.png"}
+],
+
+g10:[
+  {text:"Add New Income", img:"AddIncome1.png"},
+    {text:"Reports", img:"Reports1.png"},
+ {text:"Sensitive Reports", img:"SensitiveReports1.png"},
+     {text:"All Reports", img:"All Reports1.png"},
+    {text:"Custom Search", img:"CustomSearch1.png"},
+    {text:"About", img:"About1.png"}
+],
+  g11:[
+   {text:"Add New Loan", img:"AddLoans1.png"},
+        {text:"Reports", img:"Reports1.png"},
+   {text:"Sensitive Reports", img:"SensitiveReports1.png"},
+     {text:"All Reports", img:"All Reports1.png"},
+    {text:"Custom Search", img:"CustomSearch1.png"},
+    {text:"About", img:"About1.png"}  ],
+
+};
+
+
+/* =========================
+   CREATE BUTTON HTML
+========================= */
+
+for(const id in data){
+
+  const box = document.getElementById(id);
+
+  if(!box) continue;
+
+  data[id].forEach(function(item){
+
+    box.innerHTML += `
+      <a href="#" class="circle-item">
+        <div class="circle">
+          <img src="${item.img}">
+        </div>
+        <span>${item.text}</span>
+      </a>
+    `;
+
+  });
+}
+;
+ /* Loan Menu */
+
+
+
+/* =========================
+   HIDE ALL GROUPS
+========================= */
+
+function hideGroups(){
+
+  document
+    .querySelectorAll('.circle-grid')
+    .forEach(function(g){
+      g.style.display = 'none';
+    });
+
+  // Loan Container Hide
+  document
+    .getElementById('g4')
+    .style.display = 'none';
+
+  document
+    .getElementById('homeMessage')
+    .style.display = 'none';
+
+  document
+    .getElementById('languageSection')
+    .style.display = 'none';
+}
+/* =========================
+   REMOVE ACTIVE
+========================= */
+
+function clearActive(){
+
+  document
+    .querySelectorAll(
+      '.rect-btn,.nav-btn'
+    )
+    .forEach(function(btn){
+
+      btn.classList.remove(
+        'active'
+      );
+
+    });
+
+}
+
+
+/* =========================
+   SHOW HOME
+========================= */
+
+function showHome(btn){
+
+  clearActive();
+
+  btn.classList.add('active');
+
+  hideGroups();
+
+  document
+    .getElementById('languageSection')
+    .style.display = 'flex';
+
+  document
+    .getElementById('homeMessage')
+    .style.display = 'block';
+}
+
+/* =========================
+   SHOW GROUP
+========================= */
+
+function showGroup(id,btn){
+
+  clearActive();
+
+  btn.classList.add('active');
+
+  hideGroups();
+
+  document.getElementById(id).style.display='block';
+
+  if(id==='g4'){
+
+   document.getElementById(id).style.display='block';
+
+   showLoanSection(
+      'g11',
+      document.getElementById('loanBtn')
+   );
+
+}
+else{
+
+   document.getElementById(id).style.display='grid';
+
+}
+}
+function showLoanSection(id,btn){
+
+  document
+    .querySelectorAll('.loan-tab-btn')
+    .forEach(function(b){
+      b.classList.remove('active');
+    });
+
+if(btn){
+   btn.classList.add('active');
+}
+
+  const loanContent =
+      document.getElementById("loanContent");
+
+  loanContent.innerHTML =
+      document.getElementById(id).innerHTML;
+
+  loanContent.style.display = "grid";
+  loanContent.style.gridTemplateColumns =
+      "repeat(3,1fr)";
+  loanContent.style.justifyItems = "center";
+  loanContent.style.gap = "25px 10px";
+}
+/* =========================
+   OPEN SIDE MENU
+========================= */
+
+function toggleMenu(){
+
+  document
+    .getElementById('menu')
+    .classList.toggle(
+      'open'
+    );
+
+}
+
+
+/* =========================
+   EXIT POPUP
+========================= */
+
+function showExit(){
+
+  document
+    .getElementById('menu')
+    .classList.remove('open');
+
+  const p =
+    document.getElementById('popup');
+
+  p.innerHTML =
+    'Scroll from bottom to top to close the App';
+
+  p.style.display = 'block';
+
+  setTimeout(function(){
+    p.style.display = 'none';
+  },3000);
+}
+
+/* =========================
+   DEFAULT HOME
+========================= */
+
+window.onload = function(){
+
+  hideGroups();
+
+  document
+    .getElementById('languageSection')
+    .style.display = 'flex';
+
+  document
+    .getElementById('homeMessage')
+    .style.display = 'block';
+
+  changeLanguage();
+};
+function changeLanguage(){
+
+  const lang =
+    document.getElementById('langSelect').value;
+
+  if(lang === 'en'){
+
+    document.getElementById(
+      'welcomeTitle'
+    ).innerHTML =
+      'Welcome to oneFaMiLe';
+
+    document.getElementById(
+      'welcomeContent'
+    ).innerHTML = `
+
+      <p><strong>You can Track your :</strong></p>
+
+      <p>
+        ...Income<br>
+        ...Expenses<br>
+        ...Activities<br>
+        ...Loans<br>
+        ...Health<br>
+        ...Family
+      </p>
+
+      <h3>💰 Expenses Management</h3>
+
+      <p>
+        Track your daily expenses and monitor spendings easily.
+      </p>
+
+      <ul>
+        <li>Add income and expenses</li>
+        <li>View weekly and monthly reports</li>
+        <li>Manage categories</li>
+        <li>Track sensitive expenses</li>
+      </ul>
+
+      <h3>🏦 Loan Management</h3>
+
+      <p>
+        Manage loans, payments, and balances efficiently.
+      </p>
+
+      <ul>
+        <li>Add loan details</li>
+        <li>Track payment history</li>
+        <li>Monitor pending balances</li>
+        <li>Generate reports</li>
+      </ul>
+
+      <h3>📋 Activities & Tasks Management</h3>
+
+      <ul>
+        <li>Create tasks</li>
+        <li>Track deadlines</li>
+        <li>Birthday reminders</li>
+        <li>Daily activity management</li>
+      </ul>
+
+      <h3>📊 Reports & Dashboard</h3>
+
+      <p>
+        View complete financial summaries and activity reports.
+      </p>
+
+      <h3>🔒 Privacy & Security</h3>
+
+      <p>
+        Protect important data with secure access features.
+      </p>
+
+    `;
+  }
+
+  else if(lang === 'te'){
+
+    document.getElementById(
+      'welcomeTitle'
+    ).innerHTML =
+      'oneFaMiLe కు స్వాగతం';
+
+    document.getElementById(
+      'welcomeContent'
+    ).innerHTML = `
+
+      <p><strong>మీరు ట్రాక్ చేయగల అంశాలు :</strong></p>
+
+      <p>
+        ...ఆదాయం<br>
+        ...ఖర్చులు<br>
+        ...కార్యకలాపాలు<br>
+        ...రుణాలు<br>
+        ...ఆరోగ్యం<br>
+        ...కుటుంబం
+     </p>
+
+    <h3>💰 ఖర్చుల నిర్వహణ</h3>
+
+    <p>
+      మీ రోజువారీ ఖర్చులను సులభంగా నమోదు చేసి, పర్యవేక్షించండి.
+    </p>
+
+    <ul>
+      <li>ఆదాయం మరియు ఖర్చులను నమోదు చేయండి</li>
+      <li>వారాంత మరియు నెలవారీ నివేదికలను చూడండి</li>
+      <li>వర్గాల వారీగా ఖర్చులను నిర్వహించండి</li>
+      <li>సున్నితమైన ఖర్చులను ట్రాక్ చేయండి</li>
+    </ul>
+
+    <h3>🏦 రుణాల నిర్వహణ</h3>
+
+    <p>
+      రుణాలు, చెల్లింపులు మరియు మిగిలిన బాకీలను సమర్థవంతంగా నిర్వహించండి.
+    </p>
+
+    <ul>
+      <li>రుణ వివరాలను నమోదు చేయండి</li>
+      <li>చెల్లింపు చరిత్రను ట్రాక్ చేయండి</li>
+      <li>మిగిలిన బాకీలను పర్యవేక్షించండి</li>
+      <li>నివేదికలను రూపొందించండి</li>
+    </ul>
+
+    <h3>📋 కార్యకలాపాలు & పనుల నిర్వహణ</h3>
+
+    <ul>
+      <li>పనులను సృష్టించండి</li>
+      <li>గడువులను ట్రాక్ చేయండి</li>
+      <li>పుట్టినరోజు గుర్తింపులను పొందండి</li>
+      <li>రోజువారీ కార్యకలాపాలను నిర్వహించండి</li>
+    </ul>
+
+    <h3>📊 నివేదికలు & డ్యాష్‌బోర్డ్</h3>
+
+    <p>
+      ఆర్థిక వివరాలు మరియు కార్యకలాపాలపై పూర్తి నివేదికలను చూడండి.
+    </p>
+
+    <h3>🔒 గోప్యత & భద్రత</h3>
+
+    <p>
+      సురక్షితమైన యాక్సెస్ సౌకర్యాలతో మీ ముఖ్యమైన డేటాను రక్షించండి.
+    </p>
+    `;
+      }
+      else if(lang === 'hi'){
+
+  document.getElementById(
+    'welcomeTitle'
+  ).innerHTML =
+    'oneFaMiLe में आपका स्वागत है';
+
+  document.getElementById(
+    'welcomeContent'
+  ).innerHTML = `
+
+    <p><strong>आप ट्रैक कर सकते हैं :</strong></p>
+
+    <p>
+      ...आय<br>
+      ...खर्चे<br>
+      ...गतिविधियाँ<br>
+      ...ऋण<br>
+      ...स्वास्थ्य<br>
+      ...परिवार
+    </p>
+
+    <h3>💰 खर्च प्रबंधन</h3>
+    <p>अपने दैनिक खर्चों को आसानी से रिकॉर्ड और मॉनिटर करें।</p>
+
+    <ul>
+      <li>आय और खर्च जोड़ें</li>
+      <li>साप्ताहिक और मासिक रिपोर्ट देखें</li>
+      <li>श्रेणियों का प्रबंधन करें</li>
+      <li>संवेदनशील खर्चों को ट्रैक करें</li>
+    </ul>
+
+    <h3>🏦 ऋण प्रबंधन</h3>
+    <p>ऋण, भुगतान और बकाया राशि को कुशलतापूर्वक प्रबंधित करें।</p>
+
+    <ul>
+      <li>ऋण विवरण जोड़ें</li>
+      <li>भुगतान इतिहास ट्रैक करें</li>
+      <li>शेष बकाया की निगरानी करें</li>
+      <li>रिपोर्ट तैयार करें</li>
+    </ul>
+
+    <h3>📋 गतिविधि एवं कार्य प्रबंधन</h3>
+
+    <ul>
+      <li>कार्य बनाएं</li>
+      <li>समय-सीमा ट्रैक करें</li>
+      <li>जन्मदिन अनुस्मारक प्राप्त करें</li>
+      <li>दैनिक गतिविधियों का प्रबंधन करें</li>
+    </ul>
+
+    <h3>📊 रिपोर्ट एवं डैशबोर्ड</h3>
+    <p>वित्तीय और गतिविधि रिपोर्टों का पूरा सारांश देखें।</p>
+
+    <h3>🔒 गोपनीयता एवं सुरक्षा</h3>
+    <p>सुरक्षित पहुँच सुविधाओं से अपने महत्वपूर्ण डेटा की रक्षा करें।</p>
+  `;
+}
+
+else if(lang === 'ta'){
+
+  document.getElementById(
+    'welcomeTitle'
+  ).innerHTML =
+    'oneFaMiLe-க்கு வரவேற்கிறோம்';
+
+  document.getElementById(
+    'welcomeContent'
+  ).innerHTML = `
+
+    <p><strong>நீங்கள் கண்காணிக்கக்கூடியவை :</strong></p>
+
+    <p>
+      ...வருமானம்<br>
+      ...செலவுகள்<br>
+      ...செயல்பாடுகள்<br>
+      ...கடன்கள்<br>
+      ...ஆரோக்கியம்<br>
+      ...குடும்பம்
+    </p>
+
+    <h3>💰 செலவு மேலாண்மை</h3>
+    <p>உங்கள் தினசரி செலவுகளை எளிதாக பதிவு செய்து கண்காணிக்கவும்.</p>
+
+    <h3>🏦 கடன் மேலாண்மை</h3>
+    <p>கடன்கள், பணப்பரிவர்த்தனைகள் மற்றும் நிலுவைகளை திறம்பட நிர்வகிக்கவும்.</p>
+
+    <h3>📋 செயல்பாடுகள் & பணிகள் மேலாண்மை</h3>
+    <p>தினசரி பணிகளையும் நினைவூட்டல்களையும் ஒழுங்குபடுத்துங்கள்.</p>
+
+    <h3>📊 அறிக்கைகள் & டாஷ்போர்டு</h3>
+    <p>முழுமையான நிதி மற்றும் செயல்பாட்டு அறிக்கைகளை காணுங்கள்.</p>
+
+    <h3>🔒 தனியுரிமை & பாதுகாப்பு</h3>
+    <p>உங்கள் முக்கிய தரவை பாதுகாப்பாக வைத்திருங்கள்.</p>
+  `;
+}
+
+else if(lang === 'kn'){
+
+  document.getElementById(
+    'welcomeTitle'
+  ).innerHTML =
+    'oneFaMiLe ಗೆ ಸ್ವಾಗತ';
+
+  document.getElementById(
+    'welcomeContent'
+  ).innerHTML = `
+
+    <p><strong>ನೀವು ಟ್ರ್ಯಾಕ್ ಮಾಡಬಹುದಾದವು :</strong></p>
+
+    <p>
+      ...ಆದಾಯ<br>
+      ...ವೆಚ್ಚಗಳು<br>
+      ...ಚಟುವಟಿಕೆಗಳು<br>
+      ...ಸಾಲಗಳು<br>
+      ...ಆರೋಗ್ಯ<br>
+      ...ಕುಟುಂಬ
+    </p>
+
+    <h3>💰 ವೆಚ್ಚ ನಿರ್ವಹಣೆ</h3>
+    <p>ನಿಮ್ಮ ದೈನಂದಿನ ವೆಚ್ಚಗಳನ್ನು ಸುಲಭವಾಗಿ ದಾಖಲಿಸಿ ಮತ್ತು ಮೇಲ್ವಿಚಾರಣೆ ಮಾಡಿ.</p>
+
+    <h3>🏦 ಸಾಲ ನಿರ್ವಹಣೆ</h3>
+    <p>ಸಾಲಗಳು, ಪಾವತಿಗಳು ಮತ್ತು ಬಾಕಿಗಳನ್ನು ಪರಿಣಾಮಕಾರಿಯಾಗಿ ನಿರ್ವಹಿಸಿ.</p>
+
+    <h3>📋 ಚಟುವಟಿಕೆಗಳು ಮತ್ತು ಕಾರ್ಯ ನಿರ್ವಹಣೆ</h3>
+    <p>ದೈನಂದಿನ ಕೆಲಸಗಳು ಮತ್ತು ಜ್ಞಾಪನೆಗಳನ್ನು ವ್ಯವಸ್ಥಿತಗೊಳಿಸಿ.</p>
+
+    <h3>📊 ವರದಿಗಳು ಮತ್ತು ಡ್ಯಾಶ್‌ಬೋರ್ಡ್</h3>
+    <p>ಹಣಕಾಸು ಮತ್ತು ಚಟುವಟಿಕೆಗಳ ಸಂಪೂರ್ಣ ವರದಿಗಳನ್ನು ವೀಕ್ಷಿಸಿ.</p>
+
+    <h3>🔒 ಗೌಪ್ಯತೆ ಮತ್ತು ಭದ್ರತೆ</h3>
+    <p>ನಿಮ್ಮ ಪ್ರಮುಖ ಡೇಟಾವನ್ನು ಸುರಕ್ಷಿತವಾಗಿ ರಕ್ಷಿಸಿ.</p>
+  `;
+}
+
+else if(lang === 'ml'){
+
+  document.getElementById(
+    'welcomeTitle'
+  ).innerHTML =
+    'oneFaMiLe ലേക്ക് സ്വാഗതം';
+
+  document.getElementById(
+    'welcomeContent'
+  ).innerHTML = `
+
+    <p><strong>നിങ്ങൾക്ക് ട്രാക്ക് ചെയ്യാവുന്നവ :</strong></p>
+
+    <p>
+      ...വരുമാനം<br>
+      ...ചെലവുകൾ<br>
+      ...പ്രവർത്തനങ്ങൾ<br>
+      ...വായ്പകൾ<br>
+      ...ആരോഗ്യം<br>
+      ...കുടുംബം
+    </p>
+
+
+    <h3>💰 ചെലവ് മാനേജ്മെന്റ്</h3>
+    <p>ദൈനംദിന ചെലവുകൾ എളുപ്പത്തിൽ രേഖപ്പെടുത്തി നിരീക്ഷിക്കുക.</p>
+
+    <h3>🏦 വായ്പ മാനേജ്മെന്റ്</h3>
+    <p>വായ്പകൾ, പേയ്‌മെന്റുകൾ, ബാക്കി തുകകൾ എന്നിവ കാര്യക്ഷമമായി കൈകാര്യം ചെയ്യുക.</p>
+
+    <h3>📋 പ്രവർത്തനങ്ങളും ജോലികളും</h3>
+    <p>ദൈനംദിന ജോലികളും ഓർമ്മപ്പെടുത്തലുകളും ക്രമീകരിക്കുക.</p>
+
+    <h3>📊 റിപ്പോർട്ടുകളും ഡാഷ്‌ബോർഡും</h3>
+    <p>സമ്പൂർണ്ണ സാമ്പത്തികവും പ്രവർത്തനപരവുമായ റിപ്പോർട്ടുകൾ കാണുക.</p>
+
+    <h3>🔒 സ്വകാര്യതയും സുരക്ഷയും</h3>
+    <p>സുരക്ഷിത ആക്‌സസ് സൗകര്യങ്ങളിലൂടെ പ്രധാനപ്പെട്ട ഡാറ്റ സംരക്ഷിക്കുക.</p>
+  `;
+}
+
+}
+  // మిగతా languages translations తరువాత add చేయవచ్చు
+
+</script>
+
+</body>
+</html>
