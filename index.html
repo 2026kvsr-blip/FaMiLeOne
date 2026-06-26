@@ -8,8 +8,7 @@
 
  <style>
 
-  
-    *{
+      *{
   box-sizing:border-box;
 }
 
@@ -756,7 +755,7 @@ g10:[
     {text:"About Loans", img:"About1.png"}  ],
 
 };
-
+let reportMenuOpen = false;
 let currentGroup="";
 /* =========================
    CREATE BUTTON HTML
@@ -801,12 +800,17 @@ ${click}>
 
 function hideGroups(){
 
-  document.querySelectorAll('.circle-grid').forEach(function(g){
-      g.style.display='none';
-  });
+    document.querySelectorAll('.circle-grid').forEach(function(g){
+        g.style.display='none';
+    });
 
-  document.getElementById('homeMessage').style.display='none';
-  document.getElementById('langSelect').style.display='none';
+    document.getElementById('g4').style.display='none';
+    document.getElementById('homeMessage').style.display='none';
+    document.getElementById('langSelect').style.display='none';
+
+    // Report Menu కూడా hide చేయాలి
+    document.getElementById("reportMenu").style.display="none";
+    reportMenuOpen = false;
 }
 /* =========================
    REMOVE ACTIVE
@@ -850,38 +854,42 @@ function showHome(btn){
 
 function showGroup(id,btn){
 
-     if(reportMenuOpen){
-        return;
+    // Report Menu open ఉంటే ముందు close చేయాలి
+    if(reportMenuOpen){
+        reportMenuOpen = false;
+        document.getElementById("reportMenu").style.display="none";
     }
 
-  clearActive();
+    clearActive();
 
-  btn.classList.add('active');
+    btn.classList.add("active");
 
-  hideGroups();
+    hideGroups();
 
-  document.getElementById(id).style.display='block';
+    if(id==="g4"){
 
-  if(id==='g4'){
+        document.getElementById("g4").style.display="block";
 
-   document.getElementById(id).style.display='block';
+        showLoanSection(
+            "g11",
+            document.getElementById("loanBtn")
+        );
 
-   showLoanSection(
-      'g11',
-      document.getElementById('loanBtn')
-   );
+    }else{
+
+        document.getElementById(id).style.display="grid";
+
+    }
 
 }
-else{
-
-   document.getElementById(id).style.display='grid';
-
-}
-}
-
  
 function showLoanSection(id,btn){
 
+ if(reportMenuOpen){
+        return;
+    }
+
+ 
   document
     .querySelectorAll('.loan-tab-btn')
     .forEach(function(b){
@@ -966,6 +974,7 @@ function backReportMenu(){
     else{
         document.getElementById(currentGroup).style.display="grid";
     }
+ reportMenuOpen = false;
 }
  
  /* =========================
