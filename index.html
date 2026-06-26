@@ -5,7 +5,8 @@
 <meta name="viewport"
  content="width=device-width,initial-scale=1">
  <title>FaMiLeOne</title>
-<style>
+
+ <style>
  
   *{
   box-sizing:border-box;
@@ -745,25 +746,13 @@ for(const id in data){
 
 function hideGroups(){
 
-  document
-    .querySelectorAll('.circle-grid')
-    .forEach(function(g){
-      g.style.display = 'none';
-    });
+  document.querySelectorAll('.circle-grid').forEach(function(g){
+      g.style.display='none';
+  });
 
-  // Loan Container Hide
-  document
-    .getElementById('g4')
-    .style.display = 'none';
-
-  document
-    .getElementById('homeMessage')
-    .style.display = 'none';
-
-  document
-    .getElementById('languageSection')
-    .style.display = 'none';
- document.getElementById('langSelect').style.display='none';
+  document.getElementById('g4').style.display='none';
+  document.getElementById('homeMessage').style.display='none';
+  document.getElementById('langSelect').style.display='none';
 }
 /* =========================
    REMOVE ACTIVE
@@ -897,21 +886,16 @@ function showExit(){
    DEFAULT HOME
 ========================= */
 
-window.onload = function(){
+window.onload=function(){
 
-  hideGroups();
+    hideGroups();
 
-  document
-    .getElementById('languageSection')
-    .style.display = 'flex';
+    document.getElementById('homeMessage').style.display='block';
 
-  document
-    .getElementById('homeMessage')
-    .style.display = 'block';
+    document.getElementById('langSelect').style.display='block';
 
-  changeLanguage();
- document.getElementById('langSelect').style.display='block';
-};
+    changeLanguage();
+}
 function changeLanguage(){
 
   const lang =
