@@ -7,6 +7,7 @@
  <title>FaMiLeOne</title>
 
  <style>
+
   
   *{
   box-sizing:border-box;
@@ -770,13 +771,9 @@ for(const id in data){
     let click="";
 
 if(
-item.text=="Reports" ||
-item.text=="Sensitive Reports" ||
-item.text=="All Reports"
+    item.text.includes("Reports")
 ){
-
-click=`onclick="showReportMenu('${id}');return false;"`;
-
+    click=`onclick="showReportMenu('${id}');return false;"`;
 }
 
 box.innerHTML+=`
@@ -920,7 +917,7 @@ if(btn){
 currentGroup=group;
 
 hideGroups();
-
+document.getElementById("reportMenu").style.display="none";
 document.getElementById("reportMenu").style.display="grid";
 
 document.getElementById("reportMenu").innerHTML=`
