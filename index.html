@@ -10,7 +10,7 @@
   *{
   box-sizing:border-box;
 }
- 
+
    body{
   margin:0;
   font-family:Arial,sans-serif;
@@ -359,7 +359,27 @@ background:#5f84e8;
 .bottom-nav a{
   transition:transform 0.15s ease;
 }
+/*--Top Bar------*/
+.top-lang{
+    position:absolute;
+    right:8px;
+    width:62px;
+    height:28px;
 
+    background:#8fb0ff;      /* Top bar same color */
+    color:#000;
+
+    border:1px solid #333;   /* Thin dark border */
+    border-radius:6px;
+
+    font-size:11px;
+    outline:none;
+    cursor:pointer;
+ display:none;   /* Default hidden */
+
+}
+
+ 
 /* Optional Touch Effect */
 .rect-btn:active,
 .nav-btn:active,
@@ -433,17 +453,28 @@ background:#5f84e8;
 
 <div class="top-bar">
 
-  <button class="menu-icon"
-          onclick="toggleMenu()">
-          ☰
-  </button>
+    <button class="menu-icon" onclick="toggleMenu()">
+        ☰
+    </button>
 
-  <div class="page-title">
-      oneFaMiLe
-  </div>
+    <div class="page-title">
+        oneFaMiLe
+    </div>
+
+    <select id="langSelect"
+            class="top-lang"
+            onchange="changeLanguage()">
+
+        <option value="en">EN</option>
+        <option value="te">తెలు</option>
+        <option value="hi">हिं</option>
+        <option value="ta">த</option>
+        <option value="kn">ಕ</option>
+        <option value="ml">മ</option>
+
+    </select>
 
 </div>
-
 <div class="container">
 
   <!-- TOP 4 BUTTONS -->
@@ -484,32 +515,6 @@ background:#5f84e8;
 </div>
       <!-- Language Dropdown -->
 <!-- Language Dropdown -->
-<div id="languageSection" class="language-box">
-
- <label for="langSelect"
-       style="
-       font-weight:normal;
-       color:#5f84e8;
-       margin-right:10px;
-       font-size:14px;">
-  Select Language
-</label>
-  <select id="langSelect"
-          onchange="changeLanguage()">
-
-    <option value="en">English</option>
-    <option value="te">తెలుగు</option>
-    <option value="hi">हिन्दी</option>
-    <option value="ta">தமிழ்</option>
-    <option value="kn">ಕನ್ನಡ</option>
-    <option value="ml">മലയാളം</option>
-
-
-  </select>
-
-</div>
-</div>
-<!-- HOME MESSAGE -->
 
 
   <!-- HOME MESSAGE -->
@@ -758,6 +763,7 @@ function hideGroups(){
   document
     .getElementById('languageSection')
     .style.display = 'none';
+ document.getElementById('langSelect').style.display='none';
 }
 /* =========================
    REMOVE ACTIVE
@@ -787,20 +793,14 @@ function clearActive(){
 function showHome(btn){
 
   clearActive();
-
   btn.classList.add('active');
-
   hideGroups();
 
-  document
-    .getElementById('languageSection')
-    .style.display = 'flex';
+  document.getElementById('homeMessage').style.display='block';
 
-  document
-    .getElementById('homeMessage')
-    .style.display = 'block';
+  document.getElementById('langSelect').style.display='block';   // Add this
+
 }
-
 /* =========================
    SHOW GROUP
 ========================= */
@@ -910,6 +910,7 @@ window.onload = function(){
     .style.display = 'block';
 
   changeLanguage();
+ document.getElementById('langSelect').style.display='block';
 };
 function changeLanguage(){
 
