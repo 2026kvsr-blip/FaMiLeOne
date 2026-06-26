@@ -8,8 +8,7 @@
 
  <style>
 
-  
-  *{
+    *{
   box-sizing:border-box;
 }
 
@@ -606,7 +605,6 @@ background:#5f84e8;
 <div id="g8" class="circle-grid"></div>
 <div id="g9" class="circle-grid"></div>
 <div id="g10" class="circle-grid"></div>
- <div id="g10" class="circle-grid"></div>
  <div id="reportMenu" style="display:none;"></div>
 </div>   <!-- container close -->
   <!-- ======================
@@ -777,30 +775,15 @@ if(
 }
 
 box.innerHTML+=`
-
 <a href="#"
-
 class="circle-item"
-
 ${click}>
-
 <div class="circle">
-
 <img src="${item.img}">
-
 </div>
-
 <span>${item.text}</span>
-
 </a>
-
-`;        <div class="circle">
-          <img src="${item.img}">
-        </div>
-        <span>${item.text}</span>
-      </a>
-    `;
-
+`;
   });
 }
 ;
