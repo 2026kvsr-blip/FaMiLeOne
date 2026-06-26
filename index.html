@@ -7,7 +7,6 @@
  <title>FaMiLeOne</title>
 
  <style>
-
   
   *{
   box-sizing:border-box;
@@ -433,6 +432,37 @@ background:#5f84e8;
   gap:25px 10px;
   margin-top:20px;
 }
+  /* =====================
+   REPORT MENU
+===================== */
+
+.report-menu{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+    margin-top:18px;
+}
+
+.report-btn{
+    background:#dce7ff;
+    border:none;
+    border-radius:10px;
+    height:42px;
+    cursor:pointer;
+    font-size:13px;
+    font-weight:600;
+}
+
+.report-btn:hover{
+    background:#5f84e8;
+    color:#fff;
+}
+
+.back-btn{
+    background:#ffd6d6;
+    color:#b00000;
+    font-weight:bold;
+}
 </style>
 
 </head>
@@ -575,6 +605,8 @@ background:#5f84e8;
 <div id="g8" class="circle-grid"></div>
 <div id="g9" class="circle-grid"></div>
 <div id="g10" class="circle-grid"></div>
+ <div id="g10" class="circle-grid"></div>
+ <div id="reportMenu" style="display:none;"></div>
 </div>   <!-- container close -->
   <!-- ======================
      BOTTOM NAVIGATION
@@ -722,7 +754,7 @@ g10:[
 
 };
 
-
+let currentGroup="";
 /* =========================
    CREATE BUTTON HTML
 ========================= */
@@ -735,9 +767,37 @@ for(const id in data){
 
   data[id].forEach(function(item){
 
-    box.innerHTML += `
-      <a href="#" class="circle-item">
-        <div class="circle">
+    let click="";
+
+if(
+item.text=="Reports" ||
+item.text=="Sensitive Reports" ||
+item.text=="All Reports"
+){
+
+click=`onclick="showReportMenu('${id}');return false;"`;
+
+}
+
+box.innerHTML+=`
+
+<a href="#"
+
+class="circle-item"
+
+${click}>
+
+<div class="circle">
+
+<img src="${item.img}">
+
+</div>
+
+<span>${item.text}</span>
+
+</a>
+
+`;        <div class="circle">
           <img src="${item.img}">
         </div>
         <span>${item.text}</span>
@@ -854,6 +914,78 @@ if(btn){
       "repeat(3,1fr)";
   loanContent.style.justifyItems = "center";
   loanContent.style.gap = "25px 10px";
+}
+ function showReportMenu(group){
+
+currentGroup=group;
+
+hideGroups();
+
+document.getElementById("reportMenu").style.display="grid";
+
+document.getElementById("reportMenu").innerHTML=`
+
+<div class="report-menu">
+
+<button class="report-btn">Today Report</button>
+
+<button class="report-btn">This Week Report</button>
+
+<button class="report-btn">This Month Report</button>
+
+<button class="report-btn">Daily Report</button>
+
+<button class="report-btn">Monthly Report</button>
+
+<button class="report-btn">This Year Report</button>
+
+<button class="report-btn">Yearly Report</button>
+
+<button class="report-btn">Report Abstract</button>
+
+<button class="report-btn back-btn"
+onclick="backReportMenu()">
+Back
+</button>
+
+</div>
+
+`;
+
+}
+
+function backReportMenu(){
+
+document.getElementById("reportMenu").style.display="none";
+
+if(currentGroup=="g11"){
+
+document.getElementById("g4").style.display="block";
+
+showLoanSection(
+"g11",
+document.getElementById("loanBtn")
+);
+
+}
+
+else if(currentGroup=="g7"){
+
+document.getElementById("g4").style.display="block";
+
+showLoanSection(
+"g7",
+document.getElementById("paymentBtn")
+);
+
+}
+
+else{
+
+document.getElementById(currentGroup).style.display="grid";
+
+}
+
 }
 /* =========================
    OPEN SIDE MENU
