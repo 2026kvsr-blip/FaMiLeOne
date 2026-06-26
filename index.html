@@ -7,7 +7,6 @@
  <title>FaMiLeOne</title>
 
  <style>
-
   
     *{
   box-sizing:border-box;
@@ -660,7 +659,9 @@ background:#5f84e8;
 /* =========================
    CREATE CIRCULAR BUTTONS
 ========================= */
-
+let reportMenuOpen = false;
+let currentGroup = "";
+ 
 const data = {
 
     g1:[
@@ -848,6 +849,10 @@ function showHome(btn){
 
 function showGroup(id,btn){
 
+     if(reportMenuOpen){
+        return;
+    }
+
   clearActive();
 
   btn.classList.add('active');
@@ -872,6 +877,8 @@ else{
 
 }
 }
+
+ 
 function showLoanSection(id,btn){
 
   document
@@ -896,8 +903,10 @@ if(btn){
   loanContent.style.justifyItems = "center";
   loanContent.style.gap = "25px 10px";
 }
- function showReportMenu(group){
 
+ 
+ function showReportMenu(group){
+reportMenuOpen = true;
 currentGroup=group;
 
 hideGroups();
@@ -935,38 +944,30 @@ Back
 
 function backReportMenu(){
 
-document.getElementById("reportMenu").style.display="none";
+    reportMenuOpen = false;
 
-if(currentGroup=="g11"){
+    document.getElementById("reportMenu").style.display="none";
 
-document.getElementById("g4").style.display="block";
-
-showLoanSection(
-"g11",
-document.getElementById("loanBtn")
-);
-
+    if(currentGroup=="g11"){
+        document.getElementById("g4").style.display="block";
+        showLoanSection(
+            "g11",
+            document.getElementById("loanBtn")
+        );
+    }
+    else if(currentGroup=="g7"){
+        document.getElementById("g4").style.display="block";
+        showLoanSection(
+            "g7",
+            document.getElementById("paymentBtn")
+        );
+    }
+    else{
+        document.getElementById(currentGroup).style.display="grid";
+    }
 }
-
-else if(currentGroup=="g7"){
-
-document.getElementById("g4").style.display="block";
-
-showLoanSection(
-"g7",
-document.getElementById("paymentBtn")
-);
-
-}
-
-else{
-
-document.getElementById(currentGroup).style.display="grid";
-
-}
-
-}
-/* =========================
+ 
+ /* =========================
    OPEN SIDE MENU
 ========================= */
 
