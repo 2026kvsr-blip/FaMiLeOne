@@ -4,7 +4,6 @@
 
 /* Generate Top Menu */
 function createTopMenu() {
-
    
     const row = document.getElementById("topMenu");
 
@@ -430,3 +429,150 @@ function menuClick(action){
     }
 
 }
+/* ==========================================
+   menu.js - Part 5C
+========================================== */
+
+
+/* -------- Close Side Menu -------- */
+
+function closeMenu(){
+
+    document.getElementById("menu")
+    .classList.remove("open");
+
+}
+
+
+/* -------- Popup -------- */
+
+function showPopup(msg){
+
+    const p=document.getElementById("popup");
+
+    p.innerHTML=msg;
+
+    p.style.display="block";
+
+    clearTimeout(window.popupTimer);
+
+    window.popupTimer=setTimeout(function(){
+
+        p.style.display="none";
+
+    },3000);
+
+}
+
+
+/* -------- Exit -------- */
+
+function showExit(){
+
+    closeMenu();
+
+    showPopup(
+        "Scroll from bottom to top to close App"
+    );
+
+}
+
+
+/* -------- Click Outside Menu -------- */
+
+document.addEventListener("click",function(e){
+
+    const menu=document.getElementById("menu");
+
+    const btn=document.querySelector(".menu-icon");
+
+    if(
+
+        menu.classList.contains("open")
+
+        &&
+
+        !menu.contains(e.target)
+
+        &&
+
+        !btn.contains(e.target)
+
+    ){
+
+        closeMenu();
+
+    }
+
+});
+
+
+/* -------- ESC Key -------- */
+
+document.addEventListener("keydown",function(e){
+
+    if(e.key==="Escape"){
+
+        if(reportMode){
+
+            backReportMenu();
+
+            return;
+
+        }
+
+        closeMenu();
+
+    }
+
+});
+
+
+/* -------- Navigation Placeholder -------- */
+
+function openPage(name){
+
+    console.log("Open :",name);
+
+}
+
+
+/* -------- Common Menu Click -------- */
+
+function menuClick(action){
+
+    if(reportMode){
+
+        return;
+
+    }
+
+    switch(action){
+
+        default:
+
+            openPage(action);
+
+    }
+
+}
+
+
+/* -------- App Initialize -------- */
+
+function initializeApp(){
+
+    createTopMenu();
+
+    createCircleMenus();
+
+    changeLanguage();
+
+    showHome(document.querySelector(".nav-btn"));
+
+}
+
+
+/* -------- Load -------- */
+
+window.addEventListener("load",initializeApp);
