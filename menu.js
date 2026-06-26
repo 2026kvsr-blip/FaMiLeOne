@@ -5,6 +5,7 @@
 /* Generate Top Menu */
 function createTopMenu() {
 
+   
     const row = document.getElementById("topMenu");
 
     row.innerHTML = "";
@@ -70,7 +71,11 @@ function createCircleMenus(){
 /* Home */
 
 function showHome(btn){
+if(reportMode){
 
+    backReportMenu();
+
+}
     clearActive();
 
     if(btn) btn.classList.add("active");
@@ -117,7 +122,11 @@ document.querySelectorAll(".rect-btn,.nav-btn,.loan-tab-btn")
 /* Open Group */
 
 function showGroup(id,btn){
+if(reportMode){
 
+    backReportMenu();
+
+}
 clearActive();
 
 if(btn) btn.classList.add("active");
@@ -163,7 +172,11 @@ loan.style.display="grid";
 /* Side Menu */
 
 function toggleMenu(){
+if(reportMode){
 
+    return;
+
+}
 document.getElementById("menu")
 
 .classList.toggle("open");
@@ -207,3 +220,213 @@ showHome(document.querySelector(".nav-btn"));
 changeLanguage();
 
 };
+/* PART - B * /
+/* =====================================
+   REPORT MENU
+===================================== */
+
+let currentReportGroup = "";
+let reportMode = false;
+
+/* Open Report Menu */
+
+function openReportMenu(groupId){
+
+    reportMode = true;
+    currentReportGroup = groupId;
+
+    /* Hide current buttons */
+
+    if(groupId=="g4"){
+
+        document.getElementById("loanContent").style.display="none";
+
+    }else{
+
+        document.getElementById(groupId).style.display="none";
+
+    }
+
+    createReportButtons();
+
+    document.getElementById("reportMenu").style.display="grid";
+
+}
+
+
+/* Create Report Buttons */
+
+function createReportButtons(){
+
+    const box=document.getElementById("reportMenu");
+
+    box.innerHTML="";
+
+    reportButtons.forEach(name=>{
+
+        box.innerHTML+=`
+
+        <button class="report-btn"
+
+        onclick="reportButtonClick('${name}')">
+
+        ${name}
+
+        </button>
+
+        `;
+
+    });
+
+}
+
+
+/* Report Button Click */
+
+function reportButtonClick(name){
+
+    if(name==="Back"){
+
+        backReportMenu();
+
+        return;
+
+    }
+
+    alert(name);
+
+}
+
+
+/* Back */
+
+function backReportMenu(){
+
+    reportMode=false;
+
+    document.getElementById("reportMenu").style.display="none";
+
+    if(currentReportGroup==="g4"){
+
+        document.getElementById("loanContent").style.display="grid";
+
+    }
+
+    else{
+
+        document.getElementById(currentReportGroup).style.display="grid";
+
+    }
+
+}
+
+
+/* Navigation Lock */
+
+function menuClick(action){
+
+    if(reportMode){
+
+        return;
+    }
+
+    switch(action){
+
+        /* Expenses */
+
+        case "expenseReports":
+
+        case "sensitiveExpense":
+
+        case "allExpenseReports":
+
+            openReportMenu("g1");
+
+            break;
+
+
+        /* Activities */
+
+        case "activityReports":
+
+        case "sensitiveActivity":
+
+        case "allActivityReports":
+
+            openReportMenu("g2");
+
+            break;
+
+
+        /* Health */
+
+        case "healthReports":
+
+        case "sensitiveHealth":
+
+        case "allHealthReports":
+
+            openReportMenu("g3");
+
+            break;
+
+
+        /* Memories */
+
+        case "memoryReports":
+
+        case "sensitiveMemory":
+
+        case "allMemoryReports":
+
+            openReportMenu("g5");
+
+            break;
+
+
+        /* Income */
+
+        case "incomeReports":
+
+        case "sensitiveIncome":
+
+        case "allIncomeReports":
+
+            openReportMenu("g10");
+
+            break;
+
+
+        /* Loans */
+
+        case "loanReports":
+
+        case "sensitiveLoan":
+
+        case "allLoanReports":
+
+            openReportMenu("g4");
+
+            break;
+
+
+        /* Payments */
+
+        case "paymentReports":
+
+        case "sensitivePayment":
+
+        case "allPaymentReports":
+
+            openReportMenu("g4");
+
+            break;
+
+
+        default:
+
+            console.log(action);
+
+    }
+
+}
