@@ -569,6 +569,7 @@ background:#5f84e8;
   <div id="welcomeContent">
   </div>
 
+ 
 </div>   <!-- homeMessage close -->
 
 <!-- CIRCULAR BUTTON GROUPS -->
@@ -801,7 +802,6 @@ function hideGroups(){
       g.style.display='none';
   });
 
-  document.getElementById('g4').style.display='none';
   document.getElementById('homeMessage').style.display='none';
   document.getElementById('langSelect').style.display='none';
 }
@@ -900,9 +900,7 @@ if(btn){
 currentGroup=group;
 
 hideGroups();
-document.getElementById("reportMenu").style.display="none";
-document.getElementById("reportMenu").style.display="grid";
-
+reportMenu.style.display="grid";
 document.getElementById("reportMenu").innerHTML=`
 
 <div class="report-menu">
