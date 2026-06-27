@@ -8,6 +8,7 @@
    TOP MENU
 ========================== */
 
+
 const topMenu=[
 
 {
@@ -145,7 +146,7 @@ g6:[
 
 g7:[
 
-{text:"Add Payment",img:"images/AddPayments2.png",action:"addPayment"},
+{text:"Add Payment",img:"images/AddPayments1.png",action:"addPayment"},
 
 {text:"Reports",img:"images/Reports1.png",action:"paymentReports"},
 
