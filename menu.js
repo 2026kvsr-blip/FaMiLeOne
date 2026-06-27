@@ -192,14 +192,17 @@ function showGroup(id,btn){
 
 function showLoanSection(id,btn){
 
+    // Reports screen open ఉంటే tab change చేయొద్దు
+    if(reportMode){
+        return;
+    }
+
     document
     .querySelectorAll(".loan-tab-btn")
     .forEach(b=>b.classList.remove("active"));
 
     if(btn){
-
         btn.classList.add("active");
-
     }
 
     const loan=document.getElementById("loanContent");
@@ -209,7 +212,6 @@ function showLoanSection(id,btn){
     loan.style.display="grid";
 
 }
-
 
 /* ===========================
    MENU CLICK
