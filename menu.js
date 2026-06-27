@@ -208,17 +208,7 @@ p.style.display="none";
 
 /* Default */
 
-window.onload=function(){
 
-createTopMenu();
-
-createCircleMenus();
-
-showHome(document.querySelector(".nav-btn"));
-
-changeLanguage();
-
-};
 /* PART - B * /
 /* =====================================
    REPORT MENU
