@@ -3,6 +3,7 @@
    style.css
 ========================================== */
 
+
 *{
 margin:0;
 padding:0;
@@ -261,6 +262,17 @@ color:#fff;
    HOME BOX
 ========================== */
 
+#welcomeContent{
+
+font-size:15px;
+
+line-height:1.8;
+
+text-align:justify;
+
+}
+
+
 .welcome-box{
 
 background:#fff;
@@ -271,10 +283,15 @@ border-radius:18px;
 
 box-shadow:0 2px 8px rgba(0,0,0,.08);
 
-line-height:1.6;
+line-height:1.7;
+
+min-height:220px;
+
+white-space:normal;
+
+word-wrap:break-word;
 
 }
-
 .welcome-box h2{
 
 text-align:center;
