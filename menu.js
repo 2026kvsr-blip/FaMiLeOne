@@ -6,7 +6,6 @@
 let reportMode = false;
 let currentReportGroup = "";
 
-
 /* ===========================
    CREATE TOP MENU
 =========================== */
@@ -604,16 +603,27 @@ function initializeNavigation(){
 
 function initializeApp(){
 
+    alert("1");
+
     createTopMenu();
+
+    alert("2");
 
     createCircleMenus();
 
+    alert("3");
+
     initializeNavigation();
+
+    alert("4");
 
     changeLanguage();
 
+    alert("5");
+
     showHome(document.getElementById("homeNav"));
 
+    alert("6");
 }
 
 
