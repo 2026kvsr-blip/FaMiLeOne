@@ -3,6 +3,7 @@
    menu.js
 ========================================== */
 
+
 /* ===========================
    GLOBALS
 =========================== */
@@ -230,49 +231,49 @@ function menuClick(action){
             case "sensitiveExpense":
             case "allExpenseReports":
 
-                openReportMenu("g1");
+    openReportMenu("g1","Expenses Reports");
                 return;
 
             case "activityReports":
             case "sensitiveActivity":
             case "allActivityReports":
 
-                openReportMenu("g2");
+    openReportMenu("g2","Activities Reports");
                 return;
 
             case "healthReports":
             case "sensitiveHealth":
             case "allHealthReports":
 
-                openReportMenu("g3");
+    openReportMenu("g3","Health Reports");
                 return;
 
             case "memoryReports":
             case "sensitiveMemory":
             case "allMemoryReports":
 
-                openReportMenu("g5");
+    openReportMenu("g5","Memories Reports");
                 return;
 
             case "incomeReports":
             case "sensitiveIncome":
             case "allIncomeReports":
 
-                openReportMenu("g10");
+    openReportMenu("g10","Income Reports");
                 return;
 
             case "loanReports":
             case "sensitiveLoan":
             case "allLoanReports":
 
-                openReportMenu("g4");
+    openReportMenu("g4","Loans Reports");
                 return;
 
             case "paymentReports":
             case "sensitivePayment":
             case "allPaymentReports":
 
-                openReportMenu("g4");
+    openReportMenu("g4","Payments Reports");
                 return;
 
         }
