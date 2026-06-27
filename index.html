@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>oneFaMiLe</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<!-- =======================
+TOP BAR
+======================= -->
+
+<header class="top-bar">
+
+<button class="menu-icon"
+onclick="toggleMenu()">
+
+☰
+
+</button>
+
+<h1 class="page-title">
+
+oneFaMiLe
+
+</h1>
+
+<select id="langSelect"
+class="top-lang"
+onchange="changeLanguage()">
+
+<option value="en">EN</option>
+<option value="te">తెలు</option>
+<option value="hi">हिं</option>
+<option value="ta">த</option>
+<option value="kn">ಕ</option>
+<option value="ml">മ</option>
+
+</select>
+
+</header>
+
+
+<!-- =======================
+SIDE MENU
+======================= -->
+
+<div id="menu"
+class="side-menu">
+
+<a href="#"
+class="exit-btn"
+onclick="showExit();return false;">
+
+Exit
+
+</a>
+
+</div>
+
+
+<!-- =======================
+POPUP
+======================= -->
+
+<div id="popup"
+class="popup"></div>
+
+
+<!-- =======================
+MAIN
+======================= -->
+
+<div class="container">
+
+
+<!-- Top 5 Buttons -->
+
+<div id="topButtons"
+class="rect-row">
+
+</div>
+
+
+<!-- Home -->
+
+<div id="homeMessage"
+class="welcome-box">
+
+<h2 id="welcomeTitle">
+
+Welcome
+
+</h2>
+
+<div id="welcomeContent">
+
+Welcome to oneFaMiLe
+
+</div>
+
+</div>
+
+
+<!-- Expenses -->
+
+<div id="g1"
+class="circle-grid"></div>
+
+
+<!-- Activities -->
+
+<div id="g2"
+class="circle-grid"></div>
+
+
+<!-- Health -->
+
+<div id="g3"
+class="circle-grid"></div>
+
+
+<!-- Loans -->
+
+<div id="g4"
+class="loan-page">
+
+<div class="loan-tabs">
+
+<button id="loanBtn"
+class="loan-tab-btn"
+onclick="showLoanSection('g11',this)">
+
+Loans
+
+</button>
+
+<button id="paymentBtn"
+class="loan-tab-btn"
+onclick="showLoanSection('g7',this)">
+
+Payments
+
+</button>
+
+</div>
+
+<div id="loanContent"
+class="circle-grid">
+
+</div>
+
+</div>
+
+
+<!-- Memories -->
+
+<div id="g5"
+class="circle-grid"></div>
+
+
+<!-- Family -->
+
+<div id="g6"
+class="circle-grid"></div>
+
+
+<!-- Payments Data -->
+
+<div id="g7"
+class="circle-grid"
+style="display:none">
+
+</div>
+
+
+<!-- Charts -->
+
+<div id="g8"
+class="circle-grid"></div>
+
+
+<!-- Reports -->
+
+<div id="g9"
+class="circle-grid"></div>
+
+
+<!-- Income -->
+
+<div id="g10"
+class="circle-grid"></div>
+
+
+<!-- Loans Data -->
+
+<div id="g11"
+class="circle-grid"
+style="display:none">
+
+</div>
+
+
+<!-- Report Menu -->
+
+<div id="reportMenu">
+
+</div>
+
+</div>
+
+
+<!-- =======================
+BOTTOM MENU
+======================= -->
+
+<nav class="bottom-nav">
+
+<a href="#"
+id="homeNav">
+
+<img src="images/Home1.png">
+
+<div>Home</div>
+
+</a>
+
+
+<a href="#"
+id="familyNav">
+
+<img src="images/FT1.png">
+
+<div>Family</div>
+
+</a>
+
+
+<a href="#"
+id="chartsNav">
+
+<img src="images/Charts1.png">
+
+<div>Charts</div>
+
+</a>
+
+
+<a href="#"
+id="memoryNav">
+
+<img src="images/Memories1.png">
+
+<div>Memories</div>
+
+</a>
+
+
+<a href="#"
+id="reportsNav">
+
+<img src="images/Reports1.png">
+
+<div>Reports</div>
+
+</a>
+
+</nav>
+
+
+<!-- =======================
+JAVASCRIPT
+======================= -->
+
+<script src="data.js"></script>
+
+<script src="language.js"></script>
+
+<script src="reports.js"></script>
+
+<script src="menu.js"></script>
+
+</body>
+
+</html>
