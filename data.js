@@ -1,10 +1,14 @@
 /* ==========================================
-   oneFaMiLe - data.js
+   oneFaMiLe V2.0
+   data.js
 ========================================== */
 
-/* ---------- TOP MENU ---------- */
 
-const topMenu = [
+/* ==========================
+   TOP MENU
+========================== */
+
+const topMenu=[
 
 {
 id:"g1",
@@ -39,119 +43,90 @@ img:"images/Income1.png"
 ];
 
 
-/* ---------- BOTTOM MENU ---------- */
-
-const bottomMenu = [
-
-{
-id:"home",
-text:"Home",
-img:"images/Home1.png"
-},
-
-{
-id:"g6",
-text:"Family",
-img:"images/FT1.png"
-},
-
-{
-id:"g8",
-text:"Charts",
-img:"images/Charts1.png"
-},
-
-{
-id:"g5",
-text:"Memories",
-img:"images/Memories1.png"
-},
-
-{
-id:"g9",
-text:"Reports",
-img:"images/Reports1.png"
-}
-
-];
-
-
-/* ---------- MAIN MENUS ---------- */
+/* ==========================
+   MENU DATA
+========================== */
 
 const menuData={
 
 
+/* Expenses */
+
 g1:[
 
-{text:"Add New Expense",img:"images/AddExpenses1.png",action:"addExpense"},
+{text:"Add Expense",img:"images/AddExpenses1.png",action:"addExpense"},
 
-{text:"Expenses Reports",img:"images/Reports1.png",action:"expenseReports"},
+{text:"Reports",img:"images/Reports1.png",action:"expenseReports"},
 
-{text:"Sensitive Expenses",img:"images/Key.png",action:"sensitiveExpense"},
+{text:"Sensitive",img:"images/Key.png",action:"sensitiveExpense"},
 
-{text:"All Expenses Reports",img:"images/AllReports1.png",action:"allExpenseReports"},
+{text:"All Reports",img:"images/AllReports1.png",action:"allExpenseReports"},
 
-{text:"Custom Search",img:"images/CustomSearch1.png",action:"expenseSearch"},
+{text:"Search",img:"images/CustomSearch1.png",action:"expenseSearch"},
 
 {text:"About",img:"images/About1.png",action:"expenseAbout"}
 
 ],
 
 
+/* Activities */
 
 g2:[
 
-{text:"Add New Activity",img:"images/AddActivity1.png",action:"addActivity"},
+{text:"Add Activity",img:"images/AddActivity1.png",action:"addActivity"},
 
-{text:"Activities Reports",img:"images/Reports1.png",action:"activityReports"},
+{text:"Reports",img:"images/Reports1.png",action:"activityReports"},
 
-{text:"Sensitive Activities",img:"images/Key.png",action:"sensitiveActivity"},
+{text:"Sensitive",img:"images/Key.png",action:"sensitiveActivity"},
 
-{text:"All Activities Reports",img:"images/AllReports1.png",action:"allActivityReports"},
+{text:"All Reports",img:"images/AllReports1.png",action:"allActivityReports"},
 
-{text:"Custom Search",img:"images/CustomSearch1.png",action:"activitySearch"},
+{text:"Search",img:"images/CustomSearch1.png",action:"activitySearch"},
 
 {text:"About",img:"images/About1.png",action:"activityAbout"}
 
 ],
 
 
+/* Health */
 
 g3:[
 
-{text:"Add New Medicine",img:"images/AddMedicine1.png",action:"addMedicine"},
+{text:"Add Medicine",img:"images/AddMedicine1.png",action:"addMedicine"},
 
-{text:"Health Reports",img:"images/Reports1.png",action:"healthReports"},
+{text:"Reports",img:"images/Reports1.png",action:"healthReports"},
 
-{text:"Sensitive Health",img:"images/Key.png",action:"sensitiveHealth"},
+{text:"Sensitive",img:"images/Key.png",action:"sensitiveHealth"},
 
-{text:"All Health Reports",img:"images/AllReports1.png",action:"allHealthReports"},
+{text:"All Reports",img:"images/AllReports1.png",action:"allHealthReports"},
 
-{text:"Custom Search",img:"images/CustomSearch1.png",action:"healthSearch"},
+{text:"Search",img:"images/CustomSearch1.png",action:"healthSearch"},
 
 {text:"About",img:"images/About1.png",action:"healthAbout"}
 
 ],
 
 
+/* Memories */
 
 g5:[
 
-{text:"Add New Memory",img:"images/AddMemories1.png",action:"addMemory"},
+{text:"Add Memory",img:"images/AddMemories1.png",action:"addMemory"},
 
-{text:"Memories Reports",img:"images/Reports1.png",action:"memoryReports"},
+{text:"Reports",img:"images/Reports1.png",action:"memoryReports"},
 
-{text:"Sensitive Memories",img:"images/Key.png",action:"sensitiveMemory"},
+{text:"Sensitive",img:"images/Key.png",action:"sensitiveMemory"},
 
-{text:"All Memories Reports",img:"images/AllReports1.png",action:"allMemoryReports"},
+{text:"All Reports",img:"images/AllReports1.png",action:"allMemoryReports"},
 
-{text:"Custom Search",img:"images/CustomSearch1.png",action:"memorySearch"},
+{text:"Search",img:"images/CustomSearch1.png",action:"memorySearch"},
 
 {text:"About",img:"images/About1.png",action:"memoryAbout"}
 
 ],
 
 
+/* Family */
 
 g6:[
 
@@ -166,114 +141,120 @@ g6:[
 ],
 
 
+/* Payments */
 
 g7:[
 
-{text:"Add New Payment",img:"images/AddPayments2.png",action:"addPayment"},
+{text:"Add Payment",img:"images/AddPayments2.png",action:"addPayment"},
 
-{text:"Payments Reports",img:"images/Reports1.png",action:"paymentReports"},
+{text:"Reports",img:"images/Reports1.png",action:"paymentReports"},
 
-{text:"Sensitive Payments",img:"images/Key.png",action:"sensitivePayment"},
+{text:"Sensitive",img:"images/Key.png",action:"sensitivePayment"},
 
-{text:"All Payments Reports",img:"images/AllReports1.png",action:"allPaymentReports"},
+{text:"All Reports",img:"images/AllReports1.png",action:"allPaymentReports"},
 
-{text:"Custom Search",img:"images/CustomSearch1.png",action:"paymentSearch"},
+{text:"Search",img:"images/CustomSearch1.png",action:"paymentSearch"},
 
 {text:"About",img:"images/About1.png",action:"paymentAbout"}
 
 ],
 
 
+/* Charts */
+
+g8:[
+
+{text:"Expense Charts",img:"images/ExpensesCharts1.png",action:"expenseCharts"},
+
+{text:"Activity Charts",img:"images/ActivityCharts1.png",action:"activityCharts"},
+
+{text:"Loan Charts",img:"images/LoansCharts1.png",action:"loanCharts"},
+
+{text:"Income Charts",img:"images/IncomeCharts1.png",action:"incomeCharts"},
+
+{text:"Payment Charts",img:"images/PaymentsCharts1.png",action:"paymentCharts"},
+
+{text:"Memory Charts",img:"images/MemoriesCharts1.png",action:"memoryCharts"},
+
+{text:"Health Charts",img:"images/HealthCharts1.png",action:"healthCharts"}
+
+],
+
+
+/* Reports */
+
+g9:[
+
+{text:"Expense Reports",img:"images/ExpensesReports1.png",action:"expenseReportsMain"},
+
+{text:"Activity Reports",img:"images/ActivitiesReports1.png",action:"activityReportsMain"},
+
+{text:"Loan Reports",img:"images/LoansReports1.png",action:"loanReportsMain"},
+
+{text:"Income Reports",img:"images/IncomeReports1.png",action:"incomeReportsMain"},
+
+{text:"Payment Reports",img:"images/PaymentsReports1.png",action:"paymentReportsMain"},
+
+{text:"Memory Reports",img:"images/MemoriesReports1.png",action:"memoryReportsMain"},
+
+{text:"Health Reports",img:"images/MedicalReports1.png",action:"healthReportsMain"}
+
+],
+
+
+/* Income */
 
 g10:[
 
-{text:"Add New Income",img:"images/AddIncome1.png",action:"addIncome"},
+{text:"Add Income",img:"images/AddIncome1.png",action:"addIncome"},
 
-{text:"Income Reports",img:"images/Reports1.png",action:"incomeReports"},
+{text:"Reports",img:"images/Reports1.png",action:"incomeReports"},
 
-{text:"Sensitive Income",img:"images/Key.png",action:"sensitiveIncome"},
+{text:"Sensitive",img:"images/Key.png",action:"sensitiveIncome"},
 
-{text:"All Income Reports",img:"images/AllReports1.png",action:"allIncomeReports"},
+{text:"All Reports",img:"images/AllReports1.png",action:"allIncomeReports"},
 
-{text:"Custom Search",img:"images/CustomSearch1.png",action:"incomeSearch"},
+{text:"Search",img:"images/CustomSearch1.png",action:"incomeSearch"},
 
 {text:"About",img:"images/About1.png",action:"incomeAbout"}
 
 ],
 
 
+/* Loans */
 
 g11:[
 
-{text:"Add New Loan",img:"images/AddLoans1.png",action:"addLoan"},
+{text:"Add Loan",img:"images/AddLoans1.png",action:"addLoan"},
 
-{text:"Loans Reports",img:"images/Reports1.png",action:"loanReports"},
+{text:"Reports",img:"images/Reports1.png",action:"loanReports"},
 
-{text:"Sensitive Loans",img:"images/Key.png",action:"sensitiveLoan"},
+{text:"Sensitive",img:"images/Key.png",action:"sensitiveLoan"},
 
-{text:"All Loans Reports",img:"images/AllReports1.png",action:"allLoanReports"},
+{text:"All Reports",img:"images/AllReports1.png",action:"allLoanReports"},
 
-{text:"Custom Search",img:"images/CustomSearch1.png",action:"loanSearch"},
+{text:"Search",img:"images/CustomSearch1.png",action:"loanSearch"},
 
 {text:"About",img:"images/About1.png",action:"loanAbout"}
-
-],
-
-
-
-g8:[
-
-{text:"Expenses Charts",img:"images/ExpensesCharts1.png"},
-
-{text:"Activities Charts",img:"images/ActivityCharts1.png"},
-
-{text:"Loans Charts",img:"images/LoansCharts1.png"},
-
-{text:"Income Charts",img:"images/IncomeCharts1.png"},
-
-{text:"Payments Charts",img:"images/PaymentsCharts1.png"},
-
-{text:"Memories Charts",img:"images/MemoriesCharts1.png"},
-
-{text:"Health Charts",img:"images/HealthCharts1.png"}
-
-],
-
-
-
-g9:[
-
-{text:"Expenses Reports",img:"images/ExpensesReports1.png"},
-
-{text:"Activities Reports",img:"images/ActivitiesReports1.png"},
-
-{text:"Loans Reports",img:"images/LoansReports1.png"},
-
-{text:"Income Reports",img:"images/IncomeReports1.png"},
-
-{text:"Payments Reports",img:"images/PaymentsReports1.png"},
-
-{text:"Memories Reports",img:"images/MemoriesReports1.png"},
-
-{text:"Health Reports",img:"images/MedicalReports1.png"}
 
 ]
 
 };
 
 
-
-/* ---------- COMMON REPORT BUTTONS ---------- */
+/* ==========================
+   REPORT BUTTONS
+========================== */
 
 const reportButtons=[
 
 "Today Report",
 
-"This Week Report",
+"This Week",
 
-"This Month Report",
+"This Month",
 
-"This Year Report",
+"This Year",
 
 "Daily Report",
 
@@ -281,7 +262,7 @@ const reportButtons=[
 
 "Yearly Report",
 
-"Report Abstract",
+"Abstract",
 
 "Back"
 
