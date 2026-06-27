@@ -5,6 +5,7 @@
 
 
 
+
 /* ===========================
    CREATE REPORT BUTTONS
 =========================== */
@@ -98,7 +99,7 @@ function openReportMenu(groupId,title){
 function backReportMenu(){
 
     reportMode=false;
-
+document.getElementById("reportHeader").style.display="none";
     document.getElementById("reportMenu").style.display="none";
 
     if(currentReportGroup==="g4"){
