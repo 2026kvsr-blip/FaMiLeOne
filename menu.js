@@ -6,6 +6,7 @@
 let reportMode = false;
 let currentReportGroup = "";
 
+
 /* ===========================
    CREATE TOP MENU
 =========================== */
