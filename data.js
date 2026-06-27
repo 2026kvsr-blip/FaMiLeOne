@@ -130,7 +130,7 @@ g5:[
 
 g6:[
 
-{text:"Family",img:"images/Family2.png",action:"family"},
+{text:"Family",img:"images/Family1.png",action:"family"},
 
 {text:"Add Member",img:"images/AddMember1.png",action:"addMember"},
 
