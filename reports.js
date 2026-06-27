@@ -2,8 +2,7 @@
    reports.js
 ========================================== */
 
-let reportMode = false;
-let currentReportGroup = "";
+
 
 /* ---------- Open Report Menu ---------- */
 
