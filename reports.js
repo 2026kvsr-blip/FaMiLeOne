@@ -5,7 +5,6 @@
 
 
 
-
 /* ===========================
    CREATE REPORT BUTTONS
 =========================== */
@@ -69,6 +68,8 @@ function openReportMenu(groupId,title){
     document.getElementById("reportTitle").innerHTML = title;
 
     document.getElementById("reportHeader").style.display = "block";
+   document.getElementById("loanBtn").disabled = true;
+  document.getElementById("paymentBtn").disabled = true;
 
     if(groupId==="g4"){
 
@@ -99,6 +100,8 @@ function openReportMenu(groupId,title){
 function backReportMenu(){
 
     reportMode=false;
+   document.getElementById("loanBtn").disabled = false;
+document.getElementById("paymentBtn").disabled = false;
 document.getElementById("reportHeader").style.display="none";
     document.getElementById("reportMenu").style.display="none";
 
