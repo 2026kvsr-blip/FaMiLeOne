@@ -1,49 +1,28 @@
 /* ==========================================
+   oneFaMiLe V2.0
    reports.js
 ========================================== */
 
 
-
-/* ---------- Open Report Menu ---------- */
-
-function openReportMenu(groupId){
-
-    reportMode = true;
-    currentReportGroup = groupId;
-
-    /* Hide current menu */
-
-    if(groupId === "g4"){
-
-        document.getElementById("loanContent").style.display = "none";
-
-    }else{
-
-        document.getElementById(groupId).style.display = "none";
-
-    }
-
-    createReportButtons();
-
-    document.getElementById("reportMenu").style.display = "grid";
-
-}
-
-
-/* ---------- Create Report Buttons ---------- */
+/* ===========================
+   CREATE REPORT BUTTONS
+=========================== */
 
 function createReportButtons(){
 
-    const box = document.getElementById("reportMenu");
+    const box=document.getElementById("reportMenu");
 
-    box.innerHTML = "";
+    if(!box) return;
 
-    reportButtons.forEach(function(name){
+    box.innerHTML="";
 
-        box.innerHTML += `
+    reportButtons.forEach(name=>{
 
-        <button class="report-btn"
-                onclick="reportButtonClick('${name}')">
+        box.innerHTML+=`
+
+        <button
+            class="report-btn"
+            onclick="reportButtonClick('${name}')">
 
             ${name}
 
@@ -56,95 +35,131 @@ function createReportButtons(){
 }
 
 
-/* ---------- Report Button ---------- */
+/* ===========================
+   REPORT BUTTON CLICK
+=========================== */
 
 function reportButtonClick(name){
 
-    if(name === "Back"){
+    if(name==="Back"){
 
         backReportMenu();
+
         return;
 
     }
 
-    alert(name);
+    showPopup(name);
 
 }
 
 
-/* ---------- Back ---------- */
+/* ===========================
+   OPEN REPORT MENU
+=========================== */
+
+function openReportMenu(groupId){
+
+    reportMode=true;
+
+    currentReportGroup=groupId;
+
+    if(groupId==="g4"){
+
+        document.getElementById("loanContent").style.display="none";
+
+    }
+    else{
+
+        const g=document.getElementById(groupId);
+
+        if(g){
+
+            g.style.display="none";
+
+        }
+
+    }
+
+    createReportButtons();
+
+    document.getElementById("reportMenu").style.display="grid";
+
+}
+
+
+/* ===========================
+   BACK REPORT MENU
+=========================== */
 
 function backReportMenu(){
 
-    reportMode = false;
+    reportMode=false;
 
-    document.getElementById("reportMenu").style.display = "none";
+    document.getElementById("reportMenu").style.display="none";
 
-    if(currentReportGroup === "g4"){
+    if(currentReportGroup==="g4"){
 
-        document.getElementById("loanContent").style.display = "grid";
+        document.getElementById("loanContent").style.display="grid";
 
-    }else{
+        return;
 
-        document.getElementById(currentReportGroup).style.display = "grid";
+    }
+
+    const g=document.getElementById(currentReportGroup);
+
+    if(g){
+
+        g.style.display="grid";
 
     }
 
 }
 
 
-/* ---------- Report Actions ---------- */
+/* ===========================
+   REPORT ACTIONS
+=========================== */
 
-const reportActions = {
+const reportActions=[
 
-    expenseReports : "g1",
-    sensitiveExpense : "g1",
-    allExpenseReports : "g1",
+"expenseReports",
+"sensitiveExpense",
+"allExpenseReports",
 
-    activityReports : "g2",
-    sensitiveActivity : "g2",
-    allActivityReports : "g2",
+"activityReports",
+"sensitiveActivity",
+"allActivityReports",
 
-    healthReports : "g3",
-    sensitiveHealth : "g3",
-    allHealthReports : "g3",
+"healthReports",
+"sensitiveHealth",
+"allHealthReports",
 
-    memoryReports : "g5",
-    sensitiveMemory : "g5",
-    allMemoryReports : "g5",
+"loanReports",
+"sensitiveLoan",
+"allLoanReports",
 
-    incomeReports : "g10",
-    sensitiveIncome : "g10",
-    allIncomeReports : "g10",
+"paymentReports",
+"sensitivePayment",
+"allPaymentReports",
 
-    loanReports : "g4",
-    sensitiveLoan : "g4",
-    allLoanReports : "g4",
+"incomeReports",
+"sensitiveIncome",
+"allIncomeReports",
 
-    paymentReports : "g4",
-    sensitivePayment : "g4",
-    allPaymentReports : "g4"
+"memoryReports",
+"sensitiveMemory",
+"allMemoryReports"
 
-};
+];
 
 
-/* ---------- Handle Menu Click ---------- */
+/* ===========================
+   CHECK REPORT ACTION
+=========================== */
 
-function menuClick(action){
+function isReportAction(action){
 
-    if(reportMode){
-
-        return;
-
-    }
-
-    if(reportActions[action]){
-
-        openReportMenu(reportActions[action]);
-        return;
-
-    }
-
-    console.log("Open :", action);
+    return reportActions.includes(action);
 
 }
