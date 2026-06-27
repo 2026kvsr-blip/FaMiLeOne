@@ -3,6 +3,7 @@
    style.css
 ========================================== */
 
+
 *{
 margin:0;
 padding:0;
@@ -328,11 +329,11 @@ display:flex;
 align-items:center;
 justify-content:center;
 
-background:#fff;
+background:#eef3f8;
 
 border-radius:50%;
 
-box-shadow:0 2px 8px rgba(0,0,0,.12);
+box-shadow:none;
 
 }
 
