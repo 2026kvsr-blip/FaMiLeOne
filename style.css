@@ -4,7 +4,6 @@
 ========================================== */
 
 
-
 *{
 margin:0;
 padding:0;
@@ -430,7 +429,7 @@ display:none;
 
 grid-template-columns:repeat(3,1fr);
 
-gap:12px;
+gap:30px;
 
 margin-top:15px;
 
