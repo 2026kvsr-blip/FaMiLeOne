@@ -4,6 +4,7 @@
 ========================================== */
 
 
+
 /* ===========================
    GLOBALS
 =========================== */
@@ -235,7 +236,7 @@ case "expenseReports":
 
 case "sensitiveExpense":
 
-    openReportMenu("g1","Expenses Sensitive Reports");
+    openReportMenu("g1","Sensitive Expenses");
     return;
 
 case "allExpenseReports":
@@ -253,7 +254,7 @@ case "activityReports":
 
 case "sensitiveActivity":
 
-    openReportMenu("g2","Activities Sensitive Reports");
+    openReportMenu("g2","Sensitive Activities");
     return;
 
 case "allActivityReports":
@@ -270,7 +271,7 @@ case "allActivityReports":
 
 case "sensitiveHealth":
 
-    openReportMenu("g3","Health Sensitive Reports");
+    openReportMenu("g3","Sensitive Health Reports");
     return;
 
 case "allHealthReports":
@@ -287,7 +288,7 @@ case "memoryReports":
 
 case "sensitiveMemory":
 
-    openReportMenu("g5","Memories Sensitive Reports");
+    openReportMenu("g5","Sensitive Memories");
     return;
 
 case "allMemoryReports":
@@ -304,7 +305,7 @@ case "allMemoryReports":
 
 case "sensitiveIncome":
 
-    openReportMenu("g10","Income Sensitive Reports");
+    openReportMenu("g10","Sensitive Income");
     return;
 
 case "allIncomeReports":
@@ -319,7 +320,7 @@ case "allIncomeReports":
 
 case "sensitiveLoan":
 
-    openReportMenu("g4","Loans Sensitive Reports");
+    openReportMenu("g4","Sensitive Loans");
     return;
 
 case "allLoanReports":
@@ -336,7 +337,7 @@ case "allLoanReports":
 
 case "sensitivePayment":
 
-    openReportMenu("g4","Payments Sensitive Reports");
+    openReportMenu("g4","Sensitive Payments");
     return;
 
 case "allPaymentReports":
