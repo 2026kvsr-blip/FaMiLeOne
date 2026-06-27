@@ -229,56 +229,121 @@ function menuClick(action){
     if(isReportAction(action)){
 
         switch(action){
-
-            case "expenseReports":
-            case "sensitiveExpense":
-            case "allExpenseReports":
+case "expenseReports":
 
     openReportMenu("g1","Expenses Reports");
-                return;
+    return;
 
-            case "activityReports":
-            case "sensitiveActivity":
-            case "allActivityReports":
+case "sensitiveExpense":
+
+    openReportMenu("g1","Expenses Sensitive");
+    return;
+
+case "allExpenseReports":
+
+    openReportMenu("g1","Expenses All Reports");
+    return;
+         
+
+
+              
+case "activityReports":
 
     openReportMenu("g2","Activities Reports");
-                return;
+    return;
 
-            case "healthReports":
-            case "sensitiveHealth":
-            case "allHealthReports":
+case "sensitiveActivity":
+
+    openReportMenu("g2","Activities Sensitive");
+    return;
+
+case "allActivityReports":
+
+    openReportMenu("g2","Activities All Reports");
+    return;
+
+
+
+          case "healthReports":
 
     openReportMenu("g3","Health Reports");
-                return;
+    return;
 
-            case "memoryReports":
-            case "sensitiveMemory":
-            case "allMemoryReports":
+case "sensitiveHealth":
+
+    openReportMenu("g3","Health Sensitive");
+    return;
+
+case "allHealthReports":
+
+    openReportMenu("g3","Health All Reports");
+    return;
+
+
+              
+case "memoryReports":
 
     openReportMenu("g5","Memories Reports");
-                return;
+    return;
 
-            case "incomeReports":
-            case "sensitiveIncome":
-            case "allIncomeReports":
+case "sensitiveMemory":
+
+    openReportMenu("g5","Memories Sensitive");
+    return;
+
+case "allMemoryReports":
+
+    openReportMenu("g5","Memories All Reports");
+    return;
+
+
+              
+           case "incomeReports":
 
     openReportMenu("g10","Income Reports");
-                return;
+    return;
 
-            case "loanReports":
-            case "sensitiveLoan":
-            case "allLoanReports":
+case "sensitiveIncome":
+
+    openReportMenu("g10","Income Sensitive");
+    return;
+
+case "allIncomeReports":
+
+    openReportMenu("g10","Income All Reports");
+    return;
+              
+           case "loanReports":
 
     openReportMenu("g4","Loans Reports");
-                return;
+    return;
 
+case "sensitiveLoan":
+
+    openReportMenu("g4","Loans Sensitive");
+    return;
+
+case "allLoanReports":
+
+    openReportMenu("g4","Loans All Reports");
+    return;
+
+
+              
             case "paymentReports":
-            case "sensitivePayment":
-            case "allPaymentReports":
 
     openReportMenu("g4","Payments Reports");
-                return;
+    return;
 
+case "sensitivePayment":
+
+    openReportMenu("g4","Payments Sensitive");
+    return;
+
+case "allPaymentReports":
+
+    openReportMenu("g4","Payments All Reports");
+    return;
         }
 
     }
