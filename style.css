@@ -19,6 +19,7 @@ padding-bottom:85px;
 TOP BAR
 =========================*/
 
+
 .top-bar{
 
 position:fixed;
@@ -196,7 +197,7 @@ TOP BUTTONS
     background:#dce7ff;
     border-radius:20px;
     align-items:center;
-    margin-bottom:12px;   /* <-- ఈ line add చేయండి */
+    margin-bottom:18px;   /* <-- ఈ line add చేయండి */
 }
 
 .rect-btn{
