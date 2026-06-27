@@ -1,10 +1,15 @@
 /* ==========================================
-   oneFaMiLe - menu.js
-   Part 8A
+   oneFaMiLe V2.0
+   menu.js
 ========================================== */
+
+/* ===========================
+   GLOBALS
+=========================== */
 
 let reportMode = false;
 let currentReportGroup = "";
+
 
 /* ===========================
    CREATE TOP MENU
@@ -12,15 +17,15 @@ let currentReportGroup = "";
 
 function createTopMenu(){
 
-    const row = document.getElementById("topButtons");
+    const row=document.getElementById("topButtons");
 
     if(!row) return;
 
-    row.innerHTML = "";
+    row.innerHTML="";
 
     topMenu.forEach(item=>{
 
-        row.innerHTML += `
+        row.innerHTML+=`
         <a href="#"
            class="rect-btn"
            onclick="showGroup('${item.id}',this);return false;">
@@ -29,6 +34,7 @@ function createTopMenu(){
             <span>${item.text}</span>
 
         </a>`;
+
     });
 
 }
@@ -50,7 +56,7 @@ function createCircleMenus(){
 
         menuData[id].forEach(item=>{
 
-            box.innerHTML += `
+            box.innerHTML+=`
             <a href="#"
                class="circle-item"
                onclick="menuClick('${item.action || ""}');return false;">
@@ -62,6 +68,7 @@ function createCircleMenus(){
                 <span>${item.text}</span>
 
             </a>`;
+
         });
 
     }
@@ -75,37 +82,30 @@ function createCircleMenus(){
 
 function clearActive(){
 
-    document.querySelectorAll(
-        ".rect-btn,.nav-btn,.loan-tab-btn"
-    ).forEach(btn=>{
-
-        btn.classList.remove("active");
-
-    });
+    document
+    .querySelectorAll(".rect-btn,.nav-btn,.loan-tab-btn")
+    .forEach(btn=>btn.classList.remove("active"));
 
 }
 
 
 /* ===========================
-   HIDE ALL PAGES
+   HIDE ALL
 =========================== */
 
 function hideAllPages(){
 
-    document.querySelectorAll(".circle-grid")
+    document
+    .querySelectorAll(".circle-grid")
     .forEach(g=>g.style.display="none");
 
-    const g4=document.getElementById("g4");
-    if(g4) g4.style.display="none";
+    document.getElementById("homeMessage").style.display="none";
 
-    const home=document.getElementById("homeMessage");
-    if(home) home.style.display="none";
+    document.getElementById("g4").style.display="none";
 
-    const report=document.getElementById("reportMenu");
-    if(report) report.style.display="none";
+    document.getElementById("reportMenu").style.display="none";
 
-    const lang=document.getElementById("langSelect");
-    if(lang) lang.style.display="none";
+    document.getElementById("langSelect").style.display="none";
 
 }
 
@@ -171,13 +171,14 @@ function showGroup(id,btn){
         );
 
         return;
+
     }
 
-    const group=document.getElementById(id);
+    const page=document.getElementById(id);
 
-    if(group){
+    if(page){
 
-        group.style.display="grid";
+        page.style.display="grid";
 
     }
 
@@ -185,12 +186,13 @@ function showGroup(id,btn){
 
 
 /* ===========================
-   LOAN / PAYMENT
+   LOAN TAB
 =========================== */
 
 function showLoanSection(id,btn){
 
-    document.querySelectorAll(".loan-tab-btn")
+    document
+    .querySelectorAll(".loan-tab-btn")
     .forEach(b=>b.classList.remove("active"));
 
     if(btn){
@@ -201,118 +203,9 @@ function showLoanSection(id,btn){
 
     const loan=document.getElementById("loanContent");
 
-    loan.innerHTML=
-        document.getElementById(id).innerHTML;
+    loan.innerHTML=document.getElementById(id).innerHTML;
 
     loan.style.display="grid";
-
-} 
-
-
-/* ==========================================
-   oneFaMiLe - menu.js
-   Part 8B
-========================================== */
-
-/* ===========================
-   OPEN REPORT MENU
-=========================== */
-
-function openReportMenu(groupId){
-
-    reportMode = true;
-    currentReportGroup = groupId;
-
-    if(groupId === "g4"){
-
-        document.getElementById("loanContent").style.display = "none";
-
-    }else{
-
-        const g = document.getElementById(groupId);
-
-        if(g) g.style.display = "none";
-
-    }
-
-    createReportButtons();
-
-    document.getElementById("reportMenu").style.display = "grid";
-
-}
-
-
-/* ===========================
-   CREATE REPORT BUTTONS
-=========================== */
-
-function createReportButtons(){
-
-    const box = document.getElementById("reportMenu");
-
-    if(!box) return;
-
-    box.innerHTML = "";
-
-    reportButtons.forEach(name=>{
-
-        box.innerHTML += `
-        <button
-            class="report-btn"
-            onclick="reportButtonClick('${name}')">
-
-            ${name}
-
-        </button>`;
-    });
-
-}
-
-
-/* ===========================
-   REPORT BUTTON CLICK
-=========================== */
-
-function reportButtonClick(name){
-
-    if(name === "Back"){
-
-        backReportMenu();
-
-        return;
-
-    }
-
-    alert(name);
-
-}
-
-
-/* ===========================
-   BACK REPORT MENU
-=========================== */
-
-function backReportMenu(){
-
-    reportMode = false;
-
-    document.getElementById("reportMenu").style.display = "none";
-
-    if(currentReportGroup === "g4"){
-
-        document.getElementById("loanContent").style.display = "grid";
-
-        return;
-
-    }
-
-    const g = document.getElementById(currentReportGroup);
-
-    if(g){
-
-        g.style.display = "grid";
-
-    }
 
 }
 
@@ -329,84 +222,66 @@ function menuClick(action){
 
     }
 
-    switch(action){
+    if(isReportAction(action)){
 
-        /* Expenses */
+        switch(action){
 
-        case "expenseReports":
-        case "sensitiveExpense":
-        case "allExpenseReports":
+            case "expenseReports":
+            case "sensitiveExpense":
+            case "allExpenseReports":
 
-            openReportMenu("g1");
-            break;
+                openReportMenu("g1");
+                return;
 
-        /* Activities */
+            case "activityReports":
+            case "sensitiveActivity":
+            case "allActivityReports":
 
-        case "activityReports":
-        case "sensitiveActivity":
-        case "allActivityReports":
+                openReportMenu("g2");
+                return;
 
-            openReportMenu("g2");
-            break;
+            case "healthReports":
+            case "sensitiveHealth":
+            case "allHealthReports":
 
-        /* Health */
+                openReportMenu("g3");
+                return;
 
-        case "healthReports":
-        case "sensitiveHealth":
-        case "allHealthReports":
+            case "memoryReports":
+            case "sensitiveMemory":
+            case "allMemoryReports":
 
-            openReportMenu("g3");
-            break;
+                openReportMenu("g5");
+                return;
 
-        /* Memories */
+            case "incomeReports":
+            case "sensitiveIncome":
+            case "allIncomeReports":
 
-        case "memoryReports":
-        case "sensitiveMemory":
-        case "allMemoryReports":
+                openReportMenu("g10");
+                return;
 
-            openReportMenu("g5");
-            break;
+            case "loanReports":
+            case "sensitiveLoan":
+            case "allLoanReports":
 
-        /* Income */
+                openReportMenu("g4");
+                return;
 
-        case "incomeReports":
-        case "sensitiveIncome":
-        case "allIncomeReports":
+            case "paymentReports":
+            case "sensitivePayment":
+            case "allPaymentReports":
 
-            openReportMenu("g10");
-            break;
+                openReportMenu("g4");
+                return;
 
-        /* Loans */
-
-        case "loanReports":
-        case "sensitiveLoan":
-        case "allLoanReports":
-
-            openReportMenu("g4");
-            break;
-
-        /* Payments */
-
-        case "paymentReports":
-        case "sensitivePayment":
-        case "allPaymentReports":
-
-            openReportMenu("g4");
-            break;
-
-        default:
-
-            console.log(action);
+        }
 
     }
 
-} 
+    showPopup(action);
 
-
-/* ==========================================
-   oneFaMiLe - menu.js
-   Part 8C
-========================================== */
+}
 
 
 /* ===========================
@@ -415,19 +290,17 @@ function menuClick(action){
 
 function toggleMenu(){
 
-    if(reportMode) return;
-
     document
-        .getElementById("menu")
-        .classList.toggle("open");
+    .getElementById("menu")
+    .classList.toggle("open");
 
 }
 
 function closeMenu(){
 
     document
-        .getElementById("menu")
-        .classList.remove("open");
+    .getElementById("menu")
+    .classList.remove("open");
 
 }
 
@@ -438,19 +311,19 @@ function closeMenu(){
 
 function showPopup(msg){
 
-    const p = document.getElementById("popup");
+    const p=document.getElementById("popup");
 
-    p.innerHTML = msg;
+    p.innerHTML=msg;
 
-    p.style.display = "block";
+    p.style.display="block";
 
     clearTimeout(window.popupTimer);
 
-    window.popupTimer = setTimeout(function(){
+    window.popupTimer=setTimeout(()=>{
 
-        p.style.display = "none";
+        p.style.display="none";
 
-    },3000);
+    },2500);
 
 }
 
@@ -471,164 +344,72 @@ function showExit(){
 
 
 /* ===========================
-   CLICK OUTSIDE MENU
-=========================== */
-
-document.addEventListener("click",function(e){
-
-    const menu=document.getElementById("menu");
-
-    const btn=document.querySelector(".menu-icon");
-
-    if(
-        menu &&
-        btn &&
-        menu.classList.contains("open") &&
-        !menu.contains(e.target) &&
-        !btn.contains(e.target)
-    ){
-
-        closeMenu();
-
-    }
-
-});
-
-
-/* ===========================
-   ESC KEY
-=========================== */
-
-document.addEventListener("keydown",function(e){
-
-    if(e.key==="Escape"){
-
-        if(reportMode){
-
-            backReportMenu();
-            return;
-
-        }
-
-        closeMenu();
-
-    }
-
-});
-
-
-/* ===========================
-   BOTTOM NAVIGATION
+   NAVIGATION
 =========================== */
 
 function initializeNavigation(){
 
-    const home=document.getElementById("homeNav");
-    const family=document.getElementById("familyNav");
-    const charts=document.getElementById("chartsNav");
-    const memory=document.getElementById("memoryNav");
-    const reports=document.getElementById("reportsNav");
+    homeNav.onclick=function(){
 
-    if(home){
+        showHome(this);
 
-        home.classList.add("nav-btn");
+        return false;
 
-        home.onclick=function(){
+    };
 
-            showHome(this);
-            return false;
+    familyNav.onclick=function(){
 
-        };
+        showGroup("g6",this);
 
-    }
+        return false;
 
-    if(family){
+    };
 
-        family.classList.add("nav-btn");
+    chartsNav.onclick=function(){
 
-        family.onclick=function(){
+        showGroup("g8",this);
 
-            showGroup("g6",this);
-            return false;
+        return false;
 
-        };
+    };
 
-    }
+    memoryNav.onclick=function(){
 
-    if(charts){
+        showGroup("g5",this);
 
-        charts.classList.add("nav-btn");
+        return false;
 
-        charts.onclick=function(){
+    };
 
-            showGroup("g8",this);
-            return false;
+    reportsNav.onclick=function(){
 
-        };
+        showGroup("g9",this);
 
-    }
+        return false;
 
-    if(memory){
+    };
 
-        memory.classList.add("nav-btn");
-
-        memory.onclick=function(){
-
-            showGroup("g5",this);
-            return false;
-
-        };
-
-    }
-
-    if(reports){
-
-        reports.classList.add("nav-btn");
-
-        reports.onclick=function(){
-
-            showGroup("g9",this);
-            return false;
-
-        };
-
-    }
+    document
+    .querySelectorAll(".bottom-nav a")
+    .forEach(a=>a.classList.add("nav-btn"));
 
 }
 
 
 /* ===========================
-   APP INITIALIZE
+   LOAD
 =========================== */
 
-function initializeApp(){
-
-    alert("1");
+window.addEventListener("load",()=>{
 
     createTopMenu();
 
-    alert("2");
-
     createCircleMenus();
-
-    alert("3");
 
     initializeNavigation();
 
-    alert("4");
-
     changeLanguage();
-
-    alert("5");
 
     showHome(document.getElementById("homeNav"));
 
-    alert("6");
-}
-
-
-/* ===========================
-   WINDOW LOAD
-=========================== */
-
-window.addEventListener("load",initializeApp);
+});
