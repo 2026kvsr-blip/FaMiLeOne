@@ -4,6 +4,7 @@
 ========================================== */
 
 
+
 /* ===========================
    CREATE REPORT BUTTONS
 =========================== */
@@ -58,18 +59,21 @@ function reportButtonClick(name){
    OPEN REPORT MENU
 =========================== */
 
-function openReportMenu(groupId){
+function openReportMenu(groupId,title){
 
-    reportMode=true;
+    reportMode = true;
 
-    currentReportGroup=groupId;
+    currentReportGroup = groupId;
+
+    document.getElementById("reportTitle").innerHTML = title;
+
+    document.getElementById("reportHeader").style.display = "block";
 
     if(groupId==="g4"){
 
         document.getElementById("loanContent").style.display="none";
 
-    }
-    else{
+    }else{
 
         const g=document.getElementById(groupId);
 
@@ -86,7 +90,6 @@ function openReportMenu(groupId){
     document.getElementById("reportMenu").style.display="grid";
 
 }
-
 
 /* ===========================
    BACK REPORT MENU
