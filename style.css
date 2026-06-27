@@ -4,6 +4,7 @@
 ========================================== */
 
 
+
 *{
 margin:0;
 padding:0;
@@ -623,5 +624,11 @@ font-size:12px;
 font-size:22px;
 
 }
+.loan-tab-btn:disabled{
 
+opacity:0.5;
+
+cursor:not-allowed;
+
+}
 }
