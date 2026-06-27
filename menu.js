@@ -1,15 +1,24 @@
-/* ==========================
-   menu.js - Part 5A
-========================== */
+/* ==========================================
+   oneFaMiLe - menu.js
+   Part 8A
+========================================== */
 
-/* Generate Top Menu */
-function createTopMenu() {
-   
-    const row = document.getElementById("topMenu");
+let reportMode = false;
+let currentReportGroup = "";
+
+/* ===========================
+   CREATE TOP MENU
+=========================== */
+
+function createTopMenu(){
+
+    const row = document.getElementById("topButtons");
+
+    if(!row) return;
 
     row.innerHTML = "";
 
-    topMenu.forEach(item => {
+    topMenu.forEach(item=>{
 
         row.innerHTML += `
         <a href="#"
@@ -19,14 +28,15 @@ function createTopMenu() {
             <img src="${item.img}">
             <span>${item.text}</span>
 
-        </a>
-        `;
-
+        </a>`;
     });
 
 }
 
-/* Generate Circle Buttons */
+
+/* ===========================
+   CREATE CIRCLE MENUS
+=========================== */
 
 function createCircleMenus(){
 
@@ -40,26 +50,18 @@ function createCircleMenus(){
 
         menuData[id].forEach(item=>{
 
-            box.innerHTML+=`
-
+            box.innerHTML += `
             <a href="#"
-
                class="circle-item"
-
-               onclick="menuClick('${item.action}');return false;">
+               onclick="menuClick('${item.action || ""}');return false;">
 
                 <div class="circle">
-
                     <img src="${item.img}">
-
                 </div>
 
                 <span>${item.text}</span>
 
-            </a>
-
-            `;
-
+            </a>`;
         });
 
     }
@@ -67,17 +69,66 @@ function createCircleMenus(){
 }
 
 
-/* Home */
+/* ===========================
+   REMOVE ACTIVE
+=========================== */
 
-function showHome(btn){
-if(reportMode){
+function clearActive(){
 
-    backReportMenu();
+    document.querySelectorAll(
+        ".rect-btn,.nav-btn,.loan-tab-btn"
+    ).forEach(btn=>{
+
+        btn.classList.remove("active");
+
+    });
 
 }
+
+
+/* ===========================
+   HIDE ALL PAGES
+=========================== */
+
+function hideAllPages(){
+
+    document.querySelectorAll(".circle-grid")
+    .forEach(g=>g.style.display="none");
+
+    const g4=document.getElementById("g4");
+    if(g4) g4.style.display="none";
+
+    const home=document.getElementById("homeMessage");
+    if(home) home.style.display="none";
+
+    const report=document.getElementById("reportMenu");
+    if(report) report.style.display="none";
+
+    const lang=document.getElementById("langSelect");
+    if(lang) lang.style.display="none";
+
+}
+
+
+/* ===========================
+   HOME
+=========================== */
+
+function showHome(btn){
+
+    if(reportMode){
+
+        backReportMenu();
+
+    }
+
     clearActive();
 
-    if(btn) btn.classList.add("active");
+    if(btn){
+
+        btn.classList.add("active");
+
+    }
 
     hideAllPages();
 
@@ -88,193 +139,143 @@ if(reportMode){
 }
 
 
-/* Hide Everything */
-
-function hideAllPages(){
-
-    document.querySelectorAll(".circle-grid")
-
-    .forEach(g=>g.style.display="none");
-
-    document.getElementById("g4").style.display="none";
-
-    document.getElementById("reportMenu").style.display="none";
-
-    document.getElementById("homeMessage").style.display="none";
-
-    document.getElementById("langSelect").style.display="none";
-
-}
-
-
-/* Remove Active */
-
-function clearActive(){
-
-document.querySelectorAll(".rect-btn,.nav-btn,.loan-tab-btn")
-
-.forEach(btn=>btn.classList.remove("active"));
-
-}
-
-
-/* Open Group */
+/* ===========================
+   SHOW GROUP
+=========================== */
 
 function showGroup(id,btn){
-if(reportMode){
 
-    backReportMenu();
+    if(reportMode){
+
+        return;
+
+    }
+
+    clearActive();
+
+    if(btn){
+
+        btn.classList.add("active");
+
+    }
+
+    hideAllPages();
+
+    if(id==="g4"){
+
+        document.getElementById("g4").style.display="block";
+
+        showLoanSection(
+            "g11",
+            document.getElementById("loanBtn")
+        );
+
+        return;
+    }
+
+    const group=document.getElementById(id);
+
+    if(group){
+
+        group.style.display="grid";
+
+    }
 
 }
-clearActive();
-
-if(btn) btn.classList.add("active");
-
-hideAllPages();
-
-if(id==="g4"){
-
-document.getElementById("g4").style.display="block";
-
-showLoanSection("g11",document.getElementById("loanBtn"));
-
-}
-
-else{
-
-document.getElementById(id).style.display="grid";
-
-}
-
-}
 
 
-/* Loan Section */
+/* ===========================
+   LOAN / PAYMENT
+=========================== */
 
 function showLoanSection(id,btn){
 
-document.querySelectorAll(".loan-tab-btn")
+    document.querySelectorAll(".loan-tab-btn")
+    .forEach(b=>b.classList.remove("active"));
 
-.forEach(b=>b.classList.remove("active"));
+    if(btn){
 
-if(btn) btn.classList.add("active");
+        btn.classList.add("active");
 
-const loan=document.getElementById("loanContent");
+    }
 
-loan.innerHTML=document.getElementById(id).innerHTML;
+    const loan=document.getElementById("loanContent");
 
-loan.style.display="grid";
+    loan.innerHTML=
+        document.getElementById(id).innerHTML;
 
-}
+    loan.style.display="grid";
 
-
-/* Side Menu */
-
-function toggleMenu(){
-if(reportMode){
-
-    return;
-
-}
-document.getElementById("menu")
-
-.classList.toggle("open");
-
-}
+} 
 
 
-/* Exit Popup */
+/* ==========================================
+   oneFaMiLe - menu.js
+   Part 8B
+========================================== */
 
-function showExit(){
-
-document.getElementById("menu")
-
-.classList.remove("open");
-
-const p=document.getElementById("popup");
-
-p.innerHTML="Scroll from bottom to top to close App";
-
-p.style.display="block";
-
-setTimeout(()=>{
-
-p.style.display="none";
-
-},3000);
-
-}
-
-
-/* Default */
-
-
-/* PART - B * /
-/* =====================================
-   REPORT MENU
-===================================== */
-
-let currentReportGroup = "";
-let reportMode = false;
-
-/* Open Report Menu */
+/* ===========================
+   OPEN REPORT MENU
+=========================== */
 
 function openReportMenu(groupId){
 
     reportMode = true;
     currentReportGroup = groupId;
 
-    /* Hide current buttons */
+    if(groupId === "g4"){
 
-    if(groupId=="g4"){
-
-        document.getElementById("loanContent").style.display="none";
+        document.getElementById("loanContent").style.display = "none";
 
     }else{
 
-        document.getElementById(groupId).style.display="none";
+        const g = document.getElementById(groupId);
+
+        if(g) g.style.display = "none";
 
     }
 
     createReportButtons();
 
-    document.getElementById("reportMenu").style.display="grid";
+    document.getElementById("reportMenu").style.display = "grid";
 
 }
 
 
-/* Create Report Buttons */
+/* ===========================
+   CREATE REPORT BUTTONS
+=========================== */
 
 function createReportButtons(){
 
-    const box=document.getElementById("reportMenu");
+    const box = document.getElementById("reportMenu");
 
-    box.innerHTML="";
+    if(!box) return;
+
+    box.innerHTML = "";
 
     reportButtons.forEach(name=>{
 
-        box.innerHTML+=`
+        box.innerHTML += `
+        <button
+            class="report-btn"
+            onclick="reportButtonClick('${name}')">
 
-        <button class="report-btn"
+            ${name}
 
-        onclick="reportButtonClick('${name}')">
-
-        ${name}
-
-        </button>
-
-        `;
-
+        </button>`;
     });
 
 }
 
 
-/* Report Button Click */
+/* ===========================
+   REPORT BUTTON CLICK
+=========================== */
 
 function reportButtonClick(name){
 
-    if(name==="Back"){
+    if(name === "Back"){
 
         backReportMenu();
 
@@ -287,36 +288,45 @@ function reportButtonClick(name){
 }
 
 
-/* Back */
+/* ===========================
+   BACK REPORT MENU
+=========================== */
 
 function backReportMenu(){
 
-    reportMode=false;
+    reportMode = false;
 
-    document.getElementById("reportMenu").style.display="none";
+    document.getElementById("reportMenu").style.display = "none";
 
-    if(currentReportGroup==="g4"){
+    if(currentReportGroup === "g4"){
 
-        document.getElementById("loanContent").style.display="grid";
+        document.getElementById("loanContent").style.display = "grid";
+
+        return;
 
     }
 
-    else{
+    const g = document.getElementById(currentReportGroup);
 
-        document.getElementById(currentReportGroup).style.display="grid";
+    if(g){
+
+        g.style.display = "grid";
 
     }
 
 }
 
 
-/* Navigation Lock */
+/* ===========================
+   MENU CLICK
+=========================== */
 
 function menuClick(action){
 
     if(reportMode){
 
         return;
+
     }
 
     switch(action){
@@ -324,93 +334,65 @@ function menuClick(action){
         /* Expenses */
 
         case "expenseReports":
-
         case "sensitiveExpense":
-
         case "allExpenseReports":
 
             openReportMenu("g1");
-
             break;
-
 
         /* Activities */
 
         case "activityReports":
-
         case "sensitiveActivity":
-
         case "allActivityReports":
 
             openReportMenu("g2");
-
             break;
-
 
         /* Health */
 
         case "healthReports":
-
         case "sensitiveHealth":
-
         case "allHealthReports":
 
             openReportMenu("g3");
-
             break;
-
 
         /* Memories */
 
         case "memoryReports":
-
         case "sensitiveMemory":
-
         case "allMemoryReports":
 
             openReportMenu("g5");
-
             break;
-
 
         /* Income */
 
         case "incomeReports":
-
         case "sensitiveIncome":
-
         case "allIncomeReports":
 
             openReportMenu("g10");
-
             break;
-
 
         /* Loans */
 
         case "loanReports":
-
         case "sensitiveLoan":
-
         case "allLoanReports":
 
             openReportMenu("g4");
-
             break;
-
 
         /* Payments */
 
         case "paymentReports":
-
         case "sensitivePayment":
-
         case "allPaymentReports":
 
             openReportMenu("g4");
-
             break;
-
 
         default:
 
@@ -418,44 +400,64 @@ function menuClick(action){
 
     }
 
-}
+} 
+
+
 /* ==========================================
-   menu.js - Part 5C
+   oneFaMiLe - menu.js
+   Part 8C
 ========================================== */
 
 
-/* -------- Close Side Menu -------- */
+/* ===========================
+   SIDE MENU
+=========================== */
+
+function toggleMenu(){
+
+    if(reportMode) return;
+
+    document
+        .getElementById("menu")
+        .classList.toggle("open");
+
+}
 
 function closeMenu(){
 
-    document.getElementById("menu")
-    .classList.remove("open");
+    document
+        .getElementById("menu")
+        .classList.remove("open");
 
 }
 
 
-/* -------- Popup -------- */
+/* ===========================
+   POPUP
+=========================== */
 
 function showPopup(msg){
 
-    const p=document.getElementById("popup");
+    const p = document.getElementById("popup");
 
-    p.innerHTML=msg;
+    p.innerHTML = msg;
 
-    p.style.display="block";
+    p.style.display = "block";
 
     clearTimeout(window.popupTimer);
 
-    window.popupTimer=setTimeout(function(){
+    window.popupTimer = setTimeout(function(){
 
-        p.style.display="none";
+        p.style.display = "none";
 
     },3000);
 
 }
 
 
-/* -------- Exit -------- */
+/* ===========================
+   EXIT
+=========================== */
 
 function showExit(){
 
@@ -468,7 +470,9 @@ function showExit(){
 }
 
 
-/* -------- Click Outside Menu -------- */
+/* ===========================
+   CLICK OUTSIDE MENU
+=========================== */
 
 document.addEventListener("click",function(e){
 
@@ -477,17 +481,11 @@ document.addEventListener("click",function(e){
     const btn=document.querySelector(".menu-icon");
 
     if(
-
-        menu.classList.contains("open")
-
-        &&
-
-        !menu.contains(e.target)
-
-        &&
-
+        menu &&
+        btn &&
+        menu.classList.contains("open") &&
+        !menu.contains(e.target) &&
         !btn.contains(e.target)
-
     ){
 
         closeMenu();
@@ -497,7 +495,9 @@ document.addEventListener("click",function(e){
 });
 
 
-/* -------- ESC Key -------- */
+/* ===========================
+   ESC KEY
+=========================== */
 
 document.addEventListener("keydown",function(e){
 
@@ -506,7 +506,6 @@ document.addEventListener("keydown",function(e){
         if(reportMode){
 
             backReportMenu();
-
             return;
 
         }
@@ -518,37 +517,89 @@ document.addEventListener("keydown",function(e){
 });
 
 
-/* -------- Navigation Placeholder -------- */
+/* ===========================
+   BOTTOM NAVIGATION
+=========================== */
 
-function openPage(name){
+function initializeNavigation(){
 
-    console.log("Open :",name);
+    const home=document.getElementById("homeNav");
+    const family=document.getElementById("familyNav");
+    const charts=document.getElementById("chartsNav");
+    const memory=document.getElementById("memoryNav");
+    const reports=document.getElementById("reportsNav");
+
+    if(home){
+
+        home.classList.add("nav-btn");
+
+        home.onclick=function(){
+
+            showHome(this);
+            return false;
+
+        };
+
+    }
+
+    if(family){
+
+        family.classList.add("nav-btn");
+
+        family.onclick=function(){
+
+            showGroup("g6",this);
+            return false;
+
+        };
+
+    }
+
+    if(charts){
+
+        charts.classList.add("nav-btn");
+
+        charts.onclick=function(){
+
+            showGroup("g8",this);
+            return false;
+
+        };
+
+    }
+
+    if(memory){
+
+        memory.classList.add("nav-btn");
+
+        memory.onclick=function(){
+
+            showGroup("g5",this);
+            return false;
+
+        };
+
+    }
+
+    if(reports){
+
+        reports.classList.add("nav-btn");
+
+        reports.onclick=function(){
+
+            showGroup("g9",this);
+            return false;
+
+        };
+
+    }
 
 }
 
 
-/* -------- Common Menu Click -------- */
-
-function menuClick(action){
-
-    if(reportMode){
-
-        return;
-
-    }
-
-    switch(action){
-
-        default:
-
-            openPage(action);
-
-    }
-
-}
-
-
-/* -------- App Initialize -------- */
+/* ===========================
+   APP INITIALIZE
+=========================== */
 
 function initializeApp(){
 
@@ -556,13 +607,17 @@ function initializeApp(){
 
     createCircleMenus();
 
+    initializeNavigation();
+
     changeLanguage();
 
-    showHome(document.querySelector(".nav-btn"));
+    showHome(document.getElementById("homeNav"));
 
 }
 
 
-/* -------- Load -------- */
+/* ===========================
+   WINDOW LOAD
+=========================== */
 
 window.addEventListener("load",initializeApp);
