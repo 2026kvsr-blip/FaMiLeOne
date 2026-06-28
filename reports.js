@@ -4,7 +4,6 @@
 ========================================== */
 
 
-
 /* ===========================
    CREATE REPORT BUTTONS
 =========================== */
@@ -42,7 +41,7 @@ function createReportButtons(){
 
 function reportButtonClick(name){
 
-    if(name==="Back"){
+    if(name==="← Back"){
 
         backReportMenu();
 
@@ -53,7 +52,6 @@ function reportButtonClick(name){
     showPopup(name);
 
 }
-
 
 /* ===========================
    OPEN REPORT MENU
