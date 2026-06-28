@@ -438,23 +438,51 @@ margin-top:15px;
 
 }
 
+/* ==========================
+   REPORT BUTTONS
+========================== */
+
 .report-btn{
 
-padding:12px;
+height:58px;
 
-border:none;
+padding:10px;
 
-border-radius:10px;
+background:#edf4ff;
 
-background:#5f84e8;
+border:2px solid #4f79d8;
 
-color:#fff;
+border-radius:12px;
+
+color:#1f3f8f;
+
+font-size:13px;
+
+font-weight:500;
+
+letter-spacing:0.4px;
+
+text-shadow:0.3px 0.3px 0 #ffffff;
 
 cursor:pointer;
 
+transition:all .2s;
+
 }
 
+.report-btn:hover{
 
+background:#dbe9ff;
+
+}
+
+.report-btn:active{
+
+transform:scale(.96);
+
+background:#cfe0ff;
+
+}
 /* ==========================
    BOTTOM NAV
 ========================== */
