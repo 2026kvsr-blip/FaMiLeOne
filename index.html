@@ -4,6 +4,7 @@
 <head>
 
  
+ 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -224,7 +225,61 @@ style="display:none">
     </div>
 
 </div>
+<!-- ==========================
+     ACTIVITY STATUS MENU
+========================== -->
 
+<div id="statusMenu">
+
+    <button class="report-btn"
+        onclick="statusButtonClick('Completed')">
+        Completed
+    </button>
+
+    <button class="report-btn"
+        onclick="statusButtonClick('In Progress')">
+        In Progress
+    </button>
+
+    <button class="report-btn"
+        onclick="statusButtonClick('To be Takenup')">
+        To be Takenup
+    </button>
+
+    <button class="report-btn"
+        onclick="statusButtonClick('Not Necessary')">
+        Not Necessary
+    </button>
+
+    <button class="report-btn"
+        onclick="statusButtonClick('Deadline Today')">
+        Deadline Today
+    </button>
+
+    <button class="report-btn"
+        onclick="statusButtonClick('Deadline Coming Soon')">
+        Deadline Coming Soon
+    </button>
+
+    <button class="report-btn"
+        onclick="statusButtonClick('Deadline is Over')">
+        Deadline is Over
+    </button>
+
+    <button class="report-btn"
+        onclick="statusButtonClick('Deadline within Days')">
+        Deadline within _ days
+    </button>
+
+    <button class="report-btn back-btn"
+        onclick="statusBack()">
+        Back
+    </button>
+
+</div>
+
+
+ 
 <div id="reportMenu"></div>
 
   
