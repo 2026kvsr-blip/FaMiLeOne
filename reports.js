@@ -1,15 +1,100 @@
 /* ==========================================
-   oneFaMiLe V2.0
-   reports.js
+   reports.js - Part 4A
 ========================================== */
 
+let reportMode = false;
+let currentReportGroup = "";
+let currentReportTitle = "";
+let currentStatus = "";
+
+
+/* ===========================
+   OPEN REPORT MENU
+=========================== */
+
+function openReportMenu(groupId,title){
+
+    reportMode = true;
+
+    currentReportGroup = groupId;
+    currentReportTitle = title;
+
+    /* Hide current menu */
+
+    if(groupId==="g4"){
+
+        document.getElementById("loanContent").style.display="none";
+
+    }else{
+
+        document.getElementById(groupId).style.display="none";
+
+    }
+
+    /* Heading */
+
+    document.getElementById("reportTitle").innerHTML=title;
+
+    document.getElementById("reportHeader").style.display="block";
+
+    /* Disable Loan Tabs */
+
+    const loanBtn=document.getElementById("loanBtn");
+    const paymentBtn=document.getElementById("paymentBtn");
+
+    if(loanBtn) loanBtn.disabled=true;
+    if(paymentBtn) paymentBtn.disabled=true;
+
+    /* Hide Report Menu */
+
+    document.getElementById("reportMenu").style.display="none";
+
+    /* Show Status Menu */
+
+    document.getElementById("statusMenu").style.display="grid";
+
+}
+
+
+/* ===========================
+   STATUS BUTTON CLICK
+=========================== */
+
+function statusButtonClick(status){
+
+    currentStatus=status;
+
+    /* Hide Status Menu */
+
+    document.getElementById("statusMenu").style.display="none";
+
+    /* Change Heading */
+
+    document.getElementById("reportTitle").innerHTML=
+
+        currentReportTitle +
+
+        "<br><span style='font-size:16px;color:#666;'>"
+
+        + status +
+
+        "</span>";
+
+    /* Show Report Buttons */
+
+    createReportButtons();
+
+    document.getElementById("reportMenu").style.display="grid";
+
+
+/* ==========================================
+   reports.js - Part 4B
+========================================== */
 
 
 /* ===========================
    CREATE REPORT BUTTONS
 =========================== */
-let currentStatus = "";
-
 
 function createReportButtons(){
 
@@ -21,61 +106,25 @@ function createReportButtons(){
 
     reportButtons.forEach(name=>{
 
-const cls = (name==="← Back")
-        ? "report-btn back-btn"
-        : "report-btn";
+        const cls=(name==="Back")
+            ? "report-btn back-btn"
+            : "report-btn";
 
-    box.innerHTML += `
-    <button
-        class="${cls}"
-        onclick="reportButtonClick('${name}')">
+        box.innerHTML+=`
 
-        ${name}
+        <button
+            class="${cls}"
+            onclick="reportButtonClick('${name}')">
 
-    </button>`;
-});
+            ${name}
 
-}
-/* ==========================
-   STATUS BUTTON CLICK
-========================== */
+        </button>
 
-function statusButtonClick(status){
+        `;
 
-    currentStatus = status;
-
-    // Status Menu hide
-    document.getElementById("statusMenu").style.display = "none";
-
-    // Heading update
-    document.getElementById("reportTitle").innerHTML =
-        document.getElementById("reportTitle").innerHTML +
-        "<br><span style='font-size:16px'>" + status + "</span>";
-
-    // Report buttons show
-
-   
-    document.getElementById("statusMenu").style.display = "grid";
-}
-
-/* ==========================
-   STATUS BACK
-========================== */
-
-function statusBack(){
-
-    // Status Menu close
-    document.getElementById("statusMenu").style.display = "none";
-
-    // Main circular buttons show again
-    reportMode = false;
-
-    document.getElementById(currentReportGroup).style.display = "grid";
-
-    document.getElementById("reportHeader").style.display = "none";
+    });
 
 }
-
 
 
 /* ===========================
@@ -84,7 +133,7 @@ function statusBack(){
 
 function reportButtonClick(name){
 
-    if(name==="← Back"){
+    if(name==="Back"){
 
         backReportMenu();
 
@@ -96,106 +145,94 @@ function reportButtonClick(name){
 
 }
 
-/* ===========================
-   OPEN REPORT MENU
-=========================== */
-
-
-
-
-
-
-
-function openReportMenu(groupId,title){
-
-    reportMode = true;
-
-    currentReportGroup = groupId;
-
-    document.getElementById("reportTitle").innerHTML = title;
-
-    document.getElementById("reportHeader").style.display = "block";
-   document.getElementById("loanBtn").disabled = true;
-  document.getElementById("paymentBtn").disabled = true;
-
-    if(groupId==="g4"){
-
-        document.getElementById("loanContent").style.display="none";
-
-    }else{
-
-        const g=document.getElementById(groupId);
-
-        if(g){
-
-            g.style.display="none";
-
-        }
-
-    }
-
-    createReportButtons();
-
-    document.getElementById("reportMenu").style.display="grid";
-
-}
 
 /* ===========================
-   BACK REPORT MENU
+   BACK
+   (Report Buttons -> Status Menu)
 =========================== */
 
 function backReportMenu(){
 
-    // Report buttons hide
-    document.getElementById("reportMenu").style.display = "none";
+    /* Hide Report Buttons */
 
-    // Status menu show
-    document.getElementById("statusMenu").style.display = "grid";
+    document.getElementById("reportMenu").style.display="none";
+
+    /* Restore Heading */
+
+    document.getElementById("reportTitle").innerHTML=currentReportTitle;
+
+    /* Show Status Menu */
+
+    document.getElementById("statusMenu").style.display="grid";
 
 }
-/* ===========================
-   REPORT ACTIONS
-=========================== */
 
-const reportActions=[
-
-"expenseReports",
-"sensitiveExpense",
-"allExpenseReports",
-
-"activityReports",
-"sensitiveActivity",
-"allActivityReports",
-
-"healthReports",
-"sensitiveHealth",
-"allHealthReports",
-
-"loanReports",
-"sensitiveLoan",
-"allLoanReports",
-
-"paymentReports",
-"sensitivePayment",
-"allPaymentReports",
-
-"incomeReports",
-"sensitiveIncome",
-"allIncomeReports",
-
-"memoryReports",
-"sensitiveMemory",
-"allMemoryReports"
-
-];
+/* ==========================================
+   reports.js - Part 4C
+========================================== */
 
 
 /* ===========================
-   CHECK REPORT ACTION
+   STATUS BACK
+   (Status Menu -> Main Menu)
 =========================== */
 
-function isReportAction(action){
+function statusBack(){
 
-    return reportActions.includes(action);
+    reportMode=false;
+
+    /* Hide Status Menu */
+
+    document.getElementById("statusMenu").style.display="none";
+
+    /* Hide Header */
+
+    document.getElementById("reportHeader").style.display="none";
+
+    /* Enable Loan Tabs */
+
+    const loanBtn=document.getElementById("loanBtn");
+    const paymentBtn=document.getElementById("paymentBtn");
+
+    if(loanBtn) loanBtn.disabled=false;
+    if(paymentBtn) paymentBtn.disabled=false;
+
+    /* Show Previous Screen */
+
+    if(currentReportGroup==="g4"){
+
+        document.getElementById("loanContent").style.display="grid";
+
+        return;
+
+    }
+
+    const g=document.getElementById(currentReportGroup);
+
+    if(g){
+
+        g.style.display="grid";
+
+    }
 
 }
+
+
+/* ===========================
+   RESET REPORT SCREEN
+=========================== */
+
+function resetReportScreen(){
+
+    currentStatus="";
+
+    currentReportTitle="";
+
+    document.getElementById("reportMenu").style.display="none";
+
+    document.getElementById("statusMenu").style.display="none";
+
+    document.getElementById("reportHeader").style.display="none";
+
+}
+
