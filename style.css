@@ -4,6 +4,7 @@
 ========================================== */
 
 
+
 *{
 margin:0;
 padding:0;
@@ -660,6 +661,7 @@ opacity:0.5;
 cursor:not-allowed;
 
 }
+}
    /* ==========================
    BACK BUTTON
 ========================== */
@@ -691,4 +693,4 @@ background:#ffd6d6;
 background:#ffcccc;
 
 }
-}
+
