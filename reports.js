@@ -4,6 +4,7 @@
 ========================================== */
 
 
+
 /* ===========================
    CREATE REPORT BUTTONS
 =========================== */
@@ -99,6 +100,12 @@ function reportButtonClick(name){
    OPEN REPORT MENU
 =========================== */
 
+
+
+
+
+
+
 function openReportMenu(groupId,title){
 
     reportMode = true;
@@ -139,31 +146,13 @@ function openReportMenu(groupId,title){
 
 function backReportMenu(){
 
-    reportMode=false;
-   document.getElementById("loanBtn").disabled = false;
-document.getElementById("paymentBtn").disabled = false;
-document.getElementById("reportHeader").style.display="none";
-    document.getElementById("reportMenu").style.display="none";
+    // Report buttons hide
+    document.getElementById("reportMenu").style.display = "none";
 
-    if(currentReportGroup==="g4"){
-
-        document.getElementById("loanContent").style.display="grid";
-
-        return;
-
-    }
-
-    const g=document.getElementById(currentReportGroup);
-
-    if(g){
-
-        g.style.display="grid";
-
-    }
+    // Status menu show
+    document.getElementById("statusMenu").style.display = "grid";
 
 }
-
-
 /* ===========================
    REPORT ACTIONS
 =========================== */
