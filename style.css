@@ -4,7 +4,6 @@
 ========================================== */
 
 
-
 *{
 margin:0;
 padding:0;
@@ -437,6 +436,25 @@ gap:35px;
 margin-top:15px;
 
 }
+
+/* ==========================
+   STATUS MENU
+========================== */
+
+#statusMenu{
+
+display:none;
+
+grid-template-columns:repeat(3,1fr);
+
+row-gap:25px;
+
+column-gap:15px;
+
+margin-top:20px;
+
+}
+
 
 /* ==========================
    REPORT BUTTONS
