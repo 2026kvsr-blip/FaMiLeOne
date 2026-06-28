@@ -3,7 +3,6 @@
    style.css
 ========================================== */
 
-
 *{
 margin:0;
 padding:0;
@@ -658,6 +657,33 @@ font-size:22px;
 opacity:0.5;
 
 cursor:not-allowed;
+
+}
+   /* ==========================
+   BACK BUTTON
+========================== */
+
+.back-btn{
+
+background:#ffe6e6;
+
+border:2px solid #d32f2f;
+
+color:#b00020;
+
+font-weight:bold;
+
+}
+
+.back-btn:hover{
+
+background:#ffd6d6;
+
+}
+
+.back-btn:active{
+
+background:#ffcccc;
 
 }
 }
