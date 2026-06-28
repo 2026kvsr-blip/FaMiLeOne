@@ -19,19 +19,19 @@ function createReportButtons(){
 
     reportButtons.forEach(name=>{
 
-        box.innerHTML+=`
+    const cls = (name==="Back")
+        ? "report-btn back-btn"
+        : "report-btn";
 
-        <button
-            class="report-btn"
-            onclick="reportButtonClick('${name}')">
+    box.innerHTML += `
+    <button
+        class="${cls}"
+        onclick="reportButtonClick('${name}')">
 
-            ${name}
+        ${name}
 
-        </button>
-
-        `;
-
-    });
+    </button>`;
+});
 
 }
 
