@@ -18,7 +18,7 @@ function createReportButtons(){
 
     reportButtons.forEach(name=>{
 
-    const cls = (name==="Back")
+const cls = (name==="← Back")
         ? "report-btn back-btn"
         : "report-btn";
 
