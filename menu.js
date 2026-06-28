@@ -4,6 +4,7 @@
 ========================================== */
 
 
+
 /* ===========================
    GLOBALS
 =========================== */
@@ -230,120 +231,198 @@ function menuClick(action){
         switch(action){
 case "expenseReports":
 
-    openReportMenu("g1","Expenses Reports");
+    openReportMenu(
+        "g1",
+        "Expenses Reports",
+        "Reports"
+    );
     return;
 
 case "sensitiveExpense":
 
-    openReportMenu("g1","Sensitive Expenses");
+    openReportMenu(
+        "g1",
+        "Expenses Sensitive",
+        "Sensitive"
+    );
     return;
 
 case "allExpenseReports":
 
-    openReportMenu("g1","Expenses All Reports");
-    return;
-         
+    openReportMenu(
+        "g1",
+        "Expenses All Reports",
+        "All Reports"
+    );
+    return;     
 
 
               
 case "activityReports":
 
-    openReportMenu("g2","Activities Reports");
+    openReportMenu(
+        "g2",
+        "Activities Reports",
+        "Reports"
+    );
     return;
 
 case "sensitiveActivity":
 
-    openReportMenu("g2","Sensitive Activities");
+    openReportMenu(
+        "g2",
+        "Activities Sensitive",
+        "Sensitive"
+    );
     return;
 
 case "allActivityReports":
 
-    openReportMenu("g2","Activities All Reports");
+    openReportMenu(
+        "g2",
+        "Activities All Reports",
+        "All Reports"
+    );
     return;
 
 
+         case "healthReports":
 
-          case "healthReports":
-
-    openReportMenu("g3","Health Reports");
+    openReportMenu(
+        "g3",
+        "Health Reports",
+        "Reports"
+    );
     return;
 
 case "sensitiveHealth":
 
-    openReportMenu("g3","Sensitive Health Reports");
+    openReportMenu(
+        "g3",
+        "Health Sensitive",
+        "Sensitive"
+    );
     return;
 
 case "allHealthReports":
 
-    openReportMenu("g3","Health All Reports");
+    openReportMenu(
+        "g3",
+        "Health All Reports",
+        "All Reports"
+    );
     return;
-
 
               
 case "memoryReports":
 
-    openReportMenu("g5","Memories Reports");
+    openReportMenu(
+        "g5",
+        "Memories Reports",
+        "Reports"
+    );
     return;
 
 case "sensitiveMemory":
 
-    openReportMenu("g5","Sensitive Memories");
+    openReportMenu(
+        "g5",
+        "Memories Sensitive",
+        "Sensitive"
+    );
     return;
 
 case "allMemoryReports":
 
-    openReportMenu("g5","Memories All Reports");
+    openReportMenu(
+        "g5",
+        "Memories All Reports",
+        "All Reports"
+    );
     return;
 
-
               
-           case "incomeReports":
+        case "incomeReports":
 
-    openReportMenu("g10","Income Reports");
+    openReportMenu(
+        "g10",
+        "Income Reports",
+        "Reports"
+    );
     return;
 
 case "sensitiveIncome":
 
-    openReportMenu("g10","Sensitive Income");
+    openReportMenu(
+        "g10",
+        "Income Sensitive",
+        "Sensitive"
+    );
     return;
 
 case "allIncomeReports":
 
-    openReportMenu("g10","Income All Reports");
-    return;
-              
-           case "loanReports":
+    openReportMenu(
+        "g10",
+        "Income All Reports",
+        "All Reports"
+    );
+    return;   
 
-    openReportMenu("g4","Loans Reports");
+              
+     case "loanReports":
+
+    openReportMenu(
+        "g4",
+        "Loans Reports",
+        "Reports"
+    );
     return;
 
 case "sensitiveLoan":
 
-    openReportMenu("g4","Sensitive Loans");
+    openReportMenu(
+        "g4",
+        "Loans Sensitive",
+        "Sensitive"
+    );
     return;
 
 case "allLoanReports":
 
-    openReportMenu("g4","Loans All Reports");
+    openReportMenu(
+        "g4",
+        "Loans All Reports",
+        "All Reports"
+    );
     return;
-
-
               
-            case "paymentReports":
+  case "paymentReports":
 
-    openReportMenu("g4","Payments Reports");
+    openReportMenu(
+        "g4",
+        "Payments Reports",
+        "Reports"
+    );
     return;
 
 case "sensitivePayment":
 
-    openReportMenu("g4","Sensitive Payments");
+    openReportMenu(
+        "g4",
+        "Payments Sensitive",
+        "Sensitive"
+    );
     return;
 
 case "allPaymentReports":
 
-    openReportMenu("g4","Payments All Reports");
-    return;
-        }
+    openReportMenu(
+        "g4",
+        "Payments All Reports",
+        "All Reports"
+    );
+    return;      }
 
     }
 
