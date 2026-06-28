@@ -247,25 +247,16 @@ g11:[
 /* ==========================
    REPORT BUTTONS
 ========================== */
-
 const reportButtons=[
 
 "Today Report",
-
-"This Week",
-
-"This Month",
-
-"This Year",
-
+"This Week Report",
+"This Month Report",
+"This Year Report",
 "Daily Report",
-
 "Monthly Report",
-
 "Yearly Report",
-
-"Abstract",
-
-"Back"
+"Report Abstract",
+"← Back"
 
 ];
