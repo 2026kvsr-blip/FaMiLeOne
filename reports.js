@@ -4,10 +4,11 @@
 ========================================== */
 
 
-
 /* ===========================
    CREATE REPORT BUTTONS
 =========================== */
+let currentStatus = "";
+
 
 function createReportButtons(){
 
@@ -34,6 +35,46 @@ const cls = (name==="← Back")
 });
 
 }
+/* ==========================
+   STATUS BUTTON CLICK
+========================== */
+
+function statusButtonClick(status){
+
+    currentStatus = status;
+
+    // Status Menu hide
+    document.getElementById("statusMenu").style.display = "none";
+
+    // Heading update
+    document.getElementById("reportTitle").innerHTML =
+        document.getElementById("reportTitle").innerHTML +
+        "<br><span style='font-size:16px'>" + status + "</span>";
+
+    // Report buttons show
+
+   
+    document.getElementById("statusMenu").style.display = "grid";
+}
+
+/* ==========================
+   STATUS BACK
+========================== */
+
+function statusBack(){
+
+    // Status Menu close
+    document.getElementById("statusMenu").style.display = "none";
+
+    // Main circular buttons show again
+    reportMode = false;
+
+    document.getElementById(currentReportGroup).style.display = "grid";
+
+    document.getElementById("reportHeader").style.display = "none";
+
+}
+
 
 
 /* ===========================
