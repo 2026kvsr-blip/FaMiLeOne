@@ -1,662 +1,628 @@
-/* ==========================================
+/* =====================================================
    oneFaMiLe V4
-   reports.js
-   PART-1
-========================================== */
+   REPORTS.JS
+===================================================== */
 
-/* ===========================
-   REPORT VARIABLES
-=========================== */
+"use strict";
 
-let currentReportType="";
+/* =====================================================
+   REPORT MENU ENGINE
+===================================================== */
 
-let currentReportTitle="";
+function showReportMenu(title, buttons){
 
-let currentReportSource=[];
+    document.getElementById("middleMenu").style.display = "none";
 
-let reportResult=[];
+    document.getElementById("reportHeader").style.display = "block";
 
+    document.getElementById("textMenu").style.display = "grid";
 
-/* ===========================
-   OPEN REPORT
-=========================== */
+    document.getElementById("reportTitle").textContent = title;
 
-function openReport(type,title,data){
+    const menu = document.getElementById("textMenu");
 
-    currentReportType=type;
+    menu.innerHTML = "";
 
-    currentReportTitle=title;
+    buttons.forEach(item=>{
 
-    currentReportSource=data;
+        const btn = document.createElement("button");
 
-}
+        btn.className = item.back
+            ? "text-btn back-btn"
+            : "text-btn";
 
+        btn.textContent = item.text;
 
-/* ===========================
-   TODAY
-=========================== */
+        btn.onclick = item.action;
 
-function todayReport(){
-
-    alert(currentReportTitle+"\n\nToday Report");
-
-}
-
-
-/* ===========================
-   WEEK
-=========================== */
-
-function weekReport(){
-
-    alert(currentReportTitle+"\n\nWeek Report");
-
-}
-
-
-/* ===========================
-   MONTH
-=========================== */
-
-function monthReport(){
-
-    alert(currentReportTitle+"\n\nMonth Report");
-
-}
-
-
-/* ===========================
-   YEAR
-=========================== */
-
-function yearReport(){
-
-    alert(currentReportTitle+"\n\nYear Report");
-
-}
-
-
-/* ===========================
-   DAILY
-=========================== */
-
-function dailyReport(){
-
-    alert(currentReportTitle+"\n\nDaily Report");
-
-}
-
-
-/* ===========================
-   MONTHLY
-=========================== */
-
-function monthlyReport(){
-
-    alert(currentReportTitle+"\n\nMonthly Report");
-
-}
-
-
-/* ===========================
-   YEARLY
-=========================== */
-
-function yearlyReport(){
-
-    alert(currentReportTitle+"\n\nYearly Report");
-
-}
-
-
-/* ===========================
-   ABSTRACT
-=========================== */
-
-function abstractReport(){
-
-    alert(currentReportTitle+"\n\nAbstract Report");
-
-}
-/* ==========================================
-   oneFaMiLe V4
-   reports.js
-   PART-2
-========================================== */
-
-
-/* ===========================
-   LOAD REPORT
-=========================== */
-
-function loadReport(type){
-
-    switch(type){
-
-        case "Today Report":
-            todayReport();
-            break;
-
-        case "This Week Report":
-            weekReport();
-            break;
-
-        case "This Month Report":
-            monthReport();
-            break;
-
-        case "This Year Report":
-            yearReport();
-            break;
-
-        case "Daily Report":
-            dailyReport();
-            break;
-
-        case "Monthly Report":
-            monthlyReport();
-            break;
-
-        case "Yearly Report":
-            yearlyReport();
-            break;
-
-        case "Report Abstract":
-            abstractReport();
-            break;
-
-    }
-
-}
-
-
-/* ===========================
-   SHOW REPORT
-=========================== */
-
-function showReport(title,data){
-
-    reportResult=data;
-
-    let msg="";
-
-    if(data.length===0){
-
-        msg="No Records Found";
-
-    }else{
-
-        data.forEach((r,i)=>{
-
-            msg+=(i+1)+". "+JSON.stringify(r)+"\n";
-
-        });
-
-    }
-
-    alert(title+"\n\n"+msg);
-
-}
-
-
-/* ===========================
-   FILTER BY DATE
-=========================== */
-
-function filterByDate(records,dateField,targetDate){
-
-    return records.filter(r=>{
-
-        return r[dateField]===targetDate;
+        menu.appendChild(btn);
 
     });
 
 }
 
 
-/* ===========================
-   FILTER BY MONTH
-=========================== */
 
-function filterByMonth(records,dateField,month){
-
-    return records.filter(r=>{
-
-        if(!r[dateField]) return false;
-
-        return r[dateField].substring(5,7)===month;
-
-    });
-
-}
-
-
-/* ===========================
-   FILTER BY YEAR
-=========================== */
-
-function filterByYear(records,dateField,year){
-
-    return records.filter(r=>{
-
-        if(!r[dateField]) return false;
-
-        return r[dateField].substring(0,4)===year;
-
-    });
-
-}
-
-
-/* ===========================
-   FILTER BETWEEN DATES
-=========================== */
-
-function filterBetween(records,dateField,from,to){
-
-    return records.filter(r=>{
-
-        if(!r[dateField]) return false;
-
-        return r[dateField]>=from &&
-               r[dateField]<=to;
-
-    });
-
-}
-
-
-/* ===========================
-   REPORT TOTAL
-=========================== */
-
-function reportTotal(records,field){
-
-    let total=0;
-
-    records.forEach(r=>{
-
-        total+=Number(r[field]||0);
-
-    });
-
-    return total;
-
-}
-
-
-/* ==========================================
-   oneFaMiLe V4
-   reports.js
-   PART-3
-========================================== */
-
-
-/* ===========================
+/* =====================================================
    EXPENSE REPORTS
-=========================== */
+===================================================== */
 
-function expenseReport(records){
+function openExpenseReports(){
 
-    showReport(
+    showReportMenu("Expense Reports",[
 
-        "Expenses Report",
+        {text:"Today Report",action:expenseToday},
 
-        records
+        {text:"This Week",action:expenseWeek},
 
-    );
+        {text:"This Month",action:expenseMonth},
 
-}
+        {text:"This Year",action:expenseYear},
 
+        {text:"Daily Report",action:expenseDaily},
 
-/* ===========================
-   INCOME REPORTS
-=========================== */
+        {text:"Monthly Report",action:expenseMonthly},
 
-function incomeReport(records){
+        {text:"Yearly Report",action:expenseYearly},
 
-    showReport(
+        {text:"Report Abstract",action:expenseAbstract},
 
-        "Income Report",
+        {text:"← Back",back:true,action:backToHomeMenu}
 
-        records
-
-    );
+    ]);
 
 }
 
 
-/* ===========================
-   HEALTH REPORTS
-=========================== */
 
-function healthReport(records){
-
-    showReport(
-
-        "Health Report",
-
-        records
-
-    );
-
-}
-
-
-/* ===========================
+/* =====================================================
    ACTIVITY REPORTS
-=========================== */
+===================================================== */
 
-function activityReport(records){
+function openActivityReports(){
 
-    showReport(
+    showReportMenu("Activity Reports",[
 
-        "Activities Report",
+        {text:"Completed",action:activityCompleted},
 
-        records
+        {text:"In Progress",action:activityProgress},
 
-    );
+        {text:"To be Takenup",action:activityTakenup},
+
+        {text:"Not Necessary",action:activityNotNecessary},
+
+        {text:"Deadline Today",action:activityToday},
+
+        {text:"Coming Soon",action:activityComing},
+
+        {text:"Deadline Over",action:activityOver},
+
+        {text:"Within _ Days",action:activityDays},
+
+        {text:"← Back",back:true,action:backToHomeMenu}
+
+    ]);
 
 }
 
 
-/* ===========================
+
+/* =====================================================
+   HEALTH REPORTS
+===================================================== */
+
+function openHealthReports(){
+
+    showReportMenu("Health Reports",[
+
+        {text:"Today",action:healthToday},
+
+        {text:"Medicines",action:healthMedicine},
+
+        {text:"Appointments",action:healthAppointments},
+
+        {text:"Lab Tests",action:healthLab},
+
+        {text:"Hospitals",action:healthHospital},
+
+        {text:"Doctors",action:healthDoctors},
+
+        {text:"Medical History",action:healthHistory},
+
+        {text:"Health Abstract",action:healthAbstract},
+
+        {text:"← Back",back:true,action:backToHomeMenu}
+
+    ]);
+
+}
+
+
+
+/* =====================================================
+   INCOME REPORTS
+===================================================== */
+
+function openIncomeReports(){
+
+    showReportMenu("Income Reports",[
+
+        {text:"Today",action:incomeToday},
+
+        {text:"Weekly",action:incomeWeek},
+
+        {text:"Monthly",action:incomeMonth},
+
+        {text:"Yearly",action:incomeYear},
+
+        {text:"Sources",action:incomeSources},
+
+        {text:"Recurring",action:incomeRecurring},
+
+        {text:"Summary",action:incomeSummary},
+
+        {text:"Income Abstract",action:incomeAbstract},
+
+        {text:"← Back",back:true,action:backToHomeMenu}
+
+    ]);
+
+}
+
+/* =====================================================
    LOAN REPORTS
-=========================== */
+===================================================== */
 
-function loanReport(records){
+function openLoanReports(){
 
-    showReport(
+    showReportMenu("Loan Reports",[
 
-        "Loans Report",
+        { text:"Lend",      action:openLendReports },
 
-        records
+        { text:"Borrowed",  action:openBorrowedReports },
 
-    );
+        { text:"← Back", back:true, action:backToHomeMenu }
+
+    ]);
 
 }
 
 
-/* ===========================
+
+/* =====================================================
+   LEND REPORTS
+===================================================== */
+
+function openLendReports(){
+
+    showReportMenu("Lend Reports",[
+
+        { text:"Lend List",            action:reportLendList },
+
+        { text:"Lend Paid Off",        action:reportLendPaid },
+
+        { text:"Lend Due List",        action:reportLendDue },
+
+        { text:"Lend Over Dues",       action:reportLendOverDue },
+
+        { text:"Lend Payments",        action:reportLendPayments },
+
+        { text:"Due Within 5 Days",    action:reportLend5Days },
+
+        { text:"Due Today",            action:reportLendToday },
+
+        { text:"Report Abstract",      action:reportLendAbstract },
+
+        { text:"← Back", back:true, action:openLoanReports }
+
+    ]);
+
+}
+
+
+
+/* =====================================================
+   BORROWED REPORTS
+===================================================== */
+
+function openBorrowedReports(){
+
+    showReportMenu("Borrowed Reports",[
+
+        { text:"Borrowed List",        action:reportBorrowedList },
+
+        { text:"Borrowed Paid Off",    action:reportBorrowedPaid },
+
+        { text:"Borrowed Due List",    action:reportBorrowedDue },
+
+        { text:"Borrowed Over Dues",   action:reportBorrowedOverDue },
+
+        { text:"Borrowed Payments",    action:reportBorrowedPayments },
+
+        { text:"Due Within 5 Days",    action:reportBorrowed5Days },
+
+        { text:"Due Today",            action:reportBorrowedToday },
+
+        { text:"Report Abstract",      action:reportBorrowedAbstract },
+
+        { text:"← Back", back:true, action:openLoanReports }
+
+    ]);
+
+}
+
+
+
+/* =====================================================
+   PLACEHOLDER FUNCTIONS
+   (Database Logic Later)
+===================================================== */
+
+function reportLendList(){}
+
+function reportLendPaid(){}
+
+function reportLendDue(){}
+
+function reportLendOverDue(){}
+
+function reportLendPayments(){}
+
+function reportLend5Days(){}
+
+function reportLendToday(){}
+
+function reportLendAbstract(){}
+
+
+
+function reportBorrowedList(){}
+
+function reportBorrowedPaid(){}
+
+function reportBorrowedDue(){}
+
+function reportBorrowedOverDue(){}
+
+function reportBorrowedPayments(){}
+
+function reportBorrowed5Days(){}
+
+function reportBorrowedToday(){}
+
+function reportBorrowedAbstract(){}
+
+/* =====================================================
+   LOAN SENSITIVE REPORTS
+===================================================== */
+
+function openLoanSensitive(){
+
+    showReportMenu("Sensitive Reports",[
+
+        { text:"Lend",      action:openLendSensitive },
+
+        { text:"Borrowed",  action:openBorrowedSensitive },
+
+        { text:"← Back", back:true, action:openLoanReports }
+
+    ]);
+
+}
+
+
+
+/* =====================================================
+   LEND SENSITIVE
+===================================================== */
+
+function openLendSensitive(){
+
+    showReportMenu("Lend Sensitive Reports",[
+
+        { text:"High Amount",          action:lendSensitiveHighAmount },
+
+        { text:"Long Pending",         action:lendSensitivePending },
+
+        { text:"Over Due",             action:lendSensitiveOverDue },
+
+        { text:"No Payments",          action:lendSensitiveNoPayment },
+
+        { text:"Due Today",            action:lendSensitiveToday },
+
+        { text:"Due Within 5 Days",    action:lendSensitiveFiveDays },
+
+        { text:"← Back", back:true, action:openLoanSensitive }
+
+    ]);
+
+}
+
+
+
+/* =====================================================
+   BORROWED SENSITIVE
+===================================================== */
+
+function openBorrowedSensitive(){
+
+    showReportMenu("Borrowed Sensitive Reports",[
+
+        { text:"High Amount",          action:borrowSensitiveHighAmount },
+
+        { text:"Long Pending",         action:borrowSensitivePending },
+
+        { text:"Over Due",             action:borrowSensitiveOverDue },
+
+        { text:"No Payments",          action:borrowSensitiveNoPayment },
+
+        { text:"Due Today",            action:borrowSensitiveToday },
+
+        { text:"Due Within 5 Days",    action:borrowSensitiveFiveDays },
+
+        { text:"← Back", back:true, action:openLoanSensitive }
+
+    ]);
+
+}
+
+
+
+/* =====================================================
+   LOAN ALL REPORTS
+===================================================== */
+
+function openLoanAllReports(){
+
+    showReportMenu("All Loan Reports",[
+
+        { text:"Lend",      action:openLendAllReports },
+
+        { text:"Borrowed",  action:openBorrowedAllReports },
+
+        { text:"← Back", back:true, action:openLoanReports }
+
+    ]);
+
+}
+
+
+
+/* =====================================================
+   LEND ALL REPORTS
+===================================================== */
+
+function openLendAllReports(){
+
+    showReportMenu("All Lend Reports",[
+
+        { text:"Complete Loan List", action:lendAllLoanList },
+
+        { text:"Complete Payments",  action:lendAllPayments },
+
+        { text:"Complete Due List",  action:lendAllDueList },
+
+        { text:"Complete Summary",   action:lendAllSummary },
+
+        { text:"← Back", back:true, action:openLoanAllReports }
+
+    ]);
+
+}
+
+
+
+/* =====================================================
+   BORROWED ALL REPORTS
+===================================================== */
+
+function openBorrowedAllReports(){
+
+    showReportMenu("All Borrowed Reports",[
+
+        { text:"Complete Loan List", action:borrowAllLoanList },
+
+        { text:"Complete Payments",  action:borrowAllPayments },
+
+        { text:"Complete Due List",  action:borrowAllDueList },
+
+        { text:"Complete Summary",   action:borrowAllSummary },
+
+        { text:"← Back", back:true, action:openLoanAllReports }
+
+    ]);
+
+}
+
+
+
+/* =====================================================
+   PLACEHOLDERS
+===================================================== */
+
+function lendSensitiveHighAmount(){}
+function lendSensitivePending(){}
+function lendSensitiveOverDue(){}
+function lendSensitiveNoPayment(){}
+function lendSensitiveToday(){}
+function lendSensitiveFiveDays(){}
+
+function borrowSensitiveHighAmount(){}
+function borrowSensitivePending(){}
+function borrowSensitiveOverDue(){}
+function borrowSensitiveNoPayment(){}
+function borrowSensitiveToday(){}
+function borrowSensitiveFiveDays(){}
+
+function lendAllLoanList(){}
+function lendAllPayments(){}
+function lendAllDueList(){}
+function lendAllSummary(){}
+
+function borrowAllLoanList(){}
+function borrowAllPayments(){}
+function borrowAllDueList(){}
+function borrowAllSummary(){}
+/* =====================================================
    PAYMENT REPORTS
-=========================== */
+===================================================== */
 
-function paymentReport(records){
+function openPaymentReports() {
 
-    showReport(
+    showReportMenu("Payment Reports", [
 
-        "Payments Report",
+        { text: "Lend Payments",      action: openPaymentLendReports },
+        { text: "Borrowed Payments",  action: openPaymentBorrowedReports },
+        { text: "← Back", back: true, action: backToHomeMenu }
 
-        records
-
-    );
-
-}
-
-
-/* ===========================
-   MEMORY REPORTS
-=========================== */
-
-function memoryReport(records){
-
-    showReport(
-
-        "Memories Report",
-
-        records
-
-    );
+    ]);
 
 }
 
 
-/* ===========================
-   REPORT SUMMARY
-=========================== */
+/* =====================================================
+   PAYMENT - LEND
+===================================================== */
 
-function reportSummary(records, amountField){
+function openPaymentLendReports(){
 
-    const total = reportTotal(records, amountField);
+    showReportMenu("Lend Payments",[
 
-    alert(
+        { text:"Today's Payments",    action:paymentLendToday },
 
-        "Total Records : " +
+        { text:"Weekly Payments",     action:paymentLendWeek },
 
-        records.length +
+        { text:"Monthly Payments",    action:paymentLendMonth },
 
-        "\n\nTotal Amount : " +
+        { text:"Yearly Payments",     action:paymentLendYear },
 
-        total
+        { text:"All Payments",        action:paymentLendAll },
 
-    );
+        { text:"← Back", back:true, action:openPaymentReports }
 
-}
-
-
-/* ===========================
-   EXPORT PLACEHOLDER
-=========================== */
-
-function exportPDF(){
-
-    alert("PDF Export Coming Soon");
-
-}
-
-function exportExcel(){
-
-    alert("Excel Export Coming Soon");
+    ]);
 
 }
 
 
-/* ===========================
-   PRINT PLACEHOLDER
-=========================== */
+/* =====================================================
+   PAYMENT - BORROWED
+===================================================== */
 
-function printReport(){
+function openPaymentBorrowedReports(){
 
-    window.print();
+    showReportMenu("Borrowed Payments",[
 
-}
-/* ==========================================
-   oneFaMiLe V4
-   reports.js
-   PART-4 (FINAL)
-========================================== */
+        { text:"Today's Payments",    action:paymentBorrowToday },
 
+        { text:"Weekly Payments",     action:paymentBorrowWeek },
 
-/* ===========================
-   REPORT DISPATCHER
-=========================== */
+        { text:"Monthly Payments",    action:paymentBorrowMonth },
 
-function runModuleReport(module, records){
+        { text:"Yearly Payments",     action:paymentBorrowYear },
 
-    switch(module){
+        { text:"All Payments",        action:paymentBorrowAll },
 
-        case "Expenses":
-            expenseReport(records);
-            break;
+        { text:"← Back", back:true, action:openPaymentReports }
 
-        case "Income":
-            incomeReport(records);
-            break;
-
-        case "Health":
-            healthReport(records);
-            break;
-
-        case "Activities":
-            activityReport(records);
-            break;
-
-        case "Loans":
-            loanReport(records);
-            break;
-
-        case "Payments":
-            paymentReport(records);
-            break;
-
-        case "Memories":
-            memoryReport(records);
-            break;
-
-        default:
-            showReport(module + " Report", records);
-
-    }
+    ]);
 
 }
 
 
-/* ===========================
-   GET CURRENT REPORT
-=========================== */
+/* =====================================================
+   MEMORIES REPORTS
+===================================================== */
 
-function getCurrentReport(){
+function openMemoryReports(){
 
-    return{
+    showReportMenu("Memory Reports",[
 
-        module:currentModule,
+        { text:"Photos",        action:memoryPhotos },
 
-        type:currentReportType,
+        { text:"Videos",        action:memoryVideos },
 
-        title:currentReportTitle,
+        { text:"Documents",     action:memoryDocuments },
 
-        records:reportResult
+        { text:"Events",        action:memoryEvents },
 
-    };
+        { text:"Birthdays",     action:memoryBirthdays },
 
-}
+        { text:"Anniversaries", action:memoryAnniversaries },
 
+        { text:"Family Trips",  action:memoryTrips },
 
-/* ===========================
-   CLEAR REPORT
-=========================== */
+        { text:"Favorites",     action:memoryFavorites },
 
-function clearReport(){
+        { text:"← Back", back:true, action:backToHomeMenu }
 
-    currentReportType="";
-
-    currentReportTitle="";
-
-    currentReportSource=[];
-
-    reportResult=[];
+    ]);
 
 }
 
 
-/* ===========================
-   REPORT INFORMATION
-=========================== */
+/* =====================================================
+   COMMON REPORT DISPLAY
+===================================================== */
 
-function reportInformation(){
+function showReport(title){
 
-    alert(
+    setPageTitle(title);
 
-        "oneFaMiLe Version 4\n\n"+
+    document.getElementById("middleMenu").style.display="none";
 
-        "Current Module : "+currentModule+
+    document.getElementById("textMenu").style.display="none";
 
-        "\nReport : "+currentReportTitle+
+    document.getElementById("reportHeader").style.display="none";
 
-        "\nRecords : "+reportResult.length
+    document.getElementById("reportContainer").style.display="block";
 
-    );
+    document.getElementById("reportContainer").innerHTML=`
 
-}
+        <div class="report-page">
 
+            <h2>${title}</h2>
 
-/* ===========================
-   REPORT STATISTICS
-=========================== */
+            <br>
 
-function reportStatistics(records){
+            <p>
+                Report data will be loaded from Firebase.
+            </p>
 
-    return{
+        </div>
 
-        totalRecords:records.length,
-
-        created:new Date().toLocaleString()
-
-    };
+    `;
 
 }
 
 
-/* ===========================
-   REPORT SEARCH
-=========================== */
 
-function searchReport(records, field, value){
+/* =====================================================
+   PAYMENT PLACE HOLDERS
+===================================================== */
 
-    value=String(value).toLowerCase();
+function paymentLendToday(){ showReport("Today's Lend Payments"); }
+function paymentLendWeek(){ showReport("Weekly Lend Payments"); }
+function paymentLendMonth(){ showReport("Monthly Lend Payments"); }
+function paymentLendYear(){ showReport("Yearly Lend Payments"); }
+function paymentLendAll(){ showReport("All Lend Payments"); }
 
-    return records.filter(item=>{
-
-        return String(item[field] || "")
-
-            .toLowerCase()
-
-            .includes(value);
-
-    });
-
-}
+function paymentBorrowToday(){ showReport("Today's Borrowed Payments"); }
+function paymentBorrowWeek(){ showReport("Weekly Borrowed Payments"); }
+function paymentBorrowMonth(){ showReport("Monthly Borrowed Payments"); }
+function paymentBorrowYear(){ showReport("Yearly Borrowed Payments"); }
+function paymentBorrowAll(){ showReport("All Borrowed Payments"); }
 
 
-/* ===========================
-   SORT REPORT
-=========================== */
+/* =====================================================
+   MEMORY PLACE HOLDERS
+===================================================== */
 
-function sortReport(records, field){
-
-    return [...records].sort((a,b)=>{
-
-        if(a[field] < b[field]) return -1;
-
-        if(a[field] > b[field]) return 1;
-
-        return 0;
-
-    });
-
-}
-
-
-/* ===========================
-   REPORT INITIALIZATION
-=========================== */
-
-function initializeReports(){
-
-    clearReport();
-
-    console.log(
-
-        "Reports Engine Initialized"
-
-    );
-
-}
-
-
-/* ===========================
-   AUTO START
-=========================== */
-
-document.addEventListener(
-
-    "DOMContentLoaded",
-
-    initializeReports
-
-);
-
-
-/* ==========================================
-   END OF reports.js
-========================================== */
+function memoryPhotos(){ showReport("Photos"); }
+function memoryVideos(){ showReport("Videos"); }
+function memoryDocuments(){ showReport("Documents"); }
+function memoryEvents(){ showReport("Events"); }
+function memoryBirthdays(){ showReport("Birthdays"); }
+function memoryAnniversaries(){ showReport("Anniversaries"); }
+function memoryTrips(){ showReport("Family Trips"); }
+function memoryFavorites(){ showReport("Favorites"); }
