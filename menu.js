@@ -9,7 +9,6 @@
    GLOBAL MENU VARIABLES
 ===================================================== */
 
-
 let currentModule = "expenses";
 
 let currentSubMenu = "";
@@ -414,3 +413,155 @@ function backToHomeMenu(){
     document.getElementById("middleMenu").style.display="grid";
 
 }
+/* =====================================================
+   LEND MENU
+===================================================== */
+
+function openLendMenu(){
+
+    showTextMenu("Loans - Lend",[
+
+        { text:"Reports",      action:openLendReports },
+        { text:"Sensitive",    action:openLendSensitive },
+        { text:"All Reports",  action:openLendAllReports },
+
+        { text:"Add Loan",     action:openLoanForm },
+        { text:"Search",       action:openLoanSearch },
+        { text:"About",        action:openLoanAbout },
+
+        { text:"← Back", back:true, action:openLoanReports }
+
+    ]);
+
+}
+
+
+/* =====================================================
+   BORROWED MENU
+===================================================== */
+
+function openBorrowedMenu(){
+
+    showTextMenu("Loans - Borrowed",[
+
+        { text:"Reports",      action:openBorrowedReports },
+        { text:"Sensitive",    action:openBorrowedSensitive },
+        { text:"All Reports",  action:openBorrowedAllReports },
+
+        { text:"Add Loan",     action:openLoanForm },
+        { text:"Search",       action:openLoanSearch },
+        { text:"About",        action:openLoanAbout },
+
+        { text:"← Back", back:true, action:openLoanReports }
+
+    ]);
+
+}
+
+
+/* =====================================================
+   PAYMENT - LEND
+===================================================== */
+
+function openPaymentLendMenu(){
+
+    showTextMenu("Payments - Lend",[
+
+        { text:"Reports",      action:openPaymentLendReports },
+        { text:"Sensitive",    action:openPaymentLendSensitive },
+        { text:"All Reports",  action:openPaymentLendAllReports },
+
+        { text:"Add Payment",  action:openAddPayment },
+        { text:"Search",       action:openPaymentSearch },
+        { text:"About",        action:openPaymentAbout },
+
+        { text:"← Back", back:true, action:openLoanPayments }
+
+    ]);
+
+}
+
+
+/* =====================================================
+   PAYMENT - BORROWED
+===================================================== */
+
+function openPaymentBorrowedMenu(){
+
+    showTextMenu("Payments - Borrowed",[
+
+        { text:"Reports",      action:openPaymentBorrowedReports },
+        { text:"Sensitive",    action:openPaymentBorrowedSensitive },
+        { text:"All Reports",  action:openPaymentBorrowedAllReports },
+
+        { text:"Add Payment",  action:openAddPayment },
+        { text:"Search",       action:openPaymentSearch },
+        { text:"About",        action:openPaymentAbout },
+
+        { text:"← Back", back:true, action:openLoanPayments }
+
+    ]);
+
+}
+
+
+/* =====================================================
+   MEMORIES MENU
+===================================================== */
+
+function openMemoriesMenu(){
+
+    showTextMenu("Memories",[
+
+        { text:"Reports",      action:openMemoryReports },
+        { text:"Sensitive",    action:openMemorySensitive },
+        { text:"All Reports",  action:openMemoryAllReports },
+
+        { text:"Add Memory",   action:openMemoryForm },
+        { text:"Search",       action:openMemorySearch },
+        { text:"About",        action:openMemoryAbout },
+
+        { text:"← Back", back:true, action:backToHomeMenu }
+
+    ]);
+
+}
+
+
+/* =====================================================
+   PLACE HOLDERS
+   (Implementation in reports.js / forms.js)
+===================================================== */
+
+function openLendReports(){}
+function openLendSensitive(){}
+function openLendAllReports(){}
+
+function openBorrowedReports(){}
+function openBorrowedSensitive(){}
+function openBorrowedAllReports(){}
+
+function openPaymentLendReports(){}
+function openPaymentLendSensitive(){}
+function openPaymentLendAllReports(){}
+
+function openPaymentBorrowedReports(){}
+function openPaymentBorrowedSensitive(){}
+function openPaymentBorrowedAllReports(){}
+
+function openMemoryReports(){}
+function openMemorySensitive(){}
+function openMemoryAllReports(){}
+
+function openLoanSearch(){}
+function openLoanAbout(){}
+
+function openPaymentSearch(){}
+function openPaymentAbout(){}
+
+function openMemoryForm(){}
+function openMemorySearch(){}
+function openMemoryAbout(){}
+
+function openAddPayment(){}
+
