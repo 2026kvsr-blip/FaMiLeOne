@@ -9,6 +9,7 @@
    GLOBAL MENU VARIABLES
 ===================================================== */
 
+
 let currentModule = "expenses";
 
 let currentSubMenu = "";
@@ -175,12 +176,19 @@ function circleMenuClick(id,title){
             break;
 
 
-        case "reports":
+       case "reports":
 
-            openReports();
+    if(currentModule==="loans"){
 
-            break;
+        openLoanReports();
 
+    }else{
+
+        openReports();
+
+    }
+
+    break;
 
         case "sensitive":
 
