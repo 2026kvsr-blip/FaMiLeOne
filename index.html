@@ -10,6 +10,7 @@
 </head>
 <body>
 
+    
     <!-- Splash Screen -->
     <div id="splash-screen" class="screen active">
         <div class="splash-content">
@@ -148,6 +149,72 @@
         </nav>
     </div>
 
-    <script src="app.js"></script>
+    <!-- ఇక్కడ పాత స్క్రిప్ట్ లైన్ తీసేసి ఈ కింద ఉన్న కోడ్ మొత్తం పెట్టండి -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // 3 సెకన్ల తర్వాత Splash స్క్రీన్ మారుతుంది
+            setTimeout(() => {
+                showScreen("login-screen");
+            }, 3000);
+
+            // OTP పంపే బటన్ క్లిక్ లాజిక్
+            const sendOtpBtn = document.getElementById("send-otp-btn");
+            if(sendOtpBtn) {
+                sendOtpBtn.addEventListener("click", () => {
+                    const phone = document.getElementById("phone-number").value;
+                    if(phone.length === 10) {
+                        document.getElementById("otp-area").classList.remove("hidden");
+                        alert("డెమో OTP పంపబడింది! (ఏదైనా 4 అంకెలు నొక్కండి)");
+                    } else {
+                        alert("దయచేసి 10 అంకెల మొబైల్ నంబర్ ఎంటర్ చేయండి.");
+                    }
+                });
+            }
+
+            // లాగిన్ వెరిఫై
+            const verifyOtpBtn = document.getElementById("verify-otp-btn");
+            if(verifyOtpBtn) {
+                verifyOtpBtn.addEventListener("click", () => {
+                    showScreen("main-screen");
+                });
+            }
+
+            // లాగౌట్
+            const logoutBtn = document.getElementById("logout-btn");
+            if(logoutBtn) {
+                logoutBtn.addEventListener("click", () => {
+                    showScreen("login-screen");
+                    document.getElementById("otp-area").classList.add("hidden");
+                    document.getElementById("phone-number").value = "";
+                });
+            }
+        });
+
+        function showScreen(screenId) {
+            document.querySelectorAll(".screen").forEach(s => s.classList.remove("active"));
+            const targetScreen = document.getElementById(screenId);
+            if(targetScreen) {
+                targetScreen.classList.add("active");
+            }
+        }
+
+        function switchView(viewId) {
+            document.querySelectorAll(".view").forEach(v => v.classList.remove("active"));
+            const targetView = document.getElementById(`${viewId}-view`);
+            if(targetView) {
+                targetView.classList.add("active");
+            }
+
+            document.querySelectorAll(".nav-item").forEach(item => item.classList.remove("active"));
+            
+            const navButtons = document.querySelectorAll(".bottom-nav .nav-item");
+            navButtons.forEach(btn => {
+                if(btn.getAttribute("onclick").includes(viewId)) {
+                    btn.classList.add("active");
+                }
+            });
+        }
+    </script>
+</body>
 </body>
 </html>
