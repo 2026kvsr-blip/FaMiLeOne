@@ -1,678 +1,153 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="te">
 <head>
-
-<meta charset="UTF-8">
-
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-
-<meta name="theme-color" content="#8fb0ff">
-
-<title>oneFaMiLe V4</title>
-
-<link rel="manifest" href="manifest.json">
-
-<link rel="stylesheet" href="style.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>oneFaMiLe V5</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- ఐకాన్స్ కోసం FontAwesome లింక్ -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-
 <body>
 
-<!-- =========================================
-     SPLASH SCREEN
-========================================= -->
-
-<div id="splashScreen" class="screen">
-
-    <div class="splash-container">
-
-        <img src="images/logo.png"
-             class="splash-logo"
-             alt="Logo">
-
-        <h1 class="splash-title">
-            oneFaMiLe
-        </h1>
-
-        <p class="splash-subtitle">
-            One Family... One Solution
-        </p>
-
-        <div class="version">
-            Version 4.0
+    <!-- Splash Screen -->
+    <div id="splash-screen" class="screen active">
+        <div class="splash-content">
+            <div class="app-logo">
+                <i class="fa-solid fa-people-roof"></i>
+            </div>
+            <h1 class="app-title">one<span>FaMiLe</span></h1>
         </div>
-
     </div>
 
-</div>
-
-
-
-<!-- =========================================
-     WELCOME SCREEN
-========================================= -->
-
-<div id="welcomeScreen"
-     class="screen"
-     style="display:none;">
-
-    <div class="welcome-box">
-
-        <img src="images/logo.png"
-             class="welcome-logo"
-             alt="Logo">
-
-        <h2>
-            Welcome to oneFaMiLe
-        </h2>
-
-        <p>
-            Manage your Family, Expenses, Activities,
-            Loans, Memories and much more.
-        </p>
-
-        <button id="loginButton"
-                class="welcome-btn">
-
-            Login
-
-        </button>
-
-        <button id="signupButton"
-                class="welcome-btn">
-
-            Sign Up
-
-        </button>
-
-    </div>
-
-</div>
-
-
-
-<!-- =========================================
-     LOGIN SCREEN
-========================================= -->
-
-<div id="loginScreen"
-     class="screen"
-     style="display:none;">
-
-    <div class="login-box">
-
-        <h2>
-
-            Login
-
-        </h2>
-
-        <input
-            type="tel"
-            id="phoneNumber"
-            maxlength="10"
-            placeholder="Enter Mobile Number">
-
-        <button
-            id="sendOtpBtn"
-            class="primary-btn">
-
-            Send OTP
-
-        </button>
-
-        <button
-            id="loginBackBtn"
-            class="secondary-btn">
-
-            ← Back
-
-        </button>
-
-    </div>
-
-</div>
-
-
-
-<!-- =========================================
-     OTP SCREEN
-========================================= -->
-
-<div id="otpScreen"
-     class="screen"
-     style="display:none;">
-
-    <div class="login-box">
-
-        <h2>
-
-            OTP Verification
-
-        </h2>
-
-        <input
-            type="text"
-            id="otpNumber"
-            maxlength="6"
-            placeholder="Enter OTP">
-
-        <button
-            id="verifyOtpBtn"
-            class="primary-btn">
-
-            Verify OTP
-
-        </button>
-
-        <button
-            id="resendOtpBtn"
-            class="secondary-btn">
-
-            Resend OTP
-
-        </button>
-
-    </div>
-
-</div>
-
-
-
-<!-- =========================================
-     MAIN APP
-========================================= -->
-
-<div id="appContainer"
-     style="display:none;">
-
-
-
-     <!-- =========================================
-     APP HEADER
-========================================= -->
-
-<header class="app-header">
-
-    <button id="menuBtn" class="header-btn">
-        ☰
-    </button>
-
-    <div class="header-title">
-
-        <img src="images/logo.png"
-             class="header-logo"
-             alt="Logo">
-
-        <span>
-            oneFaMiLe
-        </span>
-
-    </div>
-
-    <button id="languageBtn" class="header-btn">
-
-        🌐
-
-    </button>
-
-</header>
-
-
-
-<!-- =========================================
-     PAGE TITLE
-========================================= -->
-
-<div class="page-title-area">
-
-    <h2 id="pageTitle"
-        class="page-title">
-
-        Home
-
-    </h2>
-
-</div>
-
-
-
-<!-- =========================================
-     TOP RECTANGLE BUTTONS
-========================================= -->
-
-<div id="topButtons"
-     class="top-buttons">
-
-    <button id="expenseBtn"
-            class="rect-btn active">
-
-        <img src="images/expense.png"
-             alt="Expense">
-
-        <span>Expenses</span>
-
-    </button>
-
-    <button id="activityBtn"
-            class="rect-btn">
-
-        <img src="images/activity.png"
-             alt="Activity">
-
-        <span>Activities</span>
-
-    </button>
-
-    <button id="healthBtn"
-            class="rect-btn">
-
-        <img src="images/health.png"
-             alt="Health">
-
-        <span>Health</span>
-
-    </button>
-
-    <button id="loanBtn"
-            class="rect-btn">
-
-        <img src="images/loan.png"
-             alt="Loans">
-
-        <span>Loans</span>
-
-    </button>
-
-    <button id="incomeBtn"
-            class="rect-btn">
-
-        <img src="images/income.png"
-             alt="Income">
-
-        <span>Income</span>
-
-    </button>
-
-</div>
-
-
-
-<!-- =========================================
-     REPORT HEADER
-========================================= -->
-
-<div id="reportHeader"
-     class="report-header">
-
-    <img id="reportHeaderIcon"
-         src="images/report.png"
-         class="report-header-icon"
-         alt="Report">
-
-    <div id="reportTitle"
-         class="report-title">
-
-        Reports
-
-    </div>
-
-</div>
-
-
-
-<!-- =========================================
-     MIDDLE BUTTONS
-========================================= -->
-
-<div id="middleMenu"
-     class="circle-menu">
-
-    <!-- Dynamic Buttons -->
-
-</div>
-
-
-
-<!-- =========================================
-     TEXT BUTTON MENU
-========================================= -->
-
-<div id="textMenu"
-     class="text-menu"
-     style="display:none;">
-
-    <!-- Dynamic Text Buttons -->
-
-</div>
-
-
-
-<!-- =========================================
-     FORMS CONTAINER
-========================================= -->
-
-<div id="formContainer"
-     class="form-container"
-     style="display:none;">
-
-</div>
-
-
-
-<!-- =========================================
-     REPORT RESULT
-========================================= -->
-
-<div id="reportResult"
-     class="report-result"
-     style="display:none;">
-
-</div>
-
-
-
-<!-- =========================================
-     SEARCH RESULT
-========================================= -->
-
-<div id="searchContainer"
-     class="search-container"
-     style="display:none;">
-
-</div>
-
-<!-- =========================================
-     BOTTOM NAVIGATION
-========================================= -->
-
-<nav class="bottom-nav">
-
-    <button id="navHome"
-            class="nav-btn active">
-
-        <img src="images/home.png"
-             alt="Home">
-
-        <span>Home</span>
-
-    </button>
-
-    <button id="navFamily"
-            class="nav-btn">
-
-        <img src="images/family.png"
-             alt="Family">
-
-        <span>Family</span>
-
-    </button>
-
-    <button id="navCharts"
-            class="nav-btn">
-
-        <img src="images/charts.png"
-             alt="Charts">
-
-        <span>Charts</span>
-
-    </button>
-
-    <button id="navMemories"
-            class="nav-btn">
-
-        <img src="images/memories.png"
-             alt="Memories">
-
-        <span>Memories</span>
-
-    </button>
-
-</nav>
-
-
-
-<!-- =========================================
-     LOADING SCREEN
-========================================= -->
-
-<div id="loadingScreen"
-     class="loading-screen"
-     style="display:none;">
-
-    <div class="loader"></div>
-
-    <div class="loading-text">
-
-        Please Wait...
-
-    </div>
-
-</div>
-
-
-
-<!-- =========================================
-     POPUP
-========================================= -->
-
-<div id="popupOverlay"
-     class="popup-overlay"
-     style="display:none;">
-
-    <div class="popup-box">
-
-        <div id="popupTitle"
-             class="popup-title">
-
-            Message
-
+    <!-- Login Screen (OTP UI) -->
+    <div id="login-screen" class="screen">
+        <div class="glass-card">
+            <h2>లాగిన్ అవ్వండి</h2>
+            <p>మీ మొబైల్ నంబర్ ఎంటర్ చేయండి</p>
+            <div class="input-group">
+                <span class="prefix">+91</span>
+                <input type="tel" id="phone-number" placeholder="9876543210" maxlength="10">
+            </div>
+            <button id="send-otp-btn" class="main-btn">OTP పంపండి</button>
+
+            <div id="otp-area" class="hidden">
+                <p class="mt-20">OTP ని ఎంటర్ చేయండి</p>
+                <div class="otp-inputs">
+                    <input type="text" maxlength="1" class="otp-box">
+                    <input type="text" maxlength="1" class="otp-box">
+                    <input type="text" maxlength="1" class="otp-box">
+                    <input type="text" maxlength="1" class="otp-box">
+                </div>
+                <button id="verify-otp-btn" class="main-btn success-btn">వెరిఫై & లాగిన్</button>
+            </div>
         </div>
+    </div>
 
-        <div id="popupMessage"
-             class="popup-message">
+    <!-- Main Dashboard Screen -->
+    <div id="main-screen" class="screen">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="user-profile">
+                <i class="fa-solid fa-circle-user"></i>
+                <span>నమస్తే, వన్ ఫ్యామిలీ!</span>
+            </div>
+            <button id="logout-btn" class="icon-btn"><i class="fa-solid fa-right-from-bracket"></i></button>
+        </header>
 
-        </div>
+        <!-- Main Content Area -->
+        <main id="content-area">
+            <!-- Home View -->
+            <div id="home-view" class="view active">
+                <!-- 2x2 Circular Buttons Grid -->
+                <div class="circular-grid">
+                    <button class="circle-item" onclick="switchView('expenses')">
+                        <div class="circle-icon icon-red"><i class="fa-solid fa-wallet"></i></div>
+                        <span>Expenses</span>
+                    </button>
+                    <button class="circle-item" onclick="switchView('activities')">
+                        <div class="circle-icon icon-blue"><i class="fa-solid fa-bolt"></i></div>
+                        <span>Activities</span>
+                    </button>
+                    <button class="circle-item" onclick="switchView('loans')">
+                        <div class="circle-icon icon-green"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+                        <span>Loans</span>
+                    </button>
+                    <button class="circle-item" onclick="switchView('health')">
+                        <div class="circle-icon icon-purple"><i class="fa-solid fa-heart-pulse"></i></div>
+                        <span>Health</span>
+                    </button>
+                </div>
+            </div>
 
-        <div class="popup-buttons">
+            <!-- Expenses View -->
+            <div id="expenses-view" class="view">
+                <div class="view-header">
+                    <h3><i class="fa-solid fa-wallet"></i> Expenses Module</h3>
+                </div>
+                <div class="glass-card">
+                    <p>ఖర్చుల వివరాలు ఇక్కడ చూసుకోవచ్చు.</p>
+                </div>
+            </div>
 
-            <button id="popupOk"
-                    class="popup-btn">
+            <!-- Activities View -->
+            <div id="activities-view" class="view">
+                <div class="view-header">
+                    <h3><i class="fa-solid fa-bolt"></i> Activities Module</h3>
+                </div>
+                <div class="glass-card">
+                    <p>రోజువారీ పనుల వివరాలు ఇక్కడ ఉంటాయి.</p>
+                </div>
+            </div>
 
-                OK
+            <!-- Loans View -->
+            <div id="loans-view" class="view">
+                <div class="view-header">
+                    <h3><i class="fa-solid fa-hand-holding-dollar"></i> Loans Module</h3>
+                </div>
+                <!-- Rectangle Buttons -->
+                <div class="rect-btn-container">
+                    <button class="rect-btn active"><i class="fa-solid fa-arrow-down"></i> తీసుకున్న అప్పులు</button>
+                    <button class="rect-btn"><i class="fa-solid fa-arrow-up"></i> ఇచ్చిన అప్పులు</button>
+                </div>
+            </div>
 
+            <!-- Health View -->
+            <div id="health-view" class="view">
+                <div class="view-header">
+                    <h3><i class="fa-solid fa-heart-pulse"></i> Health Module</h3>
+                </div>
+                <div class="glass-card">
+                    <p>ఆరోగ్య సమాచారం ఇక్కడ ఉంటుంది.</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Fixed Bottom Navigation (5 Buttons) -->
+        <nav class="bottom-nav">
+            <button class="nav-item active" onclick="switchView('home')">
+                <i class="fa-solid fa-house"></i>
+                <span>Home</span>
             </button>
-
-            <button id="popupCancel"
-                    class="popup-btn"
-                    style="display:none;">
-
-                Cancel
-
+            <button class="nav-item" onclick="switchView('expenses')">
+                <i class="fa-solid fa-wallet"></i>
+                <span>Expenses</span>
             </button>
-
-        </div>
-
+            <button class="nav-item" onclick="switchView('loans')">
+                <i class="fa-solid fa-hand-holding-dollar"></i>
+                <span>Loans</span>
+            </button>
+            <button class="nav-item" onclick="switchView('health')">
+                <i class="fa-solid fa-heart-pulse"></i>
+                <span>Health</span>
+            </button>
+            <button class="nav-item" onclick="switchView('activities')">
+                <i class="fa-solid fa-bolt"></i>
+                <span>Activities</span>
+            </button>
+        </nav>
     </div>
 
-</div>
-
-
-
-<!-- =========================================
-     VERSION INFO
-========================================= -->
-
-<div id="versionInfo"
-     class="version-info">
-
-    oneFaMiLe V4.0
-
-</div>
-
-
-
-<!-- =========================================
-     FIREBASE (MODULES)
-========================================= -->
-
-<script type="module"
-        src="firebase-config.js"></script>
-
-<script type="module"
-        src="firebase.js"></script>
-
-
-
-<!-- =========================================
-     APPLICATION FILES
-========================================= -->
-
-<script src="data.js"></script>
-
-<script src="database.js"></script>
-
-<script src="menu.js"></script>
-
-<script src="forms.js"></script>
-
-<script src="reports.js"></script>
-
-<script src="search.js"></script>
-
-<script src="popup.js"></script>
-
-<script src="language.js"></script>
-
-<script src="settings.js"></script>
-
-<script src="app.js"></script>
-
-<!-- =========================================
-     SIDE MENU
-========================================= -->
-
-<div id="sideMenu"
-     class="side-menu"
-     style="display:none;">
-
-    <div class="side-menu-header">
-
-        <img src="images/logo.png"
-             class="side-logo"
-             alt="Logo">
-
-        <h3>oneFaMiLe</h3>
-
-    </div>
-
-    <button class="side-menu-btn" id="profileMenuBtn">
-        My Profile
-    </button>
-
-    <button class="side-menu-btn" id="familyMenuBtn">
-        Family Members
-    </button>
-
-    <button class="side-menu-btn" id="backupMenuBtn">
-        Backup & Restore
-    </button>
-
-    <button class="side-menu-btn" id="settingsMenuBtn">
-        Settings
-    </button>
-
-    <button class="side-menu-btn" id="helpMenuBtn">
-        Help
-    </button>
-
-    <button class="side-menu-btn" id="aboutMenuBtn">
-        About oneFaMiLe
-    </button>
-
-</div>
-
-
-
-<!-- =========================================
-     SIDE MENU OVERLAY
-========================================= -->
-
-<div id="menuOverlay"
-     class="menu-overlay"
-     style="display:none;">
-</div>
-
-
-
-<!-- =========================================
-     DYNAMIC CONTENT AREA
-========================================= -->
-
-<div id="contentArea"
-     class="content-area">
-
-</div>
-
-
-
-<!-- =========================================
-     TOAST MESSAGE
-========================================= -->
-
-<div id="toast"
-     class="toast"
-     style="display:none;">
-
-    Record Saved Successfully
-
-</div>
-
-
-
-<!-- =========================================
-     IMAGE PREVIEW
-========================================= -->
-
-<div id="imagePreview"
-     class="image-preview"
-     style="display:none;">
-
-    <img id="previewImage"
-         src=""
-         alt="Preview">
-
-</div>
-
-
-
-<!-- =========================================
-     CAMERA CONTAINER
-========================================= -->
-
-<div id="cameraContainer"
-     style="display:none;">
-
-</div>
-
-
-
-<!-- =========================================
-     DOCUMENT VIEWER
-========================================= -->
-
-<div id="documentViewer"
-     style="display:none;">
-
-</div>
-
-</div>
-
+    <script src="app.js"></script>
 </body>
-
 </html>
-     
-
-     
