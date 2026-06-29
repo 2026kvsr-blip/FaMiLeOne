@@ -1,1319 +1,1157 @@
-/* ==========================================
+/* =====================================================
    oneFaMiLe V4
-   style.css
-   PART-1
-========================================== */
-
-
-/* ==========================
-   RESET
-========================== */
+   FINAL CSS
+===================================================== */
 
 *{
-
-margin:0;
-
-padding:0;
-
-box-sizing:border-box;
-
-font-family:Arial,Helvetica,sans-serif;
-
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-
-/* ==========================
-   BODY
-========================== */
-
+html,
 body{
 
-background:#f4f7ff;
+    width:100%;
+    height:100%;
 
-color:#222;
+    font-family:Arial, Helvetica, sans-serif;
 
-overflow-x:hidden;
+    background:#eef4ff;
 
-padding-bottom:85px;
+    color:#1d3557;
 
-}
+    overflow:hidden;
 
+    user-select:none;
 
-/* ==========================
-   LINKS
-========================== */
-
-a{
-
-text-decoration:none;
-
-color:inherit;
+    -webkit-tap-highlight-color:transparent;
 
 }
 
 
-/* ==========================
-   HEADER
-========================== */
+/* =====================================================
+   COMMON
+===================================================== */
+
+.screen{
+
+    width:100%;
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:20px;
+
+}
+
+.hidden{
+
+    display:none !important;
+
+}
+
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+button{
+
+    font-family:inherit;
+
+    cursor:pointer;
+
+    outline:none;
+
+    border:none;
+
+}
+
+button:active{
+
+    transform:scale(.97);
+
+}
+
+
+/* =====================================================
+   SPLASH SCREEN
+===================================================== */
+
+#splashScreen{
+
+    background:linear-gradient(
+        180deg,
+        #eef4ff,
+        #dfeaff
+    );
+
+}
+
+.splash-container{
+
+    text-align:center;
+
+}
+
+.splash-logo{
+
+    width:110px;
+
+    margin-bottom:20px;
+
+}
+
+.splash-title{
+
+    font-size:34px;
+
+    color:#2f5fd0;
+
+    margin-bottom:10px;
+
+}
+
+.splash-subtitle{
+
+    font-size:16px;
+
+    color:#555;
+
+}
+
+.version{
+
+    margin-top:30px;
+
+    color:#888;
+
+    font-size:14px;
+
+}
+
+
+/* =====================================================
+   WELCOME
+===================================================== */
+
+.welcome-box{
+
+    width:100%;
+
+    max-width:360px;
+
+    text-align:center;
+
+}
+
+.welcome-logo{
+
+    width:90px;
+
+    margin-bottom:20px;
+
+}
+
+.welcome-box h2{
+
+    color:#2f5fd0;
+
+    margin-bottom:15px;
+
+}
+
+.welcome-box p{
+
+    line-height:1.5;
+
+    margin-bottom:25px;
+
+    color:#555;
+
+}
+
+.welcome-btn{
+
+    width:100%;
+
+    height:48px;
+
+    margin-bottom:15px;
+
+    border-radius:12px;
+
+    background:white;
+
+    border:1px solid #d7dbe6;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    color:#2f5fd0;
+
+}
+
+.welcome-btn:hover{
+
+    background:#f5f8ff;
+
+}
+
+
+/* =====================================================
+   LOGIN SCREEN
+===================================================== */
+
+.login-box{
+
+    width:100%;
+    max-width:360px;
+
+    background:rgba(255,255,255,.45);
+
+    border:1px solid #d7dbe6;
+
+    border-radius:16px;
+
+    padding:25px;
+
+    backdrop-filter:blur(8px);
+
+}
+
+.login-box h2{
+
+    text-align:center;
+
+    color:#2f5fd0;
+
+    margin-bottom:25px;
+
+}
+
+.login-box input{
+
+    width:100%;
+
+    height:46px;
+
+    border:1px solid #d7dbe6;
+
+    border-radius:12px;
+
+    padding:0 15px;
+
+    font-size:16px;
+
+    margin-bottom:18px;
+
+    background:#fff;
+
+}
+
+.login-box input:focus{
+
+    border-color:#5f84e8;
+
+    outline:none;
+
+}
+
+.primary-btn{
+
+    width:100%;
+
+    height:46px;
+
+    border-radius:12px;
+
+    background:#5f84e8;
+
+    color:#fff;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    margin-bottom:12px;
+
+}
+
+.secondary-btn{
+
+    width:100%;
+
+    height:46px;
+
+    border-radius:12px;
+
+    background:#fff;
+
+    border:1px solid #d7dbe6;
+
+    color:#2f5fd0;
+
+    font-size:15px;
+
+    font-weight:600;
+
+}
+
+
+/* =====================================================
+   APP HEADER
+===================================================== */
 
 .app-header{
 
-position:fixed;
+    position:fixed;
 
-top:0;
+    top:0;
 
-left:0;
+    left:0;
 
-width:100%;
+    width:100%;
 
-height:60px;
+    height:60px;
 
-background:#4f7df3;
+    background:rgba(255,255,255,.75);
 
-display:flex;
+    backdrop-filter:blur(10px);
 
-align-items:center;
+    display:flex;
 
-justify-content:space-between;
+    justify-content:space-between;
 
-padding:0 15px;
+    align-items:center;
 
-color:#fff;
+    padding:0 12px;
 
-box-shadow:0 2px 8px rgba(0,0,0,.15);
+    border-bottom:1px solid #d7dbe6;
 
-z-index:999;
+    z-index:1000;
+
+}
+
+.header-btn{
+
+    width:42px;
+
+    height:42px;
+
+    background:transparent;
+
+    border:none;
+
+    font-size:22px;
+
+    color:#2f5fd0;
+
+}
+
+.header-title{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    font-size:20px;
+
+    font-weight:bold;
+
+    color:#2f5fd0;
+
+}
+
+.header-logo{
+
+    width:34px;
+
+    height:34px;
 
 }
 
 
-/* ==========================
-   MENU ICON
-========================== */
+/* =====================================================
+   PAGE TITLE
+===================================================== */
 
-.menu-icon{
+.page-title-area{
 
-font-size:28px;
+    margin-top:75px;
 
-cursor:pointer;
+    margin-bottom:15px;
 
-padding:6px 10px;
-
-border-radius:8px;
-
-transition:.25s;
+    text-align:center;
 
 }
 
-.menu-icon:hover{
+.page-title{
 
-background:rgba(255,255,255,.18);
+    font-size:26px;
 
-}
+    color:#2f5fd0;
 
-
-/* ==========================
-   LOGO
-========================== */
-
-.logo{
-
-display:flex;
-
-align-items:center;
-
-gap:10px;
-
-font-size:22px;
-
-font-weight:bold;
-
-}
-
-.logo img{
-
-width:42px;
-
-height:42px;
+    font-weight:bold;
 
 }
 
 
-/* ==========================
-   SIDE MENU
-========================== */
+/* =====================================================
+   TOP RECTANGLE BUTTONS
+===================================================== */
 
-.side-menu{
+.top-buttons{
 
-position:fixed;
+    display:grid;
 
-top:60px;
+    grid-template-columns:repeat(5,1fr);
 
-left:-270px;
+    gap:8px;
 
-width:250px;
+    padding:0 10px;
 
-height:calc(100% - 60px);
-
-background:#ffffff;
-
-box-shadow:3px 0 12px rgba(0,0,0,.18);
-
-transition:.30s;
-
-z-index:998;
-
-overflow:auto;
+    margin-bottom:20px;
 
 }
-
-.side-menu.open{
-
-left:0;
-
-}
-
-.side-menu a{
-
-display:block;
-
-padding:16px 20px;
-
-border-bottom:1px solid #ececec;
-
-font-size:16px;
-
-transition:.25s;
-
-}
-
-.side-menu a:hover{
-
-background:#edf3ff;
-
-}
-
-
-/* ==========================
-   MAIN CONTAINER
-========================== */
-
-.main-container{
-
-margin-top:75px;
-
-padding:12px;
-
-}
-
-
-/* ==========================
-   HOME
-========================== */
-
-#homeMessage{
-
-text-align:center;
-
-padding:25px 10px;
-
-}
-
-#homeMessage h2{
-
-font-size:28px;
-
-color:#2d5fd2;
-
-margin-bottom:12px;
-
-}
-
-#homeMessage p{
-
-font-size:16px;
-
-color:#555;
-
-line-height:1.6;
-
-}
-
-
-/* ==========================
-   LANGUAGE
-========================== */
-
-#langSelect{
-
-display:flex;
-
-justify-content:center;
-
-margin-bottom:18px;
-
-}
-
-#languageDropdown{
-
-width:170px;
-
-padding:8px 10px;
-
-font-size:15px;
-
-border:1px solid #9fb8ff;
-
-border-radius:10px;
-
-background:#fff;
-
-outline:none;
-
-}
-
-
-/* ==========================
-   TOP MENU
-========================== */
-
-.top-menu{
-
-margin-bottom:18px;
-
-}
-
-#topButtons{
-
-display:grid;
-
-grid-template-columns:repeat(5,1fr);
-
-gap:10px;
-
-}
-
-
-/* ==========================
-   TOP BUTTONS
-========================== */
 
 .rect-btn{
 
-display:flex;
+    background:rgba(255,255,255,.55);
 
-flex-direction:column;
+    border:1px solid #d7dbe6;
 
-align-items:center;
+    border-radius:14px;
 
-justify-content:center;
+    padding:8px 4px;
 
-background:#eef4ff;
+    display:flex;
 
-border:1px solid #7fa6ff;
+    flex-direction:column;
 
-border-radius:16px;
+    align-items:center;
 
-padding:12px 8px;
+    justify-content:center;
 
-transition:.20s;
-
-min-height:95px;
+    transition:.2s;
 
 }
 
 .rect-btn img{
 
-width:34px;
+    width:30px;
 
-height:34px;
+    height:30px;
 
-margin-bottom:8px;
+    margin-bottom:6px;
 
 }
 
 .rect-btn span{
 
-font-size:13px;
+    font-size:11px;
 
-font-weight:600;
+    color:#2f5fd0;
 
-text-align:center;
+    font-weight:600;
 
-line-height:1.3;
-
-}
-
-.rect-btn:hover{
-
-background:#dfeaff;
+    text-align:center;
 
 }
 
 .rect-btn.active{
 
-background:#4f7df3;
-
-color:#fff;
-
-border-color:#4f7df3;
+    border-color:#d4a017;
 
 }
 
+.rect-btn.active span{
 
-/* ==========================
-   COMMON GRID
-========================== */
-
-.circle-grid{
-
-display:none;
-
-grid-template-columns:repeat(auto-fill,minmax(110px,1fr));
-
-gap:20px;
-
-justify-items:center;
-
-padding:10px 5px;
+    color:#c28a00;
 
 }
 
-.report-grid{
+/* =====================================================
+   MIDDLE CIRCLE MENU
+===================================================== */
 
-display:grid;
+.circle-menu{
 
-grid-template-columns:1fr;
+    display:grid;
 
-gap:14px;
+    grid-template-columns:repeat(2,1fr);
 
-padding:12px;
+    gap:18px;
+
+    justify-items:center;
+
+    padding:10px 20px 20px;
 
 }
-
-/* ==========================================
-   oneFaMiLe V4
-   style.css
-   PART-2
-========================================== */
-
-
-/* ==========================
-   CIRCLE ITEM
-========================== */
 
 .circle-item{
 
-display:flex;
+    display:flex;
 
-flex-direction:column;
+    flex-direction:column;
 
-align-items:center;
+    align-items:center;
 
-text-decoration:none;
+    text-decoration:none;
 
-color:#222;
-
-width:110px;
-
-transition:.20s;
+    cursor:pointer;
 
 }
-
-.circle-item:hover{
-
-transform:translateY(-2px);
-
-}
-
-
-/* ==========================
-   CIRCLE
-========================== */
 
 .circle{
 
-width:88px;
+    width:88px;
 
-height:88px;
+    height:88px;
 
-border-radius:50%;
+    border-radius:50%;
 
-background:#edf3ff;
+    background:rgba(255,255,255,.55);
 
-border:1px solid #7ea5ff;
+    border:1px solid #d7dbe6;
 
-display:flex;
+    display:flex;
 
-justify-content:center;
+    justify-content:center;
 
-align-items:center;
+    align-items:center;
 
-transition:.20s;
+    transition:.2s;
 
 }
-
-
-/* ==========================
-   CIRCLE IMAGE
-========================== */
 
 .circle img{
 
-width:52px;
+    width:52px;
 
-height:52px;
-
-object-fit:contain;
+    height:52px;
 
 }
-
-
-/* ==========================
-   CIRCLE TEXT
-========================== */
 
 .circle-item span{
 
-margin-top:8px;
+    margin-top:8px;
 
-font-size:13px;
+    font-size:13px;
 
-font-weight:500;
+    font-weight:600;
 
-text-align:center;
+    color:#2f5fd0;
 
-line-height:1.3;
-
-color:#333;
+    text-align:center;
 
 }
 
-
-/* ==========================
-   ACTIVE CIRCLE
-========================== */
-
 .circle-item.active .circle{
 
-background:#4f7df3;
-
-border-color:#4f7df3;
+    border-color:#d4a017;
 
 }
 
 .circle-item.active span{
 
-color:#4f7df3;
-
-font-weight:700;
+    color:#c28a00;
 
 }
 
 
-/* ==========================
-   LOAN TABS
-========================== */
 
-.loan-tabs{
-
-display:flex;
-
-justify-content:center;
-
-gap:12px;
-
-margin-bottom:18px;
-
-}
-
-
-/* ==========================
-   LOAN TAB BUTTON
-========================== */
-
-.loan-tab-btn{
-
-padding:10px 22px;
-
-font-size:15px;
-
-font-weight:600;
-
-border-radius:12px;
-
-border:1px solid #7ea5ff;
-
-background:#eef4ff;
-
-cursor:pointer;
-
-transition:.20s;
-
-}
-
-.loan-tab-btn:hover{
-
-background:#dce8ff;
-
-}
-
-.loan-tab-btn.active{
-
-background:#4f7df3;
-
-border-color:#4f7df3;
-
-color:#fff;
-
-}
-
-.loan-tab-btn:disabled{
-
-opacity:.45;
-
-cursor:not-allowed;
-
-}
-
-
-/* ==========================
-   NAVIGATION
-========================== */
-
-.bottom-nav{
-
-position:fixed;
-
-left:0;
-
-bottom:0;
-
-width:100%;
-
-height:70px;
-
-background:#ffffff;
-
-display:flex;
-
-justify-content:space-around;
-
-align-items:center;
-
-border-top:1px solid #d9e3ff;
-
-box-shadow:0 -2px 10px rgba(0,0,0,.08);
-
-z-index:999;
-
-}
-
-
-/* ==========================
-   NAV BUTTON
-========================== */
-
-.bottom-nav a{
-
-display:flex;
-
-flex-direction:column;
-
-align-items:center;
-
-justify-content:center;
-
-width:20%;
-
-height:100%;
-
-font-size:11px;
-
-color:#333;
-
-border-radius:12px;
-
-transition:.20s;
-
-}
-
-
-/* ==========================
-   NAV ICON
-========================== */
-
-.bottom-nav img{
-
-width:28px;
-
-height:28px;
-
-margin-bottom:4px;
-
-}
-
-
-/* ==========================
-   ACTIVE NAV
-========================== */
-
-.nav-btn.active{
-
-background:#e7efff;
-
-color:#2d5fd2;
-
-font-weight:700;
-
-}
-
-
-/* ==========================
-   TOUCH EFFECT
-========================== */
-
-.rect-btn:active,
-
-.circle-item:active,
-
-.loan-tab-btn:active,
-
-.bottom-nav a:active{
-
-transform:scale(.96);
-
-}
-
-/* ==========================================
-   oneFaMiLe V4
-   style.css
-   PART-3
-========================================== */
-
-
-/* ==========================
+/* =====================================================
    REPORT HEADER
-========================== */
+===================================================== */
 
 .report-header{
 
-display:none;
+    display:none;
 
-text-align:center;
+    text-align:center;
 
-padding:12px 10px 18px;
-
-margin-bottom:10px;
+    margin:8px 0 18px;
 
 }
 
 .report-header-icon{
 
-width:48px;
+    width:46px;
 
-height:48px;
+    height:46px;
 
-display:block;
-
-margin:0 auto 10px;
+    margin-bottom:8px;
 
 }
 
 .report-title{
 
-font-size:24px;
+    font-size:24px;
 
-font-weight:700;
+    font-weight:bold;
 
-color:#2d5fd2;
-
-line-height:1.4;
+    color:#2f5fd0;
 
 }
 
 .report-header::after{
 
-content:"";
+    content:"";
 
-display:block;
+    display:block;
 
-width:220px;
+    width:180px;
 
-height:2px;
+    height:2px;
 
-background:#8fb0ff;
+    margin:10px auto 0;
 
-margin:12px auto 0;
+    background:#8fb0ff;
 
-border-radius:20px;
-
-}
-
-
-/* ==========================
-   REPORT MENU
-========================== */
-
-#reportMenu{
-
-display:none;
-
-grid-template-columns:1fr;
-
-gap:18px;
-
-padding:15px;
+    border-radius:2px;
 
 }
 
 
-/* ==========================
-   REPORT BUTTON
-========================== */
 
-.report-btn{
+/* =====================================================
+   TEXT MENU
+===================================================== */
 
-width:100%;
+.text-menu{
 
-padding:14px 16px;
+    display:grid;
 
-background:#f5f8ff;
+    grid-template-columns:repeat(3,1fr);
 
-border:2px solid #5f84e8;
+    gap:14px 12px;
 
-border-radius:12px;
-
-font-size:16px;
-
-font-weight:500;
-
-color:#2d2d2d;
-
-cursor:pointer;
-
-transition:.20s;
-
-text-align:center;
+    padding:0 14px 90px;
 
 }
 
-.report-btn:hover{
+.text-btn{
 
-background:#e7efff;
+    min-height:44px;
+
+    background:rgba(255,255,255,.60);
+
+    border:1px solid #d7dbe6;
+
+    border-radius:12px;
+
+    color:#2f5fd0;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    padding:8px;
+
+    transition:.2s;
 
 }
 
-.report-btn:active{
+.text-btn:active{
 
-transform:scale(.97);
+    transform:scale(.97);
 
 }
 
 
-/* ==========================
+
+/* =====================================================
    BACK BUTTON
-========================== */
+===================================================== */
 
 .back-btn{
 
-background:#ffe8e8;
+    background:#fff2dc;
 
-border:2px solid #d32f2f;
+    border:1px solid #e6a23c;
 
-color:#b00020;
+    color:#b76b00;
 
-font-weight:700;
-
-}
-
-.back-btn:hover{
-
-background:#ffd9d9;
+    font-weight:bold;
 
 }
 
 
-/* ==========================
-   ACTIVITY STATUS MENU
-========================== */
 
-#activityStatusMenu{
+/* =====================================================
+   FORM / REPORT / SEARCH
+===================================================== */
 
-display:none;
+.form-container,
 
-grid-template-columns:1fr;
+.report-result,
 
-gap:18px;
+.search-container{
 
-padding:15px;
+    display:none;
 
-}
+    padding:15px;
 
+    padding-bottom:90px;
 
-/* ==========================
-   LOAN MAIN MENU
-========================== */
-
-#loanMainMenu{
-
-display:none;
-
-grid-template-columns:1fr;
-
-gap:18px;
-
-padding:15px;
+    overflow-y:auto;
 
 }
 
+.form-container{
 
-/* ==========================
-   LOAN CATEGORY MENU
-========================== */
-
-#loanCategoryMenu{
-
-display:none;
+    min-height:300px;
 
 }
 
+.report-result{
 
-/* ==========================
-   LOAN LIST MENU
-========================== */
-
-#loanListMenu{
-
-display:none;
-
-grid-template-columns:1fr;
-
-gap:18px;
-
-padding:15px;
+    min-height:250px;
 
 }
 
+.search-container{
 
-/* ==========================
-   PAYMENT MAIN MENU
-========================== */
-
-#paymentMainMenu{
-
-display:none;
-
-grid-template-columns:1fr;
-
-gap:18px;
-
-padding:15px;
+    min-height:250px;
 
 }
-
-
-/* ==========================
-   PAYMENT CATEGORY MENU
-========================== */
-
-#paymentCategoryMenu{
-
-display:none;
-
-}
-
-
-/* ==========================
-   PAYMENT LIST MENU
-========================== */
-
-#paymentListMenu{
-
-display:none;
-
-grid-template-columns:1fr;
-
-gap:18px;
-
-padding:15px;
-
-}
-
-
-/* ==========================
-   MEMORY CATEGORY MENU
-========================== */
-
-#memoryCategoryMenu{
-
-display:none;
-
-grid-template-columns:1fr;
-
-gap:18px;
-
-padding:15px;
-
-}
-/* ==========================================
-   oneFaMiLe V4
-   style.css
-   PART-4
-========================================== */
-
-
-/* ==========================
-   POPUP OVERLAY
-========================== */
-
-.popup-overlay{
-
-position:fixed;
-
-top:0;
-
-left:0;
-
-width:100%;
-
-height:100%;
-
-background:rgba(0,0,0,.45);
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-z-index:5000;
-
-}
-
-
-/* ==========================
-   POPUP BOX
-========================== */
-
-.popup-box{
-
-width:320px;
-
-max-width:92%;
-
-background:#fff;
-
-border-radius:18px;
-
-padding:20px;
-
-text-align:center;
-
-box-shadow:0 8px 30px rgba(0,0,0,.25);
-
-animation:popupShow .25s ease;
-
-}
-
-
-/* ==========================
-   POPUP TITLE
-========================== */
-
-.popup-title{
-
-font-size:22px;
-
-font-weight:bold;
-
-color:#2d5fd2;
-
-margin-bottom:12px;
-
-}
-
-
-/* ==========================
-   POPUP MESSAGE
-========================== */
-
-.popup-message{
-
-font-size:16px;
-
-line-height:1.6;
-
-color:#444;
-
-margin-bottom:20px;
-
-white-space:pre-line;
-
-}
-
-
-/* ==========================
-   POPUP BUTTON
-========================== */
-
-.popup-btn{
-
-padding:10px 28px;
-
-border:none;
-
-border-radius:10px;
-
-background:#4f7df3;
-
-color:#fff;
-
-font-size:15px;
-
-font-weight:600;
-
-cursor:pointer;
-
-transition:.20s;
-
-}
-
-.popup-btn:hover{
-
-background:#3968dc;
-
-}
-
-
-/* ==========================
-   ANIMATION
-========================== */
-
-@keyframes popupShow{
-
-from{
-
-opacity:0;
-
-transform:scale(.88);
-
-}
-
-to{
-
-opacity:1;
-
-transform:scale(1);
-
-}
-
-}
-
-
-/* ==========================
-   SCROLLBAR
-========================== */
-
-::-webkit-scrollbar{
-
-width:8px;
-
-}
-
-::-webkit-scrollbar-thumb{
-
-background:#8fb0ff;
-
-border-radius:10px;
-
-}
-
-::-webkit-scrollbar-track{
-
-background:#edf3ff;
-
-}
-
-
-/* ==========================
-   MOBILE
-========================== */
-
-@media(max-width:768px){
-
-#topButtons{
-
-grid-template-columns:repeat(5,1fr);
-
-gap:8px;
-
-}
-
-.rect-btn{
-
-min-height:82px;
-
-padding:10px 5px;
-
-}
-
-.rect-btn img{
-
-width:28px;
-
-height:28px;
-
-}
-
-.rect-btn span{
-
-font-size:11px;
-
-}
-
-.circle{
-
-width:82px;
-
-height:82px;
-
-}
-
-.circle img{
-
-width:46px;
-
-height:46px;
-
-}
-
-.circle-item{
-
-width:95px;
-
-}
-
-.circle-item span{
-
-font-size:12px;
-
-}
-
-.loan-tab-btn{
-
-padding:8px 16px;
-
-font-size:14px;
-
-}
-
-.report-btn{
-
-font-size:15px;
-
-padding:13px;
-
-}
-
-.report-title{
-
-font-size:20px;
-
-}
-
-.popup-box{
-
-width:95%;
-
-}
-
-}
-
-
-/* ==========================
-   SMALL MOBILE
-========================== */
-
-@media(max-width:380px){
-
-#topButtons{
-
-grid-template-columns:repeat(3,1fr);
-
-}
-
-.circle{
-
-width:76px;
-
-height:76px;
-
-}
-
-.circle img{
-
-width:42px;
-
-height:42px;
-
-}
-
-.circle-item{
-
-width:88px;
-
-}
-
-.circle-item span{
-
-font-size:11px;
-
-}
+/* =====================================================
+   BOTTOM NAVIGATION
+===================================================== */
 
 .bottom-nav{
 
-height:65px;
+    position:fixed;
+
+    left:0;
+    right:0;
+    bottom:0;
+
+    height:68px;
+
+    display:flex;
+
+    justify-content:space-around;
+    align-items:center;
+
+    background:rgba(255,255,255,.75);
+
+    backdrop-filter:blur(10px);
+
+    border-top:1px solid #d7dbe6;
+
+    z-index:1000;
 
 }
 
-.bottom-nav img{
+.nav-btn{
 
-width:24px;
+    flex:1;
 
-height:24px;
+    height:100%;
+
+    background:transparent;
+
+    border:none;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
 
 }
 
-.bottom-nav a{
+.nav-btn img{
 
-font-size:10px;
+    width:26px;
+    height:26px;
+
+    margin-bottom:4px;
 
 }
 
-.report-btn{
+.nav-btn span{
 
-font-size:14px;
+    font-size:11px;
 
-padding:12px;
+    color:#2f5fd0;
+
+    font-weight:600;
+
+}
+
+.nav-btn.active span{
+
+    color:#c28a00;
+
+}
+
+
+
+/* =====================================================
+   POPUP
+===================================================== */
+
+.popup-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.35);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:5000;
+
+}
+
+.popup-box{
+
+    width:90%;
+    max-width:360px;
+
+    background:#ffffff;
+
+    border-radius:16px;
+
+    border:1px solid #d7dbe6;
+
+    padding:20px;
 
 }
 
 .popup-title{
 
-font-size:20px;
+    text-align:center;
+
+    font-size:20px;
+
+    font-weight:bold;
+
+    color:#2f5fd0;
+
+    margin-bottom:15px;
 
 }
 
 .popup-message{
 
-font-size:15px;
+    text-align:center;
+
+    line-height:1.6;
+
+    margin-bottom:20px;
+
+    color:#444;
 
 }
 
+.popup-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:12px;
+
+}
+
+.popup-btn{
+
+    min-width:110px;
+
+    height:42px;
+
+    border-radius:10px;
+
+    border:1px solid #d7dbe6;
+
+    background:#ffffff;
+
+    color:#2f5fd0;
+
+    font-weight:600;
+
 }
 
 
-/* ==========================
-   END
-========================== */
+
+/* =====================================================
+   LOADING SCREEN
+===================================================== */
+
+.loading-screen{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(255,255,255,.80);
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:6000;
+
+}
+
+.loader{
+
+    width:46px;
+    height:46px;
+
+    border:4px solid #d7dbe6;
+
+    border-top:4px solid #5f84e8;
+
+    border-radius:50%;
+
+    animation:spin 1s linear infinite;
+
+}
+
+.loading-text{
+
+    margin-top:15px;
+
+    color:#2f5fd0;
+
+    font-weight:600;
+
+}
+
+
+
+/* =====================================================
+   TOAST
+===================================================== */
+
+.toast{
+
+    position:fixed;
+
+    left:50%;
+    bottom:85px;
+
+    transform:translateX(-50%);
+
+    background:#2f5fd0;
+
+    color:#ffffff;
+
+    padding:10px 18px;
+
+    border-radius:30px;
+
+    font-size:14px;
+
+    z-index:7000;
+
+}
+
+
+
+/* =====================================================
+   SIDE MENU
+===================================================== */
+
+.side-menu{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:280px;
+
+    height:100%;
+
+    background:#ffffff;
+
+    border-right:1px solid #d7dbe6;
+
+    z-index:4000;
+
+    overflow-y:auto;
+
+}
+
+.side-menu-header{
+
+    text-align:center;
+
+    padding:25px 15px;
+
+    border-bottom:1px solid #d7dbe6;
+
+}
+
+.side-logo{
+
+    width:70px;
+
+    margin-bottom:10px;
+
+}
+
+.side-menu-header h3{
+
+    color:#2f5fd0;
+
+}
+
+.side-menu-btn{
+
+    width:100%;
+
+    height:48px;
+
+    background:#ffffff;
+
+    border:none;
+
+    border-bottom:1px solid #ececec;
+
+    text-align:left;
+
+    padding-left:18px;
+
+    color:#2f5fd0;
+
+    font-size:15px;
+
+}
+
+.menu-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.25);
+
+    z-index:3500;
+
+}
+
+
+
+/* =====================================================
+   IMAGE PREVIEW
+===================================================== */
+
+.image-preview{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.75);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:8000;
+
+}
+
+.image-preview img{
+
+    max-width:95%;
+
+    max-height:90%;
+
+    border-radius:12px;
+
+}
+
+
+
+/* =====================================================
+   ANIMATIONS
+===================================================== */
+
+@keyframes spin{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width:420px){
+
+    .top-buttons{
+
+        gap:6px;
+
+    }
+
+    .rect-btn span{
+
+        font-size:10px;
+
+    }
+
+    .circle{
+
+        width:80px;
+
+        height:80px;
+
+    }
+
+    .circle img{
+
+        width:48px;
+
+        height:48px;
+
+    }
+
+    .text-btn{
+
+        font-size:13px;
+
+    }
+
+}
