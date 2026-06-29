@@ -1,263 +1,804 @@
 /* ==========================================
-   oneFaMiLe V2.0
+   oneFaMiLe V4
    data.js
+   PART-1
 ========================================== */
 
 
-
-/* ==========================
+/* ===========================
    TOP MENU
-========================== */
-
+=========================== */
 
 const topMenu=[
 
 {
 id:"g1",
-text:"Expenses",
-img:"images/Expenses3.png"
+img:"images/expenses.png",
+text:"Expenses"
 },
 
 {
 id:"g2",
-text:"Activities",
-img:"images/Activities1.png"
+img:"images/activity.png",
+text:"Activities"
 },
 
 {
 id:"g3",
-text:"Health",
-img:"images/Health1.png"
+img:"images/health.png",
+text:"Health"
 },
 
 {
 id:"g4",
-text:"Loans",
-img:"images/Loans.png"
+img:"images/loan.png",
+text:"Loans"
 },
 
 {
 id:"g10",
-text:"Income",
-img:"images/Income1.png"
+img:"images/income.png",
+text:"Income"
 }
 
 ];
 
 
-/* ==========================
-   MENU DATA
-========================== */
+/* ===========================
+   REPORT BUTTONS
+=========================== */
+
+const reportButtons=[
+
+"Today Report",
+
+"This Week Report",
+
+"This Month Report",
+
+"This Year Report",
+
+"Daily Report",
+
+"Monthly Report",
+
+"Yearly Report",
+
+"Report Abstract",
+
+"Back"
+
+];
+
+
+/* ===========================
+   ACTIVITIES STATUS
+=========================== */
+
+const activityStatus=[
+
+"Completed",
+
+"In Progress",
+
+"To be Takenup",
+
+"Not Necessary",
+
+"Deadline Today",
+
+"Deadline Coming Soon",
+
+"Deadline Over",
+
+"Deadline within _ Days",
+
+"Back"
+
+];
+
+
+/* ===========================
+   LOAN MAIN MENU
+=========================== */
+
+const loanMain=[
+
+"Lend",
+
+"Borrowed",
+
+"Back"
+
+];
+
+
+/* ===========================
+   PAYMENT MAIN MENU
+=========================== */
+
+const paymentMain=[
+
+"Lend",
+
+"Borrowed",
+
+"Back"
+
+];
+
+/* ==========================================
+   oneFaMiLe V4
+   data.js
+   PART-2
+========================================== */
+
+
+/* ===========================
+   LOAN CATEGORY MENU
+=========================== */
+
+const loanCategories=[
+
+"Reports",
+
+"Sensitive",
+
+"All Reports",
+
+"Add Loan",
+
+"Search",
+
+"About"
+
+];
+
+
+/* ===========================
+   PAYMENT CATEGORY MENU
+=========================== */
+
+const paymentCategories=[
+
+"Reports",
+
+"Sensitive",
+
+"All Reports",
+
+"Add Payment",
+
+"Search",
+
+"About"
+
+];
+
+
+/* ===========================
+   MEMORIES CATEGORY MENU
+=========================== */
+
+const memoryCategories=[
+
+"Memories at Home",
+
+"Memories in Office",
+
+"Memories with Friends",
+
+"Memories with Relatives",
+
+"Memories in Functions",
+
+"Back"
+
+];
+
+
+/* ===========================
+   LEND REPORT LIST
+=========================== */
+
+const lendReports=[
+
+"Lend List",
+
+"Lend Paid Off",
+
+"Lend Due List",
+
+"Lend Over Dues",
+
+"Lend Payments",
+
+"Lend Dues within 5 Days",
+
+"Lend Due Today",
+
+"Back"
+
+];
+
+
+/* ===========================
+   BORROWED REPORT LIST
+=========================== */
+
+const borrowedReports=[
+
+"Borrowed List",
+
+"Borrowed Paid Off",
+
+"Borrowed Due List",
+
+"Borrowed Over Dues",
+
+"Borrowed Payments",
+
+"Borrowed Dues within 5 Days",
+
+"Borrowed Due Today",
+
+"Back"
+
+];
+
+
+/* ===========================
+   PAYMENT - LEND REPORT LIST
+=========================== */
+
+const paymentLendReports=[
+
+"Payment List",
+
+"Paid",
+
+"Pending",
+
+"Over Due",
+
+"Today's Payments",
+
+"Within 5 Days",
+
+"Payment History",
+
+"Back"
+
+];
+
+
+/* ===========================
+   PAYMENT - BORROWED REPORT LIST
+=========================== */
+
+const paymentBorrowedReports=[
+
+"Borrowed Payment List",
+
+"Paid",
+
+"Pending",
+
+"Over Due",
+
+"Today's Payments",
+
+"Within 5 Days",
+
+"Payment History",
+
+"Back"
+
+];
+
+/* ==========================================
+   oneFaMiLe V4
+   data.js
+   PART-3
+========================================== */
+
+
+/* ===========================
+   MAIN MENU DATA
+=========================== */
 
 const menuData={
 
 
-/* Expenses */
+/* ===========================
+   EXPENSES
+=========================== */
 
 g1:[
 
-{text:"Add Expense",img:"images/AddExpenses1.png",action:"addExpense"},
+{
+text:"Reports",
+img:"images/report.png",
+action:"expenseReports"
+},
 
-{text:"Reports",img:"images/Reports1.png",action:"expenseReports"},
+{
+text:"Sensitive",
+img:"images/sensitive.png",
+action:"expenseSensitive"
+},
 
-{text:"Sensitive",img:"images/Key.png",action:"sensitiveExpense"},
+{
+text:"All Reports",
+img:"images/allreports.png",
+action:"expenseAllReports"
+},
 
-{text:"All Reports",img:"images/AllReports1.png",action:"allExpenseReports"},
+{
+text:"Add Expense",
+img:"images/add.png",
+action:"addExpense"
+},
 
-{text:"Search",img:"images/CustomSearch1.png",action:"expenseSearch"},
+{
+text:"Search",
+img:"images/search.png",
+action:"searchExpense"
+},
 
-{text:"About",img:"images/About1.png",action:"expenseAbout"}
+{
+text:"About",
+img:"images/about.png",
+action:"aboutExpense"
+}
 
 ],
 
 
-/* Activities */
+/* ===========================
+   ACTIVITIES
+=========================== */
 
 g2:[
 
-{text:"Add Activity",img:"images/AddActivity1.png",action:"addActivity"},
+{
+text:"Reports",
+img:"images/report.png",
+action:"activityReports"
+},
 
-{text:"Reports",img:"images/Reports1.png",action:"activityReports"},
+{
+text:"Sensitive",
+img:"images/sensitive.png",
+action:"activitySensitive"
+},
 
-{text:"Sensitive",img:"images/Key.png",action:"sensitiveActivity"},
+{
+text:"All Reports",
+img:"images/allreports.png",
+action:"activityAllReports"
+},
 
-{text:"All Reports",img:"images/AllReports1.png",action:"allActivityReports"},
+{
+text:"Add Activity",
+img:"images/add.png",
+action:"addActivity"
+},
 
-{text:"Search",img:"images/CustomSearch1.png",action:"activitySearch"},
+{
+text:"Search",
+img:"images/search.png",
+action:"searchActivity"
+},
 
-{text:"About",img:"images/About1.png",action:"activityAbout"}
+{
+text:"About",
+img:"images/about.png",
+action:"aboutActivity"
+}
 
 ],
 
 
-/* Health */
+/* ===========================
+   HEALTH
+=========================== */
 
 g3:[
 
-{text:"Add Medicine",img:"images/AddMedicine1.png",action:"addMedicine"},
+{
+text:"Reports",
+img:"images/report.png",
+action:"healthReports"
+},
 
-{text:"Reports",img:"images/Reports1.png",action:"healthReports"},
+{
+text:"Sensitive",
+img:"images/sensitive.png",
+action:"healthSensitive"
+},
 
-{text:"Sensitive",img:"images/Key.png",action:"sensitiveHealth"},
+{
+text:"All Reports",
+img:"images/allreports.png",
+action:"healthAllReports"
+},
 
-{text:"All Reports",img:"images/AllReports1.png",action:"allHealthReports"},
+{
+text:"Add Record",
+img:"images/add.png",
+action:"addHealth"
+},
 
-{text:"Search",img:"images/CustomSearch1.png",action:"healthSearch"},
+{
+text:"Search",
+img:"images/search.png",
+action:"searchHealth"
+},
 
-{text:"About",img:"images/About1.png",action:"healthAbout"}
-
-],
-
-
-/* Memories */
-
-g5:[
-
-{text:"Add Memory",img:"images/AddMemories1.png",action:"addMemory"},
-
-{text:"Reports",img:"images/Reports1.png",action:"memoryReports"},
-
-{text:"Sensitive",img:"images/Key.png",action:"sensitiveMemory"},
-
-{text:"All Reports",img:"images/AllReports1.png",action:"allMemoryReports"},
-
-{text:"Search",img:"images/CustomSearch1.png",action:"memorySearch"},
-
-{text:"About",img:"images/About1.png",action:"memoryAbout"}
-
-],
-
-
-/* Family */
-
-g6:[
-
-{text:"Family",img:"images/Family1.png",action:"family"},
-
-{text:"Add Member",img:"images/AddMember1.png",action:"addMember"},
-
-{text:"Add Family",img:"images/AddFT2.png",action:"addFamily"},
-
-{text:"Family Tree",img:"images/FT1.png",action:"familyTree"}
-
-],
-
-   
-
-/* Payments */
-
-g7:[
-
-{text:"Add Payment",img:"images/AddPayments1.png",action:"addPayment"},
-
-{text:"Reports",img:"images/Reports1.png",action:"paymentReports"},
-
-{text:"Sensitive",img:"images/Key.png",action:"sensitivePayment"},
-
-{text:"All Reports",img:"images/AllReports1.png",action:"allPaymentReports"},
-
-{text:"Search",img:"images/CustomSearch1.png",action:"paymentSearch"},
-
-{text:"About",img:"images/About1.png",action:"paymentAbout"}
+{
+text:"About",
+img:"images/about.png",
+action:"aboutHealth"
+}
 
 ],
 
 
-/* Charts */
-
-g8:[
-
-{text:"Expense Charts",img:"images/ExpensesCharts1.png",action:"expenseCharts"},
-
-{text:"Activity Charts",img:"images/ActivityCharts1.png",action:"activityCharts"},
-
-{text:"Loan Charts",img:"images/LoansCharts1.png",action:"loanCharts"},
-
-{text:"Income Charts",img:"images/IncomeCharts1.png",action:"incomeCharts"},
-
-{text:"Payment Charts",img:"images/PaymentsCharts1.png",action:"paymentCharts"},
-
-{text:"Memory Charts",img:"images/MemoriesCharts1.png",action:"memoryCharts"},
-
-{text:"Health Charts",img:"images/HealthCharts1.png",action:"healthCharts"}
-
-],
-
-
-/* Reports */
-
-g9:[
-
-{text:"Expense Reports",img:"images/ExpensesReports1.png",action:"expenseReportsMain"},
-
-{text:"Activity Reports",img:"images/ActivitiesReports1.png",action:"activityReportsMain"},
-
-{text:"Loan Reports",img:"images/LoansReports1.png",action:"loanReportsMain"},
-
-{text:"Income Reports",img:"images/IncomeReports1.png",action:"incomeReportsMain"},
-
-{text:"Payment Reports",img:"images/PaymentsReports1.png",action:"paymentReportsMain"},
-
-{text:"Memory Reports",img:"images/MemoriesReports1.png",action:"memoryReportsMain"},
-
-{text:"Health Reports",img:"images/MedicalReports1.png",action:"healthReportsMain"}
-
-],
-
-
-/* Income */
-
-g10:[
-
-{text:"Add Income",img:"images/AddIncome1.png",action:"addIncome"},
-
-{text:"Reports",img:"images/Reports1.png",action:"incomeReports"},
-
-{text:"Sensitive",img:"images/Key.png",action:"sensitiveIncome"},
-
-{text:"All Reports",img:"images/AllReports1.png",action:"allIncomeReports"},
-
-{text:"Search",img:"images/CustomSearch1.png",action:"incomeSearch"},
-
-{text:"About",img:"images/About1.png",action:"incomeAbout"}
-
-],
-
-
-/* Loans */
+/* ===========================
+   LOANS
+=========================== */
 
 g11:[
 
-{text:"Add Loan",img:"images/AddLoans1.png",action:"addLoan"},
+{
+text:"Reports",
+img:"images/report.png",
+action:"loanReports"
+},
 
-{text:"Reports",img:"images/Reports1.png",action:"loanReports"},
+{
+text:"Sensitive",
+img:"images/sensitive.png",
+action:"loanSensitive"
+},
 
-{text:"Sensitive",img:"images/Key.png",action:"sensitiveLoan"},
+{
+text:"All Reports",
+img:"images/allreports.png",
+action:"loanAllReports"
+},
 
-{text:"All Reports",img:"images/AllReports1.png",action:"allLoanReports"},
+{
+text:"Add Loan",
+img:"images/add.png",
+action:"addLoan"
+},
 
-{text:"Search",img:"images/CustomSearch1.png",action:"loanSearch"},
+{
+text:"Search",
+img:"images/search.png",
+action:"searchLoan"
+},
 
-{text:"About",img:"images/About1.png",action:"loanAbout"}
+{
+text:"About",
+img:"images/about.png",
+action:"aboutLoan"
+}
+
+],
+
+
+/* ===========================
+   PAYMENTS
+=========================== */
+
+g12:[
+
+{
+text:"Reports",
+img:"images/report.png",
+action:"paymentReports"
+},
+
+{
+text:"Sensitive",
+img:"images/sensitive.png",
+action:"paymentSensitive"
+},
+
+{
+text:"All Reports",
+img:"images/allreports.png",
+action:"paymentAllReports"
+},
+
+{
+text:"Add Payment",
+img:"images/add.png",
+action:"addPayment"
+},
+
+{
+text:"Search",
+img:"images/search.png",
+action:"searchPayment"
+},
+
+{
+text:"About",
+img:"images/about.png",
+action:"aboutPayment"
+}
+
+],
+
+
+/* ===========================
+   MEMORIES
+=========================== */
+
+g5:[
+
+{
+text:"Reports",
+img:"images/report.png",
+action:"memoryReports"
+},
+
+{
+text:"Sensitive",
+img:"images/sensitive.png",
+action:"memorySensitive"
+},
+
+{
+text:"All Reports",
+img:"images/allreports.png",
+action:"memoryAllReports"
+},
+
+{
+text:"Add Memory",
+img:"images/add.png",
+action:"addMemory"
+},
+
+{
+text:"Search",
+img:"images/search.png",
+action:"searchMemory"
+},
+
+{
+text:"About",
+img:"images/about.png",
+action:"aboutMemory"
+}
+
+],
+
+
+/* ===========================
+   INCOME
+=========================== */
+
+g10:[
+
+{
+text:"Reports",
+img:"images/report.png",
+action:"incomeReports"
+},
+
+{
+text:"Sensitive",
+img:"images/sensitive.png",
+action:"incomeSensitive"
+},
+
+{
+text:"All Reports",
+img:"images/allreports.png",
+action:"incomeAllReports"
+},
+
+{
+text:"Add Income",
+img:"images/add.png",
+action:"addIncome"
+},
+
+{
+text:"Search",
+img:"images/search.png",
+action:"searchIncome"
+},
+
+{
+text:"About",
+img:"images/about.png",
+action:"aboutIncome"
+}
 
 ]
 
 };
 
+/* ==========================================
+   oneFaMiLe V4
+   data.js
+   PART-4
+========================================== */
 
-/* ==========================
-   REPORT BUTTONS
-========================== */
-const reportButtons=[
 
-"Today Report",
-"This Week Report",
-"This Month Report",
-"This Year Report",
-"Daily Report",
-"Monthly Report",
-"Yearly Report",
-"Report Abstract",
-"← Back"
+/* ===========================
+   REPORT TITLES
+=========================== */
+
+const reportTitles={
+
+expenseReports:"Expenses Reports",
+expenseSensitive:"Expenses Sensitive",
+expenseAllReports:"Expenses All Reports",
+
+activityReports:"Activities Reports",
+activitySensitive:"Activities Sensitive",
+activityAllReports:"Activities All Reports",
+
+healthReports:"Health Reports",
+healthSensitive:"Health Sensitive",
+healthAllReports:"Health All Reports",
+
+loanReports:"Loans Reports",
+loanSensitive:"Loans Sensitive",
+loanAllReports:"Loans All Reports",
+
+paymentReports:"Payments Reports",
+paymentSensitive:"Payments Sensitive",
+paymentAllReports:"Payments All Reports",
+
+memoryReports:"Memories Reports",
+memorySensitive:"Memories Sensitive",
+memoryAllReports:"Memories All Reports",
+
+incomeReports:"Income Reports",
+incomeSensitive:"Income Sensitive",
+incomeAllReports:"Income All Reports"
+
+};
+
+
+/* ===========================
+   REPORT ICONS
+=========================== */
+
+const reportIcons={
+
+expenseReports:"images/report.png",
+expenseSensitive:"images/sensitive.png",
+expenseAllReports:"images/allreports.png",
+
+activityReports:"images/report.png",
+activitySensitive:"images/sensitive.png",
+activityAllReports:"images/allreports.png",
+
+healthReports:"images/report.png",
+healthSensitive:"images/sensitive.png",
+healthAllReports:"images/allreports.png",
+
+loanReports:"images/report.png",
+loanSensitive:"images/sensitive.png",
+loanAllReports:"images/allreports.png",
+
+paymentReports:"images/report.png",
+paymentSensitive:"images/sensitive.png",
+paymentAllReports:"images/allreports.png",
+
+memoryReports:"images/report.png",
+memorySensitive:"images/sensitive.png",
+memoryAllReports:"images/allreports.png",
+
+incomeReports:"images/report.png",
+incomeSensitive:"images/sensitive.png",
+incomeAllReports:"images/allreports.png"
+
+};
+
+
+/* ===========================
+   ABOUT MESSAGES
+=========================== */
+
+const aboutMessages={
+
+expense:
+"Maintain all family expenses in one place.",
+
+activity:
+"Track daily activities and deadlines.",
+
+health:
+"Maintain complete health records.",
+
+loan:
+"Manage all lend and borrowed details.",
+
+payment:
+"Track loan payments and due dates.",
+
+memory:
+"Store memorable family moments.",
+
+income:
+"Maintain all income details."
+
+};
+
+
+/* ===========================
+   POPUP MESSAGES
+=========================== */
+
+const popupMessages={
+
+saved:"Record Saved Successfully",
+
+updated:"Record Updated Successfully",
+
+deleted:"Record Deleted Successfully",
+
+search:"Search Feature Coming Soon",
+
+about:"About Information",
+
+error:"Something Went Wrong"
+
+};
+
+
+/* ===========================
+   SUPPORTED LANGUAGES
+=========================== */
+
+const languages=[
+
+{
+code:"en",
+name:"English"
+},
+
+{
+code:"te",
+name:"తెలుగు"
+},
+
+{
+code:"hi",
+name:"हिन्दी"
+}
 
 ];
+
+
+/* ===========================
+   APP INFORMATION
+=========================== */
+
+const appInfo={
+
+name:"oneFaMiLe",
+
+version:"4.0",
+
+author:"KVSR",
+
+copyright:"© 2026"
+
+};
+
+
+/* ==========================================
+   END OF data.js
+========================================== */
