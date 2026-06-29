@@ -5,6 +5,7 @@
 ========================================== */
 
 
+
 /* ===========================
    GLOBAL VARIABLES
 =========================== */
@@ -888,7 +889,7 @@ function openMemoryMenu(action){
 
 function reportButtonClick(name){
 
-    if(name==="Back"){
+if(name==="Back"){
 
         backToMainMenu();
 
@@ -896,7 +897,8 @@ function reportButtonClick(name){
 
     }
 
-    alert(currentModule+" : "+name);
+    loadReport(name);
+
 
 }
 
