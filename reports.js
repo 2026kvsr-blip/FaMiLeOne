@@ -1,128 +1,214 @@
 /* ==========================================
-   reports.js - Part 4A
+   oneFaMiLe V4
+   reports.js
+   PART-1
 ========================================== */
-
-let reportMode = false;
-let currentReportGroup = "";
-let currentReportTitle = "";
-let currentStatus = "";
-
-
 
 
 /* ===========================
-   OPEN REPORT MENU
+   REPORT VARIABLES
 =========================== */
 
-function openReportMenu(groupId,title){
+let currentReportType="";
 
-    reportMode = true;
+let currentReportTitle="";
 
-    currentReportGroup = groupId;
-    currentReportTitle = title;
+let currentReportSource=[];
 
-    /* Hide current menu */
+let reportResult=[];
 
-    if(groupId==="g4"){
 
-        document.getElementById("loanContent").style.display="none";
+/* ===========================
+   OPEN REPORT
+=========================== */
 
-    }else{
+function openReport(type,title,data){
 
-        document.getElementById(groupId).style.display="none";
+    currentReportType=type;
 
-    }
+    currentReportTitle=title;
 
-    /* Heading */
-
-    document.getElementById("reportTitle").innerHTML=title;
-
-    document.getElementById("reportHeader").style.display="block";
-
-    /* Disable Loan Tabs */
-
-    const loanBtn=document.getElementById("loanBtn");
-    const paymentBtn=document.getElementById("paymentBtn");
-
-    if(loanBtn) loanBtn.disabled=true;
-    if(paymentBtn) paymentBtn.disabled=true;
-
-    /* Hide Report Menu */
-
-    document.getElementById("reportMenu").style.display="none";
-
-    /* Show Status Menu */
-
-    document.getElementById("statusMenu").style.display="grid";
+    currentReportSource=data;
 
 }
 
 
 /* ===========================
-   STATUS BUTTON CLICK
+   TODAY
 =========================== */
 
-function statusButtonClick(status){
+function todayReport(){
 
-    currentStatus=status;
+    alert(currentReportTitle+"\n\nToday Report");
 
-    /* Hide Status Menu */
-
-    document.getElementById("statusMenu").style.display="none";
-
-    /* Change Heading */
-
-    document.getElementById("reportTitle").innerHTML=
-
-        currentReportTitle +
-
-        "<br><span style='font-size:16px;color:#666;'>"
-
-        + status +
-
-        "</span>";
-
-    /* Show Report Buttons */
-
-    createReportButtons();
-
-    document.getElementById("reportMenu").style.display="grid";
+}
 
 
+/* ===========================
+   WEEK
+=========================== */
+
+function weekReport(){
+
+    alert(currentReportTitle+"\n\nWeek Report");
+
+}
+
+
+/* ===========================
+   MONTH
+=========================== */
+
+function monthReport(){
+
+    alert(currentReportTitle+"\n\nMonth Report");
+
+}
+
+
+/* ===========================
+   YEAR
+=========================== */
+
+function yearReport(){
+
+    alert(currentReportTitle+"\n\nYear Report");
+
+}
+
+
+/* ===========================
+   DAILY
+=========================== */
+
+function dailyReport(){
+
+    alert(currentReportTitle+"\n\nDaily Report");
+
+}
+
+
+/* ===========================
+   MONTHLY
+=========================== */
+
+function monthlyReport(){
+
+    alert(currentReportTitle+"\n\nMonthly Report");
+
+}
+
+
+/* ===========================
+   YEARLY
+=========================== */
+
+function yearlyReport(){
+
+    alert(currentReportTitle+"\n\nYearly Report");
+
+}
+
+
+/* ===========================
+   ABSTRACT
+=========================== */
+
+function abstractReport(){
+
+    alert(currentReportTitle+"\n\nAbstract Report");
+
+}
 /* ==========================================
-   reports.js - Part 4B
+   oneFaMiLe V4
+   reports.js
+   PART-2
 ========================================== */
 
 
 /* ===========================
-   CREATE REPORT BUTTONS
+   LOAD REPORT
 =========================== */
 
-function createReportButtons(){
+function loadReport(type){
 
-    const box=document.getElementById("reportMenu");
+    switch(type){
 
-    if(!box) return;
+        case "Today Report":
+            todayReport();
+            break;
 
-    box.innerHTML="";
+        case "This Week Report":
+            weekReport();
+            break;
 
-    reportButtons.forEach(name=>{
+        case "This Month Report":
+            monthReport();
+            break;
 
-        const cls=(name==="Back")
-            ? "report-btn back-btn"
-            : "report-btn";
+        case "This Year Report":
+            yearReport();
+            break;
 
-        box.innerHTML+=`
+        case "Daily Report":
+            dailyReport();
+            break;
 
-        <button
-            class="${cls}"
-            onclick="reportButtonClick('${name}')">
+        case "Monthly Report":
+            monthlyReport();
+            break;
 
-            ${name}
+        case "Yearly Report":
+            yearlyReport();
+            break;
 
-        </button>
+        case "Report Abstract":
+            abstractReport();
+            break;
 
-        `;
+    }
+
+}
+
+
+/* ===========================
+   SHOW REPORT
+=========================== */
+
+function showReport(title,data){
+
+    reportResult=data;
+
+    let msg="";
+
+    if(data.length===0){
+
+        msg="No Records Found";
+
+    }else{
+
+        data.forEach((r,i)=>{
+
+            msg+=(i+1)+". "+JSON.stringify(r)+"\n";
+
+        });
+
+    }
+
+    alert(title+"\n\n"+msg);
+
+}
+
+
+/* ===========================
+   FILTER BY DATE
+=========================== */
+
+function filterByDate(records,dateField,targetDate){
+
+    return records.filter(r=>{
+
+        return r[dateField]===targetDate;
 
     });
 
@@ -130,90 +216,296 @@ function createReportButtons(){
 
 
 /* ===========================
-   REPORT BUTTON CLICK
+   FILTER BY MONTH
 =========================== */
 
-function reportButtonClick(name){
+function filterByMonth(records,dateField,month){
 
-    if(name==="Back"){
+    return records.filter(r=>{
 
-        backReportMenu();
+        if(!r[dateField]) return false;
 
-        return;
+        return r[dateField].substring(5,7)===month;
 
-    }
-
-    showPopup(name);
+    });
 
 }
 
 
 /* ===========================
-   BACK
-   (Report Buttons -> Status Menu)
+   FILTER BY YEAR
 =========================== */
 
-function backReportMenu(){
+function filterByYear(records,dateField,year){
 
-    /* Hide Report Buttons */
+    return records.filter(r=>{
 
-    document.getElementById("reportMenu").style.display="none";
+        if(!r[dateField]) return false;
 
-    /* Restore Heading */
+        return r[dateField].substring(0,4)===year;
 
-    document.getElementById("reportTitle").innerHTML=currentReportTitle;
-
-    /* Show Status Menu */
-
-    document.getElementById("statusMenu").style.display="grid";
+    });
 
 }
 
+
+/* ===========================
+   FILTER BETWEEN DATES
+=========================== */
+
+function filterBetween(records,dateField,from,to){
+
+    return records.filter(r=>{
+
+        if(!r[dateField]) return false;
+
+        return r[dateField]>=from &&
+               r[dateField]<=to;
+
+    });
+
+}
+
+
+/* ===========================
+   REPORT TOTAL
+=========================== */
+
+function reportTotal(records,field){
+
+    let total=0;
+
+    records.forEach(r=>{
+
+        total+=Number(r[field]||0);
+
+    });
+
+    return total;
+
+}
+
+
 /* ==========================================
-   reports.js - Part 4C
+   oneFaMiLe V4
+   reports.js
+   PART-3
 ========================================== */
 
 
 /* ===========================
-   STATUS BACK
-   (Status Menu -> Main Menu)
+   EXPENSE REPORTS
 =========================== */
 
-function statusBack(){
+function expenseReport(records){
 
-    reportMode=false;
+    showReport(
 
-    /* Hide Status Menu */
+        "Expenses Report",
 
-    document.getElementById("statusMenu").style.display="none";
+        records
 
-    /* Hide Header */
+    );
 
-    document.getElementById("reportHeader").style.display="none";
+}
 
-    /* Enable Loan Tabs */
 
-    const loanBtn=document.getElementById("loanBtn");
-    const paymentBtn=document.getElementById("paymentBtn");
+/* ===========================
+   INCOME REPORTS
+=========================== */
 
-    if(loanBtn) loanBtn.disabled=false;
-    if(paymentBtn) paymentBtn.disabled=false;
+function incomeReport(records){
 
-    /* Show Previous Screen */
+    showReport(
 
-    if(currentReportGroup==="g4"){
+        "Income Report",
 
-        document.getElementById("loanContent").style.display="grid";
+        records
 
-        return;
+    );
 
-    }
+}
 
-    const g=document.getElementById(currentReportGroup);
 
-    if(g){
+/* ===========================
+   HEALTH REPORTS
+=========================== */
 
-        g.style.display="grid";
+function healthReport(records){
+
+    showReport(
+
+        "Health Report",
+
+        records
+
+    );
+
+}
+
+
+/* ===========================
+   ACTIVITY REPORTS
+=========================== */
+
+function activityReport(records){
+
+    showReport(
+
+        "Activities Report",
+
+        records
+
+    );
+
+}
+
+
+/* ===========================
+   LOAN REPORTS
+=========================== */
+
+function loanReport(records){
+
+    showReport(
+
+        "Loans Report",
+
+        records
+
+    );
+
+}
+
+
+/* ===========================
+   PAYMENT REPORTS
+=========================== */
+
+function paymentReport(records){
+
+    showReport(
+
+        "Payments Report",
+
+        records
+
+    );
+
+}
+
+
+/* ===========================
+   MEMORY REPORTS
+=========================== */
+
+function memoryReport(records){
+
+    showReport(
+
+        "Memories Report",
+
+        records
+
+    );
+
+}
+
+
+/* ===========================
+   REPORT SUMMARY
+=========================== */
+
+function reportSummary(records, amountField){
+
+    const total = reportTotal(records, amountField);
+
+    alert(
+
+        "Total Records : " +
+
+        records.length +
+
+        "\n\nTotal Amount : " +
+
+        total
+
+    );
+
+}
+
+
+/* ===========================
+   EXPORT PLACEHOLDER
+=========================== */
+
+function exportPDF(){
+
+    alert("PDF Export Coming Soon");
+
+}
+
+function exportExcel(){
+
+    alert("Excel Export Coming Soon");
+
+}
+
+
+/* ===========================
+   PRINT PLACEHOLDER
+=========================== */
+
+function printReport(){
+
+    window.print();
+
+}
+/* ==========================================
+   oneFaMiLe V4
+   reports.js
+   PART-4 (FINAL)
+========================================== */
+
+
+/* ===========================
+   REPORT DISPATCHER
+=========================== */
+
+function runModuleReport(module, records){
+
+    switch(module){
+
+        case "Expenses":
+            expenseReport(records);
+            break;
+
+        case "Income":
+            incomeReport(records);
+            break;
+
+        case "Health":
+            healthReport(records);
+            break;
+
+        case "Activities":
+            activityReport(records);
+            break;
+
+        case "Loans":
+            loanReport(records);
+            break;
+
+        case "Payments":
+            paymentReport(records);
+            break;
+
+        case "Memories":
+            memoryReport(records);
+            break;
+
+        default:
+            showReport(module + " Report", records);
 
     }
 
@@ -221,20 +513,151 @@ function statusBack(){
 
 
 /* ===========================
-   RESET REPORT SCREEN
+   GET CURRENT REPORT
 =========================== */
 
-function resetReportScreen(){
+function getCurrentReport(){
 
-    currentStatus="";
+    return{
 
-    currentReportTitle="";
+        module:currentModule,
 
-    document.getElementById("reportMenu").style.display="none";
+        type:currentReportType,
 
-    document.getElementById("statusMenu").style.display="none";
+        title:currentReportTitle,
 
-    document.getElementById("reportHeader").style.display="none";
+        records:reportResult
+
+    };
 
 }
 
+
+/* ===========================
+   CLEAR REPORT
+=========================== */
+
+function clearReport(){
+
+    currentReportType="";
+
+    currentReportTitle="";
+
+    currentReportSource=[];
+
+    reportResult=[];
+
+}
+
+
+/* ===========================
+   REPORT INFORMATION
+=========================== */
+
+function reportInformation(){
+
+    alert(
+
+        "oneFaMiLe Version 4\n\n"+
+
+        "Current Module : "+currentModule+
+
+        "\nReport : "+currentReportTitle+
+
+        "\nRecords : "+reportResult.length
+
+    );
+
+}
+
+
+/* ===========================
+   REPORT STATISTICS
+=========================== */
+
+function reportStatistics(records){
+
+    return{
+
+        totalRecords:records.length,
+
+        created:new Date().toLocaleString()
+
+    };
+
+}
+
+
+/* ===========================
+   REPORT SEARCH
+=========================== */
+
+function searchReport(records, field, value){
+
+    value=String(value).toLowerCase();
+
+    return records.filter(item=>{
+
+        return String(item[field] || "")
+
+            .toLowerCase()
+
+            .includes(value);
+
+    });
+
+}
+
+
+/* ===========================
+   SORT REPORT
+=========================== */
+
+function sortReport(records, field){
+
+    return [...records].sort((a,b)=>{
+
+        if(a[field] < b[field]) return -1;
+
+        if(a[field] > b[field]) return 1;
+
+        return 0;
+
+    });
+
+}
+
+
+/* ===========================
+   REPORT INITIALIZATION
+=========================== */
+
+function initializeReports(){
+
+    clearReport();
+
+    console.log(
+
+        "Reports Engine Initialized"
+
+    );
+
+}
+
+
+/* ===========================
+   AUTO START
+=========================== */
+
+document.addEventListener(
+
+    "DOMContentLoaded",
+
+    initializeReports
+
+);
+
+
+/* ==========================================
+   END OF reports.js
+========================================== */
