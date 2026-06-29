@@ -13,6 +13,7 @@
     font-family: 'Segoe UI', sans-serif;
 }
 
+
 body {
     background: var(--bg-gradient);
     color: var(--text-color);
@@ -257,4 +258,28 @@ body {
 @keyframes fadeIn {
     from { opacity: 0; transform: scale(0.9); }
     to { opacity: 1; transform: scale(1); }
+}
+/* Language Selector Styles */
+.lang-nav {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 1000;
+}
+
+#lang-select {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid var(--glass-border);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    outline: none;
+    cursor: pointer;
+    font-weight: bold;
+    backdrop-filter: blur(5px);
+}
+
+#lang-select option {
+    background: #203a43;
+    color: white;
 }
