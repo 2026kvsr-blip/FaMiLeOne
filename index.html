@@ -3,306 +3,448 @@
 
 <head>
 
-  
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>oneFaMiLe</title>
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="style.css">
+<title>oneFaMiLe V4</title>
+
+<link rel="stylesheet"
+href="style.css">
 
 </head>
 
 <body>
 
-<!-- =======================
-TOP BAR
-======================= -->
+<!-- ==========================
+     HEADER
+========================== -->
 
-<header class="top-bar">
+<header class="app-header">
 
-<button class="menu-icon"
+<div class="menu-icon"
 onclick="toggleMenu()">
 
 ☰
 
-</button>
+</div>
 
-<h1 class="page-title">
+<div class="logo">
+
+<img src="images/logo.png"
+alt="Logo">
+
+<span id="appTitle">
 
 oneFaMiLe
 
-</h1>
+</span>
 
-<select id="langSelect"
-class="top-lang"
-onchange="changeLanguage()">
-
-<option value="en">English</option>
-<option value="te">తెలుగు</option>
-<option value="hi">हिन्दी</option>
-<option value="ta">தமிழ்</option>
-<option value="kn">ಕನ್ನಡ</option>
-<option value="ml">മലയാളം</option>
-
-</select>
+</div>
 
 </header>
 
 
-<!-- =======================
-SIDE MENU
-======================= -->
+<!-- ==========================
+     SIDE MENU
+========================== -->
 
-<div id="menu"
+<nav id="menu"
 class="side-menu">
 
 <a href="#"
-class="exit-btn"
-onclick="showExit();return false;">
+onclick="showHome();closeMenu();">
 
-Exit
+🏠 Home
 
 </a>
 
+<a href="#">
+
+⚙ Settings
+
+</a>
+
+<a href="#">
+
+🌐 Language
+
+</a>
+
+<a href="#">
+
+ℹ About
+
+</a>
+
+<a href="#"
+onclick="showExit();">
+
+🚪 Exit
+
+</a>
+
+</nav>
+
+
+<!-- ==========================
+     TOP MENU
+========================== -->
+
+<div class="top-menu">
+
+<div id="topButtons">
+
+<!-- Dynamic -->
+
+</div>
+
 </div>
 
 
-<!-- =======================
-POPUP
-======================= -->
+<!-- ==========================
+     HOME MESSAGE
+========================== -->
 
-<div id="popup"
-class="popup"></div>
+<div id="homeMessage">
 
-
-<!-- =======================
-MAIN
-======================= -->
-
-<div class="container">
-
-
-<!-- Top 5 Buttons -->
-
-<div id="topButtons"
-class="rect-row">
-
-</div>
-
-
-<!-- Home -->
-
-<div id="homeMessage"
-class="welcome-box">
-
-<h2 id="welcomeTitle">
-
-Welcome
-
-</h2>
-
-<div id="welcomeContent">
+<h2 id="welcomeText">
 
 Welcome to oneFaMiLe
 
-</div>
+</h2>
+
+<p id="welcomeSubText">
+
+Manage your complete family information.
+
+</p>
 
 </div>
 
 
-<!-- Expenses -->
+<!-- ==========================
+     LANGUAGE
+========================== -->
 
-<div id="g1"
-class="circle-grid"></div>
+<div id="langSelect">
 
+<select id="languageDropdown"
+onchange="changeLanguage()">
 
-<!-- Activities -->
+<option value="en">
 
-<div id="g2"
-class="circle-grid"></div>
+English
 
+</option>
 
-<!-- Health -->
+<option value="te">
 
-<div id="g3"
-class="circle-grid"></div>
+తెలుగు
 
+</option>
 
-<!-- Loans -->
+<option value="hi">
 
-<div id="g4"
-class="loan-page">
+हिन्दी
 
-<div class="loan-tabs">
+</option>
 
-<button id="loanBtn"
-class="loan-tab-btn"
-onclick="showLoanSection('g11',this)">
-
-Loans
-
-</button>
-
-<button id="paymentBtn"
-class="loan-tab-btn"
-onclick="showLoanSection('g7',this)">
-
-Payments
-
-</button>
-
-</div>
-
-<div id="loanContent"
-class="circle-grid">
-
-</div>
+</select>
 
 </div>
 
 
-<!-- Memories -->
+<!-- ==========================
+     MAIN CONTAINER
+========================== -->
 
-<div id="g5"
-class="circle-grid"></div>
+<div class="main-container">
+  <!-- ==========================
+     EXPENSES (g1)
+========================== -->
 
-
-<!-- Family -->
-
-<div id="g6"
-class="circle-grid"></div>
-
-
-<!-- Payments Data -->
-
-<div id="g7"
-class="circle-grid"
-style="display:none">
-
-</div>
+<div id="g1" class="circle-grid"></div>
 
 
-<!-- Charts -->
+<!-- ==========================
+     ACTIVITIES (g2)
+========================== -->
 
-<div id="g8"
-class="circle-grid"></div>
-
-
-<!-- Reports -->
-
-<div id="g9"
-class="circle-grid"></div>
+<div id="g2" class="circle-grid"></div>
 
 
-<!-- Income -->
+<!-- ==========================
+     HEALTH (g3)
+========================== -->
 
-<div id="g10"
-class="circle-grid"></div>
-
-
-<!-- Loans Data -->
-
-<div id="g11"
-class="circle-grid"
-style="display:none">
-
-</div>
+<div id="g3" class="circle-grid"></div>
 
 
+<!-- ==========================
+     LOANS (g4)
+========================== -->
 
-<div id="reportHeader" class="report-header">
+<div id="g4" style="display:none;">
 
-    <img
-    src="images/Reports1.png"
-    class="report-header-icon">
+    <!-- Loan / Payment Tabs -->
+
+    <div class="loan-tabs">
+
+        <button
+            id="loanBtn"
+            class="loan-tab-btn"
+            onclick="showLoanSection('g11',this)">
+
+            Loans
+
+        </button>
+
+        <button
+            id="paymentBtn"
+            class="loan-tab-btn"
+            onclick="showLoanSection('g12',this)">
+
+            Payments
+
+        </button>
+
+    </div>
+
+    <!-- Loan Content -->
 
     <div
-    id="reportTitle"
-    class="report-title">
+        id="loanContent"
+        class="circle-grid">
 
     </div>
 
 </div>
+
+
 <!-- ==========================
-     ACTIVITY STATUS MENU
+     LOANS DATA
 ========================== -->
 
-<div id="statusMenu">
-
-    <button class="report-btn"
-        onclick="statusButtonClick('Completed')">
-        Completed
-    </button>
-
-    <button class="report-btn"
-        onclick="statusButtonClick('In Progress')">
-        In Progress
-    </button>
-
-    <button class="report-btn"
-        onclick="statusButtonClick('To be Takenup')">
-        To be Takenup
-    </button>
-
-    <button class="report-btn"
-        onclick="statusButtonClick('Not Necessary')">
-        Not Necessary
-    </button>
-
-    <button class="report-btn"
-        onclick="statusButtonClick('Deadline Today')">
-        Deadline Today
-    </button>
-
-    <button class="report-btn"
-        onclick="statusButtonClick('Deadline Coming Soon')">
-        Deadline Coming Soon
-    </button>
-
-    <button class="report-btn"
-        onclick="statusButtonClick('Deadline is Over')">
-        Deadline is Over
-    </button>
-
-    <button class="report-btn"
-        onclick="statusButtonClick('Deadline within Days')">
-        Deadline within _ days
-    </button>
-
-    <button class="report-btn back-btn"
-        onclick="statusBack()">
-        Back
-    </button>
+<div id="g11"
+style="display:none;">
 
 </div>
 
 
- 
-<div id="reportMenu"></div>
+<!-- ==========================
+     PAYMENTS DATA
+========================== -->
 
-  
-<!-- Report Menu -->
- 
-<div id="reportMenu">
-
-</div>
+<div id="g12"
+style="display:none;">
 
 </div>
 
 
-<!-- =======================
-BOTTOM MENU
-======================= -->
+<!-- ==========================
+     INCOME (g10)
+========================== -->
+
+<div id="g10"
+class="circle-grid">
+
+</div>
+<!-- ==========================
+     FAMILY (g6)
+========================== -->
+
+<div id="g6" class="circle-grid"></div>
+
+
+<!-- ==========================
+     MEMORIES (g5)
+========================== -->
+
+<div id="g5" class="circle-grid"></div>
+
+
+<!-- ==========================
+     CHARTS (g8)
+========================== -->
+
+<div id="g8" class="circle-grid"></div>
+
+
+<!-- ==========================
+     REPORTS (g9)
+========================== -->
+
+<div id="g9" class="circle-grid"></div>
+
+
+<!-- ==========================
+     REPORT HEADER
+========================== -->
+
+<div id="reportHeader"
+     class="report-header"
+     style="display:none;">
+
+    <img id="reportIcon"
+         class="report-header-icon"
+         src="images/report.png">
+
+    <div id="reportTitle"
+         class="report-title">
+
+    </div>
+
+</div>
+
+
+<!-- ==========================
+     ACTIVITIES STATUS MENU
+========================== -->
+
+<div id="activityStatusMenu"
+     class="report-grid"
+     style="display:none;">
+
+</div>
+
+
+<!-- ==========================
+     LOAN MAIN MENU
+========================== -->
+
+<div id="loanMainMenu"
+     class="report-grid"
+     style="display:none;">
+
+</div>
+
+
+<!-- ==========================
+     LOAN CATEGORY MENU
+========================== -->
+
+<div id="loanCategoryMenu"
+     class="circle-grid"
+     style="display:none;">
+
+</div>
+
+
+<!-- ==========================
+     LOAN LIST MENU
+========================== -->
+
+<div id="loanListMenu"
+     class="report-grid"
+     style="display:none;">
+
+</div>
+
+
+<!-- ==========================
+     PAYMENT MAIN MENU
+========================== -->
+
+<div id="paymentMainMenu"
+     class="report-grid"
+     style="display:none;">
+
+</div>
+
+
+<!-- ==========================
+     PAYMENT CATEGORY MENU
+========================== -->
+
+<div id="paymentCategoryMenu"
+     class="circle-grid"
+     style="display:none;">
+
+</div>
+
+
+<!-- ==========================
+     PAYMENT LIST MENU
+========================== -->
+
+<div id="paymentListMenu"
+     class="report-grid"
+     style="display:none;">
+
+</div>
+
+
+<!-- ==========================
+     MEMORIES CATEGORY MENU
+========================== -->
+
+<div id="memoryCategoryMenu"
+     class="report-grid"
+     style="display:none;">
+
+</div>
+
+
+<!-- ==========================
+     UNIVERSAL REPORT MENU
+========================== -->
+
+<div id="reportMenu"
+     class="report-grid"
+     style="display:none;">
+
+</div>
+
+
+  <!-- ==========================
+     POPUP
+========================== -->
+
+<div id="popupOverlay"
+     class="popup-overlay"
+     style="display:none;">
+
+    <div class="popup-box">
+
+        <div id="popupTitle"
+             class="popup-title">
+
+            oneFaMiLe
+
+        </div>
+
+        <div id="popupMessage"
+             class="popup-message">
+
+        </div>
+
+        <button
+            class="popup-btn"
+            onclick="closePopup()">
+
+            OK
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- ==========================
+     BOTTOM NAVIGATION
+========================== -->
 
 <nav class="bottom-nav">
 
 <a href="#"
 id="homeNav">
 
-<img src="images/Home1.png">
+<img src="images/home.png">
 
-<div>Home</div>
+<span>Home</span>
 
 </a>
 
@@ -310,9 +452,9 @@ id="homeNav">
 <a href="#"
 id="familyNav">
 
-<img src="images/FT1.png">
+<img src="images/family.png">
 
-<div>Family</div>
+<span>Family</span>
 
 </a>
 
@@ -320,9 +462,9 @@ id="familyNav">
 <a href="#"
 id="chartsNav">
 
-<img src="images/Charts1.png">
+<img src="images/chart.png">
 
-<div>Charts</div>
+<span>Charts</span>
 
 </a>
 
@@ -330,9 +472,9 @@ id="chartsNav">
 <a href="#"
 id="memoryNav">
 
-<img src="images/Memories1.png">
+<img src="images/memory.png">
 
-<div>Memories</div>
+<span>Memories</span>
 
 </a>
 
@@ -340,18 +482,22 @@ id="memoryNav">
 <a href="#"
 id="reportsNav">
 
-<img src="images/Reports1.png">
+<img src="images/report.png">
 
-<div>Reports</div>
+<span>Reports</span>
 
 </a>
 
 </nav>
 
 
-<!-- =======================
-JAVASCRIPT
-======================= -->
+</div>
+<!-- End Main Container -->
+
+
+<!-- ==========================
+     JAVASCRIPT FILES
+========================== -->
 
 <script src="data.js"></script>
 
@@ -360,6 +506,9 @@ JAVASCRIPT
 <script src="reports.js"></script>
 
 <script src="menu.js"></script>
+
+<script src="popup.js"></script>
+
 
 </body>
 
