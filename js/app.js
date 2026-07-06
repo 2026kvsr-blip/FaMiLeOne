@@ -5,7 +5,6 @@ Part 1A.3
 
 ===================================== */
 
-
 /* WELCOME SCREEN */
 
 const welcomePage =
@@ -150,3 +149,37 @@ dashboard.classList.remove("hidden");
 END
 
 ====================== */
+const signupPage =
+document.getElementById(
+"signupPage"
+);
+
+const signupOTPPage =
+document.getElementById(
+"signupOTPPage"
+);
+
+const signupOTPBtn =
+document.getElementById(
+"signupOTPBtn"
+);
+
+const signupVerifyBtn =
+document.getElementById(
+"signupVerifyBtn"
+);
+
+const registerBtn =
+document.getElementById(
+"registerBtn"
+);
+
+const backSignupBtn =
+document.getElementById(
+"backSignupBtn"
+);
+
+const backSignupOTPBtn =
+document.getElementById(
+"backSignupOTPBtn"
+);
