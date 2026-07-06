@@ -1,291 +1,326 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>oneFaMiLe V5</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>oneFaMiLe</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+
 </head>
+
 <body>
 
-    <!-- Splash Screen -->
-    <div id="splash-screen" class="screen active">
-        <div class="splash-content">
-            <div class="app-logo">
-                <i class="fa-solid fa-people-roof"></i>
-            </div>
-            <h1 class="app-title">one<span>FaMiLe</span></h1>
-        </div>
-    </div>
+<!-- TOP BAR -->
 
-    <!-- Global Language Selector (Top Floating) -->
-    <div id="lang-selector-container" class="lang-nav hidden">
-        <select id="lang-select" onchange="changeLanguage(this.value)">
-            <option value="en">English</option>
-            <option value="te">తెలుగు</option>
-        </select>
-    </div>
+<header class="topbar">
 
-    <!-- Login Screen (OTP UI) -->
-    <div id="login-screen" class="screen">
-        <div class="glass-card">
-            <h2 id="text-login-title">Login</h2>
-            <p id="text-login-desc">Enter your mobile number</p>
-            <div class="input-group">
-                <span class="prefix">+91</span>
-                <input type="tel" id="phone-number" placeholder="9876543210" maxlength="10">
-            </div>
-            <button id="send-otp-btn" class="main-btn">Send OTP</button>
+<div class="menu-btn">
+<i class="fa-solid fa-bars"></i>
+</div>
 
-            <div id="otp-area" class="hidden">
-                <p class="mt-20" id="text-otp-desc">Enter OTP</p>
-                <div class="otp-inputs">
-                    <input type="text" maxlength="1" class="otp-box">
-                    <input type="text" maxlength="1" class="otp-box">
-                    <input type="text" maxlength="1" class="otp-box">
-                    <input type="text" maxlength="1" class="otp-box">
-                </div>
-                <button id="verify-otp-btn" class="main-btn success-btn">Verify & Login</button>
-            </div>
-        </div>
-    </div>
+<div class="app-title">
+oneFaMiLe
+</div>
 
-    <!-- Main Dashboard Screen -->
-    <div id="main-screen" class="screen">
-        <!-- Header -->
-        <header class="app-header">
-            <div class="user-profile">
-                <i class="fa-solid fa-circle-user"></i>
-                <span id="text-welcome">Hello, User!</span>
-            </div>
-            <button id="logout-btn" class="icon-btn"><i class="fa-solid fa-right-from-bracket"></i></button>
-        </header>
+<div class="language">
 
-        <!-- Main Content Area -->
-        <main id="content-area">
-            <!-- Home View -->
-            <div id="home-view" class="view active">
-                <!-- 2x2 Circular Buttons Grid -->
-                <div class="circular-grid">
-                    <button class="circle-item" onclick="switchView('expenses')">
-                        <div class="circle-icon icon-red"><i class="fa-solid fa-wallet"></i></div>
-                        <span id="text-menu-expenses">Expenses</span>
-                    </button>
-                    <button class="circle-item" onclick="switchView('activities')">
-                        <div class="circle-icon icon-blue"><i class="fa-solid fa-bolt"></i></div>
-                        <span id="text-menu-activities">Activities</span>
-                    </button>
-                    <button class="circle-item" onclick="switchView('loans')">
-                        <div class="circle-icon icon-green"><i class="fa-solid fa-hand-holding-dollar"></i></div>
-                        <span id="text-menu-loans">Loans</span>
-                    </button>
-                    <button class="circle-item" onclick="switchView('health')">
-                        <div class="circle-icon icon-purple"><i class="fa-solid fa-heart-pulse"></i></div>
-                        <span id="text-menu-health">Health</span>
-                    </button>
-                </div>
-            </div>
+<select id="lang">
 
-            <!-- Expenses View -->
-            <div id="expenses-view" class="view">
-                <div class="view-header">
-                    <h3><i class="fa-solid fa-wallet"></i> <span id="text-exp-title">Expenses Module</span></h3>
-                </div>
-                <div class="glass-card">
-                    <p id="text-exp-desc">Expense details can be managed here.</p>
-                </div>
-            </div>
+<option>English</option>
 
-            <!-- Activities View -->
-            <div id="activities-view" class="view">
-                <div class="view-header">
-                    <h3><i class="fa-solid fa-bolt"></i> <span id="text-act-title">Activities Module</span></h3>
-                </div>
-                <div class="glass-card">
-                    <p id="text-act-desc">Daily tasks and activities will appear here.</p>
-                </div>
-            </div>
+<option>తెలుగు</option>
 
-            <!-- Loans View -->
-            <div id="loans-view" class="view">
-                <div class="view-header">
-                    <h3><i class="fa-solid fa-hand-holding-dollar"></i> <span id="text-loans-title">Loans Module</span></h3>
-                </div>
-                <!-- Rectangle Buttons -->
-                <div class="rect-btn-container">
-                    <button class="rect-btn active" id="text-btn-borrowed"><i class="fa-solid fa-arrow-down"></i> Borrowed</button>
-                    <button class="rect-btn" id="text-btn-lent"><i class="fa-solid fa-arrow-up"></i> Lent</button>
-                </div>
-            </div>
+<option>हिन्दी</option>
 
-            <!-- Health View -->
-            <div id="health-view" class="view">
-                <div class="view-header">
-                    <h3><i class="fa-solid fa-heart-pulse"></i> <span id="text-health-title">Health Module</span></h3>
-                </div>
-                <div class="glass-card">
-                    <p id="text-health-desc">Health records and medicine updates here.</p>
-                </div>
-            </div>
-        </main>
+<option>ಕನ್ನಡ</option>
 
-        <!-- Fixed Bottom Navigation (5 Buttons) -->
-        <nav class="bottom-nav">
-            <button class="nav-item active" onclick="switchView('home')">
-                <i class="fa-solid fa-house"></i>
-                <span id="text-nav-home">Home</span>
-            </button>
-            <button class="nav-item" onclick="switchView('expenses')">
-                <i class="fa-solid fa-wallet"></i>
-                <span id="text-nav-expenses">Expenses</span>
-            </button>
-            <button class="nav-item" onclick="switchView('loans')">
-                <i class="fa-solid fa-hand-holding-dollar"></i>
-                <span id="text-nav-loans">Loans</span>
-            </button>
-            <button class="nav-item" onclick="switchView('health')">
-                <i class="fa-solid fa-heart-pulse"></i>
-                <span id="text-nav-health">Health</span>
-            </button>
-            <button class="nav-item" onclick="switchView('activities')">
-                <i class="fa-solid fa-bolt"></i>
-                <span id="text-nav-activities">Activities</span>
-            </button>
-        </nav>
-    </div>
+<option>தமிழ்</option>
 
-    <!-- Language Translation Logic -->
-    <script>
-        // Languages Dictionary
-        const translations = {
-            en: {
-                loginTitle: "Login",
-                loginDesc: "Enter your mobile number",
-                sendOtp: "Send OTP",
-                otpDesc: "Enter OTP",
-                verifyBtn: "Verify & Login",
-                welcome: "Hello, User!",
-                menuExpenses: "Expenses",
-                menuActivities: "Activities",
-                menuLoans: "Loans",
-                menuHealth: "Health",
-                expTitle: "Expenses Module",
-                expDesc: "Expense details can be managed here.",
-                actTitle: "Activities Module",
-                actDesc: "Daily tasks and activities will appear here.",
-                loansTitle: "Loans Module",
-                btnBorrowed: "Borrowed",
-                btnLent: "Lent",
-                healthTitle: "Health Module",
-                healthDesc: "Health records and medicine updates here.",
-                navHome: "Home"
-            },
-            te: {
-                loginTitle: "లాగిన్ అవ్వండి",
-                loginDesc: "మీ మొబైల్ నంబర్ ఎంటర్ చేయండి",
-                sendOtp: "OTP పంపండి",
-                otpDesc: "OTP ని ఎంటర్ చేయండి",
-                verifyBtn: "వెరిఫై & లాగిన్",
-                welcome: "నమస్తే, యూజర్!",
-                menuExpenses: "ఖర్చులు",
-                menuActivities: "పనులు",
-                menuLoans: "అప్పులు",
-                menuHealth: "ఆరోగ్యం",
-                expTitle: "ఖర్చుల విభాగం",
-                expDesc: "ఖర్చుల వివరాలు ఇక్కడ చూసుకోవచ్చు.",
-                actTitle: "పనుల విభాగం",
-                actDesc: "రోజువారీ పనుల వివరాలు ఇక్కడ ఉంటాయి.",
-                loansTitle: "అప్పుల విభాగం",
-                btnBorrowed: "తీసుకున్నవి",
-                btnLent: "ఇచ్చినవి",
-                healthTitle: "ఆరోగ్య విభాగం",
-                healthDesc: "ఆరోగ్య సమాచారం మరియు మెడిసిన్ రిమైండర్స్ ఇక్కడ ఉంటాయి.",
-                navHome: "హోమ్"
-            }
-        };
+<option>മലയാളം</option>
 
-        // Function to change language dynamic elements
-        function changeLanguage(lang) {
-            const data = translations[lang];
-            
-            document.getElementById("text-login-title").innerText = data.loginTitle;
-            document.getElementById("text-login-desc").innerText = data.loginDesc;
-            document.getElementById("send-otp-btn").innerText = data.sendOtp;
-            document.getElementById("text-otp-desc").innerText = data.otpDesc;
-            document.getElementById("verify-otp-btn").innerText = data.verifyBtn;
-            document.getElementById("text-welcome").innerText = data.welcome;
-            
-            document.getElementById("text-menu-expenses").innerText = data.menuExpenses;
-            document.getElementById("text-menu-activities").innerText = data.menuActivities;
-            document.getElementById("text-menu-loans").innerText = data.menuLoans;
-            document.getElementById("text-menu-health").innerText = data.menuHealth;
-            
-            document.getElementById("text-exp-title").innerText = data.expTitle;
-            document.getElementById("text-exp-desc").innerText = data.expDesc;
-            document.getElementById("text-act-title").innerText = data.actTitle;
-            document.getElementById("text-act-desc").innerText = data.actDesc;
-            document.getElementById("text-loans-title").innerText = data.loansTitle;
-            
-            document.getElementById("text-btn-borrowed").innerHTML = `<i class="fa-solid fa-arrow-down"></i> ` + data.btnBorrowed;
-            document.getElementById("text-btn-lent").innerHTML = `<i class="fa-solid fa-arrow-up"></i> ` + data.btnLent;
-            
-            document.getElementById("text-health-title").innerText = data.healthTitle;
-            document.getElementById("text-health-desc").innerText = data.healthDesc;
-            
-            document.getElementById("text-nav-home").innerText = data.navHome;
-            document.getElementById("text-nav-expenses").innerText = data.menuExpenses;
-            document.getElementById("text-nav-loans").innerText = data.menuLoans;
-            document.getElementById("text-nav-health").innerText = data.menuHealth;
-            document.getElementById("text-nav-activities").innerText = data.menuActivities;
-        }
+</select>
 
-        document.addEventListener("DOMContentLoaded", () => {
-            // Splash Timer
-            setTimeout(() => {
-                showScreen("login-screen");
-                document.getElementById("lang-selector-container").classList.remove("hidden");
-            }, 3000);
+</div>
 
-            // OTP Setup
-            document.getElementById("send-otp-btn").addEventListener("click", () => {
-                const phone = document.getElementById("phone-number").value;
-                if(phone.length === 10) {
-                    document.getElementById("otp-area").classList.remove("hidden");
-                } else {
-                    alert("Please enter a valid 10-digit number.");
-                }
-            });
+</header>
 
-            document.getElementById("verify-otp-btn").addEventListener("click", () => {
-                showScreen("main-screen");
-            });
+<!-- WELCOME -->
 
-            document.getElementById("logout-btn").addEventListener("click", () => {
-                showScreen("login-screen");
-                document.getElementById("otp-area").classList.add("hidden");
-                document.getElementById("phone-number").value = "";
-            });
-        });
+<section class="welcome-box">
 
-        function showScreen(screenId) {
-            document.querySelectorAll(".screen").forEach(s => s.classList.remove("active"));
-            document.getElementById(screenId).classList.add("active");
-        }
+<h2>Welcome to oneFaMiLe</h2>
 
-        function switchView(viewId) {
-            document.querySelectorAll(".view").forEach(v => v.classList.remove("active"));
-            document.getElementById(`${viewId}-view`).classList.add("active");
+<p>
 
-            document.querySelectorAll(".nav-item").forEach(item => item.classList.remove("active"));
-            const navButtons = document.querySelectorAll(".bottom-nav .nav-item");
-            navButtons.forEach(btn => {
-                if(btn.getAttribute("onclick").includes(viewId)) {
-                    btn.classList.add("active");
-                }
-            });
-        }
-    </script>
+oneFaMiLe<br>
+
+one StRuCtUrE<br>
+
+one CoDe
+
+</p>
+
+</section>
+
+
+<!-- LOGIN SIGNUP -->
+
+<section class="auth-buttons">
+
+<button id="loginBtn">
+
+Login
+
+</button>
+
+<button id="signupBtn">
+
+SignUp
+
+</button>
+
+</section>
+
+
+<!-- LOGIN AREA -->
+
+<section id="loginArea"
+class="hidden">
+
+<input
+type="tel"
+
+placeholder="Mobile Number">
+
+<button>
+
+Send OTP
+
+</button>
+
+<input
+
+type="text"
+
+placeholder="OTP">
+
+<button>
+
+Verify OTP
+
+</button>
+
+</section>
+
+
+<!-- SIGNUP AREA -->
+
+<section
+
+id="signupArea"
+
+class="hidden">
+
+<input
+
+type="tel"
+
+placeholder="Mobile Number">
+
+
+<button>
+
+Send OTP
+
+</button>
+
+
+<input
+
+type="text"
+
+placeholder="OTP">
+
+
+<button>
+
+Verify OTP
+
+</button>
+
+
+<input
+
+type="password"
+
+maxlength="6"
+
+placeholder="Sensitive Pass Code">
+
+
+<input
+
+type="password"
+
+maxlength="6"
+
+placeholder="Confirm Pass Code">
+
+
+<button>
+
+Register
+
+</button>
+
+</section>
+
+
+
+<!-- TOP MODULE CONTAINER -->
+
+<div class="top-container">
+
+<div class="top-buttons">
+
+<button class="module-btn">
+
+Expenses
+
+</button>
+
+<button class="module-btn">
+
+Activities
+
+</button>
+
+<button class="module-btn">
+
+Loans
+
+</button>
+
+<button class="module-btn">
+
+Income
+
+</button>
+
+<button class="module-btn">
+
+Health
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- PAGE AREA -->
+
+<main>
+
+<section id="homePage">
+
+<h3>
+
+HOME PAGE
+
+</h3>
+
+</section>
+
+</main>
+
+
+
+<!-- BOTTOM BAR -->
+
+<footer>
+
+<div class="bottom-container">
+
+<button class="bottom-btn active">
+
+Home
+
+</button>
+
+<button class="bottom-btn">
+
+Family Tree
+
+</button>
+
+<button class="bottom-btn">
+
+Memories
+
+</button>
+
+<button class="bottom-btn">
+
+Charts
+
+</button>
+
+<button class="bottom-btn">
+
+Reports
+
+</button>
+
+</div>
+
+</footer>
+
+
+
+<!-- MENU -->
+
+<div
+
+id="menuPanel"
+
+class="menu-panel hidden">
+
+<button id="exitBtn">
+
+Exit
+
+</button>
+
+</div>
+
+
+
+<!-- EXIT MESSAGE -->
+
+<div
+
+id="exitMessage"
+
+class="hidden">
+
+Scroll from bottom to top
+
+to close the app
+
+</div>
+
+
+<script src="js/app.js"></script>
+
 </body>
+
 </html>
