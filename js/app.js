@@ -74,7 +74,17 @@ SIGNUP
 
 signupBtn.onclick = ()=>{
 
-alert("SignUp Flow Part-1B");
+welcomePage.classList.add(
+
+"hidden"
+
+);
+
+signupPage.classList.remove(
+
+"hidden"
+
+);
 
 };
 
