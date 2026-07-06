@@ -5,7 +5,6 @@ Part 1.1C
 
 ===================================== */
 
-
 /* LOGIN */
 
 const loginBtn =
@@ -749,6 +748,11 @@ expensesBtn.classList.remove(
 
 
 };
+
+const bottomContainer =
+document.getElementById(
+"bottomContainer"
+);
 /* ======================
 
 END
