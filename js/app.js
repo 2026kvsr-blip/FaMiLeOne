@@ -769,6 +769,7 @@ expensesBtn.classList.remove(
 
 };
 
+
 const bottomContainer =
 document.getElementById(
 "bottomContainer"
@@ -796,6 +797,20 @@ signupArea.classList.add(
 );
 
 homeBtn.click();
+
+};
+loginBtn.onclick = () => {
+
+loginArea.classList.remove("hidden");
+
+signupArea.classList.add("hidden");
+
+};
+signupBtn.onclick = () => {
+
+signupArea.classList.remove("hidden");
+
+loginArea.classList.add("hidden");
 
 };
 /* ======================
