@@ -5,7 +5,6 @@ Part 1.1C
 
 ===================================== */
 
-
 /* LOGIN */
 
 const loginBtn =
@@ -598,8 +597,157 @@ TOP BUTTON PLACEHOLDER
 
 ====================== */
 
+const homeContent =
+document.getElementById(
+"homeContent"
+);
 
 
+const expensesBtn =
+document.getElementById(
+"expensesBtn"
+);
+
+const activitiesBtn =
+document.getElementById(
+"activitiesBtn"
+);
+
+const loansBtn =
+document.getElementById(
+"loansBtn"
+);
+
+const incomeBtn =
+document.getElementById(
+"incomeBtn"
+);
+
+const healthBtn =
+document.getElementById(
+"healthBtn"
+);
+
+
+
+expensesBtn.onclick=()=>{
+
+
+moduleButtons.forEach(
+
+b=>{
+
+b.classList.remove(
+
+"active"
+
+);
+
+}
+
+);
+
+
+expensesBtn.classList.add(
+
+"active"
+
+);
+
+
+
+homeContent.innerHTML=`
+
+<div class="grid-3x2">
+
+<button class="grid-btn">
+
+Add Expense
+
+</button>
+
+
+<button class="grid-btn">
+
+Reports
+
+</button>
+
+
+<button class="grid-btn">
+
+Sensitive Reports
+
+</button>
+
+
+<button class="grid-btn">
+
+All Reports
+
+</button>
+
+
+<button class="grid-btn">
+
+Custom Search
+
+</button>
+
+
+<button class="grid-btn">
+
+About
+
+</button>
+
+
+</div>
+
+
+<div align="center">
+
+<button
+
+id="backExpense"
+
+class="back-btn">
+
+← Back
+
+</button>
+
+</div>
+
+`;
+
+
+
+document.getElementById(
+
+"backExpense"
+
+)
+
+.onclick=()=>{
+
+
+homeContent.innerHTML=
+
+"<h2>Home</h2>";
+
+
+expensesBtn.classList.remove(
+
+"active"
+
+);
+
+
+};
+
+
+};
 /* ======================
 
 END
