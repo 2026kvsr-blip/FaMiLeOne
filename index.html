@@ -3,15 +3,15 @@
 
 <head>
 
-  
-  <meta charset="UTF-8">
+<meta charset="UTF-8">
+
 <meta name="viewport"
 content="width=device-width, initial-scale=1.0">
 
 <title>oneFaMiLe</title>
 
-
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet"
+href="css/style.css">
 
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
@@ -20,23 +20,28 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
 
 <body>
 
+
 <!-- TOP BAR -->
 
 <header class="topbar">
 
 <div class="menu-btn">
+
 <i class="fa-solid fa-bars"></i>
+
 </div>
+
 
 <div class="app-title">
+
 oneFaMiLe
+
 </div>
 
-<div
-id="languageArea"
-class="language">
 
-<select id="lang">
+<div class="language">
+
+<select>
 
 <option>English</option>
 
@@ -48,38 +53,47 @@ class="language">
 
 <option>தமிழ்</option>
 
- 
 <option>മലയാളം</option>
 
 </select>
 
 </div>
+
 </header>
 
-<!-- WELCOME -->
 
-<section
-id="welcomeBox"
-class="welcome-box">
 
-<h2>Welcome to oneFaMiLe</h2>
+<!-- WELCOME SCREEN -->
+
+<section id="welcomePage">
+
+<div class="welcome-box">
+
+<h2>
+
+Welcome to oneFaMiLe
+
+</h2>
 
 <p>
 
-oneFaMiLe<br>
+oneFaMiLe
 
-one StRuCtUrE<br>
+<br>
+
+one StRuCtUrE
+
+<br>
 
 one CoDe
 
 </p>
 
-</section>
+</div>
 
 
-<!-- LOGIN SIGNUP -->
 
-<section class="auth-buttons">
+<div class="auth-buttons">
 
 <button id="loginBtn">
 
@@ -87,316 +101,216 @@ Login
 
 </button>
 
+
 <button id="signupBtn">
 
 SignUp
 
 </button>
 
-</section>
-
-
-<!-- LOGIN AREA -->
-
-<section id="loginArea"
-class="auth-form hidden">
-
-<input
-type="tel"
-
-placeholder="Mobile Number">
-
-<button>
-
-Send OTP
-
-</button>
-
-<input
-
-type="text"
-
-placeholder="OTP">
-
-<button id="verifyOTPBtn">
-
-Verify OTP
-
-</button>
+</div>
 
 </section>
 
 
-<!-- SIGNUP AREA -->
 
-<section id="signupArea"
-class="auth-form hidden">
+<!-- LOGIN SCREEN -->
+
+<section
+
+id="loginPage"
+
+class="hidden">
+
+<h3>
+
+Mobile Number
+
+</h3>
+
 
 <input
 
 type="tel"
 
-placeholder="Mobile Number">
+placeholder="Enter Mobile Number">
 
-
-<button>
-
-Send OTP
-
-</button>
-
-
-<input
-
-type="text"
-
-placeholder="OTP">
-
-
-<button>
-
-Verify OTP
-
-</button>
-
-
-<input
-
-type="password"
-
-maxlength="6"
-
-placeholder="Sensitive Pass Code">
-
-
-<input
-
-type="password"
-
-maxlength="6"
-
-placeholder="Confirm Pass Code">
-
-
-<button>
-
-Register
-
-</button>
-
-</section>
-
-
-
-<!-- TOP MODULE CONTAINER -->
-
-<div id="topContainer" class="top-container hidden">
-
-<div class="top-buttons">
 
 <button
-id="expensesBtn"
-class="module-btn">
+
+id="sendOTPBtn">
+
+Send OTP
+
+</button>
+
+
+<button
+
+id="backLoginBtn">
+
+← Back
+
+</button>
+
+</section>
+
+
+
+
+<!-- OTP SCREEN -->
+
+<section
+
+id="otpPage"
+
+class="hidden">
+
+<h3>
+
+Verify OTP
+
+</h3>
+
+
+<input
+
+type="text"
+
+placeholder="Enter OTP">
+
+
+<button
+
+id="verifyOTPBtn">
+
+Verify OTP
+
+</button>
+
+
+<button
+
+id="backOTPBtn">
+
+← Back
+
+</button>
+
+</section>
+
+
+
+
+<!-- DASHBOARD -->
+
+<section
+
+id="dashboard"
+
+class="hidden">
+
+
+<div
+
+id="topContainer"
+
+class="top-container">
+
+
+<button>
 
 Expenses
 
 </button>
 
 
-<button
-id="activitiesBtn"
-class="module-btn">
+<button>
 
 Activities
 
 </button>
 
 
-<button
-id="loansBtn"
-class="module-btn">
+<button>
 
 Loans
 
 </button>
 
 
-<button
-id="incomeBtn"
-class="module-btn">
+<button>
 
 Income
 
 </button>
 
 
-<button
-id="healthBtn"
-class="module-btn">
+<button>
 
 Health
 
 </button>
 
-</div>
-</div>
-
-
-<!-- PAGE AREA -->
-
-<main>
-<section
-id="homePage"
-class="page hidden">
-
-<div id="homeContent">
-
-<h2>Home</h2>
 
 </div>
 
-</section>
-
-<section id="familyPage"
-
-class="page hidden">
-
-<h2>
-
-Family Tree
-
-</h2>
-
-</section>
 
 
-<section id="memoriesPage"
+<div class="home-message">
 
-class="page hidden">
+HOME PAGE
 
-<h2>
-
-Memories
-
-</h2>
-
-</section>
+</div>
 
 
-<section id="chartsPage"
-
-class="page hidden">
-
-<h2>
-
-Charts
-
-</h2>
-
-</section>
-
-
-<section id="reportsPage"
-
-class="page hidden">
-
-<h2>
-
-Reports
-
-</h2>
-
-</section>
-</main>
-
-
-
-<!-- BOTTOM BAR -->
 
 <footer>
 
-<div
-id="bottomContainer"
-class="bottom-container hidden">
-<button
-id="homeBtn"
-class="bottom-btn active">
+<div class="bottom-container">
+
+<button class="active">
 
 Home
 
 </button>
 
 
-<button
-id="familyBtn"
-class="bottom-btn">
+<button>
 
 Family Tree
 
 </button>
 
 
-<button
-id="memoriesBtn"
-class="bottom-btn">
+<button>
 
 Memories
 
 </button>
 
 
-<button
-id="chartsBtn"
-class="bottom-btn">
+<button>
 
 Charts
 
 </button>
 
 
-<button
-id="reportsBtn"
-class="bottom-btn">
+<button>
 
 Reports
 
 </button>
 
+
 </div>
+
 </footer>
 
 
+</section>
 
-<!-- MENU -->
-
-<div
-
-id="menuPanel"
-
-class="menu-panel hidden">
-
-<button id="exitBtn">
-
-Exit
-
-</button>
-
-</div>
-
-
-<!-- EXIT MESSAGE -->
-
-<div
-
-id="exitMessage"
-
-class="hidden">
-
-Scroll from bottom to top
-
-to close the app
-
-</div>
 
 
 <script src="js/app.js"></script>
