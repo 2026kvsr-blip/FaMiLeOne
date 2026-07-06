@@ -601,16 +601,6 @@ PLACEHOLDER PAGES
 
 ====================== */
 
-const homePage =
-
-document.getElementById(
-
-"homePage"
-
-);
-
-
-
 
 /* ======================
 
