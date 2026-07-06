@@ -7,7 +7,6 @@ Part 1.1C
 
 /* LOGIN */
 
-
 const loginBtn =
 document.getElementById("loginBtn");
 
@@ -571,7 +570,6 @@ languageArea.classList.add(
 );
 
 }
-homeBtn.click();
 
 /* ======================
 
@@ -774,8 +772,6 @@ topContainer.classList.remove("hidden");
 bottomContainer.classList.remove("hidden");
 
 languageArea.classList.remove("hidden");
-
-homeBtn.click();
 
 };
 loginBtn.onclick = ()=>{
