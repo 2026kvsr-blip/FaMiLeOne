@@ -5,6 +5,7 @@ Part 1.1C
 
 ===================================== */
 
+
 /* LOGIN */
 
 const loginBtn =
@@ -596,35 +597,6 @@ document.getElementById(
 TOP BUTTON PLACEHOLDER
 
 ====================== */
-
-
-moduleButtons.forEach(
-
-(btn)=>{
-
-
-btn.addEventListener(
-
-"click",
-
-()=>{
-
-
-homePage.innerHTML =
-
-`<h3>
-
-${btn.textContent}
-
-MODULE
-
-</h3>`;
-
-
-});
-
-
-});
 
 
 
