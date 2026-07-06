@@ -413,3 +413,59 @@ HIDDEN
 display:none !important;
 
 }
+#signupPage,
+#signupOTPPage{
+
+width:90%;
+
+margin:auto;
+
+padding-top:40px;
+
+display:flex;
+
+flex-direction:column;
+
+gap:15px;
+
+}
+
+
+#signupPage h3,
+#signupOTPPage h3{
+
+text-align:center;
+
+color:#2A6EB0;
+
+}
+
+
+#signupPage input,
+#signupOTPPage input{
+
+height:46px;
+
+border:none;
+
+border-radius:12px;
+
+padding-left:15px;
+
+}
+
+
+#signupPage button,
+#signupOTPPage button{
+
+height:46px;
+
+border:none;
+
+border-radius:12px;
+
+background:#4A9FE8;
+
+color:white;
+
+}
