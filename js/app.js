@@ -20,53 +20,6 @@ const signupArea =
 document.getElementById("signupArea");
 
 
-loginBtn.addEventListener(
-
-"click",
-
-() => {
-
-loginArea.classList.remove(
-
-"hidden"
-
-);
-
-signupArea.classList.add(
-
-"hidden"
-
-);
-
-}
-
-);
-
-
-
-signupBtn.addEventListener(
-
-"click",
-
-() => {
-
-signupArea.classList.remove(
-
-"hidden"
-
-);
-
-loginArea.classList.add(
-
-"hidden"
-
-);
-
-}
-
-);
-
-
 
 /* ======================
 
