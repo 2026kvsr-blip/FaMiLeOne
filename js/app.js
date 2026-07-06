@@ -5,6 +5,7 @@ Part 1.1C
 
 ===================================== */
 
+
 /* LOGIN */
 
 const loginBtn =
@@ -186,6 +187,7 @@ exitMessage.classList.add(
 
 BOTTOM BUTTONS
 
+
 ====================== */
 
 const bottomButtons =
@@ -363,6 +365,10 @@ const reportsPage =
 document.getElementById("reportsPage");
 const topContainer =
 document.getElementById("topContainer");
+const bottomContainer =
+document.getElementById(
+"bottomContainer"
+);
 const languageArea =
 document.getElementById("languageArea");
 function hidePages(){
@@ -395,6 +401,13 @@ b.classList.remove(
 );
 
 }
+topContainer.classList.add(
+"hidden"
+);
+
+bottomContainer.classList.add(
+"hidden"
+);
 homeBtn.onclick = ()=>{
 
 hidePages();
