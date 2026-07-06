@@ -5,6 +5,7 @@ box-sizing:border-box;
 font-family:Arial,Helvetica,sans-serif;
 }
 
+
 body{
 
 background:#EAF8FF;
@@ -361,45 +362,31 @@ BOTTOM NAVIGATION
 
 position:fixed;
 
-left:10px;
+bottom:0;
 
-right:10px;
+left:0;
 
-bottom:10px;
+right:0;
 
-background:#D9F0FF;
+width:100%;
 
-border-radius:20px;
+height:65px;
 
-padding:10px;
+background:#4A9FE8;
 
 display:flex;
 
-justify-content:space-between;
+justify-content:space-around;
 
 align-items:center;
 
 z-index:999;
 
-}
+border-radius:0;
 
-.bottom-btn{
-
-background:transparent;
-
-border:none;
-
-cursor:pointer;
-
-font-size:13px;
-
-font-weight:600;
-
-color:#2D6AA5;
+padding:0;
 
 }
-
-
 
 /* =======================
 
