@@ -5,6 +5,7 @@ Part 1.1C
 
 ===================================== */
 
+
 /* LOGIN */
 
 const loginBtn =
@@ -367,6 +368,10 @@ document.getElementById("topContainer");
 const bottomContainer =
 document.getElementById(
 "bottomContainer"
+);
+const verifyOTPBtn =
+document.getElementById(
+"verifyOTPBtn"
 );
 const languageArea =
 document.getElementById("languageArea");
