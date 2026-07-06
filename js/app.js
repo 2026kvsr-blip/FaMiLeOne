@@ -761,10 +761,6 @@ expensesBtn.classList.remove(
 };
 
 
-const bottomContainer =
-document.getElementById(
-"bottomContainer"
-);
 verifyOTPBtn.onclick = ()=>{
 
 welcomeBox.classList.add("hidden");
