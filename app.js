@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     
+    
     // లాగిన్ వెరిఫై
     document.getElementById("verify-otp-btn").addEventListener("click", () => {
         showScreen("main-screen");
