@@ -7,25 +7,19 @@ font-family:Arial,Helvetica,sans-serif;
 
 body{
 
-  
 background:#EAF8FF;
 
 min-height:100vh;
 
+padding-top:70px;
+
 overflow-x:hidden;
-
-padding-top:72px;
-
-padding-bottom:90px;
 
 }
 
 
-
 /* =======================
-
 TOP BAR
-
 ======================= */
 
 .topbar{
@@ -48,11 +42,12 @@ align-items:center;
 
 justify-content:space-between;
 
-padding:0 16px;
+padding:0 15px;
 
 z-index:999;
 
 }
+
 
 .menu-btn{
 
@@ -60,9 +55,8 @@ font-size:24px;
 
 color:white;
 
-cursor:pointer;
-
 }
+
 
 .app-title{
 
@@ -72,9 +66,8 @@ font-weight:700;
 
 color:white;
 
-letter-spacing:1px;
-
 }
+
 
 .language select{
 
@@ -82,68 +75,71 @@ border:none;
 
 outline:none;
 
-background:white;
+border-radius:10px;
 
 padding:6px 10px;
 
-border-radius:10px;
-
-font-size:14px;
-
-color:#2469AA;
+color:#2A6EB0;
 
 }
 
 
 
 /* =======================
-
 WELCOME
-
 ======================= */
+
+#welcomePage{
+
+width:100%;
+
+padding-top:40px;
+
+}
+
 
 .welcome-box{
 
-width:92%;
+width:90%;
 
-margin:20px auto;
+margin:auto;
 
 background:white;
 
-padding:25px;
+padding:30px;
 
-border-radius:22px;
+border-radius:25px;
 
 text-align:center;
 
 }
 
+
 .welcome-box h2{
 
-color:#2469AA;
+color:#2A6EB0;
 
-margin-bottom:12px;
+margin-bottom:20px;
 
 }
+
 
 .welcome-box p{
 
 line-height:1.8;
 
-font-size:16px;
+font-size:18px;
+
+color:#4A9FE8;
 
 font-weight:600;
-
-color:#4689C7;
 
 }
 
 
 
 /* =======================
-
 LOGIN SIGNUP
-
 ======================= */
 
 .auth-buttons{
@@ -154,9 +150,10 @@ justify-content:center;
 
 gap:20px;
 
-margin-top:20px;
+margin-top:30px;
 
 }
+
 
 .auth-buttons button{
 
@@ -174,8 +171,6 @@ color:white;
 
 font-size:16px;
 
-font-weight:600;
-
 cursor:pointer;
 
 }
@@ -183,29 +178,36 @@ cursor:pointer;
 
 
 /* =======================
-
-LOGIN AREA
-
+LOGIN PAGE
 ======================= */
 
-#loginArea,
+#loginPage{
 
-#signupArea{
+width:90%;
 
-width:92%;
+margin:auto;
 
-margin:20px auto;
+padding-top:40px;
 
+display:flex;
 
 flex-direction:column;
 
-gap:12px;
+gap:15px;
 
 }
 
-#loginArea input,
 
-#signupArea input{
+#loginPage h3{
+
+text-align:center;
+
+color:#2A6EB0;
+
+}
+
+
+#loginPage input{
 
 height:46px;
 
@@ -215,15 +217,10 @@ border-radius:12px;
 
 padding-left:15px;
 
-font-size:15px;
-
-background:white;
-
 }
 
-#loginArea button,
 
-#signupArea button{
+#loginPage button{
 
 height:46px;
 
@@ -235,126 +232,128 @@ background:#4A9FE8;
 
 color:white;
 
-font-size:15px;
-
-font-weight:600;
-
-cursor:pointer;
-
 }
 
 
 
 /* =======================
-
-TOP CONTAINER
-
+OTP PAGE
 ======================= */
 
-.top-container{
+#otpPage{
 
-position:fixed;
+width:90%;
 
-top:70px;
+margin:auto;
 
-left:10px;
-
-right:10px;
-
-z-index:998;
-
-background:#D9F0FF;
-
-border-radius:20px;
-
-padding:10px;
-
-}
-
-.top-buttons{
+padding-top:40px;
 
 display:flex;
 
-justify-content:space-between;
+flex-direction:column;
 
-align-items:center;
-
-}
-
-.module-btn{
-
-background:transparent;
-
-border:none;
-
-cursor:pointer;
-
-font-size:14px;
-
-font-weight:600;
-
-color:#2D6AA5;
-
-padding:6px;
+gap:15px;
 
 }
 
 
-
-/* =======================
-
-ACTIVE BUTTON
-
-======================= */
-
-.active{
-
-color:#E5C85B;
-
-font-weight:700;
-
-}
-
-
-
-/* =======================
-
-PAGE AREA
-
-======================= */
-
-main{
-
-margin-top:85px;
-
-padding:20px;
-
-}
-
-#homePage{
-
-min-height:350px;
+#otpPage h3{
 
 text-align:center;
 
-padding-top:60px;
+color:#2A6EB0;
 
 }
 
-#homePage h3{
 
-color:#2D6AA5;
+#otpPage input{
 
-font-size:24px;
+height:46px;
+
+border:none;
+
+border-radius:12px;
+
+padding-left:15px;
+
+}
+
+
+#otpPage button{
+
+height:46px;
+
+border:none;
+
+border-radius:12px;
+
+background:#4A9FE8;
+
+color:white;
 
 }
 
 
 
 /* =======================
+DASHBOARD
+======================= */
 
-BOTTOM NAVIGATION
+#dashboard{
 
+padding-top:20px;
+
+}
+
+
+.top-container{
+
+display:flex;
+
+justify-content:space-around;
+
+align-items:center;
+
+background:#D6EEFF;
+
+padding:12px;
+
+}
+
+
+.top-container button{
+
+border:none;
+
+background:none;
+
+color:#2A6EB0;
+
+font-weight:600;
+
+cursor:pointer;
+
+}
+
+
+.home-message{
+
+margin-top:100px;
+
+text-align:center;
+
+font-size:26px;
+
+font-weight:700;
+
+color:#2A6EB0;
+
+}
+
+
+
+/* =======================
+BOTTOM BAR
 ======================= */
 
 .bottom-container{
@@ -367,8 +366,6 @@ left:0;
 
 right:0;
 
-width:100%;
-
 height:65px;
 
 background:#4A9FE8;
@@ -379,226 +376,40 @@ justify-content:space-around;
 
 align-items:center;
 
-z-index:999;
-
-border-radius:0;
-
-padding:0;
-
 }
 
-/* =======================
 
-MENU PANEL
-
-======================= */
-
-.menu-panel{
-
-position:fixed;
-
-top:70px;
-
-left:15px;
-
-width:180px;
-
-background:white;
-
-border-radius:18px;
-
-padding:15px;
-
-z-index:1000;
-
-}
-
-.menu-panel button{
-
-width:100%;
-
-height:42px;
+.bottom-container button{
 
 border:none;
 
-border-radius:12px;
-
-background:#4A9FE8;
+background:none;
 
 color:white;
+
+font-size:13px;
+
+font-weight:600;
 
 cursor:pointer;
 
 }
 
 
+.active{
 
-/* =======================
-
-EXIT MESSAGE
-
-======================= */
-
-#exitMessage{
-
-position:fixed;
-
-left:50%;
-
-top:50%;
-
-transform:translate(-50%,-50%);
-
-background:white;
-
-padding:25px;
-
-border-radius:20px;
-
-text-align:center;
-
-font-weight:600;
-
-color:#2D6AA5;
-
-z-index:2000;
+color:#FFD86A !important;
 
 }
 
 
 
 /* =======================
-
 HIDDEN
-
 ======================= */
 
 .hidden{
 
-display:none;
-
-}
-
-
-
-/* =======================
-
-RESPONSIVE
-
-======================= */
-
-@media(max-width:480px){
-
-.app-title{
-
-font-size:20px;
-
-}
-
-.module-btn{
-
-font-size:12px;
-
-}
-
-.bottom-btn{
-
-font-size:12px;
-
-}
-
-}
-.page{
-
-padding-top:40px;
-
-min-height:500px;
-
-text-align:center;
-
-}
-
-
-
-.page h2{
-
-color:#2D6AA5;
-
-font-size:28px;
-
-font-weight:700;
-
-}
-
-
-
-.hidden{
-
-display:none;
-
-}
-.grid-3x2{
-
-display:grid;
-
-grid-template-columns:
-repeat(3,1fr);
-
-gap:16px;
-
-margin-top:20px;
-
-}
-
-
-.grid-btn{
-
-background:white;
-
-border:none;
-
-border-radius:14px;
-
-padding:15px;
-
-min-height:70px;
-
-font-size:14px;
-
-font-weight:600;
-
-cursor:pointer;
-
-color:#2D6AA5;
-
-}
-
-
-.back-btn{
-
-margin-top:25px;
-
-padding:12px 28px;
-
-border:2px solid red;
-
-background:transparent;
-
-border-radius:12px;
-
-color:red;
-
-font-weight:600;
-
-cursor:pointer;
-
-}
-
-
-.back-btn:hover{
-
-background:red;
-
-color:white;
+display:none !important;
 
 }
