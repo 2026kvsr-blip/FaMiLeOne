@@ -27,7 +27,23 @@ document.getElementById("otpPage");
 
 const dashboard =
 document.getElementById("dashboard");
+const signupPage =
+document.getElementById("signupPage");
 
+const signupOTPPage =
+document.getElementById("signupOTPPage");
+
+const signupOTPBtn =
+document.getElementById("signupOTPBtn");
+
+const registerBtn =
+document.getElementById("registerBtn");
+
+const backSignupBtn =
+document.getElementById("backSignupBtn");
+
+const backSignupOTPBtn =
+document.getElementById("backSignupOTPBtn");
 
 /* BUTTONS */
 
@@ -74,20 +90,11 @@ SIGNUP
 
 signupBtn.onclick = ()=>{
 
-welcomePage.classList.add(
+welcomePage.classList.add("hidden");
 
-"hidden"
-
-);
-
-signupPage.classList.remove(
-
-"hidden"
-
-);
+signupPage.classList.remove("hidden");
 
 };
-
 
 
 /* ======================
@@ -120,8 +127,20 @@ otpPage.classList.remove("hidden");
 
 };
 
+backSignupBtn.onclick = ()=>{
 
+signupPage.classList.add("hidden");
 
+welcomePage.classList.remove("hidden");
+
+};
+signupOTPBtn.onclick = ()=>{
+
+signupPage.classList.add("hidden");
+
+signupOTPPage.classList.remove("hidden");
+
+};
 /* ======================
 
 BACK OTP
@@ -135,7 +154,13 @@ otpPage.classList.add("hidden");
 loginPage.classList.remove("hidden");
 
 };
+backSignupOTPBtn.onclick = ()=>{
 
+signupOTPPage.classList.add("hidden");
+
+signupPage.classList.remove("hidden");
+
+};
 
 
 /* ======================
@@ -193,3 +218,12 @@ const backSignupOTPBtn =
 document.getElementById(
 "backSignupOTPBtn"
 );
+registerBtn.onclick = ()=>{
+
+alert("Registration Successful");
+
+signupOTPPage.classList.add("hidden");
+
+welcomePage.classList.remove("hidden");
+
+};
