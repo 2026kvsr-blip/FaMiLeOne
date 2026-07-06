@@ -7,6 +7,7 @@ Part 1.1C
 
 /* LOGIN */
 
+
 const loginBtn =
 document.getElementById("loginBtn");
 
@@ -776,37 +777,30 @@ document.getElementById(
 );
 verifyOTPBtn.onclick = ()=>{
 
-topContainer.classList.remove(
-"hidden"
-);
+welcomeBox.classList.add("hidden");
 
-bottomContainer.classList.remove(
-"hidden"
-);
+loginArea.classList.add("hidden");
 
-welcomeBox.classList.add(
-"hidden"
-);
+signupArea.classList.add("hidden");
 
-loginArea.classList.add(
-"hidden"
-);
+topContainer.classList.remove("hidden");
 
-signupArea.classList.add(
-"hidden"
-);
+bottomContainer.classList.remove("hidden");
+
+languageArea.classList.remove("hidden");
 
 homeBtn.click();
 
 };
-loginBtn.onclick = () => {
+loginBtn.onclick = ()=>{
 
 loginArea.classList.remove("hidden");
 
 signupArea.classList.add("hidden");
 
 };
-signupBtn.onclick = () => {
+
+signupBtn.onclick = ()=>{
 
 signupArea.classList.remove("hidden");
 
