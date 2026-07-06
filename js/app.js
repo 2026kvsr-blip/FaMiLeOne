@@ -5,7 +5,6 @@ Part 1.1C
 
 ===================================== */
 
-
 /* LOGIN */
 
 const loginBtn =
@@ -333,7 +332,225 @@ selected
 
 
 });
+const homeBtn =
+document.getElementById("homeBtn");
 
+const familyBtn =
+document.getElementById("familyBtn");
+
+const memoriesBtn =
+document.getElementById("memoriesBtn");
+
+const chartsBtn =
+document.getElementById("chartsBtn");
+
+const reportsBtn =
+document.getElementById("reportsBtn");
+
+const homePage =
+document.getElementById("homePage");
+
+const familyPage =
+document.getElementById("familyPage");
+
+const memoriesPage =
+document.getElementById("memoriesPage");
+
+const chartsPage =
+document.getElementById("chartsPage");
+
+const reportsPage =
+document.getElementById("reportsPage");
+const topContainer =
+document.getElementById("topContainer");
+const languageArea =
+document.getElementById("languageArea");
+function hidePages(){
+
+homePage.classList.add("hidden");
+
+familyPage.classList.add("hidden");
+
+memoriesPage.classList.add("hidden");
+
+chartsPage.classList.add("hidden");
+
+reportsPage.classList.add("hidden");
+
+}
+function clearBottom(){
+
+bottomButtons.forEach(
+
+b=>{
+
+b.classList.remove(
+
+"active"
+
+);
+
+}
+
+);
+
+}
+homeBtn.onclick = ()=>{
+
+hidePages();
+
+clearBottom();
+
+homeBtn.classList.add(
+
+"active"
+
+);
+
+homePage.classList.remove(
+
+"hidden"
+
+);
+
+topContainer.classList.remove(
+
+"hidden"
+
+);
+
+languageArea.classList.remove(
+
+"hidden"
+
+);
+
+}
+familyBtn.onclick=()=>{
+
+hidePages();
+
+clearBottom();
+
+familyBtn.classList.add(
+
+"active"
+
+);
+
+familyPage.classList.remove(
+
+"hidden"
+
+);
+
+topContainer.classList.add(
+
+"hidden"
+
+);
+
+languageArea.classList.add(
+
+"hidden"
+
+);
+
+}
+memoriesBtn.onclick=()=>{
+
+hidePages();
+
+clearBottom();
+
+memoriesBtn.classList.add(
+
+"active"
+
+);
+
+memoriesPage.classList.remove(
+
+"hidden"
+
+);
+
+topContainer.classList.add(
+
+"hidden"
+
+);
+
+languageArea.classList.add(
+
+"hidden"
+
+);
+
+}
+chartsBtn.onclick=()=>{
+
+hidePages();
+
+clearBottom();
+
+chartsBtn.classList.add(
+
+"active"
+
+);
+
+chartsPage.classList.remove(
+
+"hidden"
+
+);
+
+topContainer.classList.add(
+
+"hidden"
+
+);
+
+languageArea.classList.add(
+
+"hidden"
+
+);
+
+}
+reportsBtn.onclick=()=>{
+
+hidePages();
+
+clearBottom();
+
+reportsBtn.classList.add(
+
+"active"
+
+);
+
+reportsPage.classList.remove(
+
+"hidden"
+
+);
+
+topContainer.classList.add(
+
+"hidden"
+
+);
+
+languageArea.classList.add(
+
+"hidden"
+
+);
+
+}
+homeBtn.click();
 
 /* ======================
 
@@ -370,36 +587,6 @@ document.getElementById(
 "homePage"
 
 );
-
-
-
-bottomButtons.forEach(
-
-(btn)=>{
-
-
-btn.addEventListener(
-
-"click",
-
-()=>{
-
-
-homePage.innerHTML =
-
-`<h3>
-
-${btn.textContent}
-
-PAGE
-
-</h3>`;
-
-
-});
-
-
-});
 
 
 
