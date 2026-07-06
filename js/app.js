@@ -372,6 +372,10 @@ const verifyOTPBtn =
 document.getElementById(
 "verifyOTPBtn"
 );
+const welcomeBox =
+document.getElementById(
+"welcomeBox"
+);
 const languageArea =
 document.getElementById("languageArea");
 function hidePages(){
@@ -769,6 +773,31 @@ const bottomContainer =
 document.getElementById(
 "bottomContainer"
 );
+verifyOTPBtn.onclick = ()=>{
+
+topContainer.classList.remove(
+"hidden"
+);
+
+bottomContainer.classList.remove(
+"hidden"
+);
+
+welcomeBox.classList.add(
+"hidden"
+);
+
+loginArea.classList.add(
+"hidden"
+);
+
+signupArea.classList.add(
+"hidden"
+);
+
+homeBtn.click();
+
+};
 /* ======================
 
 END
