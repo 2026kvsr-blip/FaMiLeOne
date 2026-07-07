@@ -7,7 +7,6 @@ Part 1A.3
 
 /* WELCOME SCREEN */
 
-
 const welcomePage =
 document.getElementById("welcomePage");
 
@@ -132,7 +131,9 @@ Add Activity
 
 </button>
 
-<button class="grid-btn">
+<button
+id="activityReports"
+class="grid-btn">
 
 Reports
 
@@ -177,7 +178,19 @@ class="back-btn">
 </div>
 
 `;
+document.getElementById(
 
+"activityReports"
+
+).onclick=()=>{
+
+reportsLayout(
+
+"Activity Reports"
+
+);
+
+};
 document.getElementById(
 
 "activityBack"
@@ -784,7 +797,9 @@ Add Expense
 </button>
 
 
-<button class="grid-btn">
+<button
+id="expenseReports"
+class="grid-btn">
 
 Reports
 
@@ -835,7 +850,19 @@ class="back-btn">
 </div>
 
 `;
+document.getElementById(
 
+"expenseReports"
+
+).onclick=()=>{
+
+reportsLayout(
+
+"Expense Reports"
+
+);
+
+};
 
 document.getElementById(
 
@@ -1040,49 +1067,77 @@ homeBtn.click();
 
 reportsBtn.onclick=()=>{
 
+reportsLayout(
+
+"Reports"
+
+);
+
+};
+
+function reportsLayout(title){
+
 homeContent.innerHTML=`
 
 <h2 class="page-title">
 
-Reports
+${title}
 
 </h2>
 
-<div class="grid-3x2">
+<div class="report-grid">
 
-<button class="grid-btn">
+<button class="report-btn">
 
 Today
 
 </button>
 
-<button class="grid-btn">
+<button class="report-btn">
 
 This Week
 
 </button>
 
-<button class="grid-btn">
+<button class="report-btn">
 
 This Month
 
 </button>
 
-<button class="grid-btn">
+<button class="report-btn">
 
 This Year
 
 </button>
 
-<button class="grid-btn">
+<button class="report-btn">
 
-Abstract
+Daily
 
 </button>
 
-<button class="grid-btn">
+<button class="report-btn">
 
-About
+Weekly
+
+</button>
+
+<button class="report-btn">
+
+Monthly
+
+</button>
+
+<button class="report-btn">
+
+Yearly
+
+</button>
+
+<button class="report-btn">
+
+Abstract
 
 </button>
 
@@ -1091,7 +1146,8 @@ About
 <div align="center">
 
 <button
-id="reportsBack"
+id="reportBack"
+
 class="back-btn">
 
 ← Back
@@ -1102,12 +1158,4 @@ class="back-btn">
 
 `;
 
-document.getElementById(
-"reportsBack"
-).onclick=()=>{
-
-homeBtn.click();
-
-};
-
-};
+}
