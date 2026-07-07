@@ -5,7 +5,6 @@ Part 1A.3
 
 ===================================== */
 
-
 /* WELCOME SCREEN */
 
 const welcomePage =
@@ -578,6 +577,9 @@ loginPage.classList.add("hidden");
 welcomePage.classList.add("hidden");
 
 dashboard.classList.remove("hidden");
+  homeBtn.classList.add(
+"active"
+);
 
 };
 
