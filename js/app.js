@@ -5,6 +5,7 @@ Part 1A.3
 
 ===================================== */
 
+
 /* WELCOME SCREEN */
 
 const welcomePage =
@@ -588,11 +589,13 @@ document.getElementById(
 ).onclick=()=>{
 
 homeContent.innerHTML=`
+
 <h2 class="page-title">
 
-${type} - Lend
+Loan - Lend
 
 </h2>
+
 <div class="grid-3x2">
 
 <button class="grid-btn">
@@ -625,36 +628,6 @@ All Reports
 
 </button>
 
-document.getElementById(
-"lendReports"
-).onclick=()=>{
-
-reportsLayout(
-type + " Reports"
-);
-
-};
-
-document.getElementById(
-"lendSensitive"
-).onclick=()=>{
-
-reportsLayout(
-type + " Sensitive Reports"
-);
-
-};
-
-document.getElementById(
-"lendAll"
-).onclick=()=>{
-
-reportsLayout(
-type + " All Reports"
-);
-
-};
-
 <button class="grid-btn">
 
 Custom Search
@@ -682,41 +655,59 @@ class="back-btn">
 </div>
 
 `;
+
 document.getElementById(
-
 "lendReports"
-
 ).onclick=()=>{
 
 reportsLayout(
-
-type + " Reports"
-
+"Loan - Lend Reports"
 );
 
 };
+
+document.getElementById(
+"lendSensitive"
+).onclick=()=>{
+
+reportsLayout(
+"Loan - Lend Sensitive Reports"
+);
+
+};
+
+document.getElementById(
+"lendAll"
+).onclick=()=>{
+
+reportsLayout(
+"Loan - Lend All Reports"
+);
+
+};
+
 document.getElementById(
 "lendBack"
 ).onclick=()=>{
 
-showLendBorrow(type);
+showLendBorrow();
 
 };
 
 };
-
-
 
 document.getElementById(
 "borrowBtn"
 ).onclick=()=>{
 
 homeContent.innerHTML=`
+
 <h2 class="page-title">
 
-${type} - Borrowed
+Loan - Borrowed
 
 </h2>
+
 <div class="grid-3x2">
 
 <button class="grid-btn">
@@ -748,35 +739,7 @@ class="grid-btn">
 All Reports
 
 </button>
-document.getElementById(
-"borrowReports"
-).onclick=()=>{
 
-reportsLayout(
-type + " Reports"
-);
-
-};
-
-document.getElementById(
-"borrowSensitive"
-).onclick=()=>{
-
-reportsLayout(
-type + " Sensitive Reports"
-);
-
-};
-
-document.getElementById(
-"borrowAll"
-).onclick=()=>{
-
-reportsLayout(
-type + " All Reports"
-);
-
-};
 <button class="grid-btn">
 
 Custom Search
@@ -804,31 +767,47 @@ class="back-btn">
 </div>
 
 `;
+
 document.getElementById(
-
 "borrowReports"
-
 ).onclick=()=>{
 
 reportsLayout(
-
-type + " Reports"
-
+"Loan - Borrowed Reports"
 );
 
 };
+
+document.getElementById(
+"borrowSensitive"
+).onclick=()=>{
+
+reportsLayout(
+"Loan - Borrowed Sensitive Reports"
+);
+
+};
+
+document.getElementById(
+"borrowAll"
+).onclick=()=>{
+
+reportsLayout(
+"Loan - Borrowed All Reports"
+);
+
+};
+
 document.getElementById(
 "borrowBack"
 ).onclick=()=>{
 
-showLendBorrow(type);
+showLendBorrow();
 
 };
 
 };
-
-}
-/* ======================
+  /* ======================
 
 LOGIN
 
