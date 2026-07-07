@@ -5,7 +5,6 @@ Part 1A.3
 
 ===================================== */
 
-
 /* WELCOME SCREEN */
 
 const welcomePage =
@@ -1293,3 +1292,95 @@ homeBtn.click();
 };
 
 };
+
+function reportsLayout(title){
+
+homeContent.innerHTML=`
+
+<h2 class="page-title">
+
+${title}
+
+</h2>
+
+<div class="report-grid">
+
+<button class="report-btn">
+
+Today
+
+</button>
+
+<button class="report-btn">
+
+This Week
+
+</button>
+
+<button class="report-btn">
+
+This Month
+
+</button>
+
+<button class="report-btn">
+
+This Year
+
+</button>
+
+<button class="report-btn">
+
+Daily
+
+</button>
+
+<button class="report-btn">
+
+Weekly
+
+</button>
+
+<button class="report-btn">
+
+Monthly
+
+</button>
+
+<button class="report-btn">
+
+Yearly
+
+</button>
+
+<button class="report-btn">
+
+Abstract
+
+</button>
+
+</div>
+
+<div align="center">
+
+<button
+id="reportBack"
+class="back-btn">
+
+← Back
+
+</button>
+
+</div>
+
+`;
+
+document.getElementById(
+"reportBack"
+).onclick=()=>{
+
+homeBtn.click();
+
+};
+
+}
