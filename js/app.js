@@ -1214,5 +1214,11 @@ class="back-btn">
 </div>
 
 `;
+document.getElementById(
+"reportBack"
+).onclick=()=>{
 
+homeBtn.click();
+
+};
 }
