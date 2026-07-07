@@ -5,7 +5,6 @@ Part 1A.3
 
 ===================================== */
 
-
 /* WELCOME SCREEN */
 
 const welcomePage =
@@ -448,33 +447,6 @@ loansBtn.click();
 
 };
 
-<div align="center">
-
-<button
-id="loanBack"
-class="back-btn">
-
-← Back
-
-</button>
-
-</div>
-
-`;
-
-document.getElementById(
-
-"loanBack"
-
-).onclick=()=>{
-
-homeContent.innerHTML=
-
-"HOME PAGE";
-
-};
-
-};
 /* ======================
 
 LOGIN
