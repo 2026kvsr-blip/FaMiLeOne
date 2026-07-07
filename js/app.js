@@ -4,7 +4,6 @@ oneFaMiLe V1
 Part 1A.3
 
 ===================================== */
-
 /* WELCOME SCREEN */
 
 const welcomePage =
@@ -447,17 +446,143 @@ loansBtn.click();
 
 document.getElementById(
 "lendBtn"
-).onclick = ()=>{
+).onclick=()=>{
 
-alert("Lend Working");
+homeContent.innerHTML=`
+
+<div class="grid-3x2">
+
+<button class="grid-btn">
+
+Add Lend
+
+</button>
+
+<button class="grid-btn">
+
+Reports
+
+</button>
+
+<button class="grid-btn">
+
+Sensitive Reports
+
+</button>
+
+<button class="grid-btn">
+
+All Reports
+
+</button>
+
+<button class="grid-btn">
+
+Custom Search
+
+</button>
+
+<button class="grid-btn">
+
+About
+
+</button>
+
+</div>
+
+<div align="center">
+
+<button
+id="lendBack"
+class="back-btn">
+
+← Back
+
+</button>
+
+</div>
+
+`;
+
+document.getElementById(
+"lendBack"
+).onclick=()=>{
+
+showLendBorrow();
 
 };
 
+};
+
+
+
 document.getElementById(
 "borrowBtn"
-).onclick = ()=>{
+).onclick=()=>{
 
-alert("Borrowed Working");
+homeContent.innerHTML=`
+
+<div class="grid-3x2">
+
+<button class="grid-btn">
+
+Add Borrowed
+
+</button>
+
+<button class="grid-btn">
+
+Reports
+
+</button>
+
+<button class="grid-btn">
+
+Sensitive Reports
+
+</button>
+
+<button class="grid-btn">
+
+All Reports
+
+</button>
+
+<button class="grid-btn">
+
+Custom Search
+
+</button>
+
+<button class="grid-btn">
+
+About
+
+</button>
+
+</div>
+
+<div align="center">
+
+<button
+id="borrowBack"
+class="back-btn">
+
+← Back
+
+</button>
+
+</div>
+
+`;
+
+document.getElementById(
+"borrowBack"
+).onclick=()=>{
+
+showLendBorrow();
+
+};
 
 };
 
