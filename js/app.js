@@ -405,12 +405,69 @@ HOME PAGE
 `;
 
 };
+
 document.getElementById(
+
+"loanBtn"
+
+).onclick=()=>{
+
+homeContent.innerHTML=`
+
+<div class="grid-2">
+
+<button
+id="lendBtn"
+class="grid-btn">
+
+Lend
+
+</button>
+
+
+<button
+id="borrowBtn"
+class="grid-btn">
+
+Borrowed
+
+</button>
+
+</div>
+
+
+<div align="center">
+
+<button
+id="loanInnerBack"
+class="back-btn">
+
+← Back
+
+</button>
+
+</div>
+
+`;
+
+document.getElementById(
+
+"loanInnerBack"
+
+).onclick=()=>{
+
+loansBtn.click();
+
+};
+
+};
+
+
+  document.getElementById(
 
 "paymentsBtn"
 
 ).onclick=()=>{
-
 
 homeContent.innerHTML=`
 
@@ -449,7 +506,6 @@ class="back-btn">
 </div>
 
 `;
-
 
 document.getElementById(
 
