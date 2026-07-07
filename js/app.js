@@ -5,6 +5,7 @@ Part 1A.3
 
 ===================================== */
 
+
 /* WELCOME SCREEN */
 
 const welcomePage =
@@ -407,10 +408,21 @@ HOME PAGE
 };
 
 document.getElementById(
-
 "loanBtn"
-
 ).onclick=()=>{
+
+showLendBorrow();
+
+};
+
+document.getElementById(
+"paymentsBtn"
+).onclick=()=>{
+
+showLendBorrow();
+
+};
+function showLendBorrow(){
 
 homeContent.innerHTML=`
 
@@ -424,7 +436,6 @@ Lend
 
 </button>
 
-
 <button
 id="borrowBtn"
 class="grid-btn">
@@ -435,11 +446,10 @@ Borrowed
 
 </div>
 
-
 <div align="center">
 
 <button
-id="loanInnerBack"
+id="lendBorrowBack"
 class="back-btn">
 
 ← Back
@@ -451,62 +461,14 @@ class="back-btn">
 `;
 
 document.getElementById(
-
-"loanInnerBack"
-
+"lendBorrowBack"
 ).onclick=()=>{
 
 loansBtn.click();
 
 };
 
-};
-
-
-  document.getElementById(
-
-"paymentsBtn"
-
-).onclick=()=>{
-
-homeContent.innerHTML=`
-
-<div class="grid-2">
-
-<button
-id="lendBtn"
-class="grid-btn">
-
-Lend
-
-</button>
-
-
-<button
-id="borrowBtn"
-class="grid-btn">
-
-Borrowed
-
-</button>
-
-</div>
-
-
-<div align="center">
-
-<button
-id="paymentBack"
-class="back-btn">
-
-← Back
-
-</button>
-
-</div>
-
-`;
-
+}
 document.getElementById(
 
 "paymentBack"
