@@ -5,7 +5,6 @@ Part 1A.3
 
 ===================================== */
 
-
 /* WELCOME SCREEN */
 
 const welcomePage =
@@ -1003,7 +1002,7 @@ Relations
 
 <button class="grid-btn">
 
-Family Tree
+Tree View
 
 </button>
 
