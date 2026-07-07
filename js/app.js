@@ -5,6 +5,7 @@ Part 1A.3
 
 ===================================== */
 
+
 /* WELCOME SCREEN */
 
 const welcomePage =
@@ -1049,17 +1050,41 @@ Memories
 
 </h2>
 
-<div class="grid-2">
+<div class="grid-3x2">
 
 <button class="grid-btn">
 
-Photos
+Add New Memory
 
 </button>
 
 <button class="grid-btn">
 
-Videos
+Reports
+
+</button>
+
+<button class="grid-btn">
+
+Sensitive Reports
+
+</button>
+
+<button class="grid-btn">
+
+All Reports
+
+</button>
+
+<button class="grid-btn">
+
+Custom Search
+
+</button>
+
+<button class="grid-btn">
+
+About
 
 </button>
 
@@ -1088,7 +1113,6 @@ homeBtn.click();
 };
 
 };
-
 
 
 
