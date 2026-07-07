@@ -5,7 +5,6 @@ Part 1A.3
 
 ===================================== */
 
-
 /* WELCOME SCREEN */
 
 const welcomePage =
@@ -468,71 +467,13 @@ document.getElementById(
 loansBtn.click();
 
 };
+
+  
 document.getElementById(
 "lendBtn"
 ).onclick=()=>{
 
-homeContent.innerHTML=`
-
-<div class="grid-3x2">
-
-<button class="grid-btn">
-
-Add Lend
-
-</button>
-
-<button class="grid-btn">
-
-Reports
-
-</button>
-
-<button class="grid-btn">
-
-Sensitive Reports
-
-</button>
-
-<button class="grid-btn">
-
-All Reports
-
-</button>
-
-<button class="grid-btn">
-
-Custom Search
-
-</button>
-
-<button class="grid-btn">
-
-About
-
-</button>
-
-</div>
-
-<div align="center">
-
-<button
-id="lendBack"
-class="back-btn">
-
-← Back
-
-</button>
-
-</div>
-
-`;
-
-document.getElementById(
-"lendBack"
-).onclick=()=>{
-
-showLendBorrow();
+alert("Lend Clicked");
 
 };
 
