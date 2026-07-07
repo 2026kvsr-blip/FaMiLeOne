@@ -6,7 +6,6 @@ Part 1A.3
 ===================================== */
 
 
-
 /* WELCOME SCREEN */
 
 const welcomePage =
@@ -382,6 +381,7 @@ homeContent.innerHTML=`
 Health
 
 </h2>
+
 <div class="grid-3x2">
 
 <button class="grid-btn">
@@ -389,6 +389,7 @@ Health
 Add Health
 
 </button>
+
 <button
 id="healthReports"
 class="grid-btn">
@@ -412,6 +413,35 @@ class="grid-btn">
 All Reports
 
 </button>
+
+<button class="grid-btn">
+
+Custom Search
+
+</button>
+
+<button class="grid-btn">
+
+About
+
+</button>
+
+</div>
+
+<div align="center">
+
+<button
+id="healthBack"
+class="back-btn">
+
+← Back
+
+</button>
+
+</div>
+
+`;
+
 document.getElementById(
 "healthReports"
 ).onclick=()=>{
@@ -441,44 +471,12 @@ reportsLayout(
 );
 
 };
-<button class="grid-btn">
 
-Custom Search
-
-</button>
-
-<button class="grid-btn">
-
-About
-
-</button>
-
-</div>
-
-<div align="center">
-
-<button
-id="healthBack"
-class="back-btn">
-
-← Back
-
-</button>
-
-</div>
-
-`;
 document.getElementById(
-
-"healthReports"
-
+"healthBack"
 ).onclick=()=>{
 
-reportsLayout(
-
-"Health Reports"
-
-);
+homeBtn.click();
 
 };
 document.getElementById(
@@ -644,17 +642,51 @@ Reports
 
 </button>
 
-<button class="grid-btn">
+<button
+id="lendSensitive"
+class="grid-btn">
 
 Sensitive Reports
 
 </button>
 
-<button class="grid-btn">
+<button
+id="lendAll"
+class="grid-btn">
 
 All Reports
 
 </button>
+
+document.getElementById(
+"lendReports"
+).onclick=()=>{
+
+reportsLayout(
+type + " Reports"
+);
+
+};
+
+document.getElementById(
+"lendSensitive"
+).onclick=()=>{
+
+reportsLayout(
+type + " Sensitive Reports"
+);
+
+};
+
+document.getElementById(
+"lendAll"
+).onclick=()=>{
+
+reportsLayout(
+type + " All Reports"
+);
+
+};
 
 <button class="grid-btn">
 
@@ -734,18 +766,50 @@ Reports
 
 </button>
 
-<button class="grid-btn">
+<button
+id="borrowSensitive"
+class="grid-btn">
 
 Sensitive Reports
 
 </button>
 
-<button class="grid-btn">
+<button
+id="borrowAll"
+class="grid-btn">
 
 All Reports
 
 </button>
+document.getElementById(
+"borrowReports"
+).onclick=()=>{
 
+reportsLayout(
+type + " Reports"
+);
+
+};
+
+document.getElementById(
+"borrowSensitive"
+).onclick=()=>{
+
+reportsLayout(
+type + " Sensitive Reports"
+);
+
+};
+
+document.getElementById(
+"borrowAll"
+).onclick=()=>{
+
+reportsLayout(
+type + " All Reports"
+);
+
+};
 <button class="grid-btn">
 
 Custom Search
