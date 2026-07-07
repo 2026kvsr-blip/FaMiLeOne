@@ -5,7 +5,6 @@ Part 1A.3
 
 ===================================== */
 
-
 /* WELCOME SCREEN */
 
 const welcomePage =
@@ -377,53 +376,39 @@ healthBtn.onclick=()=>{
 homeContent.innerHTML=`
 
 <h2 class="page-title">
-
 Health
-
 </h2>
 
 <div class="grid-3x2">
 
 <button class="grid-btn">
-
 Add Health
-
 </button>
 
 <button
 id="healthReports"
 class="grid-btn">
-
 Reports
-
 </button>
 
 <button
 id="healthSensitive"
 class="grid-btn">
-
 Sensitive Reports
-
 </button>
 
 <button
 id="healthAll"
 class="grid-btn">
-
 All Reports
-
 </button>
 
 <button class="grid-btn">
-
 Custom Search
-
 </button>
 
 <button class="grid-btn">
-
 About
-
 </button>
 
 </div>
@@ -479,26 +464,8 @@ document.getElementById(
 homeBtn.click();
 
 };
-document.getElementById(
-
-"healthBack"
-
-).onclick=()=>{
-
-homeContent.innerHTML=`
-
-<h2>
-
-HOME PAGE
-
-</h2>
-
-`;
 
 };
-
-};
-
 loansBtn.onclick = ()=>{
 
 homeContent.innerHTML = `
