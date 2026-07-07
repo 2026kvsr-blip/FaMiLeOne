@@ -408,22 +408,10 @@ HOME PAGE
 };
 
 document.getElementById(
+
 "loanBtn"
+
 ).onclick=()=>{
-
-showLendBorrow();
-
-};
-
-document.getElementById(
-"paymentsBtn"
-).onclick=()=>{
-
-showLendBorrow();
-
-};
-  };
-function showLendBorrow(){
 
 homeContent.innerHTML=`
 
@@ -437,6 +425,7 @@ Lend
 
 </button>
 
+
 <button
 id="borrowBtn"
 class="grid-btn">
@@ -447,10 +436,11 @@ Borrowed
 
 </div>
 
+
 <div align="center">
 
 <button
-id="lendBorrowBack"
+id="loanInnerBack"
 class="back-btn">
 
 ← Back
@@ -462,25 +452,96 @@ class="back-btn">
 `;
 
 document.getElementById(
-"lendBorrowBack"
+
+"loanInnerBack"
+
 ).onclick=()=>{
 
 loansBtn.click();
 
 };
 
-  
+};
+
 document.getElementById(
+
 "lendBtn"
+
 ).onclick=()=>{
 
-alert("Lend Clicked");
+homeContent.innerHTML=`
 
-};
+<div class="grid-3x2">
 
-};
+<button class="grid-btn">
+
+Add Lend
+
+</button>
+
+<button class="grid-btn">
+
+Reports
+
+</button>
+
+<button class="grid-btn">
+
+Sensitive Reports
+
+</button>
+
+<button class="grid-btn">
+
+All Reports
+
+</button>
+
+<button class="grid-btn">
+
+Custom Search
+
+</button>
+
+<button class="grid-btn">
+
+About
+
+</button>
+
+</div>
+
+
+<div align="center">
+
+<button
+id="lendBack"
+class="back-btn">
+
+← Back
+
+</button>
+
+</div>
+
+`;
+
 document.getElementById(
+
+"lendBack"
+
+).onclick=()=>{
+
+loansBtn.click();
+
+};
+
+};
+
+document.getElementById(
+
 "borrowBtn"
+
 ).onclick=()=>{
 
 homeContent.innerHTML=`
@@ -525,6 +586,7 @@ About
 
 </div>
 
+
 <div align="center">
 
 <button
@@ -540,19 +602,76 @@ class="back-btn">
 `;
 
 document.getElementById(
+
 "borrowBack"
+
 ).onclick=()=>{
 
-showLendBorrow();
+loansBtn.click();
 
 };
 
 };
-
-
 
   
-}
+  
+  document.getElementById(
+
+"paymentsBtn"
+
+).onclick=()=>{
+
+homeContent.innerHTML=`
+
+<div class="grid-2">
+
+<button
+id="lendBtn"
+class="grid-btn">
+
+Lend
+
+</button>
+
+
+<button
+id="borrowBtn"
+class="grid-btn">
+
+Borrowed
+
+</button>
+
+</div>
+
+
+<div align="center">
+
+<button
+id="paymentBack"
+class="back-btn">
+
+← Back
+
+</button>
+
+</div>
+
+`;
+
+document.getElementById(
+
+"paymentBack"
+
+).onclick=()=>{
+
+loansBtn.click();
+
+};
+
+};
+
+};
 
 /* ======================
 
