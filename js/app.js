@@ -173,10 +173,11 @@ verifyOTPBtn.onclick = ()=>{
 
 otpPage.classList.add("hidden");
 
+welcomePage.classList.add("hidden");
+
 dashboard.classList.remove("hidden");
 
 };
-
 
 
 /* ======================
@@ -191,6 +192,8 @@ registerBtn.onclick = ()=>{
 alert("Registration Successful");
 
 signupOTPPage.classList.add("hidden");
+
+signupPage.classList.add("hidden");
 
 welcomePage.classList.remove("hidden");
 
