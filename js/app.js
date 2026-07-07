@@ -347,24 +347,18 @@ HOME PAGE
 
 };
 
-loansBtn.onclick=()=>{
+loansBtn.onclick = ()=>{
 
-homeContent.innerHTML=`
+homeContent.innerHTML = `
 
 <div class="grid-2">
 
-<button id="loanBtn"
-class="grid-btn">
-
+<button id="loanBtn" class="grid-btn">
 Loans
-
 </button>
 
-<button id="paymentsBtn"
-class="grid-btn">
-
+<button id="paymentsBtn" class="grid-btn">
 Payments
-
 </button>
 
 </div>
@@ -383,10 +377,18 @@ class="back-btn">
 `;
 
 document.getElementById(
-"loanBack"
-).onclick=()=>{
+"loanBtn"
+).onclick = showLendBorrow;
 
-homeContent.innerHTML=`
+document.getElementById(
+"paymentsBtn"
+).onclick = showLendBorrow;
+
+document.getElementById(
+"loanBack"
+).onclick = ()=>{
+
+homeContent.innerHTML = `
 
 <h2>
 
@@ -398,26 +400,12 @@ HOME PAGE
 
 };
 
-document.getElementById(
-"loanBtn"
-).onclick=()=>{
-
-showLendBorrow();
-
 };
 
-document.getElementById(
-"paymentsBtn"
-).onclick=()=>{
 
-showLendBorrow();
-
-};
-
-};
 function showLendBorrow(){
 
-homeContent.innerHTML=`
+homeContent.innerHTML = `
 
 <div class="grid-2">
 
@@ -452,7 +440,7 @@ class="back-btn">
 
 document.getElementById(
 "lendBorrowBack"
-).onclick=()=>{
+).onclick = ()=>{
 
 loansBtn.click();
 
@@ -460,7 +448,7 @@ loansBtn.click();
 
 document.getElementById(
 "lendBtn"
-).onclick=()=>{
+).onclick = ()=>{
 
 alert("Lend Working");
 
@@ -468,20 +456,12 @@ alert("Lend Working");
 
 document.getElementById(
 "borrowBtn"
-).onclick=()=>{
+).onclick = ()=>{
 
 alert("Borrowed Working");
 
 };
 
-
-alert("showLendBorrow");
-
-homeContent.innerHTML=`
-
-...
-
-  
 }
 /* ======================
 
