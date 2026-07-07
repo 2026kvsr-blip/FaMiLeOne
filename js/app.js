@@ -5,7 +5,6 @@ Part 1A.3
 
 ===================================== */
 
-
 /* WELCOME SCREEN */
 
 
@@ -858,5 +857,257 @@ HOME PAGE
 
 };
 
+
+};
+homeBtn.onclick=()=>{
+
+homeContent.innerHTML=`
+
+<h2 class="page-title">
+
+Home
+
+</h2>
+
+<h2>
+
+HOME PAGE
+
+</h2>
+
+`;
+
+};
+
+
+
+familyBtn.onclick=()=>{
+
+homeContent.innerHTML=`
+
+<h2 class="page-title">
+
+Family Tree
+
+</h2>
+
+<div class="grid-2">
+
+<button class="grid-btn">
+
+Add Member
+
+</button>
+
+<button class="grid-btn">
+
+Relations
+
+</button>
+
+</div>
+
+<div align="center">
+
+<button
+id="familyBack"
+class="back-btn">
+
+← Back
+
+</button>
+
+</div>
+
+`;
+
+document.getElementById(
+"familyBack"
+).onclick=()=>{
+
+homeBtn.click();
+
+};
+
+};
+
+
+
+memoriesBtn.onclick=()=>{
+
+homeContent.innerHTML=`
+
+<h2 class="page-title">
+
+Memories
+
+</h2>
+
+<div class="grid-2">
+
+<button class="grid-btn">
+
+Photos
+
+</button>
+
+<button class="grid-btn">
+
+Videos
+
+</button>
+
+</div>
+
+<div align="center">
+
+<button
+id="memoryBack"
+class="back-btn">
+
+← Back
+
+</button>
+
+</div>
+
+`;
+
+document.getElementById(
+"memoryBack"
+).onclick=()=>{
+
+homeBtn.click();
+
+};
+
+};
+
+
+
+
+chartsBtn.onclick=()=>{
+
+homeContent.innerHTML=`
+
+<h2 class="page-title">
+
+Charts
+
+</h2>
+
+<div class="grid-2">
+
+<button class="grid-btn">
+
+Expenses
+
+</button>
+
+<button class="grid-btn">
+
+Income
+
+</button>
+
+</div>
+
+<div align="center">
+
+<button
+id="chartBack"
+class="back-btn">
+
+← Back
+
+</button>
+
+</div>
+
+`;
+
+document.getElementById(
+"chartBack"
+).onclick=()=>{
+
+homeBtn.click();
+
+};
+
+};
+
+
+
+reportsBtn.onclick=()=>{
+
+homeContent.innerHTML=`
+
+<h2 class="page-title">
+
+Reports
+
+</h2>
+
+<div class="grid-3x2">
+
+<button class="grid-btn">
+
+Today
+
+</button>
+
+<button class="grid-btn">
+
+This Week
+
+</button>
+
+<button class="grid-btn">
+
+This Month
+
+</button>
+
+<button class="grid-btn">
+
+This Year
+
+</button>
+
+<button class="grid-btn">
+
+Abstract
+
+</button>
+
+<button class="grid-btn">
+
+About
+
+</button>
+
+</div>
+
+<div align="center">
+
+<button
+id="reportsBack"
+class="back-btn">
+
+← Back
+
+</button>
+
+</div>
+
+`;
+
+document.getElementById(
+"reportsBack"
+).onclick=()=>{
+
+homeBtn.click();
+
+};
 
 };
