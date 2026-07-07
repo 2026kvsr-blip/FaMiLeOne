@@ -105,6 +105,17 @@ const homeBtn =
 document.getElementById(
 "homeBtn"
 );
+const familyBtn =
+document.getElementById("familyBtn");
+
+const memoriesBtn =
+document.getElementById("memoriesBtn");
+
+const chartsBtn =
+document.getElementById("chartsBtn");
+
+const reportsBtn =
+document.getElementById("reportsBtn");
 activitiesBtn.onclick=()=>{
 
 homeContent.innerHTML=`
@@ -472,12 +483,13 @@ verifyOTPBtn.onclick = ()=>{
 
 otpPage.classList.add("hidden");
 
+loginPage.classList.add("hidden");
+
 welcomePage.classList.add("hidden");
 
 dashboard.classList.remove("hidden");
 
 };
-
 
 /* ======================
 
@@ -571,9 +583,15 @@ document.getElementById(
 
 .onclick=()=>{
 
-homeContent.innerHTML=
+homeContent.innerHTML=`
 
-"HOME PAGE";
+<h2>
+
+HOME PAGE
+
+</h2>
+
+`;
 
 };
 
