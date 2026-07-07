@@ -6,6 +6,7 @@ Part 1A.3
 ===================================== */
 
 
+
 /* WELCOME SCREEN */
 
 const welcomePage =
@@ -388,7 +389,29 @@ Health
 Add Health
 
 </button>
+<button
+id="healthReports"
+class="grid-btn">
 
+Reports
+
+</button>
+
+<button
+id="healthSensitive"
+class="grid-btn">
+
+Sensitive Reports
+
+</button>
+
+<button
+id="healthAll"
+class="grid-btn">
+
+All Reports
+
+</button>
 document.getElementById(
 "healthReports"
 ).onclick=()=>{
@@ -1165,19 +1188,25 @@ Add New Memory
 
 </button>
 
-<button class="grid-btn">
+<button
+id="memoryReports"
+class="grid-btn">
 
 Reports
 
 </button>
 
-<button class="grid-btn">
+<button
+id="memorySensitive"
+class="grid-btn">
 
 Sensitive Reports
 
 </button>
 
-<button class="grid-btn">
+<button
+id="memoryAll"
+class="grid-btn">
 
 All Reports
 
@@ -1210,7 +1239,35 @@ class="back-btn">
 </div>
 
 `;
+document.getElementById(
+"memoryReports"
+).onclick=()=>{
 
+reportsLayout(
+"Memory Reports"
+);
+
+};
+
+document.getElementById(
+"memorySensitive"
+).onclick=()=>{
+
+reportsLayout(
+"Memory Sensitive Reports"
+);
+
+};
+
+document.getElementById(
+"memoryAll"
+).onclick=()=>{
+
+reportsLayout(
+"Memory All Reports"
+);
+
+};
 document.getElementById(
 "memoryBack"
 ).onclick=()=>{
