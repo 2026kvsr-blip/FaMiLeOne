@@ -184,40 +184,8 @@ dashboard.classList.remove("hidden");
 END
 
 ====================== */
-const signupPage =
-document.getElementById(
-"signupPage"
-);
 
-const signupOTPPage =
-document.getElementById(
-"signupOTPPage"
-);
 
-const signupOTPBtn =
-document.getElementById(
-"signupOTPBtn"
-);
-
-const signupVerifyBtn =
-document.getElementById(
-"signupVerifyBtn"
-);
-
-const registerBtn =
-document.getElementById(
-"registerBtn"
-);
-
-const backSignupBtn =
-document.getElementById(
-"backSignupBtn"
-);
-
-const backSignupOTPBtn =
-document.getElementById(
-"backSignupOTPBtn"
-);
 registerBtn.onclick = ()=>{
 
 alert("Registration Successful");
