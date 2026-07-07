@@ -5,6 +5,7 @@ Part 1A.3
 
 ===================================== */
 
+
 /* WELCOME SCREEN */
 
 const welcomePage =
@@ -346,23 +347,21 @@ HOME PAGE
 };
 
 };
+
 loansBtn.onclick=()=>{
 
 homeContent.innerHTML=`
 
 <div class="grid-2">
 
-<button
-id="loanBtn"
+<button id="loanBtn"
 class="grid-btn">
 
 Loans
 
 </button>
 
-
-<button
-id="paymentsBtn"
+<button id="paymentsBtn"
 class="grid-btn">
 
 Payments
@@ -371,12 +370,9 @@ Payments
 
 </div>
 
-
 <div align="center">
 
-<button
-id="loanBack"
-
+<button id="loanBack"
 class="back-btn">
 
 ← Back
@@ -387,11 +383,8 @@ class="back-btn">
 
 `;
 
-
 document.getElementById(
-
 "loanBack"
-
 ).onclick=()=>{
 
 homeContent.innerHTML=`
@@ -407,234 +400,36 @@ HOME PAGE
 };
 
 document.getElementById(
-
 "loanBtn"
-
 ).onclick=()=>{
 
-homeContent.innerHTML=`
-
-<div class="grid-2">
-
-<button
-id="lendBtn"
-class="grid-btn">
-
-Lend
-
-</button>
-
-
-<button
-id="borrowBtn"
-class="grid-btn">
-
-Borrowed
-
-</button>
-
-</div>
-
-
-<div align="center">
-
-<button
-id="loanInnerBack"
-class="back-btn">
-
-← Back
-
-</button>
-
-</div>
-
-`;
-
-document.getElementById(
-
-"loanInnerBack"
-
-).onclick=()=>{
-
-loansBtn.click();
-
-};
+showLendBorrow();
 
 };
 
 document.getElementById(
-
-"lendBtn"
-
-).onclick=()=>{
-
-homeContent.innerHTML=`
-
-<div class="grid-3x2">
-
-<button class="grid-btn">
-
-Add Lend
-
-</button>
-
-<button class="grid-btn">
-
-Reports
-
-</button>
-
-<button class="grid-btn">
-
-Sensitive Reports
-
-</button>
-
-<button class="grid-btn">
-
-All Reports
-
-</button>
-
-<button class="grid-btn">
-
-Custom Search
-
-</button>
-
-<button class="grid-btn">
-
-About
-
-</button>
-
-</div>
-
-
-<div align="center">
-
-<button
-id="lendBack"
-class="back-btn">
-
-← Back
-
-</button>
-
-</div>
-
-`;
-
-document.getElementById(
-
-"lendBack"
-
-).onclick=()=>{
-
-loansBtn.click();
-
-};
-
-};
-
-document.getElementById(
-
-"borrowBtn"
-
-).onclick=()=>{
-
-homeContent.innerHTML=`
-
-<div class="grid-3x2">
-
-<button class="grid-btn">
-
-Add Borrowed
-
-</button>
-
-<button class="grid-btn">
-
-Reports
-
-</button>
-
-<button class="grid-btn">
-
-Sensitive Reports
-
-</button>
-
-<button class="grid-btn">
-
-All Reports
-
-</button>
-
-<button class="grid-btn">
-
-Custom Search
-
-</button>
-
-<button class="grid-btn">
-
-About
-
-</button>
-
-</div>
-
-
-<div align="center">
-
-<button
-id="borrowBack"
-class="back-btn">
-
-← Back
-
-</button>
-
-</div>
-
-`;
-
-document.getElementById(
-
-"borrowBack"
-
-).onclick=()=>{
-
-loansBtn.click();
-
-};
-
-};
-
-  
-  
-  document.getElementById(
-
 "paymentsBtn"
-
 ).onclick=()=>{
+
+showLendBorrow();
+
+};
+
+};
+function showLendBorrow(){
 
 homeContent.innerHTML=`
 
 <div class="grid-2">
 
-<button
-id="lendBtn"
+<button id="lendBtn"
 class="grid-btn">
 
 Lend
 
 </button>
 
-
-<button
-id="borrowBtn"
+<button id="borrowBtn"
 class="grid-btn">
 
 Borrowed
@@ -643,11 +438,9 @@ Borrowed
 
 </div>
 
-
 <div align="center">
 
-<button
-id="paymentBack"
+<button id="lendBorrowBack"
 class="back-btn">
 
 ← Back
@@ -659,19 +452,30 @@ class="back-btn">
 `;
 
 document.getElementById(
-
-"paymentBack"
-
+"lendBorrowBack"
 ).onclick=()=>{
 
 loansBtn.click();
 
 };
 
-};
+document.getElementById(
+"lendBtn"
+).onclick=()=>{
+
+alert("Lend Working");
 
 };
 
+document.getElementById(
+"borrowBtn"
+).onclick=()=>{
+
+alert("Borrowed Working");
+
+};
+
+}
 /* ======================
 
 LOGIN
