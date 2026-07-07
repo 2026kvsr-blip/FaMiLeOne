@@ -5,6 +5,7 @@ Part 1A.3
 
 ===================================== */
 
+
 /* WELCOME SCREEN */
 
 const welcomePage =
@@ -104,7 +105,266 @@ const homeBtn =
 document.getElementById(
 "homeBtn"
 );
+activitiesBtn.onclick=()=>{
 
+homeContent.innerHTML=`
+
+<div class="grid-3x2">
+
+<button class="grid-btn">
+
+Add Activity
+
+</button>
+
+<button class="grid-btn">
+
+Reports
+
+</button>
+
+<button class="grid-btn">
+
+Sensitive Reports
+
+</button>
+
+<button class="grid-btn">
+
+All Reports
+
+</button>
+
+<button class="grid-btn">
+
+Custom Search
+
+</button>
+
+<button class="grid-btn">
+
+About
+
+</button>
+
+</div>
+
+<div align="center">
+
+<button
+id="activityBack"
+class="back-btn">
+
+← Back
+
+</button>
+
+</div>
+
+`;
+
+document.getElementById(
+
+"activityBack"
+
+).onclick=()=>{
+
+homeContent.innerHTML=
+
+"HOME PAGE";
+
+};
+
+};
+incomeBtn.onclick=()=>{
+
+homeContent.innerHTML=`
+
+<div class="grid-3x2">
+
+<button class="grid-btn">
+
+Add Income
+
+</button>
+
+<button class="grid-btn">
+
+Reports
+
+</button>
+
+<button class="grid-btn">
+
+Sensitive Reports
+
+</button>
+
+<button class="grid-btn">
+
+All Reports
+
+</button>
+
+<button class="grid-btn">
+
+Custom Search
+
+</button>
+
+<button class="grid-btn">
+
+About
+
+</button>
+
+</div>
+
+<div align="center">
+
+<button
+id="incomeBack"
+class="back-btn">
+
+← Back
+
+</button>
+
+</div>
+
+`;
+
+document.getElementById(
+
+"incomeBack"
+
+).onclick=()=>{
+
+homeContent.innerHTML=
+
+"HOME PAGE";
+
+};
+
+};
+healthBtn.onclick=()=>{
+
+homeContent.innerHTML=`
+
+<div class="grid-3x2">
+
+<button class="grid-btn">
+
+Add Health
+
+</button>
+
+<button class="grid-btn">
+
+Reports
+
+</button>
+
+<button class="grid-btn">
+
+Sensitive Reports
+
+</button>
+
+<button class="grid-btn">
+
+All Reports
+
+</button>
+
+<button class="grid-btn">
+
+Custom Search
+
+</button>
+
+<button class="grid-btn">
+
+About
+
+</button>
+
+</div>
+
+<div align="center">
+
+<button
+id="healthBack"
+class="back-btn">
+
+← Back
+
+</button>
+
+</div>
+
+`;
+
+document.getElementById(
+
+"healthBack"
+
+).onclick=()=>{
+
+homeContent.innerHTML=
+
+"HOME PAGE";
+
+};
+
+};
+loansBtn.onclick=()=>{
+
+homeContent.innerHTML=`
+
+<div class="grid-3x2">
+
+<button class="grid-btn">
+
+Loans
+
+</button>
+
+<button class="grid-btn">
+
+Payments
+
+</button>
+
+</div>
+
+<div align="center">
+
+<button
+id="loanBack"
+class="back-btn">
+
+← Back
+
+</button>
+
+</div>
+
+`;
+
+document.getElementById(
+
+"loanBack"
+
+).onclick=()=>{
+
+homeContent.innerHTML=
+
+"HOME PAGE";
+
+};
+
+};
 /* ======================
 
 LOGIN
