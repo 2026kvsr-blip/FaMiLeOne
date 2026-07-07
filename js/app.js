@@ -10,7 +10,6 @@ Part 1A.3
 const welcomePage =
 document.getElementById("welcomePage");
 
-
 /* LOGIN SCREEN */
 
 const loginPage =
