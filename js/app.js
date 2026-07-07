@@ -6,6 +6,7 @@ Part 1A.3
 ===================================== */
 /* WELCOME SCREEN */
 
+
 const welcomePage =
 document.getElementById("welcomePage");
 
