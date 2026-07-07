@@ -5,6 +5,7 @@ Part 1A.3
 
 ===================================== */
 
+
 /* WELCOME SCREEN */
 
 const welcomePage =
@@ -227,7 +228,9 @@ Add Income
 
 </button>
 
-<button class="grid-btn">
+<button
+id="incomeReports"
+class="grid-btn">
 
 Reports
 
@@ -272,7 +275,19 @@ class="back-btn">
 </div>
 
 `;
+document.getElementById(
 
+"incomeReports"
+
+).onclick=()=>{
+
+reportsLayout(
+
+"Income Reports"
+
+);
+
+};
 document.getElementById(
 
 "incomeBack"
@@ -309,7 +324,9 @@ Add Health
 
 </button>
 
-<button class="grid-btn">
+<button
+id="healthReports"
+class="grid-btn">
 
 Reports
 
@@ -354,7 +371,19 @@ class="back-btn">
 </div>
 
 `;
+document.getElementById(
 
+"healthReports"
+
+).onclick=()=>{
+
+reportsLayout(
+
+"Health Reports"
+
+);
+
+};
 document.getElementById(
 
 "healthBack"
@@ -510,7 +539,9 @@ Add Lend
 
 </button>
 
-<button class="grid-btn">
+<button
+id="lendReports"
+class="grid-btn">
 
 Reports
 
@@ -555,7 +586,19 @@ class="back-btn">
 </div>
 
 `;
+document.getElementById(
 
+"lendReports"
+
+).onclick=()=>{
+
+reportsLayout(
+
+type + " Reports"
+
+);
+
+};
 document.getElementById(
 "lendBack"
 ).onclick=()=>{
@@ -586,7 +629,9 @@ Add Borrowed
 
 </button>
 
-<button class="grid-btn">
+<button
+id="borrowReports"
+class="grid-btn">
 
 Reports
 
@@ -631,7 +676,19 @@ class="back-btn">
 </div>
 
 `;
+document.getElementById(
 
+"borrowReports"
+
+).onclick=()=>{
+
+reportsLayout(
+
+type + " Reports"
+
+);
+
+};
 document.getElementById(
 "borrowBack"
 ).onclick=()=>{
