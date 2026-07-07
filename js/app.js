@@ -64,7 +64,46 @@ document.getElementById("backLoginBtn");
 
 const backOTPBtn =
 document.getElementById("backOTPBtn");
+const homeContent =
+document.getElementById(
+"homeContent"
+);
 
+
+const expensesBtn =
+document.getElementById(
+"expensesBtn"
+);
+
+
+const activitiesBtn =
+document.getElementById(
+"activitiesBtn"
+);
+
+
+const loansBtn =
+document.getElementById(
+"loansBtn"
+);
+
+
+const incomeBtn =
+document.getElementById(
+"incomeBtn"
+);
+
+
+const healthBtn =
+document.getElementById(
+"healthBtn"
+);
+
+
+const homeBtn =
+document.getElementById(
+"homeBtn"
+);
 
 /* ======================
 
@@ -196,5 +235,87 @@ signupOTPPage.classList.add("hidden");
 signupPage.classList.add("hidden");
 
 welcomePage.classList.remove("hidden");
+
+};
+expensesBtn.onclick=()=>{
+
+homeContent.innerHTML=`
+
+<div class="grid-3x2">
+
+<button class="grid-btn">
+
+Add Expense
+
+</button>
+
+
+<button class="grid-btn">
+
+Reports
+
+</button>
+
+
+<button class="grid-btn">
+
+Sensitive Reports
+
+</button>
+
+
+<button class="grid-btn">
+
+All Reports
+
+</button>
+
+
+<button class="grid-btn">
+
+Custom Search
+
+</button>
+
+
+<button class="grid-btn">
+
+About
+
+</button>
+
+</div>
+
+
+<div align="center">
+
+<button
+id="expenseBack"
+
+class="back-btn">
+
+← Back
+
+</button>
+
+</div>
+
+`;
+
+
+document.getElementById(
+
+"expenseBack"
+
+)
+
+.onclick=()=>{
+
+homeContent.innerHTML=
+
+"HOME PAGE";
+
+};
+
 
 };
