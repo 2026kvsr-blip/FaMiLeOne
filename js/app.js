@@ -397,11 +397,19 @@ class="back-btn">
 
 document.getElementById(
 "loanBtn"
-).onclick = showLendBorrow;
+).onclick=()=>{
+
+showLendBorrow("Loan");
+
+};
 
 document.getElementById(
 "paymentsBtn"
-).onclick = showLendBorrow;
+).onclick=()=>{
+
+showLendBorrow("Payments");
+
+};
 
 document.getElementById(
 "loanBack"
@@ -422,15 +430,16 @@ HOME PAGE
 };
 
 
-function showLendBorrow(){
+function showLendBorrow(type){
 
 homeContent.innerHTML = `
 
 <h2 class="page-title">
 
-Loans - Borrowed
+${type}
 
 </h2>
+
 <div class="grid-2">
 
 <button id="lendBtn"
@@ -475,7 +484,11 @@ document.getElementById(
 ).onclick=()=>{
 
 homeContent.innerHTML=`
+<h2 class="page-title">
 
+${type} - Lend
+
+</h2>
 <div class="grid-3x2">
 
 <button class="grid-btn">
@@ -534,7 +547,7 @@ document.getElementById(
 "lendBack"
 ).onclick=()=>{
 
-showLendBorrow();
+showLendBorrow(type);
 
 };
 
@@ -547,7 +560,11 @@ document.getElementById(
 ).onclick=()=>{
 
 homeContent.innerHTML=`
+<h2 class="page-title">
 
+${type} - Borrowed
+
+</h2>
 <div class="grid-3x2">
 
 <button class="grid-btn">
@@ -606,7 +623,7 @@ document.getElementById(
 "borrowBack"
 ).onclick=()=>{
 
-showLendBorrow();
+showLendBorrow(type);
 
 };
 
