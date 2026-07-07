@@ -5,6 +5,7 @@ Part 1A.3
 
 ===================================== */
 
+
 /* WELCOME SCREEN */
 
 const welcomePage =
@@ -139,18 +140,21 @@ Reports
 
 </button>
 
-<button class="grid-btn">
+<button
+id="activitySensitive"
+class="grid-btn">
 
 Sensitive Reports
 
 </button>
 
-<button class="grid-btn">
+<button
+id="activityAll"
+class="grid-btn">
 
 All Reports
 
 </button>
-
 <button class="grid-btn">
 
 Custom Search
@@ -188,6 +192,35 @@ reportsLayout(
 
 "Activity Reports"
 
+);
+
+};
+  document.getElementById(
+"activityReports"
+).onclick=()=>{
+
+reportsLayout(
+"Activity Reports"
+);
+
+};
+
+document.getElementById(
+"activitySensitive"
+).onclick=()=>{
+
+reportsLayout(
+"Activity Sensitive Reports"
+);
+
+};
+
+document.getElementById(
+"activityAll"
+).onclick=()=>{
+
+reportsLayout(
+"Activity All Reports"
 );
 
 };
@@ -235,18 +268,21 @@ Reports
 
 </button>
 
-<button class="grid-btn">
+<button
+id="incomeSensitive"
+class="grid-btn">
 
 Sensitive Reports
 
 </button>
 
-<button class="grid-btn">
+<button
+id="incomeAll"
+class="grid-btn">
 
 All Reports
 
 </button>
-
 <button class="grid-btn">
 
 Custom Search
@@ -288,6 +324,36 @@ reportsLayout(
 
 };
 document.getElementById(
+"incomeReports"
+).onclick=()=>{
+
+reportsLayout(
+"Income Reports"
+);
+
+};
+
+document.getElementById(
+"incomeSensitive"
+).onclick=()=>{
+
+reportsLayout(
+"Income Sensitive Reports"
+);
+
+};
+
+document.getElementById(
+"incomeAll"
+).onclick=()=>{
+
+reportsLayout(
+"Income All Reports"
+);
+
+};
+  
+document.getElementById(
 
 "incomeBack"
 
@@ -323,26 +389,35 @@ Add Health
 
 </button>
 
-<button
-id="healthReports"
-class="grid-btn">
+document.getElementById(
+"healthReports"
+).onclick=()=>{
 
-Reports
+reportsLayout(
+"Health Reports"
+);
 
-</button>
+};
 
-<button class="grid-btn">
+document.getElementById(
+"healthSensitive"
+).onclick=()=>{
 
-Sensitive Reports
+reportsLayout(
+"Health Sensitive Reports"
+);
 
-</button>
+};
 
-<button class="grid-btn">
+document.getElementById(
+"healthAll"
+).onclick=()=>{
 
-All Reports
+reportsLayout(
+"Health All Reports"
+);
 
-</button>
-
+};
 <button class="grid-btn">
 
 Custom Search
@@ -862,19 +937,22 @@ Reports
 </button>
 
 
-<button class="grid-btn">
+<button
+id="expenseSensitive"
+class="grid-btn">
 
 Sensitive Reports
 
 </button>
 
 
-<button class="grid-btn">
+<button
+id="expenseAll"
+class="grid-btn">
 
 All Reports
 
 </button>
-
 
 <button class="grid-btn">
 
@@ -919,7 +997,37 @@ reportsLayout(
 );
 
 };
+document.getElementById(
+"expenseReports"
+).onclick=()=>{
 
+reportsLayout(
+"Expense Reports"
+);
+
+};
+
+
+document.getElementById(
+"expenseSensitive"
+).onclick=()=>{
+
+reportsLayout(
+"Expense Sensitive Reports"
+);
+
+};
+
+
+document.getElementById(
+"expenseAll"
+).onclick=()=>{
+
+reportsLayout(
+"Expense All Reports"
+);
+
+};
 document.getElementById(
 
 "expenseBack"
