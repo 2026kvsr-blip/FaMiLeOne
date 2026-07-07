@@ -474,7 +474,6 @@ alert("Borrowed Working");
 
 };
 
-function showLendBorrow(){
 
 alert("showLendBorrow");
 
