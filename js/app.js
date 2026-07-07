@@ -333,21 +333,64 @@ loansBtn.onclick=()=>{
 
 homeContent.innerHTML=`
 
-<div class="grid-3x2">
+<div class="grid-2">
 
-<button class="grid-btn">
+<button
+id="loanBtn"
+class="grid-btn">
 
 Loans
 
 </button>
 
-<button class="grid-btn">
+
+<button
+id="paymentsBtn"
+class="grid-btn">
 
 Payments
 
 </button>
 
 </div>
+
+
+<div align="center">
+
+<button
+id="loanBack"
+
+class="back-btn">
+
+← Back
+
+</button>
+
+</div>
+
+`;
+
+
+document.getElementById(
+
+"loanBack"
+
+).onclick=()=>{
+
+homeContent.innerHTML=`
+
+<h2>
+
+HOME PAGE
+
+</h2>
+
+`;
+
+};
+
+
+};
 
 <div align="center">
 
