@@ -118,6 +118,11 @@ activitiesBtn.onclick=()=>{
 
 homeContent.innerHTML=`
 
+<h2 class="page-title">
+
+Activities
+
+</h2>
 <div class="grid-3x2">
 
 <button class="grid-btn">
@@ -195,6 +200,11 @@ incomeBtn.onclick=()=>{
 
 homeContent.innerHTML=`
 
+<h2 class="page-title">
+
+Income
+
+</h2>
 <div class="grid-3x2">
 
 <button class="grid-btn">
@@ -272,6 +282,11 @@ healthBtn.onclick=()=>{
 
 homeContent.innerHTML=`
 
+<h2 class="page-title">
+
+Health
+
+</h2>
 <div class="grid-3x2">
 
 <button class="grid-btn">
@@ -727,6 +742,11 @@ welcomePage.classList.remove("hidden");
 expensesBtn.onclick=()=>{
 
 homeContent.innerHTML=`
+<h2 class="page-title">
+
+Expenses
+
+</h2>
 
 <div class="grid-3x2">
 
