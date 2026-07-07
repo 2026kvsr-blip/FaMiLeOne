@@ -388,7 +388,63 @@ HOME PAGE
 `;
 
 };
+document.getElementById(
 
+"paymentsBtn"
+
+).onclick=()=>{
+
+
+homeContent.innerHTML=`
+
+<div class="grid-2">
+
+<button
+id="lendBtn"
+class="grid-btn">
+
+Lend
+
+</button>
+
+
+<button
+id="borrowBtn"
+class="grid-btn">
+
+Borrowed
+
+</button>
+
+</div>
+
+
+<div align="center">
+
+<button
+id="paymentBack"
+class="back-btn">
+
+← Back
+
+</button>
+
+</div>
+
+`;
+
+
+document.getElementById(
+
+"paymentBack"
+
+).onclick=()=>{
+
+loansBtn.click();
+
+};
+
+};
 
 };
 
