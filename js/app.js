@@ -5,7 +5,6 @@ Part 1A.3
 
 ===================================== */
 
-
 /* WELCOME SCREEN */
 
 const welcomePage =
@@ -975,7 +974,7 @@ Family Tree
 
 </h2>
 
-<div class="grid-2">
+<div class="grid-3x2">
 
 <button class="grid-btn">
 
@@ -985,7 +984,31 @@ Add Member
 
 <button class="grid-btn">
 
+Add Family Tree
+
+</button>
+
+<button class="grid-btn">
+
+Search Member
+
+</button>
+
+<button class="grid-btn">
+
 Relations
+
+</button>
+
+<button class="grid-btn">
+
+Family Tree
+
+</button>
+
+<button class="grid-btn">
+
+About
 
 </button>
 
@@ -1014,7 +1037,6 @@ homeBtn.click();
 };
 
 };
-
 
 
 memoriesBtn.onclick=()=>{
@@ -1080,17 +1102,65 @@ Charts
 
 </h2>
 
-<div class="grid-2">
+<div class="grid-3x2">
 
 <button class="grid-btn">
 
-Expenses
+Expenses Charts
 
 </button>
 
 <button class="grid-btn">
 
-Income
+Activities Charts
+
+</button>
+
+<button class="grid-btn">
+
+Income Charts
+
+</button>
+
+<button class="grid-btn">
+
+Health Charts
+
+</button>
+
+<button class="grid-btn">
+
+Memories Charts
+
+</button>
+
+<button class="grid-btn">
+
+Loan - Lend Charts
+
+</button>
+
+<button class="grid-btn">
+
+Loan - Borrowed Charts
+
+</button>
+
+<button class="grid-btn">
+
+Payments - Lend Charts
+
+</button>
+
+<button class="grid-btn">
+
+Payments - Borrowed Charts
+
+</button>
+
+<button class="grid-btn">
+
+About
 
 </button>
 
@@ -1120,81 +1190,57 @@ homeBtn.click();
 
 };
 
-
-
 reportsBtn.onclick=()=>{
-
-reportsLayout(
-
-"Reports"
-
-);
-
-};
-
-function reportsLayout(title){
 
 homeContent.innerHTML=`
 
 <h2 class="page-title">
 
-${title}
+Reports
 
 </h2>
 
-<div class="report-grid">
+<div class="grid-3x2">
 
-<button class="report-btn">
+<button class="grid-btn">
 
-Today
-
-</button>
-
-<button class="report-btn">
-
-This Week
+Expenses Reports
 
 </button>
 
-<button class="report-btn">
+<button class="grid-btn">
 
-This Month
-
-</button>
-
-<button class="report-btn">
-
-This Year
+Activities Reports
 
 </button>
 
-<button class="report-btn">
+<button class="grid-btn">
 
-Daily
-
-</button>
-
-<button class="report-btn">
-
-Weekly
+Loan Reports
 
 </button>
 
-<button class="report-btn">
+<button class="grid-btn">
 
-Monthly
-
-</button>
-
-<button class="report-btn">
-
-Yearly
+Income Reports
 
 </button>
 
-<button class="report-btn">
+<button class="grid-btn">
 
-Abstract
+Health Reports
+
+</button>
+
+<button class="grid-btn">
+
+Memories Reports
+
+</button>
+
+<button class="grid-btn">
+
+About
 
 </button>
 
@@ -1203,8 +1249,7 @@ Abstract
 <div align="center">
 
 <button
-id="reportBack"
-
+id="reportsBack"
 class="back-btn">
 
 ← Back
@@ -1214,11 +1259,13 @@ class="back-btn">
 </div>
 
 `;
+
 document.getElementById(
-"reportBack"
+"reportsBack"
 ).onclick=()=>{
 
 homeBtn.click();
 
 };
-}
+
+};
