@@ -4,6 +4,7 @@ oneFaMiLe V1
 Part 1A.3
 
 ===================================== */
+
 /* WELCOME SCREEN */
 
 
@@ -364,7 +365,11 @@ HOME PAGE
 loansBtn.onclick = ()=>{
 
 homeContent.innerHTML = `
+<h2 class="page-title">
 
+Loans
+
+</h2>
 <div class="grid-2">
 
 <button id="loanBtn" class="grid-btn">
@@ -421,6 +426,11 @@ function showLendBorrow(){
 
 homeContent.innerHTML = `
 
+<h2 class="page-title">
+
+Loans - Borrowed
+
+</h2>
 <div class="grid-2">
 
 <button id="lendBtn"
