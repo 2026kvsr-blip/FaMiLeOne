@@ -555,3 +555,19 @@ cursor:pointer;
 min-height:70px;
 
 }
+
+.page-title{
+
+text-align:center;
+
+font-size:24px;
+
+font-weight:700;
+
+color:#2A6EB0;
+
+margin-top:20px;
+
+margin-bottom:20px;
+
+}
