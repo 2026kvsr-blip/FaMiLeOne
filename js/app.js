@@ -5,7 +5,6 @@ Part 1A.3
 
 ===================================== */
 
-
 /* WELCOME SCREEN */
 
 const welcomePage =
@@ -422,6 +421,7 @@ document.getElementById(
 showLendBorrow();
 
 };
+  };
 function showLendBorrow(){
 
 homeContent.innerHTML=`
@@ -469,19 +469,6 @@ loansBtn.click();
 };
 
 }
-document.getElementById(
-
-"paymentBack"
-
-).onclick=()=>{
-
-loansBtn.click();
-
-};
-
-};
-
-};
 
 /* ======================
 
