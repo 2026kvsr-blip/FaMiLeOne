@@ -5,6 +5,7 @@ Part 1A.3
 
 ===================================== */
 
+
 /* WELCOME SCREEN */
 
 const welcomePage =
@@ -179,9 +180,15 @@ document.getElementById(
 
 ).onclick=()=>{
 
-homeContent.innerHTML=
+homeContent.innerHTML=`
 
-"HOME PAGE";
+<h2>
+
+HOME PAGE
+
+</h2>
+
+`;
 
 };
 
@@ -250,9 +257,15 @@ document.getElementById(
 
 ).onclick=()=>{
 
-homeContent.innerHTML=
+homeContent.innerHTML=`
 
-"HOME PAGE";
+<h2>
+
+HOME PAGE
+
+</h2>
+
+`;
 
 };
 
@@ -321,9 +334,15 @@ document.getElementById(
 
 ).onclick=()=>{
 
-homeContent.innerHTML=
+homeContent.innerHTML=`
 
-"HOME PAGE";
+<h2>
+
+HOME PAGE
+
+</h2>
+
+`;
 
 };
 
