@@ -5,7 +5,6 @@ Part 1A.3
 
 ===================================== */
 
-
 /* WELCOME SCREEN */
 
 const welcomePage =
@@ -196,26 +195,23 @@ reportsLayout(
 
 };
   
-document.getElementById(
-"activitySensitive"
-).onclick=()=>{
+document.getElementById("activitySensitive").onclick=()=>{
 
-reportsLayout(
-"Activity Sensitive Reports"
+openSensitive(
+"Activities",
+"Sensitive Reports"
 );
 
 };
 
-document.getElementById(
-"activityAll"
-).onclick=()=>{
+document.getElementById("activityAll").onclick=()=>{
 
-reportsLayout(
-"Activity All Reports"
+openSensitive(
+"Activities",
+"All Reports"
 );
 
 };
-
   
 document.getElementById(
 
@@ -318,22 +314,20 @@ reportsLayout(
 };
 
 
-document.getElementById(
-"incomeSensitive"
-).onclick=()=>{
+document.getElementById("incomeSensitive").onclick=()=>{
 
-reportsLayout(
-"Income Sensitive Reports"
+openSensitive(
+"Income",
+"Sensitive Reports"
 );
 
 };
 
-document.getElementById(
-"incomeAll"
-).onclick=()=>{
+document.getElementById("incomeAll").onclick=()=>{
 
-reportsLayout(
-"Income All Reports"
+openSensitive(
+"Income",
+"All Reports"
 );
 
 };
@@ -425,22 +419,20 @@ reportsLayout(
 
 };
 
-document.getElementById(
-"healthSensitive"
-).onclick=()=>{
+document.getElementById("healthSensitive").onclick=()=>{
 
-reportsLayout(
-"Health Sensitive Reports"
+openSensitive(
+"Health",
+"Sensitive Reports"
 );
 
 };
 
-document.getElementById(
-"healthAll"
-).onclick=()=>{
+document.getElementById("healthAll").onclick=()=>{
 
-reportsLayout(
-"Health All Reports"
+openSensitive(
+"Health",
+"All Reports"
 );
 
 };
@@ -654,22 +646,20 @@ type + " - Lend Reports"
 
 };
 
-document.getElementById(
-"lendSensitive"
-).onclick=()=>{
+document.getElementById("lendSensitive").onclick=()=>{
 
-reportsLayout(
-type + " - Lend Sensitive Reports"
+openSensitive(
+type + " - Lend",
+"Sensitive Reports"
 );
 
 };
 
-document.getElementById(
-"lendAll"
-).onclick=()=>{
+document.getElementById("lendAll").onclick=()=>{
 
-reportsLayout(
-type + " - Lend All Reports"
+openSensitive(
+type + " - Lend",
+"All Reports"
 );
 
 };
@@ -766,26 +756,25 @@ type + " - Borrowed Reports"
 
 };
 
-document.getElementById(
-"borrowSensitive"
-).onclick=()=>{
+document.getElementById("borrowSensitive").onclick=()=>{
 
-reportsLayout(
-type + " - Borrowed Sensitive Reports"
+openSensitive(
+type + " - Borrowed",
+"Sensitive Reports"
 );
 
 };
 
-document.getElementById(
-"borrowAll"
-).onclick=()=>{
+document.getElementById("borrowAll").onclick=()=>{
 
-reportsLayout(
-type + " - Borrowed All Reports"
+openSensitive(
+type + " - Borrowed",
+"All Reports"
 );
 
 };
 
+  
 document.getElementById(
 "borrowBack"
 ).onclick=()=>{
@@ -1020,27 +1009,6 @@ reportsLayout(
 
 };
 
-document.getElementById(
-"expenseSensitive"
-).onclick=()=>{
-
-reportsLayout(
-"Expense Sensitive Reports"
-);
-
-};
-
-
-document.getElementById(
-"expenseAll"
-).onclick=()=>{
-
-reportsLayout(
-"Expense All Reports"
-);
-
-};
-
 
 document.getElementById("expenseSensitive").onclick = ()=>{
 
@@ -1254,27 +1222,23 @@ reportsLayout(
 
 };
 
-document.getElementById(
-"memorySensitive"
-).onclick=()=>{
+document.getElementById("memorySensitive").onclick=()=>{
 
-reportsLayout(
-"Memory Sensitive Reports"
+openSensitive(
+"Memories",
+"Sensitive Reports"
 );
 
 };
 
-document.getElementById(
-"memoryAll"
-).onclick=()=>{
+document.getElementById("memoryAll").onclick=()=>{
 
-reportsLayout(
-"Memory All Reports"
+openSensitive(
+"Memories",
+"All Reports"
 );
 
 };
-
-
   
 document.getElementById(
 "memoryBack"
