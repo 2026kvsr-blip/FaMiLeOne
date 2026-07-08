@@ -5,6 +5,7 @@ Part 1A.3
 
 ===================================== */
 
+
 /* WELCOME SCREEN */
 
 const welcomePage =
@@ -215,13 +216,6 @@ reportsLayout(
 
 };
 
-document.getElementById(
-"activityReports"
-).onclick=()=>{
-
-reportMenu("Activities");
-
-};
   
 document.getElementById(
 
@@ -343,13 +337,7 @@ reportsLayout(
 );
 
 };
-document.getElementById(
-"incomeReports"
-).onclick=()=>{
 
-reportMenu("Income");
-
-};
 
   
 document.getElementById(
@@ -454,14 +442,6 @@ document.getElementById(
 reportsLayout(
 "Health All Reports"
 );
-
-};
-
-document.getElementById(
-"healthReports"
-).onclick=()=>{
-
-reportMenu("Health");
 
 };
 
@@ -1061,19 +1041,6 @@ reportsLayout(
 
 };
 
-document.getElementById(
-"expenseReports"
-).onclick=()=>{
-
-reportMenu("Expenses");
-
-};
-
-document.getElementById("expenseReports").onclick = ()=>{
-
-    reportMenu("Expenses");
-
-};
 
 document.getElementById("expenseSensitive").onclick = ()=>{
 
@@ -1307,13 +1274,7 @@ reportsLayout(
 
 };
 
-document.getElementById(
-"memoryReports"
-).onclick=()=>{
 
-reportMenu("Memories");
-
-};
   
 document.getElementById(
 "memoryBack"
@@ -1599,61 +1560,3 @@ homeBtn.click();
 
 
 
-function reportMenu(moduleName){
-
-homeContent.innerHTML=`
-
-<h2 class="page-title">
-
-${moduleName}
-
-
-</h2>
-
-<div class="grid-2">
-
-<button id="normalReports" class="grid-btn">
-Reports
-</button>
-
-<button id="sensitiveReports" class="grid-btn">
-Sensitive Reports
-</button>
-
-<button id="allReports" class="grid-btn">
-All Reports
-</button>
-
-<button id="reportMenuBack" class="back-btn">
-← Back
-</button>
-
-</div>
-
-`;
-
-document.getElementById("normalReports").onclick=()=>{
-
-reportsLayout(moduleName+" Reports");
-
-};
-
-document.getElementById("sensitiveReports").onclick=()=>{
-
-openSensitive(moduleName,"Sensitive Reports");
-
-};
-
-document.getElementById("allReports").onclick=()=>{
-
-openSensitive(moduleName,"All Reports");
-
-};
-
-document.getElementById("reportMenuBack").onclick=()=>{
-
-homeBtn.click();
-
-};
-
-}
