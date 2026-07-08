@@ -5,7 +5,6 @@ box-sizing:border-box;
 font-family:Arial,Helvetica,sans-serif;
 }
 
-
 body{
   
 background:#EAF8FF;
@@ -72,18 +71,27 @@ color:white;
 
 .language select{
 
+background:transparent;
+
 border:none;
 
 outline:none;
 
-border-radius:10px;
+color:#000000;
 
-padding:6px 10px;
+font-weight:600;
 
-color:#2A6EB0;
+padding:6px;
+
+appearance:none;
+
+-webkit-appearance:none;
+
+-moz-appearance:none;
+
+cursor:pointer;
 
 }
-
 
 
 /* =======================
@@ -347,11 +355,15 @@ font-size:13px;
 
 font-weight:600;
 
-color:#2A6EB0;
+color:#000000;
 
 cursor:pointer;
 
+transition:0.3s;
+
 }
+
+
 .home-message{
 
 margin-top:35px;
@@ -400,7 +412,7 @@ border:none;
 
 background:none;
 
-color:white;
+color:#000000;
 
 font-size:13px;
 
@@ -408,15 +420,18 @@ font-weight:600;
 
 cursor:pointer;
 
+transition:0.3s;
+
 }
 
 
 .active{
 
-color:#FFD86A !important;
+color:#D4AF37 !important;
+
+font-weight:700;
 
 }
-
 
 
 /* =======================
