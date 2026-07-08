@@ -5,7 +5,6 @@ Part 1A.3
 
 ===================================== */
 
-
 /* WELCOME SCREEN */
 
 const welcomePage =
@@ -1407,37 +1406,37 @@ class="back-btn">
 `;
 document.getElementById("expenseMainReports").onclick=()=>{
 
-expensesBtn.click();
+reportCategory("Expenses");
 
 };
 
 document.getElementById("activityMainReports").onclick=()=>{
 
-activitiesBtn.click();
+reportCategory("Activities");
 
 };
 
 document.getElementById("loanMainReports").onclick=()=>{
 
-loansBtn.click();
+reportCategory("Loan");
 
 };
 
 document.getElementById("incomeMainReports").onclick=()=>{
 
-incomeBtn.click();
+reportCategory("Income");
 
 };
 
 document.getElementById("healthMainReports").onclick=()=>{
 
-healthBtn.click();
+reportCategory("Health");
 
 };
 
 document.getElementById("memoryMainReports").onclick=()=>{
 
-memoriesBtn.click();
+reportCategory("Memories");
 
 };
 document.getElementById(
@@ -1619,3 +1618,80 @@ homeBtn.click();
 
 }
 
+function reportCategory(module){
+
+homeContent.innerHTML=`
+
+<h2 class="page-title">
+
+${module} Reports
+
+</h2>
+
+<div class="grid-3x2">
+
+<button
+id="catReports"
+class="grid-btn">
+
+Reports
+
+</button>
+
+<button
+id="catSensitive"
+class="grid-btn">
+
+Sensitive Reports
+
+</button>
+
+<button
+id="catAll"
+class="grid-btn">
+
+All Reports
+
+</button>
+
+</div>
+
+<div align="center">
+
+<button
+id="catBack"
+class="back-btn">
+
+← Back
+
+</button>
+
+</div>
+
+`;
+
+document.getElementById("catReports").onclick=()=>{
+
+reportsLayout(module+" Reports");
+
+};
+
+document.getElementById("catSensitive").onclick=()=>{
+
+openSensitive(module,"Sensitive Reports");
+
+};
+
+document.getElementById("catAll").onclick=()=>{
+
+openSensitive(module,"All Reports");
+
+};
+
+document.getElementById("catBack").onclick=()=>{
+
+reportsBtn.click();
+
+};
+
+}
