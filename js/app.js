@@ -5,6 +5,7 @@ Part 1A.3
 
 ===================================== */
 
+
 /* WELCOME SCREEN */
 
 const welcomePage =
@@ -574,7 +575,7 @@ homeContent.innerHTML=`
 
 <h2 class="page-title">
 
-${type} +"- Lend"
+${type} - Lend
 
 </h2>
 
@@ -686,7 +687,7 @@ homeContent.innerHTML=`
 
 <h2 class="page-title">
 
-${type} +"- Borrowed"
+${type} - Borrowed
 
 </h2>
 
