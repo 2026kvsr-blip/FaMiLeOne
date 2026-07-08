@@ -5,7 +5,6 @@ box-sizing:border-box;
 font-family:Arial,Helvetica,sans-serif;
 }
 
-
 body{
   
 background:#EAF8FF;
@@ -635,5 +634,67 @@ color:#2A6EB0;
 font-weight:600;
 
 cursor:pointer;
+
+}
+
+
+/* ==========================
+SVG ICONS
+========================== */
+
+.btn-icon{
+
+width:34px;
+
+height:34px;
+
+display:block;
+
+margin:0 auto 8px;
+
+color:currentColor;
+
+}
+
+.nav-icon{
+
+width:22px;
+
+height:22px;
+
+display:block;
+
+margin:0 auto 4px;
+
+color:currentColor;
+
+}
+
+.grid-btn{
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+gap:8px;
+
+}
+
+.top-container button,
+.bottom-container button{
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+gap:3px;
 
 }
