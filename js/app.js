@@ -5,7 +5,6 @@ Part 1A.3
 
 ===================================== */
 
-
 /* WELCOME SCREEN */
 
 const welcomePage =
@@ -1414,7 +1413,41 @@ class="back-btn">
 </div>
 
 `;
+document.getElementById("expenseMainReports").onclick=()=>{
 
+expensesBtn.click();
+
+};
+
+document.getElementById("activityMainReports").onclick=()=>{
+
+activitiesBtn.click();
+
+};
+
+document.getElementById("loanMainReports").onclick=()=>{
+
+loansBtn.click();
+
+};
+
+document.getElementById("incomeMainReports").onclick=()=>{
+
+incomeBtn.click();
+
+};
+
+document.getElementById("healthMainReports").onclick=()=>{
+
+healthBtn.click();
+
+};
+
+document.getElementById("memoryMainReports").onclick=()=>{
+
+memoriesBtn.click();
+
+};
 document.getElementById(
 "reportsBack"
 ).onclick=()=>{
