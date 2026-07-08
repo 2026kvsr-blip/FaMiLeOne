@@ -5,7 +5,6 @@ Part 1A.3
 
 ===================================== */
 
-
 /* WELCOME SCREEN */
 
 const welcomePage =
@@ -575,7 +574,7 @@ homeContent.innerHTML=`
 
 <h2 class="page-title">
 
-Loan - Lend
+${type} +"- Lend"
 
 </h2>
 
@@ -654,7 +653,7 @@ document.getElementById(
 ).onclick=()=>{
 
 reportsLayout(
-"Loan - Lend Sensitive Reports"
+type + " - Lend Sensitive Reports"
 );
 
 };
@@ -664,7 +663,7 @@ document.getElementById(
 ).onclick=()=>{
 
 reportsLayout(
-"Loan - Lend All Reports"
+type + " - Lend All Reports"
 );
 
 };
@@ -687,7 +686,7 @@ homeContent.innerHTML=`
 
 <h2 class="page-title">
 
-${type} - Borrowed
+${type} +"- Borrowed"
 
 </h2>
 
@@ -766,7 +765,7 @@ document.getElementById(
 ).onclick=()=>{
 
 reportsLayout(
-"Loan - Borrowed Sensitive Reports"
+type + " - Borrowed Sensitive Reports"
 );
 
 };
@@ -776,7 +775,7 @@ document.getElementById(
 ).onclick=()=>{
 
 reportsLayout(
-"Loan - Borrowed All Reports"
+type + " - Borrowed All Reports"
 );
 
 };
