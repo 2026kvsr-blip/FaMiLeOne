@@ -5,6 +5,7 @@ box-sizing:border-box;
 font-family:Arial,Helvetica,sans-serif;
 }
 
+
 body{
   
 background:#EAF8FF;
@@ -427,7 +428,7 @@ transition:0.3s;
 
 .active{
 
-color:#D4AF37 !important;
+color:#FFD700 !important;
 
 font-weight:700;
 
