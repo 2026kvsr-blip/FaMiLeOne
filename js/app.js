@@ -5,7 +5,6 @@ Part 1A.3
 
 ===================================== */
 
-
 /* WELCOME SCREEN */
 
 const welcomePage =
@@ -190,7 +189,7 @@ document.getElementById(
 
 reportsLayout(
 
-"Activity Reports"
+"Activities Reports"
 
 );
 
@@ -1004,7 +1003,7 @@ document.getElementById(
 
 reportsLayout(
 
-"Expense Reports"
+"Expenses Reports"
 
 );
 
@@ -1218,7 +1217,7 @@ document.getElementById(
 ).onclick=()=>{
 
 reportsLayout(
-"Memory Reports"
+"Memories Reports"
 );
 
 };
