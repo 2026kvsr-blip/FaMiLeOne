@@ -6,7 +6,6 @@ font-family:Arial,Helvetica,sans-serif;
 }
 
 body{
-
   
 background:#EAF8FF;
 
@@ -489,13 +488,15 @@ color:white;
 
 display:grid;
 
-grid-template-columns:
-
-repeat(3,1fr);
+grid-template-columns:repeat(3,1fr);
 
 gap:15px;
 
-margin-top:30px;
+margin:30px auto;
+
+width:90%;
+
+justify-items:center;
 
 }
 
@@ -536,6 +537,10 @@ margin:25px auto;
 }
 
 .grid-btn{
+
+width:100%;
+
+max-width:160px;
 
 background:white;
 
