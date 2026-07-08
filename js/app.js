@@ -5,6 +5,7 @@ Part 1A.3
 
 ===================================== */
 
+
 /* WELCOME SCREEN */
 
 const welcomePage =
@@ -1418,7 +1419,7 @@ reportCategory("Activities");
 
 document.getElementById("loanMainReports").onclick=()=>{
 
-reportCategory("Loan");
+loanReportsMenu();
 
 };
 
@@ -1689,6 +1690,83 @@ openSensitive(module,"All Reports");
 };
 
 document.getElementById("catBack").onclick=()=>{
+
+reportsBtn.click();
+
+};
+
+}
+
+
+function loanReportsMenu(){
+
+homeContent.innerHTML=`
+
+<h2 class="page-title">
+
+Loan Reports
+
+</h2>
+
+<div class="grid-2">
+
+<button id="loanLendRpt" class="grid-btn">
+Loan - Lend Reports
+</button>
+
+<button id="loanBorrowRpt" class="grid-btn">
+Loan - Borrowed Reports
+</button>
+
+<button id="paymentLendRpt" class="grid-btn">
+Payments - Lend Reports
+</button>
+
+<button id="paymentBorrowRpt" class="grid-btn">
+Payments - Borrowed Reports
+</button>
+
+</div>
+
+<div align="center">
+
+<button
+id="loanRptBack"
+class="back-btn">
+
+← Back
+
+</button>
+
+</div>
+
+`;
+
+document.getElementById("loanLendRpt").onclick=()=>{
+
+reportCategory("Loan - Lend");
+
+};
+
+document.getElementById("loanBorrowRpt").onclick=()=>{
+
+reportCategory("Loan - Borrowed");
+
+};
+
+document.getElementById("paymentLendRpt").onclick=()=>{
+
+reportCategory("Payments - Lend");
+
+};
+
+document.getElementById("paymentBorrowRpt").onclick=()=>{
+
+reportCategory("Payments - Borrowed");
+
+};
+
+document.getElementById("loanRptBack").onclick=()=>{
 
 reportsBtn.click();
 
