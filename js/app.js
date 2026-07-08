@@ -5,7 +5,6 @@ Part 1A.3
 
 ===================================== */
 
-
 /* WELCOME SCREEN */
 
 const welcomePage =
@@ -112,9 +111,6 @@ document.getElementById("memoriesBtn");
 
 const chartsBtn =
 document.getElementById("chartsBtn");
-
-const reportsBtn =
-document.getElementById("reportsBtn");
 
 const reportsBtn =
 document.getElementById("reportsBtn");
