@@ -5,6 +5,7 @@ Part 1A.3
 
 ===================================== */
 
+
 /* WELCOME SCREEN */
 
 const welcomePage =
@@ -114,8 +115,28 @@ document.getElementById("chartsBtn");
 
 const reportsBtn =
 document.getElementById("reportsBtn");
-activitiesBtn.onclick=()=>{
 
+const reportsBtn =
+document.getElementById("reportsBtn");
+
+function setActiveButton(btn){
+
+document.querySelectorAll(
+".top-container button, .bottom-container button"
+).forEach(button=>{
+
+button.classList.remove("active");
+
+});
+
+btn.classList.add("active");
+
+};
+
+
+activitiesBtn.onclick=()=>{
+setActiveButton(activitiesBtn);
+  
 homeContent.innerHTML=`
 
 <h2 class="page-title">
@@ -234,6 +255,8 @@ HOME PAGE
 };
 incomeBtn.onclick=()=>{
 
+setActiveButton(incomeBtn);
+  
 homeContent.innerHTML=`
 
 <h2 class="page-title">
@@ -354,7 +377,8 @@ HOME PAGE
 
 };
 healthBtn.onclick=()=>{
-
+setActiveButton(healthBtn);
+  
 homeContent.innerHTML=`
 
 <h2 class="page-title">
@@ -448,7 +472,7 @@ homeBtn.click();
 
 };
 loansBtn.onclick = ()=>{
-
+setActiveButton(loansBtn);
 homeContent.innerHTML = `
 <h2 class="page-title">
 
@@ -922,7 +946,7 @@ welcomePage.classList.remove("hidden");
 
 };
 expensesBtn.onclick=()=>{
-
+setActiveButton(expensesBtn);
 homeContent.innerHTML=`
 <h2 class="page-title">
 
@@ -1047,7 +1071,8 @@ HOME PAGE
 
 };
 homeBtn.onclick=()=>{
-
+setActiveButton(homeBtn);
+  
 homeContent.innerHTML=`
 
 <h2 class="page-title">
@@ -1069,7 +1094,8 @@ HOME PAGE
 
 
 familyBtn.onclick=()=>{
-
+setActiveButton(familyBtn);
+  
 homeContent.innerHTML=`
 
 <h2 class="page-title">
@@ -1144,7 +1170,8 @@ homeBtn.click();
 
 
 memoriesBtn.onclick=()=>{
-
+setActiveButton(memoriesBtn);
+  
 homeContent.innerHTML=`
 
 <h2 class="page-title">
@@ -1253,7 +1280,8 @@ homeBtn.click();
 
 
 chartsBtn.onclick=()=>{
-
+setActiveButton(chartsBtn);
+  
 homeContent.innerHTML=`
 
 <h2 class="page-title">
@@ -1351,7 +1379,8 @@ homeBtn.click();
 };
 
 reportsBtn.onclick=()=>{
-
+setActiveButton(reportsBtn);
+  
 homeContent.innerHTML=`
 
 <h2 class="page-title">
