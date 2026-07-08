@@ -562,6 +562,7 @@ min-height:70px;
 
 }
 
+
 .page-title{
 
 text-align:center;
@@ -572,9 +573,9 @@ font-weight:700;
 
 color:#2A6EB0;
 
-margin-top:20px;
+margin-top:10px;
 
-margin-bottom:20px;
+margin-bottom:15px;
 
 }
 
@@ -585,18 +586,23 @@ margin-bottom:20px;
 
 display:grid;
 
-grid-template-columns:
-repeat(3,1fr);
+grid-template-columns:repeat(3,1fr);
 
 gap:15px;
 
-margin-top:20px;
+width:90%;
+
+margin:15px auto;
+
+justify-items:center;
 
 }
 
 .report-btn{
 
-background:white;
+width:100%;
+
+background:transparent;
 
 border:2px solid #4A9FE8;
 
