@@ -5,7 +5,6 @@ Part 1A.3
 
 ===================================== */
 
-
 /* WELCOME SCREEN */
 
 const welcomePage =
@@ -195,16 +194,7 @@ reportsLayout(
 );
 
 };
-  document.getElementById(
-"activityReports"
-).onclick=()=>{
-
-reportsLayout(
-"Activity Reports"
-);
-
-};
-
+  
 document.getElementById(
 "activitySensitive"
 ).onclick=()=>{
@@ -323,15 +313,7 @@ reportsLayout(
 );
 
 };
-document.getElementById(
-"incomeReports"
-).onclick=()=>{
 
-reportsLayout(
-"Income Reports"
-);
-
-};
 
 document.getElementById(
 "incomeSensitive"
@@ -661,7 +643,7 @@ document.getElementById(
 ).onclick=()=>{
 
 reportsLayout(
-"Loan - Lend Reports"
+type + " - Lend Reports"
 );
 
 };
@@ -690,7 +672,7 @@ document.getElementById(
 "lendBack"
 ).onclick=()=>{
 
-showLendBorrow();
+showLendBorrow(type);
 
 };
 
@@ -704,7 +686,7 @@ homeContent.innerHTML=`
 
 <h2 class="page-title">
 
-Loan - Borrowed
+${type} - Borrowed
 
 </h2>
 
@@ -773,7 +755,7 @@ document.getElementById(
 ).onclick=()=>{
 
 reportsLayout(
-"Loan - Borrowed Reports"
+type + " - Borrowed Reports"
 );
 
 };
@@ -802,11 +784,12 @@ document.getElementById(
 "borrowBack"
 ).onclick=()=>{
 
-showLendBorrow();
+showLendBorrow(type);
 
 };
 
 };
+}
   /* ======================
 
 LOGIN
@@ -1030,16 +1013,6 @@ reportsLayout(
 );
 
 };
-document.getElementById(
-"expenseReports"
-).onclick=()=>{
-
-reportsLayout(
-"Expense Reports"
-);
-
-};
-
 
 document.getElementById(
 "expenseSensitive"
