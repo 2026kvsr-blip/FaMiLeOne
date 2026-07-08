@@ -5,6 +5,7 @@ Part 1A.3
 
 ===================================== */
 
+
 /* WELCOME SCREEN */
 
 const welcomePage =
@@ -1368,34 +1369,28 @@ Expenses Reports
 
 </button>
 
-<button class="grid-btn">
+<button id="expenseMainReports" class="grid-btn">
+Expenses Reports
+</button>
 
+<button id="activityMainReports" class="grid-btn">
 Activities Reports
-
 </button>
 
-<button class="grid-btn">
-
+<button id="loanMainReports" class="grid-btn">
 Loan Reports
-
 </button>
 
-<button class="grid-btn">
-
+<button id="incomeMainReports" class="grid-btn">
 Income Reports
-
 </button>
 
-<button class="grid-btn">
-
+<button id="healthMainReports" class="grid-btn">
 Health Reports
-
 </button>
 
-<button class="grid-btn">
-
+<button id="memoryMainReports" class="grid-btn">
 Memories Reports
-
 </button>
 
 <button class="grid-btn">
