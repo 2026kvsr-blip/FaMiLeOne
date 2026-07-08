@@ -5,7 +5,6 @@ Part 1A.3
 
 ===================================== */
 
-
 /* WELCOME SCREEN */
 
 const welcomePage =
@@ -1564,11 +1563,12 @@ type="password"
 placeholder="Enter Sensitive Pass Code"
 style="
 width:90%;
-height:45px;
+height:50px;
 margin:20px auto;
 display:block;
 border-radius:10px;
 padding-left:15px;
+font-size:16px;
 ">
 
 <div align="center">
