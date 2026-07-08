@@ -5,6 +5,7 @@ Part 1A.3
 
 ===================================== */
 
+
 /* WELCOME SCREEN */
 
 const welcomePage =
@@ -1522,5 +1523,80 @@ homeBtn.click();
 
 }
 
+function openSensitive(moduleName, reportType){
 
+homeContent.innerHTML=`
+
+<h2 class="page-title">
+
+${moduleName}
+
+</h2>
+
+<h3 style="text-align:center;color:#2A6EB0;">
+
+${reportType}
+
+</h3>
+
+<input
+id="passCode"
+type="password"
+placeholder="Enter Sensitive Pass Code"
+style="
+width:90%;
+height:45px;
+margin:20px auto;
+display:block;
+border-radius:10px;
+padding-left:15px;
+">
+
+<div align="center">
+
+<button
+id="verifyPass"
+class="grid-btn">
+
+Verify
+
+</button>
+
+<br><br>
+
+<button
+id="passBack"
+class="back-btn">
+
+← Back
+
+</button>
+
+</div>
+
+`;
+
+document.getElementById("verifyPass").onclick=()=>{
+
+const pass=document.getElementById("passCode").value;
+
+if(pass==="123456"){
+
+reportsLayout(moduleName+" - "+reportType);
+
+}else{
+
+alert("Wrong Sensitive Pass Code");
+
+}
+
+};
+
+document.getElementById("passBack").onclick=()=>{
+
+homeBtn.click();
+
+};
+
+}
 
