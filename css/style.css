@@ -5,7 +5,6 @@ box-sizing:border-box;
 font-family:Arial,Helvetica,sans-serif;
 }
 
-
 body{
   
 background:#EAF8FF;
@@ -754,7 +753,7 @@ font-weight:600;
 .top-container button.active,
 .bottom-container button.active{
 
-background:#FFF9D6 !important;
+background:#FFFDEB !important;
 
 color:#FFD700 !important;
 
