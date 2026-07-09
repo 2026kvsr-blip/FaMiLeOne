@@ -18,6 +18,7 @@ overflow-x:hidden;
 
 }
 
+
 /* =======================
 TOP BAR
 ======================= */
@@ -731,5 +732,12 @@ padding:5px;
 min-height:45px;
 
 font-size:11px;
+
+}
+.chart-about-btn{
+
+max-width:120px;
+
+justify-self:center;
 
 }
