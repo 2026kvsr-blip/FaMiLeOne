@@ -5,6 +5,7 @@ box-sizing:border-box;
 font-family:Arial,Helvetica,sans-serif;
 }
 
+
 body{
   
 background:#EAF8FF;
@@ -460,7 +461,6 @@ font-weight:700;
 
 }
 
-
 /* =======================
 HIDDEN
 ======================= */
@@ -746,5 +746,22 @@ justify-self:center;
 font-size:12px;
 
 font-weight:600;
+
+}
+
+/* Selected Top & Bottom Buttons */
+
+.top-container button.active,
+.bottom-container button.active{
+
+background:#FFF9D6 !important;
+
+color:#FFD700 !important;
+
+border-radius:12px;
+
+padding:6px 8px;
+
+transition:0.3s;
 
 }
