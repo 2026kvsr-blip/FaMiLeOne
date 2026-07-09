@@ -5,6 +5,7 @@ Part 1A.3
 
 ===================================== */
 
+
 /* WELCOME SCREEN */
 
 const welcomePage =
@@ -114,6 +115,16 @@ document.getElementById("chartsBtn");
 
 const reportsBtn =
 document.getElementById("reportsBtn");
+const languageSelect =
+document.getElementById("languageSelect");
+
+let currentLanguage = "English";
+languageSelect.onchange = ()=>{
+
+currentLanguage =
+languageSelect.value;
+
+};
 
 function setActiveButton(btn){
 
@@ -1103,26 +1114,79 @@ HOME PAGE
 
 };
 homeBtn.onclick=()=>{
+
 setActiveButton(homeBtn);
-  
+
+let welcomeText="";
+let slogan="";
+
+switch(currentLanguage){
+
+case "తెలుగు":
+
+welcomeText="oneFaMiLe కు స్వాగతం";
+
+slogan="ఒక కుటుంబం<br>ఒక నిర్మాణం<br>ఒక కోడ్";
+
+break;
+
+case "हिन्दी":
+
+welcomeText="oneFaMiLe में आपका स्वागत है";
+
+slogan="एक परिवार<br>एक संरचना<br>एक कोड";
+
+break;
+
+case "ಕನ್ನಡ":
+
+welcomeText="oneFaMiLe ಗೆ ಸ್ವಾಗತ";
+
+slogan="ಒಂದು ಕುಟುಂಬ<br>ಒಂದು ರಚನೆ<br>ಒಂದು ಕೋಡ್";
+
+break;
+
+case "தமிழ்":
+
+welcomeText="oneFaMiLe க்கு வரவேற்கிறோம்";
+
+slogan="ஒரு குடும்பம்<br>ஒரு அமைப்பு<br>ஒரு குறியீடு";
+
+break;
+
+case "മലയാളം":
+
+welcomeText="oneFaMiLe ലേക്ക് സ്വാഗതം";
+
+slogan="ഒരു കുടുംബം<br>ഒരു ഘടന<br>ഒരു കോഡ്";
+
+break;
+
+default:
+
+welcomeText="Welcome to oneFaMiLe";
+
+slogan="oneFaMiLe<br>one StRuCtUrE<br>one CoDe";
+
+}
+
 homeContent.innerHTML=`
 
-<h2 class="page-title">
+<div class="welcome-box">
 
-Home
+<h2>${welcomeText}</h2>
 
-</h2>
+<p>
 
-<h2>
+${slogan}
 
-HOME PAGE
+</p>
 
-</h2>
+</div>
 
 `;
 
 };
-
 
 
 familyBtn.onclick=()=>{
