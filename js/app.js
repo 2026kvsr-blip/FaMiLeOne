@@ -5,7 +5,6 @@ Part 1A.3
 
 ===================================== */
 
-
 /* WELCOME SCREEN */
 
 const welcomePage =
@@ -1289,55 +1288,45 @@ Charts
 
 <div class="grid-3x2">
 
-<button class="grid-btn">
-
+<button class="grid-btn chart-btn">
 Expenses Charts
-
 </button>
 
-<button class="grid-btn">
+<button class="grid-btn chart-btn">Activities Charts</button>
 
-Activities Charts
+<button class="grid-btn chart-btn">Income Charts</button>
 
-</button>
-
-<button class="grid-btn">
-
-Income Charts
-
-</button>
-
-<button class="grid-btn">
+<button class="grid-btn chart-btn">
 
 Health Charts
 
 </button>
 
-<button class="grid-btn">
+<button class="grid-btn chart-btn">
 
 Memories Charts
 
 </button>
 
-<button class="grid-btn">
+<button class="grid-btn chart-btn">
 
 Loan-Lend Charts
 
 </button>
 
-<button class="grid-btn">
+<button class="grid-btn chart-btn">
 
 Loan - Borrowed Charts
 
 </button>
 
-<button class="grid-btn">
+<button class="grid-btn chart-btn">
 
 Payments- Lend Charts
 
 </button>
 
-<button class="grid-btn">
+<button class="grid-btn chart-btn">
 
 Payments- Borrowed Charts
 
