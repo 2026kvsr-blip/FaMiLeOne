@@ -5,6 +5,7 @@ box-sizing:border-box;
 font-family:Arial,Helvetica,sans-serif;
 }
 
+
 body{
   
 background:#EAF8FF;
@@ -708,10 +709,10 @@ gap:3px;
 }
 .chart-btn{
 
-padding:10px;
+padding:5px;
 
-min-height:55px;
+min-height:50px;
 
-font-size:13px;
+font-size:12px;
 
 }
