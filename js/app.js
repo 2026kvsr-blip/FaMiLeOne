@@ -5,6 +5,7 @@ Part 1A.3
 
 ===================================== */
 
+
 /* WELCOME SCREEN */
 
 const welcomePage =
@@ -1320,7 +1321,7 @@ Memories Charts
 
 <button class="grid-btn">
 
-Loan - Lend Charts
+Loan-Lend Charts
 
 </button>
 
@@ -1332,13 +1333,13 @@ Loan - Borrowed Charts
 
 <button class="grid-btn">
 
-Payments - Lend Charts
+Payments- Lend Charts
 
 </button>
 
 <button class="grid-btn">
 
-Payments - Borrowed Charts
+Payments- Borrowed Charts
 
 </button>
 
