@@ -5,7 +5,6 @@ Part 1A.3
 
 ===================================== */
 
-
 /* WELCOME SCREEN */
 
 const welcomePage =
@@ -124,12 +123,27 @@ document.querySelectorAll(
 
 button.classList.remove("active");
 
+const img = button.querySelector("img");
+
+if(img){
+
+img.src = img.dataset.normal;
+
+}
+
 });
 
 btn.classList.add("active");
 
-};
+const activeImg = btn.querySelector("img");
 
+if(activeImg){
+
+activeImg.src = activeImg.dataset.active;
+
+}
+
+}
 
 activitiesBtn.onclick=()=>{
 setActiveButton(activitiesBtn);
@@ -941,9 +955,7 @@ loginPage.classList.add("hidden");
 welcomePage.classList.add("hidden");
 
 dashboard.classList.remove("hidden");
-  homeBtn.classList.add(
-"active"
-);
+  setActiveButton(homeBtn);
 
 };
 
