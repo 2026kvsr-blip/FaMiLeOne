@@ -5,6 +5,7 @@ Part 1A.3
 
 ===================================== */
 
+
 /* WELCOME SCREEN */
 
 const welcomePage =
@@ -1332,7 +1333,7 @@ Payments- Borrowed Charts
 
 </button>
 
-<button class="grid-btn">
+<button class="grid-btn chart-about-btn">
 
 About
 
