@@ -5,7 +5,6 @@ box-sizing:border-box;
 font-family:Arial,Helvetica,sans-serif;
 }
 
-
 body{
   
 background:#EAF8FF;
@@ -351,7 +350,7 @@ justify-content:space-evenly;
 
 align-items:center;
 
-background:#C0E2FF;                       //#CBE7FF;
+background:#C0E2FF;                //#C0E2FF;                       //#CBE7FF;
 
 border-radius:28px;
 
