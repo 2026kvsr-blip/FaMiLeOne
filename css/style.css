@@ -5,7 +5,6 @@ box-sizing:border-box;
 font-family:Arial,Helvetica,sans-serif;
 }
 
-
 body{
   
 background:#EAF8FF;
@@ -529,7 +528,7 @@ justify-items:center;
 
 .back-btn{
 
-margin-top:25px;
+margin-top:10px;
 
 padding:12px 25px;
 
