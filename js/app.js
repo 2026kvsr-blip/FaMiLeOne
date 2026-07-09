@@ -5,7 +5,6 @@ Part 1A.3
 
 ===================================== */
 
-
 /* WELCOME SCREEN */
 
 const welcomePage =
@@ -471,26 +470,49 @@ homeBtn.click();
 loansBtn.onclick = ()=>{
 setActiveButton(loansBtn);
 homeContent.innerHTML = `
+
 <h2 class="page-title">
 
 Loans
 
 </h2>
+
 <div class="grid-2">
 
 <button id="loanBtn" class="grid-btn">
+
+<img
+src="images/Loans.png"
+class="btn-icon">
+
+<span>
+
 Loans
+
+</span>
+
 </button>
 
 <button id="paymentsBtn" class="grid-btn">
+
+<img
+src="images/Payments.png"
+class="btn-icon">
+
+<span>
+
 Payments
+
+</span>
+
 </button>
 
 </div>
 
 <div align="center">
 
-<button id="loanBack"
+<button
+id="loanBack"
 class="back-btn">
 
 ← Back
