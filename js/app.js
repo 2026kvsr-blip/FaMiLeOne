@@ -5,6 +5,7 @@ Part 1A.3
 
 ===================================== */
 
+
 /* WELCOME SCREEN */
 
 const welcomeHeading=
@@ -301,11 +302,8 @@ document.getElementById(
 
 homeContent.innerHTML=`
 
-<h2>
-
 homeBtn.click();
 
-</h2>
 
 `;
 
@@ -424,11 +422,8 @@ document.getElementById(
 
 homeContent.innerHTML=`
 
-<h2>
-
 homeBtn.click();
 
-</h2>
 
 `;
 
@@ -608,11 +603,8 @@ document.getElementById(
 
 homeContent.innerHTML = `
 
-<h2>
-
 homeBtn.click();
 
-</h2>
 
 `;
 
@@ -1138,11 +1130,9 @@ document.getElementById(
 
 homeContent.innerHTML=`
 
-<h2>
 
 homeBtn.click();
 
-</h2>
 
 `;
 
