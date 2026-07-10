@@ -6,78 +6,104 @@ welcome:"Welcome to oneFaMiLe",
 
 slogan:[
 "oneFaMiLe",
-"one StRuCtUrE",
-"one CoDe"
+"one Structure",
+"one Platform",
+"one Code"
 ],
 
 about:`
 
-Privacy First
+<h3>Privacy First</h3>
 
-Every module in oneFaMiLe supports optional Private Mode, allowing you to keep sensitive information confidential and accessible only to authorized users.
+<p>
+Every module in oneFaMiLe supports optional private mode, allowing you to keep sensitive information confidential and accessible only to authorized users.
+</p>
 
-You can Track your:
+<h3>You can Track your :</h3>
 
-• Family
-• Expenses
-• Activities
-• Loans
-• Payments
-• Income
-• Health
-• Memories
-• Charts
-• Reports
-• Privacy & Security
+<ul>
+<li>👨‍👩‍👧‍👦 Family</li>
+<li>💰 Expenses</li>
+<li>📋 Activities</li>
+<li>🤝 Loans</li>
+<li>💳 Payments</li>
+<li>💵 Income</li>
+<li>❤️ Health</li>
+<li>📸 Memories</li>
+<li>📊 Charts</li>
+<li>📑 Reports</li>
+<li>🔒 Privacy & Security</li>
+</ul>
 
-👨‍👩‍👧‍👦 Family
+<h3>👨‍👩‍👧‍👦 Family Tree</h3>
 
-Build and preserve your family's legacy with an interactive family tree.
+<p>
+Build and preserve your family's legacy with an interactive family tree that connects generations and keeps relationships organized for the future.
+</p>
 
-💰 Expenses
+<h3>💰 Expenses</h3>
 
-Track and manage your expenses with complete accuracy.
+<p>
+Track and manage your expenses with complete accuracy. Mark sensitive transactions as private to ensure maximum financial confidentiality.
+</p>
 
-📋 Activities
+<h3>📋 Activities</h3>
 
-Plan and organize personal and family activities efficiently.
+<p>
+Plan, organize, and monitor personal and family activities efficiently. Keep confidential tasks private whenever required.
+</p>
 
-🤝 Loans
+<h3>🤝 Loans (Lend & Borrow)</h3>
 
-Maintain secure lending and borrowing records.
+<p>
+Maintain a secure record of all lending and borrowing transactions. Protect sensitive financial information with private access.
+</p>
 
-💳 Payments
+<h3>💳 Payments</h3>
 
-Monitor payment history securely.
+<p>
+Monitor payments, balances, and transaction history with confidence. Sensitive payment records can be stored securely as private.
+</p>
 
-💵 Income
+<h3>💵 Income</h3>
 
-Record and analyze income.
+<p>
+Record and analyze all income sources with clarity. Protect private income details from unauthorized access.
+</p>
 
-❤️ Health
+<h3>❤️ Health</h3>
 
-Store medical records securely.
+<p>
+Securely organize medical records, prescriptions, and wellness information. Keep personal health details confidential with private protection.
+</p>
 
-📸 Memories
+<h3>📸 Memories</h3>
 
-Preserve your precious memories.
+<p>
+Capture and preserve your cherished memories, photos, and milestones. Personal moments remain completely private and visible only to authorized users.
+</p>
 
-📊 Charts
+<h3>📊 Charts</h3>
 
-Visualize information through charts.
+<p>
+Visualize your financial and personal data through meaningful charts. Private information is displayed according to your privacy settings.
+</p>
 
-📑 Reports
+<h3>📑 Reports</h3>
 
-Generate Daily, Weekly, Monthly and Yearly reports.
+<p>
+Generate detailed daily, weekly, monthly and yearly reports for better analysis and informed decision-making.
+</p>
 
-🔒 Privacy & Security
+<h3>🔒 Privacy & Security</h3>
 
-Sensitive information is protected by Sensitive Pass Code.
+<p>
+Every module in oneFaMiLe supports an optional Private Mode, allowing you to securely protect sensitive information.
+</p>
 
 `
 
-},
-
+}
 తెలుగు:{
 
 welcome:"oneFaMiLe కు స్వాగతం",
