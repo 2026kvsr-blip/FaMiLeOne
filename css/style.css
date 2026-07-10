@@ -5,6 +5,7 @@ box-sizing:border-box;
 font-family:Arial,Helvetica,sans-serif;
 }
 
+
 body{
 
  
@@ -138,15 +139,19 @@ overflow:hidden;
 
 width:90%;
 
+height:100%;
+
 margin:auto;
 
 background:white;
 
-padding:30px;
-
 border-radius:25px;
 
-text-align:center;
+padding:25px;
+
+overflow-y:auto;
+
+overflow-x:hidden;
 
 }
 
@@ -182,7 +187,7 @@ LOGIN SIGNUP
 
 position:fixed;
 
-bottom:20px;
+bottom:15px;
 
 left:0;
 
@@ -194,11 +199,11 @@ justify-content:center;
 
 gap:20px;
 
-z-index:999;
-
-padding:10px 0;
-
 background:#EAF8FF;
+
+padding:10px;
+
+z-index:999;
 
 }
 
@@ -776,5 +781,32 @@ font-weight:600;
 background:none;
 
 color:#FFD700 !important;
+
+}
+/* Welcome Box Scroll Bar */
+
+.welcome-box::-webkit-scrollbar{
+
+width:8px;
+
+}
+
+.welcome-box::-webkit-scrollbar-track{
+
+background:#EAF8FF;
+
+}
+
+.welcome-box::-webkit-scrollbar-thumb{
+
+background:#4A9FE8;
+
+border-radius:10px;
+
+}
+
+.welcome-box::-webkit-scrollbar-thumb:hover{
+
+background:#2A6EB0;
 
 }
