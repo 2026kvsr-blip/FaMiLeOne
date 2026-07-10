@@ -5,10 +5,19 @@ Part 1A.3
 
 ===================================== */
 
+
 /* WELCOME SCREEN */
 
 const welcomeHeading=
 document.getElementById("welcomeHeading");
+const homeWelcomeHeading =
+document.getElementById("homeWelcomeHeading");
+
+const homeWelcomeSlogan =
+document.getElementById("homeWelcomeSlogan");
+
+const homeWelcomeAbout =
+document.getElementById("homeWelcomeAbout");
 
 const welcomeSlogan=
 document.getElementById("welcomeSlogan");
@@ -1884,11 +1893,21 @@ function updateWelcomePage(){
 
     const txt = languageData[languageSelect.value];
 
+    // Login Welcome Page
     welcomeHeading.innerHTML = txt.welcome;
-
     welcomeSlogan.innerHTML = txt.slogan.join("<br>");
-
     welcomeAbout.innerHTML = txt.about;
+
+    // Home Welcome Page
+    if(homeWelcomeHeading){
+
+        homeWelcomeHeading.innerHTML = txt.welcome;
+
+        homeWelcomeSlogan.innerHTML = txt.slogan.join("<br>");
+
+        homeWelcomeAbout.innerHTML = txt.about;
+
+    }
 
 }
  updateWelcomePage();
