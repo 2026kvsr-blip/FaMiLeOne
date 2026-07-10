@@ -7,8 +7,7 @@ font-family:Arial,Helvetica,sans-serif;
 
 body{
 
- 
-background:#EAF8FF;
+ background:#EAF8FF;
 
 min-height:100vh;
 
@@ -415,13 +414,11 @@ gap:4px;
 }
 
 
-.home-message{
+#homeContent{
 
 margin-top:35px;
 
 height:calc(100vh - 185px);
-
-overflow:hidden;
 
 }
 
@@ -816,7 +813,17 @@ overflow-x:hidden;
 padding-right:8px;
 
 }
+#welcomeContent{
 
+flex:1;
+
+overflow-y:auto;
+
+overflow-x:hidden;
+
+padding-right:8px;
+
+}
 #homeWelcomeContent::-webkit-scrollbar{
 
 width:8px;
@@ -832,6 +839,25 @@ border-radius:10px;
 }
 
 #homeWelcomeContent::-webkit-scrollbar-track{
+
+background:#EAF8FF;
+
+}
+#welcomeContent::-webkit-scrollbar{
+
+width:8px;
+
+}
+
+#welcomeContent::-webkit-scrollbar-thumb{
+
+background:#4A9FE8;
+
+border-radius:10px;
+
+}
+
+#welcomeContent::-webkit-scrollbar-track{
 
 background:#EAF8FF;
 
