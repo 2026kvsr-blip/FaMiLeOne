@@ -9,6 +9,7 @@ slogan:[
 "one Platform - one Structure - one Code"
 ],
 
+    
     about:`
 
 <h3>You can Track your :</h3>
@@ -104,9 +105,7 @@ welcome:"oneFaMiLe కు స్వాగతం",
 
 slogan:[
 "oneFaMiLe",
-"ఒక నిర్మాణం",
-"ఒక వేదిక",
-"ఒక కోడ్"
+"ఒక నిర్మాణం-ఒక వేదిక-ఒక కోడ్"
 ],
 
 about:`
@@ -135,7 +134,7 @@ about:`
 
 <li>📑 నివేదికలు (Reports)</li>
 
-<li>🔒 గోప్యత & భద్రత (Privacy & Security)</li>
+<li>🔒 గోప్యత(Privacy)</li>
 
 </ul>
 
