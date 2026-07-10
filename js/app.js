@@ -5,7 +5,6 @@ Part 1A.3
 
 ===================================== */
 
-
 /* WELCOME SCREEN */
 
 const welcomeHeading=
@@ -147,53 +146,21 @@ languageSelect.onchange = function(){
 };
 function updateWelcomePage(){
 
-    const lang = languageSelect.value;
+    const txt = languageData[languageSelect.value];
 
-    let welcomeText = "";
-    let slogan = "";
+    // Login Welcome Page
+    welcomeHeading.innerHTML = txt.welcome;
+    welcomeSlogan.innerHTML = txt.slogan.join("<br>");
+    welcomeAbout.innerHTML = txt.about;
 
-    switch(lang){
+    // Home Welcome Page
+    if(homeWelcomeHeading){
 
-        case "తెలుగు":
-
-            welcomeText = "oneFaMiLe కు స్వాగతం";
-            slogan = "ఒక కుటుంబం<br>ఒక నిర్మాణం<br>ఒక కోడ్";
-            break;
-
-        case "हिन्दी":
-
-            welcomeText = "oneFaMiLe में आपका स्वागत है";
-            slogan = "एक परिवार<br>एक संरचना<br>एक कोड";
-            break;
-
-        case "ಕನ್ನಡ":
-
-            welcomeText = "oneFaMiLe ಗೆ ಸ್ವಾಗತ";
-            slogan = "ಒಂದು ಕುಟುಂಬ<br>ಒಂದು ರಚನೆ<br>ಒಂದು ಕೋಡ್";
-            break;
-
-        case "தமிழ்":
-
-            welcomeText = "oneFaMiLe க்கு வரவேற்கிறோம்";
-            slogan = "ஒரு குடும்பம்<br>ஒரு அமைப்பு<br>ஒரு குறியீடு";
-            break;
-
-        case "മലയാളം":
-
-            welcomeText = "oneFaMiLe ലേക്ക് സ്വാഗതം";
-            slogan = "ഒരു കുടുംബം<br>ഒരു ഘടന<br>ഒരു കോഡ്";
-            break;
-
-        default:
-
-            welcomeText = "Welcome to oneFaMiLe";
-            slogan = "oneFaMiLe<br>one StRuCtUrE<br>one CoDe";
+        homeWelcomeHeading.innerHTML = txt.welcome;
+        homeWelcomeSlogan.innerHTML = txt.slogan.join("<br>");
+        homeWelcomeAbout.innerHTML = txt.about;
 
     }
-
-    document.querySelector("#welcomePage h2").innerHTML = welcomeText;
-
-    document.querySelector("#welcomePage p").innerHTML = slogan;
 
 }
 function setActiveButton(btn){
