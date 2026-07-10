@@ -5,7 +5,6 @@ Part 1A.3
 
 ===================================== */
 
-
 /* WELCOME SCREEN */
 
 const welcomeHeading=
@@ -1175,40 +1174,11 @@ HOME PAGE
 
 
 };
-homeBtn.onclick=()=>{
+homeBtn.onclick = ()=>{
 
-setActiveButton(homeBtn);
+    setActiveButton(homeBtn);
 
-const txt=
-languageData[
-languageSelect.value
-];
-
-homeContent.innerHTML=`
-
-<div class="welcome-box">
-
-<h2>
-
-${txt.welcome}
-
-</h2>
-
-<p id="homeWelcomeSlogan">
-
-${txt.slogan.join("<br>")}
-
-</p>
-
-<div id="homeWelcomeContent">
-
-${txt.about}
-
-</div>
-
-</div>
-
-`;
+    updateWelcomePage();
 
 };
 familyBtn.onclick=()=>{
@@ -1912,17 +1882,13 @@ reportsBtn.click();
 }
 function updateWelcomePage(){
 
-const lang=languageSelect.value;
+    const txt = languageData[languageSelect.value];
 
-const txt=languageData[lang];
+    welcomeHeading.innerHTML = txt.welcome;
 
-welcomeHeading.innerHTML=txt.welcome;
+    welcomeSlogan.innerHTML = txt.slogan.join("<br>");
 
-welcomeSlogan.innerHTML=
-txt.slogan.join("<br>");
-
-welcomeAbout.innerHTML=
-txt.about;
+    welcomeAbout.innerHTML = txt.about;
 
 }
  updateWelcomePage();
