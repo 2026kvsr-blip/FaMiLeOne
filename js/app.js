@@ -5,7 +5,6 @@ Part 1A.3
 
 ===================================== */
 
-
 /* WELCOME SCREEN */
 
 const welcomePage =
@@ -118,14 +117,6 @@ document.getElementById("reportsBtn");
 const languageSelect =
 document.getElementById("languageSelect");
 
-let currentLanguage = "English";
-languageSelect.addEventListener("change", function () {
-
-    currentLanguage = this.value;
-
-    console.log(currentLanguage);
-
-});
 
 function setActiveButton(btn){
 
@@ -1114,77 +1105,66 @@ HOME PAGE
 
 
 };
-homeBtn.onclick=()=>{
-const lang = languageSelect.value;
+homeBtn.onclick = ()=>{
 
-switch(currentLanguage){
+    setActiveButton(homeBtn);
 
-case "తెలుగు":
+    const lang = languageSelect.value;
 
-welcomeText="oneFaMiLe కు స్వాగతం";
+    let welcomeText = "";
+    let slogan = "";
 
-slogan="ఒక కుటుంబం<br>ఒక నిర్మాణం<br>ఒక కోడ్";
+    switch(lang){
 
-break;
+        case "తెలుగు":
 
-case "हिन्दी":
+            welcomeText = "oneFaMiLe కు స్వాగతం";
+            slogan = "ఒక కుటుంబం<br>ఒక నిర్మాణం<br>ఒక కోడ్";
+            break;
 
-welcomeText="oneFaMiLe में आपका स्वागत है";
+        case "हिन्दी":
 
-slogan="एक परिवार<br>एक संरचना<br>एक कोड";
+            welcomeText = "oneFaMiLe में आपका स्वागत है";
+            slogan = "एक परिवार<br>एक संरचना<br>एक कोड";
+            break;
 
-break;
+        case "ಕನ್ನಡ":
 
-case "ಕನ್ನಡ":
+            welcomeText = "oneFaMiLe ಗೆ ಸ್ವಾಗತ";
+            slogan = "ಒಂದು ಕುಟುಂಬ<br>ಒಂದು ರಚನೆ<br>ಒಂದು ಕೋಡ್";
+            break;
 
-welcomeText="oneFaMiLe ಗೆ ಸ್ವಾಗತ";
+        case "தமிழ்":
 
-slogan="ಒಂದು ಕುಟುಂಬ<br>ಒಂದು ರಚನೆ<br>ಒಂದು ಕೋಡ್";
+            welcomeText = "oneFaMiLe க்கு வரவேற்கிறோம்";
+            slogan = "ஒரு குடும்பம்<br>ஒரு அமைப்பு<br>ஒரு குறியீடு";
+            break;
 
-break;
+        case "മലയാളം":
 
-case "தமிழ்":
+            welcomeText = "oneFaMiLe ലേക്ക് സ്വാഗതം";
+            slogan = "ഒരു കുടുംബം<br>ഒരു ഘടന<br>ഒരു കോഡ്";
+            break;
 
-welcomeText="oneFaMiLe க்கு வரவேற்கிறோம்";
+        default:
 
-slogan="ஒரு குடும்பம்<br>ஒரு அமைப்பு<br>ஒரு குறியீடு";
+            welcomeText = "Welcome to oneFaMiLe";
+            slogan = "oneFaMiLe<br>one StRuCtUrE<br>one CoDe";
+    }
 
-break;
+    homeContent.innerHTML = `
 
-case "മലയാളം":
+    <div class="welcome-box">
 
-welcomeText="oneFaMiLe ലേക്ക് സ്വാഗതം";
+        <h2>${welcomeText}</h2>
 
-slogan="ഒരു കുടുംബം<br>ഒരു ഘടന<br>ഒരു കോഡ്";
+        <p>${slogan}</p>
 
-break;
+    </div>
 
-default:
-
-welcomeText="Welcome to oneFaMiLe";
-
-slogan="oneFaMiLe<br>one StRuCtUrE<br>one CoDe";
-
-}
-
-homeContent.innerHTML=`
-
-<div class="welcome-box">
-
-<h2>${welcomeText}</h2>
-
-<p>
-
-${slogan}
-
-</p>
-
-</div>
-
-`;
+    `;
 
 };
-
 
 familyBtn.onclick=()=>{
 setActiveButton(familyBtn);
