@@ -7,6 +7,7 @@ Part 1A.3
 
 /* WELCOME SCREEN */
 
+
 const welcomePage =
 document.getElementById("welcomePage");
 
@@ -1922,5 +1923,6 @@ document.getElementById("loanRptBack").onclick=()=>{
 reportsBtn.click();
 
 };
+    updateWelcomePage();
 
 }
