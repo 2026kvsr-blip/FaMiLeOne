@@ -9,14 +9,7 @@ slogan:[
 "one Platform - one Structure - one Code"
 ],
 
-  
-about:`
-
-<h3>Privacy First</h3>
-
-<p>
-Every module in oneFaMiLe supports optional private mode, allowing you to keep sensitive information confidential and accessible only to authorized users.
-</p>
+  about:`
 
 <h3>You can Track your :</h3>
 
@@ -97,7 +90,8 @@ Generate detailed daily, weekly, monthly and yearly reports for better analysis 
 <h3>🔒 Privacy & Security</h3>
 
 <p>
-Every module in oneFaMiLe supports an optional Private Mode, allowing you to securely protect sensitive information.
+Every module in oneFaMiLe supports an optional Private Mode, allowing you to securely protect sensitive information information confidential and accessible only to authorized users.
+
 </p>
 
 `
