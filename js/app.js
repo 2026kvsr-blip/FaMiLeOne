@@ -5,6 +5,7 @@ Part 1A.3
 
 ===================================== */
 
+
 /* WELCOME SCREEN */
 
 const welcomeHeading=
@@ -303,7 +304,7 @@ homeContent.innerHTML=`
 
 <h2>
 
-HOME PAGE
+homeBtn.click();
 
 </h2>
 
@@ -426,7 +427,7 @@ homeContent.innerHTML=`
 
 <h2>
 
-HOME PAGE
+homeBtn.click();
 
 </h2>
 
@@ -610,7 +611,7 @@ homeContent.innerHTML = `
 
 <h2>
 
-HOME PAGE
+homeBtn.click();
 
 </h2>
 
@@ -1140,7 +1141,7 @@ homeContent.innerHTML=`
 
 <h2>
 
-HOME PAGE
+homeBtn.click();
 
 </h2>
 
@@ -1855,26 +1856,5 @@ reportsBtn.click();
 
 };
    
-}
-function updateWelcomePage(){
-
-    const txt = languageData[languageSelect.value];
-
-    // Login Welcome Page
-    welcomeHeading.innerHTML = txt.welcome;
-    welcomeSlogan.innerHTML = txt.slogan.join("<br>");
-    welcomeAbout.innerHTML = txt.about;
-
-    // Home Welcome Page
-    if(homeWelcomeHeading){
-
-        homeWelcomeHeading.innerHTML = txt.welcome;
-
-        homeWelcomeSlogan.innerHTML = txt.slogan.join("<br>");
-
-        homeWelcomeAbout.innerHTML = txt.about;
-
-    }
-
 }
  updateWelcomePage();
