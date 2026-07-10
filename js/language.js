@@ -24,7 +24,8 @@ slogan:[
 <li>📸 Memories</li>
 <li>📊 Charts</li>
 <li>📑 Reports</li>
-<li>🔒 Privacy & Security</li>
+<li>🔒 Privacy</li>
+<li>          </li>
 </ul>
 
 <h3>👨‍👩‍👧‍👦 Family Tree</h3>
