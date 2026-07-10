@@ -6,7 +6,7 @@ welcome:"Welcome to oneFaMiLe",
 
 slogan:[
 "oneFaMiLe",
-"one Structure - one Platform - one Code"
+"one Platform - one Structure - one Code"
 ],
 
   
