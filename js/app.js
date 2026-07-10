@@ -5,6 +5,7 @@ Part 1A.3
 
 ===================================== */
 
+
 /* WELCOME SCREEN */
 
 const welcomePage =
@@ -118,12 +119,13 @@ const languageSelect =
 document.getElementById("languageSelect");
 
 let currentLanguage = "English";
-languageSelect.onchange = ()=>{
+languageSelect.addEventListener("change", function () {
 
-currentLanguage =
-languageSelect.value;
+    currentLanguage = this.value;
 
-};
+    console.log(currentLanguage);
+
+});
 
 function setActiveButton(btn){
 
