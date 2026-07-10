@@ -5,6 +5,7 @@ Part 1A.3
 
 ===================================== */
 
+
 /* WELCOME SCREEN */
 
 const welcomeHeading=
@@ -1193,13 +1194,13 @@ ${txt.welcome}
 
 </h2>
 
-<p>
+<p id="homeWelcomeSlogan">
 
 ${txt.slogan.join("<br>")}
 
 </p>
 
-<div class="about-app">
+<div id="homeWelcomeContent">
 
 ${txt.about}
 
