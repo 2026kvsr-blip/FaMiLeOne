@@ -9,6 +9,7 @@ slogan:[
 "one Platform - one Structure - one Code"
 ],
 
+  
   about:`
 
 <h3>You can Track your :</h3>
@@ -96,7 +97,7 @@ Every module in oneFaMiLe supports an optional Private Mode, allowing you to sec
 
 `
 
-}
+},
 తెలుగు:{
 
 welcome:"oneFaMiLe కు స్వాగతం",
