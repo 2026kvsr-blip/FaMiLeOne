@@ -15,8 +15,8 @@ slogan:[
 
 <ul>
 <li>👨‍👩‍👧‍👦 Family</li>
-<li>💰 Expenses</li>
-<li>📋 Activities</li>
+<li>💰  Expenses</li>
+<li>📋  Activities</li>
 <li>🤝 Loans</li>
 <li>💳 Payments</li>
 <li>💵 Income</li>
