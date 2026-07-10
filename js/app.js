@@ -5,6 +5,7 @@ Part 1A.3
 
 ===================================== */
 
+
 /* WELCOME SCREEN */
 
 const welcomePage =
@@ -1114,13 +1115,7 @@ HOME PAGE
 
 };
 homeBtn.onclick=()=>{
-console.log(currentLanguage);
-setActiveButton(homeBtn);
-
-let welcomeText="";
-let slogan="";
-
-const currentLanguage = languageSelect.value;
+const lang = languageSelect.value;
 
 switch(currentLanguage){
 
