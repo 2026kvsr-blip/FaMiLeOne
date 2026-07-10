@@ -18,7 +18,6 @@ overflow-x:hidden;
 
 }
 
-
 /* =======================
 TOP BAR
 ======================= */
@@ -135,13 +134,13 @@ overflow:hidden;
 
 .welcome-box{
 
-width:90%;
+width:94%;
 
-margin:auto;
+margin:8px auto;
 
 background:white;
 
-border-radius:25px;
+border-radius:30px;
 
 padding:20px;
 
@@ -163,7 +162,7 @@ margin-bottom:20px;
 }
 
 
-.welcome-box p{
+#welcomeSlogan{
 
 line-height:1.8;
 
@@ -173,8 +172,37 @@ color:#4A9FE8;
 
 font-weight:600;
 
+text-align:center;
+
 }
 
+#welcomeAbout p{
+
+font-weight:400;
+
+font-size:15px;
+
+line-height:1.7;
+
+color:#444;
+
+text-align:justify;
+
+}
+
+#welcomeAbout h3{
+
+color:#2A6EB0;
+
+font-size:18px;
+
+font-weight:600;
+
+margin-top:18px;
+
+margin-bottom:8px;
+
+}
 
 
 /* =======================
