@@ -7,6 +7,14 @@ Part 1A.3
 
 /* WELCOME SCREEN */
 
+const welcomeHeading=
+document.getElementById("welcomeHeading");
+
+const welcomeSlogan=
+document.getElementById("welcomeSlogan");
+
+const welcomeAbout=
+document.getElementById("welcomeAbout");
 
 const welcomePage =
 document.getElementById("welcomePage");
@@ -1166,66 +1174,42 @@ HOME PAGE
 
 
 };
-homeBtn.onclick = ()=>{
+homeBtn.onclick=()=>{
 
-    setActiveButton(homeBtn);
+setActiveButton(homeBtn);
 
-    const lang = languageSelect.value;
-    let welcomeText = "";
-    let slogan = "";
+const txt=
+languageData[
+languageSelect.value
+];
 
-    switch(lang){
+homeContent.innerHTML=`
 
-        case "తెలుగు":
+<div class="welcome-box">
 
-            welcomeText = "oneFaMiLe కు స్వాగతం";
-            slogan = "ఒక కుటుంబం<br>ఒక నిర్మాణం<br>ఒక కోడ్";
-            break;
+<h2>
 
-        case "हिन्दी":
+${txt.welcome}
 
-            welcomeText = "oneFaMiLe में आपका स्वागत है";
-            slogan = "एक परिवार<br>एक संरचना<br>एक कोड";
-            break;
+</h2>
 
-        case "ಕನ್ನಡ":
+<p>
 
-            welcomeText = "oneFaMiLe ಗೆ ಸ್ವಾಗತ";
-            slogan = "ಒಂದು ಕುಟುಂಬ<br>ಒಂದು ರಚನೆ<br>ಒಂದು ಕೋಡ್";
-            break;
+${txt.slogan.join("<br>")}
 
-        case "தமிழ்":
+</p>
 
-            welcomeText = "oneFaMiLe க்கு வரவேற்கிறோம்";
-            slogan = "ஒரு குடும்பம்<br>ஒரு அமைப்பு<br>ஒரு குறியீடு";
-            break;
+<div class="about-app">
 
-        case "മലയാളം":
+${txt.about}
 
-            welcomeText = "oneFaMiLe ലേക്ക് സ്വാഗതം";
-            slogan = "ഒരു കുടുംബം<br>ഒരു ഘടന<br>ഒരു കോഡ്";
-            break;
+</div>
 
-        default:
+</div>
 
-            welcomeText = "Welcome to oneFaMiLe";
-            slogan = "oneFaMiLe<br>one StRuCtUrE<br>one CoDe";
-    }
-
-    homeContent.innerHTML = `
-
-    <div class="welcome-box">
-
-        <h2>${welcomeText}</h2>
-
-        <p>${slogan}</p>
-
-    </div>
-
-    `;
+`;
 
 };
-
 familyBtn.onclick=()=>{
 setActiveButton(familyBtn);
   
@@ -1923,6 +1907,21 @@ document.getElementById("loanRptBack").onclick=()=>{
 reportsBtn.click();
 
 };
-    updateWelcomePage();
+   
+}
+function updateWelcomePage(){
+
+const lang=languageSelect.value;
+
+const txt=languageData[lang];
+
+welcomeHeading.innerHTML=txt.welcome;
+
+welcomeSlogan.innerHTML=
+txt.slogan.join("<br>");
+
+welcomeAbout.innerHTML=
+txt.about;
 
 }
+ updateWelcomePage();
