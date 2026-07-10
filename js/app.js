@@ -5,7 +5,6 @@ Part 1A.3
 
 ===================================== */
 
-
 /* WELCOME SCREEN */
 
 const welcomeHeading=
@@ -1165,7 +1164,7 @@ homeContent.innerHTML=`
 
 <h2 class="page-title">
 
-Family Tree
+Family
 
 </h2>
 
