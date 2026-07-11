@@ -7,16 +7,9 @@ Part 1A.3
 
 /* WELCOME SCREEN */
 
+
 const welcomeHeading=
 document.getElementById("welcomeHeading");
-const homeWelcomeHeading =
-document.getElementById("homeWelcomeHeading");
-
-const homeWelcomeSlogan =
-document.getElementById("homeWelcomeSlogan");
-
-const homeWelcomeAbout =
-document.getElementById("homeWelcomeAbout");
 
 const welcomeSlogan=
 document.getElementById("welcomeSlogan");
@@ -154,13 +147,19 @@ function updateWelcomePage(){
     welcomeAbout.innerHTML = txt.about;
 
     // Home Welcome Page
-    if(homeWelcomeHeading){
+  const homeHeading = document.getElementById("homeWelcomeHeading");
+const homeSlogan = document.getElementById("homeWelcomeSlogan");
+const homeAbout = document.getElementById("homeWelcomeAbout");
 
-        homeWelcomeHeading.innerHTML = txt.welcome;
-        homeWelcomeSlogan.innerHTML = txt.slogan.join("<br>");
-        homeWelcomeAbout.innerHTML = txt.about;
+if(homeHeading){
 
-    }
+    homeHeading.innerHTML = txt.welcome;
+
+    homeSlogan.innerHTML = txt.slogan.join("<br>");
+
+    homeAbout.innerHTML = txt.about;
+
+}
 
 }
 function showPage(html){
