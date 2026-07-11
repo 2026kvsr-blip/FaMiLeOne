@@ -8,7 +8,6 @@ slogan:[
 "oneFaMiLe",
 "one Platform - one Structure - one Code"
 ],
-
     
     about:`
 
@@ -92,7 +91,7 @@ Generate detailed daily, weekly, monthly and yearly reports for better analysis 
 <h3>🔒 Privacy & Security</h3>
 
 <p>
-Every module in oneFaMiLe supports an optional Private Mode, allowing you to securely protect sensitive information information confidential and accessible only to authorized users.
+Every module in oneFaMiLe supports an optional Private Mode, allowing you to securely protect sensitive information confidential and accessible only to authorized users.
 
 </p>
 
@@ -214,18 +213,11 @@ welcome:"oneFaMiLe में आपका स्वागत है",
 
 slogan:[
 "oneFaMiLe",
-"एक संरचना",
-"एक मंच",
-"एक कोड"
+"एक संरचना - एक मंच - एक कोड"
 ],
 
 about:`
 
-<h3>🔒 Privacy First (गोपनीयता सबसे पहले)</h3>
-
-<p>
-oneFaMiLe के प्रत्येक मॉड्यूल में वैकल्पिक Private Mode उपलब्ध है। इसकी सहायता से आपकी संवेदनशील जानकारी पूरी तरह सुरक्षित रहती है और केवल अधिकृत उपयोगकर्ता ही उसे देख सकते हैं।
-</p>
 
 <h3>📌 You can Track your : (आप निम्नलिखित का प्रबंधन कर सकते हैं)</h3>
 
@@ -330,18 +322,11 @@ welcome:"oneFaMiLe ಗೆ ಸ್ವಾಗತ",
 
 slogan:[
 "oneFaMiLe",
-"ಒಂದು ರಚನೆ",
-"ಒಂದು ವೇದಿಕೆ",
-"ಒಂದು ಕೋಡ್"
+"ಒಂದು ರಚನೆ - ಒಂದು ವೇದಿಕೆ - ಒಂದು ಕೋಡ್"
 ],
 
 about:`
 
-<h3>🔒 Privacy First (ಗೌಪ್ಯತೆ ಮೊದಲಿಗೆ)</h3>
-
-<p>
-oneFaMiLe ನ ಪ್ರತಿಯೊಂದು ಮಾಡ್ಯೂಲ್‌ನಲ್ಲಿ ಐಚ್ಛಿಕ Private Mode ಲಭ್ಯವಿದೆ. ಇದರ ಮೂಲಕ ನಿಮ್ಮ ಸೂಕ್ಷ್ಮ ಮಾಹಿತಿಯನ್ನು ಸುರಕ್ಷಿತವಾಗಿ ಸಂರಕ್ಷಿಸಬಹುದು ಮತ್ತು ಅಧಿಕಾರ ಪಡೆದ ಬಳಕೆದಾರರು ಮಾತ್ರ ಅದನ್ನು ನೋಡಬಹುದು.
-</p>
 
 <h3>📌 You can Track your : (ನೀವು ಕೆಳಗಿನ ಮಾಹಿತಿಯನ್ನು ನಿರ್ವಹಿಸಬಹುದು)</h3>
 
@@ -446,18 +431,10 @@ welcome:"oneFaMiLe க்கு வரவேற்கிறோம்",
 
 slogan:[
 "oneFaMiLe",
-"ஒரு அமைப்பு",
-"ஒரு தளம்",
-"ஒரு குறியீடு"
+"ஒரு அமைப்பு - ஒரு தளம் - ஒரு குறியீடு"
 ],
 
 about:`
-
-<h3>🔒 Privacy First (தனியுரிமைக்கு முன்னுரிமை)</h3>
-
-<p>
-oneFaMiLe இன் ஒவ்வொரு தொகுதியிலும் விருப்பத்திற்கேற்ப Private Mode வசதி உள்ளது. இதன் மூலம் உங்கள் முக்கியமான தகவல்கள் பாதுகாப்பாக இருக்கும்; அனுமதி பெற்ற பயனர்கள் மட்டுமே அவற்றைப் பார்க்க முடியும்.
-</p>
 
 <h3>📌 You can Track your : (நீங்கள் நிர்வகிக்கக்கூடியவை)</h3>
 
@@ -562,18 +539,10 @@ welcome:"oneFaMiLe ലേക്ക് സ്വാഗതം",
 
 slogan:[
 "oneFaMiLe",
-"ഒരു ഘടന",
-"ഒരു വേദി",
-"ഒരു കോഡ്"
+"ഒരു ഘടന - ഒരു വേദി - ഒരു കോഡ്"
 ],
 
 about:`
-
-<h3>🔒 Privacy First (സ്വകാര്യതയ്ക്ക് മുൻഗണന)</h3>
-
-<p>
-oneFaMiLeയിലെ ഓരോ മോഡ്യൂളിലും ഐച്ഛിക Private Mode ലഭ്യമാണ്. ഇതിലൂടെ നിങ്ങളുടെ പ്രധാനപ്പെട്ട വിവരങ്ങൾ സുരക്ഷിതമായി സൂക്ഷിക്കപ്പെടുകയും അധികാരമുള്ള ഉപയോക്താക്കൾക്ക് മാത്രമേ അവ കാണാൻ കഴിയൂ.
-</p>
 
 <h3>📌 You can Track your : (നിങ്ങൾക്ക് നിയന്ത്രിക്കാനാകുന്നത്)</h3>
 
