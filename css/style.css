@@ -7,6 +7,7 @@ font-family:Arial,Helvetica,sans-serif;
 
 body{
 
+ 
  background:#EAF8FF;
 
 min-height:100vh;
@@ -452,7 +453,7 @@ gap:4px;
 
 #homeContent{
 
-margin-top:35px;
+margin-top:10px;
 
 height:calc(100vh - 185px);
 
