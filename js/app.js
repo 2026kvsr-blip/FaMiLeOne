@@ -5,6 +5,7 @@ Part 1A.3
 
 ===================================== */
 
+
 /* WELCOME SCREEN */
 
 const welcomeHeading=
@@ -269,7 +270,7 @@ class="back-btn">
 
 </div>
 
-');
+`);
 document.getElementById(
 
 "activityReports"
@@ -385,7 +386,7 @@ class="back-btn">
 
 </div>
 
-);
+`);
 document.getElementById(
 
 "incomeReports"
@@ -491,7 +492,7 @@ class="back-btn">
 
 </div>
 
-');
+`);
 
 document.getElementById(
 "healthReports"
@@ -733,7 +734,7 @@ class="back-btn">
 
 </div>
 
-');
+`);
 
 document.getElementById(
 "lendReports"
@@ -843,7 +844,7 @@ class="back-btn">
 
 </div>
 
-');
+`);
 
 document.getElementById(
 "borrowReports"
@@ -1092,7 +1093,7 @@ class="back-btn">
 
 </div>
 
-');
+`);
 document.getElementById(
 
 "expenseReports"
@@ -1210,7 +1211,7 @@ class="back-btn">
 
 </div>
 
-');
+`);
 
 document.getElementById(
 "familyBack"
@@ -1292,7 +1293,7 @@ class="back-btn">
 
 </div>
 
-');
+`);
 document.getElementById(
 "memoryReports"
 ).onclick=()=>{
@@ -1410,7 +1411,7 @@ class="back-btn">
 
 </div>
 
-');
+`);
 
 document.getElementById(
 "chartBack"
@@ -1476,7 +1477,7 @@ class="back-btn">
 
 </div>
 
-');
+`);
 document.getElementById("expenseMainReports").onclick=()=>{
 
 reportCategory("Expenses");
@@ -1602,7 +1603,7 @@ class="back-btn">
 
 </div>
 
-');
+`);
 
 document.getElementById(
 "reportBack"
@@ -1666,7 +1667,7 @@ class="back-btn">
 
 </div>
 
-');
+`);
 
 document.getElementById("verifyPass").onclick=()=>{
 
@@ -1742,7 +1743,7 @@ class="back-btn">
 
 </div>
 
-');
+`);
 
 document.getElementById("catReports").onclick=()=>{
 
@@ -1813,7 +1814,7 @@ class="back-btn">
 
 </div>
 
-');
+`);
 
 document.getElementById("loanLendRpt").onclick=()=>{
 
