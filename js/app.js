@@ -5,6 +5,7 @@ Part 1A.3
 
 ===================================== */
 
+
 /* WELCOME SCREEN */
 
 const welcomeHeading=
@@ -205,7 +206,7 @@ activeImg.src = activeImg.dataset.active;
 activitiesBtn.onclick=()=>{
 setActiveButton(activitiesBtn);
   
-showPage(
+showPage(`
 
 <h2 class="page-title">
 
@@ -269,7 +270,7 @@ class="back-btn">
 
 </div>
 
-);
+');
 document.getElementById(
 
 "activityReports"
@@ -308,12 +309,12 @@ document.getElementById(
 
 ).onclick=()=>{
 
-showPage(
+showPage(`
 
 homeBtn.click();
 
 
-);
+');
 
 };
 
@@ -322,7 +323,7 @@ incomeBtn.onclick=()=>{
 
 setActiveButton(incomeBtn);
   
-showPage(
+showPage(`
 
 <h2 class="page-title">
 
@@ -428,12 +429,12 @@ document.getElementById(
 
 ).onclick=()=>{
 
-showPage(
+showPage(`
 
 homeBtn.click();
 
 
-);
+');
 
 };
 
@@ -441,7 +442,7 @@ homeBtn.click();
 healthBtn.onclick=()=>{
 setActiveButton(healthBtn);
   
-showPage(
+showPage(`
 
 <h2 class="page-title">
 Health
@@ -493,7 +494,7 @@ class="back-btn">
 
 </div>
 
-);
+');
 
 document.getElementById(
 "healthReports"
@@ -535,7 +536,7 @@ homeBtn.click();
 };
 loansBtn.onclick = ()=>{
 setActiveButton(loansBtn);
-homeContent.innerHTML = `
+showPage(`
 
 <h2 class="page-title">
 
@@ -587,7 +588,7 @@ class="back-btn">
 
 </div>
 
-`;
+`);
 
 document.getElementById(
 "loanBtn"
@@ -609,12 +610,12 @@ document.getElementById(
 "loanBack"
 ).onclick = ()=>{
 
-homeContent.innerHTML = `
+showPage(`
 
 homeBtn.click();
 
 
-`;
+`);
 
 };
 
@@ -623,7 +624,7 @@ homeBtn.click();
 
 function showLendBorrow(type){
 
-homeContent.innerHTML = `
+showPage(`
 
 <h2 class="page-title">
 
@@ -660,7 +661,7 @@ class="back-btn">
 
 </div>
 
-`;
+`);
 
 document.getElementById(
 "lendBorrowBack"
@@ -674,7 +675,7 @@ document.getElementById(
 "lendBtn"
 ).onclick=()=>{
 
-showPage(
+showPage(`
 
 <h2 class="page-title">
 
@@ -740,7 +741,7 @@ class="back-btn">
 
 </div>
 
-);
+');
 
 document.getElementById(
 "lendReports"
@@ -784,7 +785,7 @@ document.getElementById(
 "borrowBtn"
 ).onclick=()=>{
 
-showPage(
+showPage(`
 
 <h2 class="page-title">
 
@@ -850,7 +851,7 @@ class="back-btn">
 
 </div>
 
-);
+');
 
 document.getElementById(
 "borrowReports"
@@ -1028,7 +1029,7 @@ welcomePage.classList.remove("hidden");
 expensesBtn.onclick=()=>{
 setActiveButton(expensesBtn);
     homeContent.scrollTop=0;
-showPage(
+showPage(`
 <h2 class="page-title">
 
 Expenses
@@ -1099,7 +1100,7 @@ class="back-btn">
 
 </div>
 
-);
+');
 document.getElementById(
 
 "expenseReports"
@@ -1137,13 +1138,13 @@ document.getElementById(
 
 .onclick=()=>{
 
-showPage(
+showPage(`
 
 
 homeBtn.click();
 
 
-);
+');
 
 };
 
@@ -1160,7 +1161,7 @@ homeContent.style.display="block";
 familyBtn.onclick=()=>{
 setActiveButton(familyBtn);
   homeContent.scrollTop=0;
-showPage(
+showPage(`
 
 <h2 class="page-title">
 
@@ -1220,7 +1221,7 @@ class="back-btn">
 
 </div>
 
-);
+');
 
 document.getElementById(
 "familyBack"
@@ -1236,7 +1237,7 @@ homeBtn.click();
 memoriesBtn.onclick=()=>{
 setActiveButton(memoriesBtn);
  homeContent.scrollTop=0; 
-showPage(
+showPage(`
 
 <h2 class="page-title">
 
@@ -1302,7 +1303,7 @@ class="back-btn">
 
 </div>
 
-);
+');
 document.getElementById(
 "memoryReports"
 ).onclick=()=>{
@@ -1346,7 +1347,7 @@ homeBtn.click();
 chartsBtn.onclick=()=>{
 setActiveButton(chartsBtn);
  homeContent.scrollTop=0; 
-showPage(
+showPage(`
 
 <h2 class="page-title">
 
@@ -1420,7 +1421,7 @@ class="back-btn">
 
 </div>
 
-);
+');
 
 document.getElementById(
 "chartBack"
@@ -1435,7 +1436,7 @@ homeBtn.click();
 reportsBtn.onclick=()=>{
 setActiveButton(reportsBtn);
 homeContent.scrollTop=0;  
-showPage(
+showPage(`
 
 <h2 class="page-title">
 
@@ -1486,7 +1487,7 @@ class="back-btn">
 
 </div>
 
-);
+');
 document.getElementById("expenseMainReports").onclick=()=>{
 
 reportCategory("Expenses");
@@ -1534,7 +1535,7 @@ homeBtn.click();
 
 function reportsLayout(title){
 
-showPage(
+showPage(`
 
 <h2 class="page-title">
 
@@ -1612,7 +1613,7 @@ class="back-btn">
 
 </div>
 
-);
+');
 
 document.getElementById(
 "reportBack"
@@ -1626,7 +1627,7 @@ homeBtn.click();
 
 function openSensitive(moduleName, reportType){
 
-showPage(
+showPage(`
 
 <h2 class="page-title">
 
@@ -1676,7 +1677,7 @@ class="back-btn">
 
 </div>
 
-);
+');
 
 document.getElementById("verifyPass").onclick=()=>{
 
@@ -1704,7 +1705,7 @@ homeBtn.click();
 
 function reportCategory(module){
 
-showPage(
+showPage(`
 
 <h2 class="page-title">
 
@@ -1752,7 +1753,7 @@ class="back-btn">
 
 </div>
 
-);
+');
 
 document.getElementById("catReports").onclick=()=>{
 
@@ -1783,7 +1784,7 @@ reportsBtn.click();
 
 function loanReportsMenu(){
 
-showPage(
+showPage(`
 
 <h2 class="page-title">
 
@@ -1823,7 +1824,7 @@ class="back-btn">
 
 </div>
 
-);
+');
 
 document.getElementById("loanLendRpt").onclick=()=>{
 
