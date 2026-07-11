@@ -5,6 +5,7 @@ Part 1A.3
 
 ===================================== */
 
+
 /* WELCOME SCREEN */
 
 const welcomeHeading=
@@ -1020,7 +1021,7 @@ welcomePage.classList.remove("hidden");
 };
 expensesBtn.onclick=()=>{
 setActiveButton(expensesBtn);
-    homeContent.scrollTop=0;
+   
 showPage(`
 <h2 class="page-title">
 
@@ -1147,7 +1148,7 @@ homeContent.style.display="block";
 };
 familyBtn.onclick=()=>{
 setActiveButton(familyBtn);
-  homeContent.scrollTop=0;
+  
 showPage(`
 
 <h2 class="page-title">
@@ -1223,7 +1224,7 @@ homeBtn.click();
 
 memoriesBtn.onclick=()=>{
 setActiveButton(memoriesBtn);
- homeContent.scrollTop=0; 
+  
 showPage(`
 
 <h2 class="page-title">
@@ -1333,7 +1334,7 @@ homeBtn.click();
 
 chartsBtn.onclick=()=>{
 setActiveButton(chartsBtn);
- homeContent.scrollTop=0; 
+ 
 showPage(`
 
 <h2 class="page-title">
@@ -1422,7 +1423,7 @@ homeBtn.click();
 
 reportsBtn.onclick=()=>{
 setActiveButton(reportsBtn);
-homeContent.scrollTop=0;  
+
 showPage(`
 
 <h2 class="page-title">
