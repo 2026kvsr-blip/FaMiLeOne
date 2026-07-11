@@ -5,6 +5,7 @@ Part 1A.3
 
 ===================================== */
 
+
 /* WELCOME SCREEN */
 
 
@@ -1140,8 +1141,9 @@ homeBtn.onclick = ()=>{
 
     setActiveButton(homeBtn);
 
-    homeContent.innerHTML =
-    homeTemplate;
+    homeContent.innerHTML = homeTemplate;
+
+    console.log(document.getElementById("homeWelcomeHeading"));
 
     updateWelcomePage();
 
