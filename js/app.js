@@ -5,7 +5,6 @@ Part 1A.3
 
 ===================================== */
 
-
 /* WELCOME SCREEN */
 
 const welcomeHeading=
@@ -309,12 +308,11 @@ document.getElementById(
 
 ).onclick=()=>{
 
-showPage(`
+
 
 homeBtn.click();
 
 
-');
 
 };
 
@@ -429,12 +427,11 @@ document.getElementById(
 
 ).onclick=()=>{
 
-showPage(`
 
 homeBtn.click();
 
 
-');
+
 
 };
 
@@ -610,12 +607,7 @@ document.getElementById(
 "loanBack"
 ).onclick = ()=>{
 
-showPage(`
-
 homeBtn.click();
-
-
-`);
 
 };
 
@@ -1129,7 +1121,6 @@ document.getElementById("expenseAll").onclick = ()=>{
 };
 
   
-  
 document.getElementById(
 
 "expenseBack"
@@ -1138,13 +1129,9 @@ document.getElementById(
 
 .onclick=()=>{
 
-showPage(`
-
 
 homeBtn.click();
 
-
-');
 
 };
 
