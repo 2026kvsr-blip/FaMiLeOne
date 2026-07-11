@@ -5,7 +5,6 @@ Part 1A.3
 
 ===================================== */
 
-
 /* WELCOME SCREEN */
 
 const welcomeHeading=
@@ -86,7 +85,7 @@ document.getElementById(
 "homeContent"
 );
 
-
+const homeTemplate = homeContent.innerHTML;
 const expensesBtn =
 document.getElementById(
 "expensesBtn"
@@ -1142,9 +1141,11 @@ homeBtn.onclick = ()=>{
 
     setActiveButton(homeBtn);
 
+    homeContent.innerHTML =
+    homeTemplate;
+
     updateWelcomePage();
-homeContent.style.display="block";
-    homeContent.scrollTop=0;
+
 };
 familyBtn.onclick=()=>{
 setActiveButton(familyBtn);
