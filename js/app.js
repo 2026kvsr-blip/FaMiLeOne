@@ -212,8 +212,7 @@ Activities
 
 </h2>
 
-<div class="grid-2">
-
+<div class="grid-3x2">
 <button class="grid-btn" id="addActivitiesBtn">
 
 <img
