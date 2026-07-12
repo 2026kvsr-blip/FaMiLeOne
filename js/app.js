@@ -7,7 +7,6 @@ Part 1A.3
 
 /* WELCOME SCREEN */
 
-
 const welcomeHeading=
 document.getElementById("welcomeHeading");
 
@@ -201,119 +200,121 @@ activeImg.src = activeImg.dataset.active;
 
 }
 
-activitiesBtn.onclick=()=>{
-setActiveButton(activitiesBtn);
-  
-showPage(`
+activitiesBtn.onclick = ()=>{
+
+    setActiveButton(activitiesBtn);
+
+    showPage(`
 
 <h2 class="page-title">
 
 Activities
 
 </h2>
-<div class="grid-3x2">
 
-<button class="grid-btn">
+<div class="grid-2">
+
+<button class="grid-btn" id="addActivitiesBtn">
+
+<img
+src="images/activities/AddActivities.png"
+class="btn-icon">
+
+<span>
 
 Add Activity
 
+</span>
+
 </button>
 
-<button
-id="activityReports"
-class="grid-btn">
+
+<button class="grid-btn" id="reportsActivitiesBtn">
+
+<img
+src="images/activities/ReportsActivities.png"
+class="btn-icon">
+
+<span>
 
 Reports
 
+</span>
+
 </button>
 
-<button
-id="activitySensitive"
-class="grid-btn">
+
+<button class="grid-btn" id="sensitiveActivitiesBtn">
+
+<img
+src="images/activities/SensitiveActivities.png"
+class="btn-icon">
+
+<span>
 
 Sensitive Reports
 
+</span>
+
 </button>
 
-<button
-id="activityAll"
-class="grid-btn">
+
+<button class="grid-btn" id="allReportsActivitiesBtn">
+
+<img
+src="images/activities/AllReportsActivities.png"
+class="btn-icon">
+
+<span>
 
 All Reports
 
+</span>
+
 </button>
-<button class="grid-btn">
+
+
+<button class="grid-btn" id="searchActivitiesBtn">
+
+<img
+src="images/activities/SearchActivities.png"
+class="btn-icon">
+
+<span>
 
 Custom Search
 
+</span>
+
 </button>
 
-<button class="grid-btn">
+
+<button class="grid-btn" id="aboutActivitiesBtn">
+
+<img
+src="images/activities/AboutActivities.png"
+class="btn-icon">
+
+<span>
 
 About
+
+</span>
 
 </button>
 
 </div>
 
-<div align="center">
 
-<button
-id="activityBack"
-class="back-btn">
+<button class="back-btn" id="activitiesBackBtn">
 
 ← Back
 
 </button>
 
-</div>
-
 `);
-document.getElementById(
 
-"activityReports"
-
-).onclick=()=>{
-
-reportsLayout(
-
-"Activities Reports"
-
-);
-
-};
-  
-document.getElementById("activitySensitive").onclick=()=>{
-
-openSensitive(
-"Activities",
-"Sensitive Reports"
-);
-
-};
-
-document.getElementById("activityAll").onclick=()=>{
-
-openSensitive(
-"Activities",
-"All Reports"
-);
-
-};
-  
-document.getElementById(
-
-"activityBack"
-
-).onclick=()=>{
-
-
-
-homeBtn.click();
-
-
-
-};
+document.getElementById("activitiesBackBtn").onclick = showHome;
 
 };
 incomeBtn.onclick=()=>{
