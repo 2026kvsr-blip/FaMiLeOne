@@ -5,7 +5,6 @@ Part 1A.3
 
 ===================================== */
 
-
 /* WELCOME SCREEN */
 
 
@@ -1032,7 +1031,15 @@ Expenses
 
 <button class="grid-btn">
 
+<img
+src="images/expenses/AddExpenses.png"
+class="btn-icon">
+
+<span>
+
 Add Expense
+
+</span>
 
 </button>
 
@@ -1041,7 +1048,15 @@ Add Expense
 id="expenseReports"
 class="grid-btn">
 
+<img
+src="images/expenses/ReportsExpenses.png"
+class="btn-icon">
+
+<span>
+
 Reports
+
+</span>
 
 </button>
 
@@ -1050,7 +1065,15 @@ Reports
 id="expenseSensitive"
 class="grid-btn">
 
+<img
+src="images/expenses/SensitiveExpenses.png"
+class="btn-icon">
+
+<span>
+
 Sensitive Reports
+
+</span>
 
 </button>
 
@@ -1059,20 +1082,41 @@ Sensitive Reports
 id="expenseAll"
 class="grid-btn">
 
+<img
+src="images/expenses/AllReportsExpenses.png"
+class="btn-icon">
+
+<span>
+
 All Reports
+
+</span>
 
 </button>
 
 <button class="grid-btn">
+
+<img
+src="images/expenses/SearchExpenses.png"
+class="btn-icon">
+
+<span>
 
 Custom Search
 
-</button>
-
+</span>
 
 <button class="grid-btn">
 
+<img
+src="images/expenses/AboutExpenses.png"
+class="btn-icon">
+
+<span>
+
 About
+
+</span>
 
 </button>
 
