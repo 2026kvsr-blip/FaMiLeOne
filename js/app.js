@@ -5,6 +5,7 @@ Part 1A.3
 
 ===================================== */
 
+
 /* WELCOME SCREEN */
 
 const welcomeHeading=
@@ -1757,7 +1758,7 @@ Loan Reports
 <button id="incomeMainReports" class="grid-btn">
 
 <img
-src="images/icome/ReportsIncome.png"
+src="images/income/ReportsIncome.png"
 class="btn-icon">
 
 <span>
