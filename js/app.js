@@ -5,6 +5,7 @@ Part 1A.3
 
 ===================================== */
 
+
 /* WELCOME SCREEN */
 
 const welcomeHeading=
@@ -1353,10 +1354,11 @@ homeBtn.click();
 };
 
 
-memoriesBtn.onclick=()=>{
-setActiveButton(memoriesBtn);
-  
-showPage(`
+memoriesBtn.onclick = ()=>{
+
+    setActiveButton(memoriesBtn);
+
+    showPage(`
 
 <h2 class="page-title">
 
@@ -1366,45 +1368,102 @@ Memories
 
 <div class="grid-3x2">
 
-<button class="grid-btn">
+<button class="grid-btn" id="addMemoryBtn">
 
-Add New Memory
+<img
+src="images/memories/AddMemory.png"
+class="btn-icon">
+
+<span>
+
+Add Memory
+
+</span>
 
 </button>
+
 
 <button
 id="memoryReports"
 class="grid-btn">
 
+<img
+src="images/memories/ReportsMemory.png"
+class="btn-icon">
+
+<span>
+
 Reports
 
+</span>
+
 </button>
+
 
 <button
 id="memorySensitive"
 class="grid-btn">
 
+<img
+src="images/memories/SensitiveMemory.png"
+class="btn-icon">
+
+<span>
+
 Sensitive Reports
 
+</span>
+
 </button>
+
 
 <button
 id="memoryAll"
 class="grid-btn">
 
+<img
+src="images/memories/AllReportsMemory.png"
+class="btn-icon">
+
+<span>
+
 All Reports
+
+</span>
 
 </button>
 
-<button class="grid-btn">
+
+<button
+id="memorySearch"
+class="grid-btn">
+
+<img
+src="images/memories/SearchMemory.png"
+class="btn-icon">
+
+<span>
 
 Custom Search
 
+</span>
+
 </button>
 
-<button class="grid-btn">
+
+<button
+id="memoryAbout"
+class="grid-btn">
+
+<img
+src="images/memories/AboutMemory.png"
+class="btn-icon">
+
+<span>
 
 About
+
+</span>
 
 </button>
 
@@ -1423,44 +1482,28 @@ class="back-btn">
 </div>
 
 `);
-document.getElementById(
-"memoryReports"
-).onclick=()=>{
 
-reportsLayout(
-"Memories Reports"
-);
+document.getElementById("memoryReports").onclick = ()=>{
+
+    reportsLayout("Memory Reports");
 
 };
 
-document.getElementById("memorySensitive").onclick=()=>{
+document.getElementById("memorySensitive").onclick = ()=>{
 
-openSensitive(
-"Memories",
-"Sensitive Reports"
-);
+    openSensitive("Memory","Sensitive Reports");
 
 };
 
-document.getElementById("memoryAll").onclick=()=>{
+document.getElementById("memoryAll").onclick = ()=>{
 
-openSensitive(
-"Memories",
-"All Reports"
-);
-
-};
-  
-document.getElementById(
-"memoryBack"
-).onclick=()=>{
-
-homeBtn.click();
+    openSensitive("Memory","All Reports");
 
 };
 
-};
+document.getElementById("memoryBack").onclick = showHome;
 
+};
 
 
 chartsBtn.onclick=()=>{
