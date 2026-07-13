@@ -5,7 +5,6 @@ Part 1A.3
 
 ===================================== */
 
-
 /* WELCOME SCREEN */
 
 const welcomeHeading=
@@ -323,22 +322,31 @@ class="back-btn">
 document.getElementById("activitiesBackBtn").onclick = showHome;
 
 };
-incomeBtn.onclick=()=>{
+incomeBtn.onclick = ()=>{
 
-setActiveButton(incomeBtn);
-  
-showPage(`
+    setActiveButton(incomeBtn);
+
+    showPage(`
 
 <h2 class="page-title">
 
 Income
 
 </h2>
+
 <div class="grid-3x2">
 
-<button class="grid-btn">
+<button class="grid-btn" id="addIncomeBtn">
+
+<img
+src="images/income/AddIncome.png"
+class="btn-icon">
+
+<span>
 
 Add Income
+
+</span>
 
 </button>
 
@@ -346,7 +354,15 @@ Add Income
 id="incomeReports"
 class="grid-btn">
 
+<img
+src="images/income/ReportsIncome.png"
+class="btn-icon">
+
+<span>
+
 Reports
+
+</span>
 
 </button>
 
@@ -354,7 +370,15 @@ Reports
 id="incomeSensitive"
 class="grid-btn">
 
+<img
+src="images/income/SensitiveIncome.png"
+class="btn-icon">
+
+<span>
+
 Sensitive Reports
+
+</span>
 
 </button>
 
@@ -362,18 +386,47 @@ Sensitive Reports
 id="incomeAll"
 class="grid-btn">
 
+<img
+src="images/income/AllReportsIncome.png"
+class="btn-icon">
+
+<span>
+
 All Reports
 
+</span>
+
 </button>
-<button class="grid-btn">
+
+<button
+id="incomeSearch"
+class="grid-btn">
+
+<img
+src="images/income/SearchIncome.png"
+class="btn-icon">
+
+<span>
 
 Custom Search
 
+</span>
+
 </button>
 
-<button class="grid-btn">
+<button
+id="incomeAbout"
+class="grid-btn">
+
+<img
+src="images/income/AboutIncome.png"
+class="btn-icon">
+
+<span>
 
 About
+
+</span>
 
 </button>
 
@@ -392,57 +445,28 @@ class="back-btn">
 </div>
 
 `);
-document.getElementById(
 
-"incomeReports"
+document.getElementById("incomeReports").onclick=()=>{
 
-).onclick=()=>{
-
-reportsLayout(
-
-"Income Reports"
-
-);
+    reportsLayout("Income Reports");
 
 };
 
-
 document.getElementById("incomeSensitive").onclick=()=>{
 
-openSensitive(
-"Income",
-"Sensitive Reports"
-);
+    openSensitive("Income","Sensitive Reports");
 
 };
 
 document.getElementById("incomeAll").onclick=()=>{
 
-openSensitive(
-"Income",
-"All Reports"
-);
+    openSensitive("Income","All Reports");
 
 };
 
+document.getElementById("incomeBack").onclick=showHome;
 
-  
-document.getElementById(
-
-"incomeBack"
-
-).onclick=()=>{
-
-
-homeBtn.click();
-
-
-
-
-};
-
-};
-healthBtn.onclick = ()=>{
+};healthBtn.onclick = ()=>{
 
     setActiveButton(healthBtn);
 
