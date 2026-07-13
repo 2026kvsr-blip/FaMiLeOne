@@ -3,6 +3,7 @@
 oneFaMiLe V1
 Part 1A.3
 
+
 ===================================== */
 
 /* WELCOME SCREEN */
@@ -1601,7 +1602,7 @@ id="activitiesChartBtn"
 class="grid-btn">
 
 <img
-src="images/charts/ActivitiesCharts.png"
+src="images/charts/ActivityCharts.png"
 class="btn-icon">
 
 <span>
