@@ -17,6 +17,7 @@ overflow-x:hidden;
 
 }
 
+
 /* =======================
 TOP BAR
 ======================= */
@@ -452,7 +453,7 @@ gap:4px;
 
 #homeContent{
 
-margin-top:8px;
+margin-top:5px;
 
 height:calc(100vh - 225px);
 
