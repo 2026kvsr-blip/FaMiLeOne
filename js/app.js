@@ -5,6 +5,7 @@ Part 1A.3
 
 ===================================== */
 
+
 /* WELCOME SCREEN */
 
 const welcomeHeading=
@@ -441,45 +442,117 @@ homeBtn.click();
 };
 
 };
-healthBtn.onclick=()=>{
-setActiveButton(healthBtn);
-  
-showPage(`
+healthBtn.onclick = ()=>{
+
+    setActiveButton(healthBtn);
+
+    showPage(`
 
 <h2 class="page-title">
+
 Health
+
 </h2>
 
 <div class="grid-3x2">
 
-<button class="grid-btn">
+<button class="grid-btn" id="addHealthBtn">
+
+<img
+src="images/health/AddHealth.png"
+class="btn-icon">
+
+<span>
+
 Add Health
+
+</span>
+
 </button>
+
 
 <button
 id="healthReports"
 class="grid-btn">
+
+<img
+src="images/health/ReportsHealth.png"
+class="btn-icon">
+
+<span>
+
 Reports
+
+</span>
+
 </button>
+
 
 <button
 id="healthSensitive"
 class="grid-btn">
+
+<img
+src="images/health/SensitiveHealth.png"
+class="btn-icon">
+
+<span>
+
 Sensitive Reports
+
+</span>
+
 </button>
+
 
 <button
 id="healthAll"
 class="grid-btn">
+
+<img
+src="images/health/AllReportsHealth.png"
+class="btn-icon">
+
+<span>
+
 All Reports
+
+</span>
+
 </button>
 
-<button class="grid-btn">
+
+<button
+id="healthSearch"
+class="grid-btn">
+
+<img
+src="images/health/SearchHealth.png"
+class="btn-icon">
+
+<span>
+
 Custom Search
+
+</span>
+
 </button>
 
-<button class="grid-btn">
+
+<button
+id="healthAbout"
+class="grid-btn">
+
+<img
+src="images/health/AboutHealth.png"
+class="btn-icon">
+
+<span>
+
 About
+
+</span>
+
 </button>
 
 </div>
@@ -498,45 +571,27 @@ class="back-btn">
 
 `);
 
-document.getElementById(
-"healthReports"
-).onclick=()=>{
+document.getElementById("healthReports").onclick = ()=>{
 
-reportsLayout(
-"Health Reports"
-);
+    reportsLayout("Health Reports");
 
 };
 
-document.getElementById("healthSensitive").onclick=()=>{
+document.getElementById("healthSensitive").onclick = ()=>{
 
-openSensitive(
-"Health",
-"Sensitive Reports"
-);
+    openSensitive("Health","Sensitive Reports");
 
 };
 
-document.getElementById("healthAll").onclick=()=>{
+document.getElementById("healthAll").onclick = ()=>{
 
-openSensitive(
-"Health",
-"All Reports"
-);
+    openSensitive("Health","All Reports");
 
 };
 
-  
-document.getElementById(
-"healthBack"
-).onclick=()=>{
+document.getElementById("healthBack").onclick = showHome;
 
-homeBtn.click();
-
-};
-
-};
-loansBtn.onclick = ()=>{
+};loansBtn.onclick = ()=>{
 setActiveButton(loansBtn);
 showPage(`
 
