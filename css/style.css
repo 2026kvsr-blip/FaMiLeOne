@@ -4,7 +4,6 @@ padding:0;
 box-sizing:border-box;
 font-family:Arial,Helvetica,sans-serif;
 }
-
 body{
  
  background:#EAF8FF;
@@ -145,7 +144,7 @@ border-radius:30px;
 
 padding:20px 20px 70px 20px;
 
-height:calc(100vh - 260px);
+height:calc(100vh - 280px);
 
 display:flex;
 
