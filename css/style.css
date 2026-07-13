@@ -6,6 +6,7 @@ font-family:Arial,Helvetica,sans-serif;
 }
 body{
 
+  
   background:#EAF8FF;
 
 min-height:100vh;
@@ -640,7 +641,8 @@ width:100%;
 
 max-width:160px;
 
-background:white;
+background:transparent;
+
 
 border:none;
 
