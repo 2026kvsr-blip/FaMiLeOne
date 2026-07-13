@@ -5,7 +5,6 @@ Part 1A.3
 
 ===================================== */
 
-
 /* WELCOME SCREEN */
 
 const welcomeHeading=
@@ -1714,31 +1713,101 @@ Reports
 <div class="grid-3x2">
 
 <button id="expenseMainReports" class="grid-btn">
+
+<img
+src="images/reports/ExpensesReports.png"
+class="btn-icon">
+
+<span>
+
 Expenses Reports
+
+</span>
+
 </button>
 
 <button id="activityMainReports" class="grid-btn">
+
+<img
+src="images/reports/ActivitiesReports.png"
+class="btn-icon">
+
+<span>
+
 Activities Reports
+
+</span>
+
 </button>
 
 <button id="loanMainReports" class="grid-btn">
+
+<img
+src="images/reports/LoanReports.png"
+class="btn-icon">
+
+<span>
+
 Loan Reports
+
+</span>
+
 </button>
 
 <button id="incomeMainReports" class="grid-btn">
+
+<img
+src="images/reports/IncomeReports.png"
+class="btn-icon">
+
+<span>
+
 Income Reports
+
+</span>
+
 </button>
 
 <button id="healthMainReports" class="grid-btn">
+
+<img
+src="images/reports/HealthReports.png"
+class="btn-icon">
+
+<span>
+
 Health Reports
+
+</span>
+
 </button>
 
 <button id="memoryMainReports" class="grid-btn">
+
+<img
+src="images/reports/MemoriesReports.png"
+class="btn-icon">
+
+<span>
+
 Memories Reports
+
+</span>
+
 </button>
 
 <button class="grid-btn">
+
+<img
+src="images/reports/AboutReports.png"
+class="btn-icon">
+
+<span>
+
 About
+
+</span>
+
 </button>
 
 </div>
