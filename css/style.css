@@ -6,8 +6,7 @@ font-family:Arial,Helvetica,sans-serif;
 }
 body{
 
- 
- background:#EAF8FF;
+  background:#EAF8FF;
 
 min-height:100vh;
 
@@ -137,7 +136,7 @@ overflow:hidden;
 
 width:94%;
 
-margin:2px auto;
+margin:5px auto 0 auto;
 
 background:white;
 
@@ -145,7 +144,7 @@ border-radius:30px;
 
 padding:20px 20px 30px 20px;
 
-height:calc(100vh - 320px);
+height:calc(100vh - 250px);
 
 display:flex;
 
