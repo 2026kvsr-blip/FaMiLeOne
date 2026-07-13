@@ -5,7 +5,6 @@ Part 1A.3
 
 ===================================== */
 
-
 /* WELCOME SCREEN */
 
 const welcomeHeading=
@@ -1716,7 +1715,7 @@ Reports
 <button id="expenseMainReports" class="grid-btn">
 
 <img
-src="images/reports/ExpensesReports.png"
+src="images/expenses/ReportsExpenses.png"
 class="btn-icon">
 
 <span>
@@ -1730,7 +1729,7 @@ Expenses Reports
 <button id="activityMainReports" class="grid-btn">
 
 <img
-src="images/reports/ActivitiesReports.png"
+src="images/activities/ReportsActivities.png"
 class="btn-icon">
 
 <span>
@@ -1744,7 +1743,7 @@ Activities Reports
 <button id="loanMainReports" class="grid-btn">
 
 <img
-src="images/reports/LoanReports.png"
+src="images/loans/ReportsLoans.png"
 class="btn-icon">
 
 <span>
@@ -1758,7 +1757,7 @@ Loan Reports
 <button id="incomeMainReports" class="grid-btn">
 
 <img
-src="images/reports/IncomeReports.png"
+src="images/icome/ReportsIncome.png"
 class="btn-icon">
 
 <span>
@@ -1772,7 +1771,7 @@ Income Reports
 <button id="healthMainReports" class="grid-btn">
 
 <img
-src="images/reports/HealthReports.png"
+src="images/health/ReportsHealth.png"
 class="btn-icon">
 
 <span>
@@ -1786,7 +1785,7 @@ Health Reports
 <button id="memoryMainReports" class="grid-btn">
 
 <img
-src="images/reports/MemoriesReports.png"
+src="images/memories/ReportsMemories.png"
 class="btn-icon">
 
 <span>
@@ -1800,7 +1799,7 @@ Memories Reports
 <button class="grid-btn">
 
 <img
-src="images/reports/AboutReports.png"
+src="images/reports/ReportsAbout.png"
 class="btn-icon">
 
 <span>
