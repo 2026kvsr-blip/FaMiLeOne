@@ -3,6 +3,7 @@
 oneFaMiLe V1
 Part 1A.3
 
+
 ===================================== */
 
 /* WELCOME SCREEN */
@@ -1595,6 +1596,21 @@ Expenses
 
 </button>
 
+<button
+id="activitiesChartBtn"
+class="grid-btn">
+
+<img
+src="images/charts/ActivitiesCharts.png"
+class="btn-icon">
+
+<span>
+
+Activities
+
+</span>
+
+</button>
 
 <button
 id="incomeChartBtn"
@@ -1647,21 +1663,6 @@ Health
 </button>
 
 
-<button
-id="familyChartBtn"
-class="grid-btn">
-
-<img
-src="images/charts/FamilyCharts.png"
-class="btn-icon">
-
-<span>
-
-Family
-
-</span>
-
-</button>
 
 
 <button
