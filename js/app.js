@@ -5,6 +5,7 @@ Part 1A.3
 
 ===================================== */
 
+
 /* WELCOME SCREEN */
 
 const welcomeHeading=
@@ -1565,11 +1566,11 @@ document.getElementById("memoryBack").onclick = showHome;
 
 };
 
+chartsBtn.onclick = ()=>{
 
-chartsBtn.onclick=()=>{
-setActiveButton(chartsBtn);
- 
-showPage(`
+    setActiveButton(chartsBtn);
+
+    showPage(`
 
 <h2 class="page-title">
 
@@ -1579,53 +1580,104 @@ Charts
 
 <div class="grid-3x2">
 
-<button class="grid-btn chart-btn">
-Expenses Charts
-</button>
+<button
+id="expensesChartBtn"
+class="grid-btn">
 
-<button class="grid-btn chart-btn">Activities Charts</button>
+<img
+src="images/charts/ExpensesChart.png"
+class="btn-icon">
 
-<button class="grid-btn chart-btn">Income Charts</button>
+<span>
 
-<button class="grid-btn chart-btn">
+Expenses
 
-Health Charts
-
-</button>
-
-<button class="grid-btn chart-btn">
-
-Memories Charts
+</span>
 
 </button>
 
-<button class="grid-btn chart-btn">
 
-Loan-Lend Charts
+<button
+id="incomeChartBtn"
+class="grid-btn">
 
-</button>
+<img
+src="images/charts/IncomeChart.png"
+class="btn-icon">
 
-<button class="grid-btn chart-btn">
+<span>
 
-Loan - Borrowed Charts
+Income
 
-</button>
-
-<button class="grid-btn chart-btn">
-
-Payments- Lend Charts
-
-</button>
-
-<button class="grid-btn chart-btn">
-
-Payments- Borrowed Charts
+</span>
 
 </button>
 
-<button class="grid-btn chart-about-btn">
+
+<button
+id="loansChartBtn"
+class="grid-btn">
+
+<img
+src="images/charts/LoansChart.png"
+class="btn-icon">
+
+<span>
+
+Loans
+
+</span>
+
+</button>
+
+
+<button
+id="healthChartBtn"
+class="grid-btn">
+
+<img
+src="images/charts/HealthChart.png"
+class="btn-icon">
+
+<span>
+
+Health
+
+</span>
+
+</button>
+
+
+<button
+id="familyChartBtn"
+class="grid-btn">
+
+<img
+src="images/charts/FamilyChart.png"
+class="btn-icon">
+
+<span>
+
+Family
+
+</span>
+
+</button>
+
+
+<button
+id="chartsAboutBtn"
+class="grid-btn">
+
+<img
+src="images/charts/AboutCharts.png"
+class="btn-icon">
+
+<span>
 
 About
+
+</span>
 
 </button>
 
@@ -1634,7 +1686,7 @@ About
 <div align="center">
 
 <button
-id="chartBack"
+id="chartsBack"
 class="back-btn">
 
 ← Back
@@ -1645,16 +1697,9 @@ class="back-btn">
 
 `);
 
-document.getElementById(
-"chartBack"
-).onclick=()=>{
-
-homeBtn.click();
+document.getElementById("chartsBack").onclick = showHome;
 
 };
-
-};
-
 reportsBtn.onclick=()=>{
 setActiveButton(reportsBtn);
 
