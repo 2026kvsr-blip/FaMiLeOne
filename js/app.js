@@ -303,14 +303,20 @@ About
 
 </button>
 
+
 </div>
 
+<div align="center">
 
-<button class="back-btn" id="activitiesBackBtn">
+<button
+id="activitiesBackBtn"
+class="back-btn">
 
 ← Back
 
 </button>
+
+</div>
 
 `);
 
