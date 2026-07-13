@@ -5,6 +5,7 @@ Part 1A.3
 
 ===================================== */
 
+
 /* WELCOME SCREEN */
 
 const welcomeHeading=
@@ -1431,7 +1432,7 @@ Memories
 <button class="grid-btn" id="addMemoryBtn">
 
 <img
-src="images/memories/AddMemory.png"
+src="images/memories/AddMemories.png"
 class="btn-icon">
 
 <span>
@@ -1448,7 +1449,7 @@ id="memoryReports"
 class="grid-btn">
 
 <img
-src="images/memories/ReportsMemory.png"
+src="images/memories/ReportsMemories.png"
 class="btn-icon">
 
 <span>
@@ -1465,7 +1466,7 @@ id="memorySensitive"
 class="grid-btn">
 
 <img
-src="images/memories/SensitiveMemory.png"
+src="images/memories/SensitiveMemories.png"
 class="btn-icon">
 
 <span>
@@ -1482,7 +1483,7 @@ id="memoryAll"
 class="grid-btn">
 
 <img
-src="images/memories/AllReportsMemory.png"
+src="images/memories/AllReportsMemories.png"
 class="btn-icon">
 
 <span>
@@ -1499,7 +1500,7 @@ id="memorySearch"
 class="grid-btn">
 
 <img
-src="images/memories/SearchMemory.png"
+src="images/memories/SearchMemories.png"
 class="btn-icon">
 
 <span>
@@ -1516,7 +1517,7 @@ id="memoryAbout"
 class="grid-btn">
 
 <img
-src="images/memories/AboutMemory.png"
+src="images/memories/AboutMemories.png"
 class="btn-icon">
 
 <span>
