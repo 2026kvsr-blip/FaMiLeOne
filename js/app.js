@@ -5,7 +5,6 @@ Part 1A.3
 
 ===================================== */
 
-
 /* WELCOME SCREEN */
 
 const welcomeHeading=
@@ -1585,7 +1584,7 @@ id="expensesChartBtn"
 class="grid-btn">
 
 <img
-src="images/charts/ExpensesChart.png"
+src="images/charts/ExpensesCharts.png"
 class="btn-icon">
 
 <span>
@@ -1602,7 +1601,7 @@ id="incomeChartBtn"
 class="grid-btn">
 
 <img
-src="images/charts/IncomeChart.png"
+src="images/charts/IncomeCharts.png"
 class="btn-icon">
 
 <span>
@@ -1619,7 +1618,7 @@ id="loansChartBtn"
 class="grid-btn">
 
 <img
-src="images/charts/LoansChart.png"
+src="images/charts/LoansCharts.png"
 class="btn-icon">
 
 <span>
@@ -1636,7 +1635,7 @@ id="healthChartBtn"
 class="grid-btn">
 
 <img
-src="images/charts/HealthChart.png"
+src="images/charts/HealthCharts.png"
 class="btn-icon">
 
 <span>
@@ -1653,7 +1652,7 @@ id="familyChartBtn"
 class="grid-btn">
 
 <img
-src="images/charts/FamilyChart.png"
+src="images/charts/FamilyCharts.png"
 class="btn-icon">
 
 <span>
