@@ -4,6 +4,7 @@ padding:0;
 box-sizing:border-box;
 font-family:Arial,Helvetica,sans-serif;
 }
+
 body{
 
     background:#EAF8FF;
@@ -453,9 +454,9 @@ gap:4px;
 
 #homeContent{
 
-margin-top:5px;
+margin-top:2px;
 
-height:calc(100vh - 225px);
+height:calc(100vh - 235px);
 
 }
 
