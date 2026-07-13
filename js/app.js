@@ -1566,6 +1566,7 @@ document.getElementById("memoryBack").onclick = showHome;
 
 };
 
+
 chartsBtn.onclick = ()=>{
 
     setActiveButton(chartsBtn);
