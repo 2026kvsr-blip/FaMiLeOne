@@ -5,7 +5,6 @@ Part 1A.3
 
 ===================================== */
 
-
 /* WELCOME SCREEN */
 
 const welcomeHeading=
@@ -1278,10 +1277,13 @@ homeBtn.onclick = ()=>{
     updateWelcomePage();
 
 };
-familyBtn.onclick=()=>{
-setActiveButton(familyBtn);
-  
-showPage(`
+
+
+familyBtn.onclick = ()=>{
+
+    setActiveButton(familyBtn);
+
+    showPage(`
 
 <h2 class="page-title">
 
@@ -1291,39 +1293,104 @@ Family
 
 <div class="grid-3x2">
 
-<button class="grid-btn">
+<button
+id="addMemberBtn"
+class="grid-btn">
+
+<img
+src="images/family/AddMember.png"
+class="btn-icon">
+
+<span>
 
 Add Member
 
-</button>
-
-<button class="grid-btn">
-
-Add Family Tree
+</span>
 
 </button>
 
-<button class="grid-btn">
+
+<button
+id="addFamilyBtn"
+class="grid-btn">
+
+<img
+src="images/family/AddFamily.png"
+class="btn-icon">
+
+<span>
+
+Add Family
+
+</span>
+
+</button>
+
+
+<button
+id="searchMemberBtn"
+class="grid-btn">
+
+<img
+src="images/family/SearchMember.png"
+class="btn-icon">
+
+<span>
 
 Search Member
 
+</span>
+
 </button>
 
-<button class="grid-btn">
+
+<button
+id="relationsBtn"
+class="grid-btn">
+
+<img
+src="images/family/Relations.png"
+class="btn-icon">
+
+<span>
 
 Relations
 
+</span>
+
 </button>
 
-<button class="grid-btn">
+
+<button
+id="treeViewBtn"
+class="grid-btn">
+
+<img
+src="images/family/TreeView.png"
+class="btn-icon">
+
+<span>
 
 Tree View
 
+</span>
+
 </button>
 
-<button class="grid-btn">
+
+<button
+id="familyAboutBtn"
+class="grid-btn">
+
+<img
+src="images/family/AboutFamily.png"
+class="btn-icon">
+
+<span>
 
 About
+
+</span>
 
 </button>
 
@@ -1343,16 +1410,9 @@ class="back-btn">
 
 `);
 
-document.getElementById(
-"familyBack"
-).onclick=()=>{
-
-homeBtn.click();
+document.getElementById("familyBack").onclick = showHome;
 
 };
-
-};
-
 
 memoriesBtn.onclick = ()=>{
 
