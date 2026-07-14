@@ -5,6 +5,7 @@ Part 1A.3
 
 ===================================== */
 
+
 /* WELCOME SCREEN */
 
 const welcomeHeading=
@@ -615,7 +616,9 @@ document.getElementById("healthAll").onclick = ()=>{
 
 document.getElementById("healthBack").onclick = showHome;
 
-};loansBtn.onclick = ()=>{
+};
+
+loansBtn.onclick = ()=>{
 setActiveButton(loansBtn);
 showPage(`
 
@@ -630,7 +633,7 @@ Loans
 <button id="loanBtn" class="grid-btn">
 
 <img
-src="images/Loans.png"
+src="images/navigation/Loans.png"
 class="btn-icon">
 
 <span>
@@ -644,7 +647,7 @@ Loans
 <button id="paymentsBtn" class="grid-btn">
 
 <img
-src="images/Payments.png"
+src="images/navigation/Payments.png"
 class="btn-icon">
 
 <span>
