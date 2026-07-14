@@ -5,6 +5,7 @@ Part 1A.3
 
 ===================================== */
 
+
 /* WELCOME SCREEN */
 
 const welcomeHeading=
@@ -2198,6 +2199,7 @@ document.getElementById("loanRptBack").onclick=()=>{
 reportsBtn.click();
 
 };
+}
    function loanChartsMenu(){
 
 showPage(`
@@ -2320,6 +2322,6 @@ document.getElementById("loanChartBack").onclick=()=>{
 
 };
 
-}
+
 }
  updateWelcomePage();
