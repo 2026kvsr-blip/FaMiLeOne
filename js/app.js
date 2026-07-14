@@ -5,7 +5,6 @@ Part 1A.3
 
 ===================================== */
 
-
 /* WELCOME SCREEN */
 
 const welcomeHeading=
@@ -1193,7 +1192,7 @@ class="btn-icon">
 Custom Search
 
 </span>
-
+</button>
 <button class="grid-btn">
 
 <img
