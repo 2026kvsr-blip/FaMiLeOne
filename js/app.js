@@ -6,6 +6,23 @@ Part 1A.3
 ===================================== */
 
 /* WELCOME SCREEN */
+const menuBtn =
+document.getElementById("menuBtn");
+
+const sideMenu =
+document.getElementById("sideMenu");
+
+const menuOverlay =
+document.getElementById("menuOverlay");
+
+const closeMenuBtn =
+document.getElementById("closeMenuBtn");
+
+const logoutMenuBtn =
+document.getElementById("logoutMenuBtn");
+
+
+
 
 const welcomeHeading=
 document.getElementById("welcomeHeading");
@@ -2323,4 +2340,35 @@ document.getElementById("loanChartBack").onclick=()=>{
 
 
 }
+menuBtn.onclick = ()=>{
+
+    sideMenu.classList.add("open");
+
+    menuOverlay.classList.add("show");
+
+};
+closeMenuBtn.onclick = ()=>{
+
+    sideMenu.classList.remove("open");
+
+    menuOverlay.classList.remove("show");
+
+};
+
+menuOverlay.onclick = ()=>{
+
+    sideMenu.classList.remove("open");
+
+    menuOverlay.classList.remove("show");
+
+};
+logoutMenuBtn.onclick = ()=>{
+
+    alert("Scroll from bottom to top to close the app");
+
+    sideMenu.classList.remove("open");
+
+    menuOverlay.classList.remove("show");
+
+};
  updateWelcomePage();
