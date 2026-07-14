@@ -3,7 +3,6 @@
 oneFaMiLe V1
 Part 1A.3
 
-
 ===================================== */
 
 
@@ -1720,7 +1719,7 @@ Reports
 <button id="expenseMainReports" class="grid-btn">
 
 <img
-src="images/Reports/ReportsExpenses.png"
+src="images/reports/ExpensesReports.png"
 class="btn-icon">
 
 <span>
@@ -1734,7 +1733,7 @@ Expenses Reports
 <button id="activityMainReports" class="grid-btn">
 
 <img
-src="images/activities/ReportsActivities.png"
+src="images/reports/ActivitiesReports.png"
 class="btn-icon">
 
 <span>
@@ -1748,7 +1747,7 @@ Activities Reports
 <button id="loanMainReports" class="grid-btn">
 
 <img
-src="images/loans/ReportsLoans.png"
+src="images/reports/LoansReports.png"
 class="btn-icon">
 
 <span>
@@ -1762,7 +1761,7 @@ Loan Reports
 <button id="incomeMainReports" class="grid-btn">
 
 <img
-src="images/income/ReportsIncome.png"
+src="images/reports/IncomeReports.png"
 class="btn-icon">
 
 <span>
@@ -1776,7 +1775,7 @@ Income Reports
 <button id="healthMainReports" class="grid-btn">
 
 <img
-src="images/health/ReportsHealth.png"
+src="images/reports/HealthReports.png"
 class="btn-icon">
 
 <span>
@@ -1790,7 +1789,7 @@ Health Reports
 <button id="memoryMainReports" class="grid-btn">
 
 <img
-src="images/memories/ReportsMemories.png"
+src="images/reports/MemoriesReports.png"
 class="btn-icon">
 
 <span>
