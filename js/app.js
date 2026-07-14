@@ -5,6 +5,7 @@ Part 1A.3
 
 ===================================== */
 
+
 /* WELCOME SCREEN */
 
 const welcomeHeading=
@@ -1698,7 +1699,7 @@ class="back-btn">
 </div>
 
 `);
-document.getElementById("loanChartsBtn").onclick = ()=>{
+document.getElementById("loansChartsBtn").onclick = ()=>{
 
     loanChartsMenu();
 
