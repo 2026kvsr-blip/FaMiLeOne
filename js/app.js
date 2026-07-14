@@ -5,7 +5,6 @@ Part 1A.3
 
 ===================================== */
 
-
 /* WELCOME SCREEN */
 
 const welcomeHeading=
@@ -1699,7 +1698,11 @@ class="back-btn">
 </div>
 
 `);
+document.getElementById("loanChartsBtn").onclick = ()=>{
 
+    loanChartsMenu();
+
+};
 document.getElementById("chartsBack").onclick = showHome;
 
 };
@@ -2195,6 +2198,128 @@ document.getElementById("loanRptBack").onclick=()=>{
 reportsBtn.click();
 
 };
-   
+   function loanChartsMenu(){
+
+showPage(`
+
+<h2 class="page-title">
+
+Loan Charts
+
+</h2>
+
+<div class="grid-2">
+
+<button
+id="loanLendChart"
+class="grid-btn">
+
+<img
+src="images/charts/LoanLendChart.png"
+class="btn-icon">
+
+<span>
+
+Loans - Lend
+
+</span>
+
+</button>
+
+<button
+id="loanBorrowChart"
+class="grid-btn">
+
+<img
+src="images/charts/LoanBorrowChart.png"
+class="btn-icon">
+
+<span>
+
+Loans - Borrowed
+
+</span>
+
+</button>
+
+<button
+id="paymentLendChart"
+class="grid-btn">
+
+<img
+src="images/charts/PaymentLendChart.png"
+class="btn-icon">
+
+<span>
+
+Payments - Lend
+
+</span>
+
+</button>
+
+<button
+id="paymentBorrowChart"
+class="grid-btn">
+
+<img
+src="images/charts/PaymentBorrowChart.png"
+class="btn-icon">
+
+<span>
+
+Payments - Borrowed
+
+</span>
+
+</button>
+
+</div>
+
+<div align="center">
+
+<button
+id="loanChartBack"
+class="back-btn">
+
+← Back
+
+</button>
+
+</div>
+
+`);
+
+document.getElementById("loanLendChart").onclick=()=>{
+
+    // Loan Lend Chart
+
+};
+
+document.getElementById("loanBorrowChart").onclick=()=>{
+
+    // Loan Borrowed Chart
+
+};
+
+document.getElementById("paymentLendChart").onclick=()=>{
+
+    // Payment Lend Chart
+
+};
+
+document.getElementById("paymentBorrowChart").onclick=()=>{
+
+    // Payment Borrowed Chart
+
+};
+
+document.getElementById("loanChartBack").onclick=()=>{
+
+    chartsBtn.click();
+
+};
+
+}
 }
  updateWelcomePage();
