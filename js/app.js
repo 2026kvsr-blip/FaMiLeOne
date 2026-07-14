@@ -633,7 +633,7 @@ Loans
 <button id="loanBtn" class="grid-btn">
 
 <img
-src="images/navigation/Loans.png"
+src="images/navigation/Loans1.png"
 class="btn-icon">
 
 <span>
