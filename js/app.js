@@ -3,7 +3,6 @@
 oneFaMiLe V1
 Part 1A.3
 
-
 ===================================== */
 
 /* WELCOME SCREEN */
@@ -2363,13 +2362,23 @@ menuOverlay.onclick = ()=>{
     menuOverlay.classList.remove("show");
 
 };
-logoutMenuBtn.onclick = ()=>{
 
-    alert("Scroll from bottom to top to close the app");
+logoutMenuBtn.onclick = ()=>{
 
     sideMenu.classList.remove("open");
 
     menuOverlay.classList.remove("show");
 
+    const msg = document.getElementById("logoutMessage");
+
+    msg.style.display = "block";
+
+    setTimeout(()=>{
+
+        msg.style.display = "none";
+
+    },10000);
+
 };
+
  updateWelcomePage();
