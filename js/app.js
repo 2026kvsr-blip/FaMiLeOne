@@ -3,7 +3,6 @@
 oneFaMiLe V1
 Part 1A.3
 
-
 ===================================== */
 
 /* WELCOME SCREEN */
@@ -2384,5 +2383,5 @@ logoutMenuBtn.onclick = ()=>{
 
     },5000);
 
-};};
+};
  updateWelcomePage();
