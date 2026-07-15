@@ -5,6 +5,7 @@ Part 1A.3
 
 ===================================== */
 
+
 /* WELCOME SCREEN */
 const menuBtn =
 document.getElementById("menuBtn");
@@ -1296,7 +1297,11 @@ homeBtn.onclick = ()=>{
     updateWelcomePage();
 
 };
+function showHome(){
 
+    homeBtn.click();
+
+}
 
 familyBtn.onclick = ()=>{
 
