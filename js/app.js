@@ -2381,7 +2381,7 @@ logoutMenuBtn.onclick = ()=>{
 
         msg.style.display = "none";
 
-    },5000);
+    },2000);
 
 };
  updateWelcomePage();
