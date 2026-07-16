@@ -5,6 +5,7 @@ Part 1A.3
 
 ===================================== */
 
+
 /* WELCOME SCREEN */
 const menuBtn =
 document.getElementById("menuBtn");
@@ -350,8 +351,11 @@ incomeBtn.onclick = ()=>{
 
 <h2 class="page-title">
 
-Income
+<img
+src="images/navigation/Income.png"
+class="title-icon">
 
+Income
 </h2>
 
 <div class="grid-3x2">
@@ -494,8 +498,11 @@ document.getElementById("incomeBack").onclick=showHome;
 
 <h2 class="page-title">
 
-Health
+<img
+src="images/navigation/Health.png"
+class="title-icon">
 
+Health
 </h2>
 
 <div class="grid-3x2">
@@ -1321,6 +1328,10 @@ familyBtn.onclick = ()=>{
 
 <h2 class="page-title">
 
+<img
+src="images/navigation/Family.png"
+class="title-icon">
+
 Family
 
 </h2>
@@ -1456,8 +1467,11 @@ memoriesBtn.onclick = ()=>{
 
 <h2 class="page-title">
 
-Memories
+<img
+src="images/navigation/Memories.png"
+class="title-icon">
 
+Memories
 </h2>
 
 <div class="grid-3x2">
@@ -1608,8 +1622,11 @@ chartsBtn.onclick = ()=>{
 
 <h2 class="page-title">
 
-Charts
+<img
+src="images/navigation/Charts.png"
+class="title-icon">
 
+Charts
 </h2>
 
 <div class="grid-3x2">
@@ -1744,6 +1761,10 @@ setActiveButton(reportsBtn);
 showPage(`
 
 <h2 class="page-title">
+
+<img
+src="images/navigation/Reports.png"
+class="title-icon">
 
 Reports
 
