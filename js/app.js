@@ -5,7 +5,6 @@ Part 1A.3
 
 ===================================== */
 
-
 /* WELCOME SCREEN */
 const menuBtn =
 document.getElementById("menuBtn");
@@ -2084,7 +2083,15 @@ ${module} Reports
 id="catReports"
 class="grid-btn">
 
+<img
+src="images/reports/Reports.png"
+class="btn-icon">
+
+<span>
+
 Reports
+
+</span>
 
 </button>
 
@@ -2092,7 +2099,15 @@ Reports
 id="catSensitive"
 class="grid-btn">
 
+<img
+src="images/reports/SensitiveReports.png"
+class="btn-icon">
+
+<span>
+
 Sensitive Reports
+
+</span>
 
 </button>
 
@@ -2100,12 +2115,19 @@ Sensitive Reports
 id="catAll"
 class="grid-btn">
 
+<img
+src="images/reports/AllReports.png"
+class="btn-icon">
+
+<span>
+
 All Reports
+
+</span>
 
 </button>
 
 </div>
-
 <div align="center">
 
 <button
@@ -2159,24 +2181,65 @@ Loan Reports
 
 <div class="grid-2">
 
+<div class="grid-2">
+
 <button id="loanLendRpt" class="grid-btn">
+
+<img
+src="images/reports/LoanLendReports.png"
+class="btn-icon">
+
+<span>
+
 Loan - Lend Reports
+
+</span>
+
 </button>
 
 <button id="loanBorrowRpt" class="grid-btn">
+
+<img
+src="images/reports/LoanBorrowedReports.png"
+class="btn-icon">
+
+<span>
+
 Loan - Borrowed Reports
+
+</span>
+
 </button>
 
 <button id="paymentLendRpt" class="grid-btn">
+
+<img
+src="images/reports/PaymentLendReports.png"
+class="btn-icon">
+
+<span>
+
 Payments - Lend Reports
+
+</span>
+
 </button>
 
 <button id="paymentBorrowRpt" class="grid-btn">
+
+<img
+src="images/reports/PaymentBorrowedReports.png"
+class="btn-icon">
+
+<span>
+
 Payments - Borrowed Reports
+
+</span>
+
 </button>
 
 </div>
-
 <div align="center">
 
 <button
