@@ -5,6 +5,7 @@ Part 1A.3
 
 ===================================== */
 
+
 /* WELCOME SCREEN */
 const menuBtn =
 document.getElementById("menuBtn");
@@ -2186,7 +2187,7 @@ Loan Reports
 <button id="loanLendRpt" class="grid-btn">
 
 <img
-src="images/reports/LoanLendReports.png"
+src="images/reports/LoansLendReports.png"
 class="btn-icon">
 
 <span>
@@ -2200,7 +2201,7 @@ Loan - Lend Reports
 <button id="loanBorrowRpt" class="grid-btn">
 
 <img
-src="images/reports/LoanBorrowedReports.png"
+src="images/reports/LoansBorrowedReports.png"
 class="btn-icon">
 
 <span>
@@ -2214,7 +2215,7 @@ Loan - Borrowed Reports
 <button id="paymentLendRpt" class="grid-btn">
 
 <img
-src="images/reports/PaymentLendReports.png"
+src="images/reports/PaymentsLendReports.png"
 class="btn-icon">
 
 <span>
@@ -2228,7 +2229,7 @@ Payments - Lend Reports
 <button id="paymentBorrowRpt" class="grid-btn">
 
 <img
-src="images/reports/PaymentBorrowedReports.png"
+src="images/reports/PaymentsBorrowedReports.png"
 class="btn-icon">
 
 <span>
