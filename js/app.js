@@ -2180,7 +2180,6 @@ Loan Reports
 
 </h2>
 
-<div class="grid-2">
 
 <div class="grid-2">
 
