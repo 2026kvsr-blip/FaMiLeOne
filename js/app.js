@@ -5,6 +5,7 @@ Part 1A.3
 
 ===================================== */
 
+
 /* WELCOME SCREEN */
 const menuBtn =
 document.getElementById("menuBtn");
@@ -1126,6 +1127,10 @@ setActiveButton(expensesBtn);
    
 showPage(`
 <h2 class="page-title">
+
+<img
+src="images/navigation/Expenses.png"
+class="title-icon">
 
 Expenses
 
