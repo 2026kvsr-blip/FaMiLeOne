@@ -5,7 +5,6 @@ Part 1A.3
 
 ===================================== */
 
-
 /* WELCOME SCREEN */
 const menuBtn =
 document.getElementById("menuBtn");
@@ -227,7 +226,7 @@ activitiesBtn.onclick = ()=>{
 <h2 class="page-title">
 
 <img
-src="images/navigation/Activities.png"
+src="images/navigation/Activities1.png"
 class="title-icon">
 
 Activities
@@ -352,7 +351,7 @@ incomeBtn.onclick = ()=>{
 <h2 class="page-title">
 
 <img
-src="images/navigation/Income.png"
+src="images/navigation/Income1.png"
 class="title-icon">
 
 Income
@@ -499,7 +498,7 @@ document.getElementById("incomeBack").onclick=showHome;
 <h2 class="page-title">
 
 <img
-src="images/navigation/Health.png"
+src="images/navigation/Health1.png"
 class="title-icon">
 
 Health
@@ -651,7 +650,7 @@ showPage(`
 <h2 class="page-title">
 
 <img
-src="images/navigation/Loans.png"
+src="images/navigation/Loans1.png"
 class="title-icon">
 
 Loans
@@ -1142,7 +1141,7 @@ showPage(`
 <h2 class="page-title">
 
 <img
-src="images/navigation/Expenses.png"
+src="images/navigation/Expenses1.png"
 class="title-icon">
 
 Expenses
@@ -1329,7 +1328,7 @@ familyBtn.onclick = ()=>{
 <h2 class="page-title">
 
 <img
-src="images/navigation/Family.png"
+src="images/navigation/Family1.png"
 class="title-icon">
 
 Family
@@ -1468,7 +1467,7 @@ memoriesBtn.onclick = ()=>{
 <h2 class="page-title">
 
 <img
-src="images/navigation/Memories.png"
+src="images/navigation/Memories1.png"
 class="title-icon">
 
 Memories
@@ -1623,7 +1622,7 @@ chartsBtn.onclick = ()=>{
 <h2 class="page-title">
 
 <img
-src="images/navigation/Charts.png"
+src="images/navigation/Charts1.png"
 class="title-icon">
 
 Charts
@@ -1763,7 +1762,7 @@ showPage(`
 <h2 class="page-title">
 
 <img
-src="images/navigation/Reports.png"
+src="images/navigation/Reports1.png"
 class="title-icon">
 
 Reports
