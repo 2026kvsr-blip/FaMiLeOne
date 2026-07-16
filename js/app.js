@@ -5,7 +5,6 @@ Part 1A.3
 
 ===================================== */
 
-
 /* WELCOME SCREEN */
 const menuBtn =
 document.getElementById("menuBtn");
@@ -226,10 +225,13 @@ activitiesBtn.onclick = ()=>{
 
 <h2 class="page-title">
 
+<img
+src="images/navigation/Activities.png"
+class="title-icon">
+
 Activities
 
 </h2>
-
 <div class="grid-3x2">
 <button class="grid-btn" id="addActivitiesBtn">
 
@@ -640,6 +642,10 @@ setActiveButton(loansBtn);
 showPage(`
 
 <h2 class="page-title">
+
+<img
+src="images/navigation/Loans.png"
+class="title-icon">
 
 Loans
 
