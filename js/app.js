@@ -5,7 +5,6 @@ Part 1A.3
 
 ===================================== */
 
-
 /* WELCOME SCREEN */
 const menuBtn =
 document.getElementById("menuBtn");
@@ -2191,7 +2190,7 @@ class="btn-icon">
 
 <span>
 
-Loan - Lend Reports
+Loans-Lend
 
 </span>
 
@@ -2205,7 +2204,7 @@ class="btn-icon">
 
 <span>
 
-Loan - Borrowed Reports
+Loans-Borrowed
 
 </span>
 
@@ -2219,7 +2218,7 @@ class="btn-icon">
 
 <span>
 
-Payments - Lend Reports
+Payments-Lend
 
 </span>
 
@@ -2233,7 +2232,7 @@ class="btn-icon">
 
 <span>
 
-Payments - Borrowed Reports
+Payments-Borrowed
 
 </span>
 
