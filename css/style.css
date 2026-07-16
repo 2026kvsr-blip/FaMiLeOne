@@ -18,7 +18,6 @@ overflow-x:hidden;
 
 }
 
-
 /* =======================
 TOP BAR
 ======================= */
@@ -700,7 +699,33 @@ justify-items:center;
 
 }
 
+.page-title{
 
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+gap:10px;
+
+font-size:24px;
+
+font-weight:bold;
+
+color:#2A6EB0;
+
+}
+
+.title-icon{
+
+width:32px;
+
+height:32px;
+
+object-fit:contain;
+
+}
 
 .report-btn{
 
