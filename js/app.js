@@ -3,7 +3,6 @@
 oneFaMiLe V1
 Part 1A.3
 
-
 ===================================== */
 
 /* WELCOME SCREEN */
@@ -747,12 +746,12 @@ function showLendBorrow(type){
 
 showPage(`
 
-<h2 class="page-title">
-
-${type}
-
-</h2>
-
+${pageTitle(
+type,
+type === "Loan"
+? "images/navigation/Loans.png"
+: "images/navigation/Payments.png"
+)}
 <div class="grid-2">
 
 <button id="lendBtn" class="grid-btn">
