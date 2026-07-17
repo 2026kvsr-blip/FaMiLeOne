@@ -3,7 +3,6 @@
 oneFaMiLe V1
 Part 1A.3
 
-
 ===================================== */
 
 /* WELCOME SCREEN */
@@ -964,17 +963,26 @@ document.getElementById(
 
 showPage(`
 
-<h2 class="page-title">
-
-${type} - Borrowed
-
-</h2>
+${pageTitle(
+type + " - Borrowed",
+type === "Loan"
+? "images/navigation/Loans.png"
+: "images/navigation/Payments.png"
+)}
 
 <div class="grid-3x2">
 
 <button class="grid-btn">
 
+<img
+src="images/loans/AddBorrowed.png"
+class="btn-icon">
+
+<span>
+
 Add Borrowed
+
+</span>
 
 </button>
 
@@ -982,7 +990,15 @@ Add Borrowed
 id="borrowReports"
 class="grid-btn">
 
+<img
+src="images/loans/Reports.png"
+class="btn-icon">
+
+<span>
+
 Reports
+
+</span>
 
 </button>
 
@@ -990,7 +1006,15 @@ Reports
 id="borrowSensitive"
 class="grid-btn">
 
+<img
+src="images/loans/SensitiveReports.png"
+class="btn-icon">
+
+<span>
+
 Sensitive Reports
+
+</span>
 
 </button>
 
@@ -998,24 +1022,47 @@ Sensitive Reports
 id="borrowAll"
 class="grid-btn">
 
+<img
+src="images/loans/AllReports.png"
+class="btn-icon">
+
+<span>
+
 All Reports
+
+</span>
 
 </button>
 
 <button class="grid-btn">
+
+<img
+src="images/loans/CustomSearch.png"
+class="btn-icon">
+
+<span>
 
 Custom Search
 
+</span>
+
 </button>
 
 <button class="grid-btn">
 
+<img
+src="images/loans/About.png"
+class="btn-icon">
+
+<span>
+
 About
+
+</span>
 
 </button>
 
 </div>
-
 <div align="center">
 
 <button
