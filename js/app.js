@@ -6,7 +6,6 @@ Part 1A.3
 
 ===================================== */
 
-
 /* WELCOME SCREEN */
 const menuBtn =
 document.getElementById("menuBtn");
@@ -756,20 +755,33 @@ ${type}
 
 <div class="grid-2">
 
-<button id="lendBtn"
-class="grid-btn">
+<button id="lendBtn" class="grid-btn">
+
+<img
+src="images/loans/Lend.png"
+class="btn-icon">
+
+<span>
 
 Lend
 
+</span>
+
 </button>
 
-<button id="borrowBtn"
-class="grid-btn">
+<button id="borrowBtn" class="grid-btn">
+
+<img
+src="images/loans/Borrowed.png"
+class="btn-icon">
+
+<span>
 
 Borrowed
 
-</button>
+</span>
 
+</button>
 </div>
 
 <div align="center">
