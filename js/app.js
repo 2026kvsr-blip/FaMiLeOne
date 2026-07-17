@@ -3,6 +3,7 @@
 oneFaMiLe V1
 Part 1A.3
 
+
 ===================================== */
 
 /* WELCOME SCREEN */
@@ -810,53 +811,96 @@ document.getElementById(
 
 showPage(`
 
-<h2 class="page-title">
-
-${type} - Lend
-
-</h2>
+${pageTitle(
+type + " - Lend",
+type === "Loan"
+? "images/navigation/Loans.png"
+: "images/navigation/Payments.png"
+)}
 
 <div class="grid-3x2">
 
 <button class="grid-btn">
 
+<img
+src="images/loans/AddLend.png"
+class="btn-icon">
+
+<span>
+
 Add Lend
+
+</span>
 
 </button>
 
-<button
-id="lendReports"
-class="grid-btn">
+<button id="lendReports" class="grid-btn">
+
+<img
+src="images/loans/Reports.png"
+class="btn-icon">
+
+<span>
 
 Reports
 
+</span>
+
 </button>
 
-<button
-id="lendSensitive"
-class="grid-btn">
+<button id="lendSensitive" class="grid-btn">
+
+<img
+src="images/loans/SensitiveReports.png"
+class="btn-icon">
+
+<span>
 
 Sensitive Reports
 
+</span>
+
 </button>
 
-<button
-id="lendAll"
-class="grid-btn">
+<button id="lendAll" class="grid-btn">
+
+<img
+src="images/loans/AllReports.png"
+class="btn-icon">
+
+<span>
 
 All Reports
 
+</span>
+
 </button>
 
 <button class="grid-btn">
+
+<img
+src="images/loans/CustomSearch.png"
+class="btn-icon">
+
+<span>
 
 Custom Search
 
+</span>
+
 </button>
 
 <button class="grid-btn">
 
+<img
+src="images/loans/About.png"
+class="btn-icon">
+
+<span>
+
 About
+
+</span>
 
 </button>
 
