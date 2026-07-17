@@ -5,6 +5,7 @@ Part 1A.3
 
 ===================================== */
 
+
 /* WELCOME SCREEN */
 const menuBtn =
 document.getElementById("menuBtn");
@@ -187,6 +188,30 @@ function showPage(html){
     homeContent.innerHTML = html;
 
 }
+function pageTitle(title,image){
+
+return `
+
+<h2 class="page-title">
+
+<img
+src="${image}"
+class="title-icon">
+
+<span>
+
+${title}
+
+</span>
+
+</h2>
+
+`;
+
+}
+
+
+
 function setActiveButton(btn){
 
 document.querySelectorAll(
@@ -1137,17 +1162,14 @@ welcomePage.classList.remove("hidden");
 expensesBtn.onclick=()=>{
 setActiveButton(expensesBtn);
    
-showPage(`
-<h2 class="page-title">
+showPage(
 
-<img
-src="images/navigation/Expenses1.png"
-class="title-icon">
+pageTitle(
+"Expenses",
+"images/navigation/Expenses.png"
+)
 
-Expenses
-
-</h2>
-
++`
 <div class="grid-3x2">
 
 <button class="grid-btn">
