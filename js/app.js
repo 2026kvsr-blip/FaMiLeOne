@@ -3,6 +3,7 @@
 oneFaMiLe V1
 Part 1A.3
 
+
 ===================================== */
 
 
@@ -246,17 +247,14 @@ activitiesBtn.onclick = ()=>{
 
     setActiveButton(activitiesBtn);
 
-    showPage(`
+    showPage(
 
-<h2 class="page-title">
+pageTitle(
+"Activities",
+"images/navigation/Activities1.png"
+)
 
-<img
-src="images/navigation/Activities1.png"
-class="title-icon">
-
-Activities
-
-</h2>
++`
 <div class="grid-3x2">
 <button class="grid-btn" id="addActivitiesBtn">
 
@@ -371,17 +369,14 @@ incomeBtn.onclick = ()=>{
 
     setActiveButton(incomeBtn);
 
-    showPage(`
+    showPage(
 
-<h2 class="page-title">
+pageTitle(
+"Income",
+"images/navigation/Income1.png"
+)
 
-<img
-src="images/navigation/Income1.png"
-class="title-icon">
-
-Income
-</h2>
-
++`
 <div class="grid-3x2">
 
 <button class="grid-btn" id="addIncomeBtn">
@@ -518,17 +513,14 @@ document.getElementById("incomeBack").onclick=showHome;
 
     setActiveButton(healthBtn);
 
-    showPage(`
+    showPage(
 
-<h2 class="page-title">
+pageTitle(
+"Health",
+"images/navigation/Health1.png"
+)
 
-<img
-src="images/navigation/Health1.png"
-class="title-icon">
-
-Health
-</h2>
-
++`
 <div class="grid-3x2">
 
 <button class="grid-btn" id="addHealthBtn">
@@ -670,18 +662,15 @@ document.getElementById("healthBack").onclick = showHome;
 
 loansBtn.onclick = ()=>{
 setActiveButton(loansBtn);
-showPage(`
+    
+showPage(
 
-<h2 class="page-title">
+pageTitle(
+"Loans",
+"images/navigation/Loans1.png"
+)
 
-<img
-src="images/navigation/Loans1.png"
-class="title-icon">
-
-Loans
-
-</h2>
-
++`
 <div class="grid-2">
 
 <button id="loanBtn" class="grid-btn">
@@ -1166,7 +1155,7 @@ showPage(
 
 pageTitle(
 "Expenses",
-"images/navigation/Expenses.png"
+"images/navigation/Expenses1.png"
 )
 
 +`
@@ -1345,18 +1334,14 @@ familyBtn.onclick = ()=>{
 
     setActiveButton(familyBtn);
 
-    showPage(`
+    showPage(
 
-<h2 class="page-title">
+pageTitle(
+"Family",
+"images/navigation/Family1.png"
+)
 
-<img
-src="images/navigation/Family1.png"
-class="title-icon">
-
-Family
-
-</h2>
-
++`
 <div class="grid-3x2">
 
 <button
@@ -1484,17 +1469,14 @@ memoriesBtn.onclick = ()=>{
 
     setActiveButton(memoriesBtn);
 
-    showPage(`
+    showPage(
 
-<h2 class="page-title">
+pageTitle(
+"Memories",
+"images/navigation/Memories1.png"
+)
 
-<img
-src="images/navigation/Memories1.png"
-class="title-icon">
-
-Memories
-</h2>
-
++`
 <div class="grid-3x2">
 
 <button class="grid-btn" id="addMemoryBtn">
@@ -1639,17 +1621,14 @@ chartsBtn.onclick = ()=>{
 
     setActiveButton(chartsBtn);
 
-    showPage(`
+    showPage(
 
-<h2 class="page-title">
+pageTitle(
+"Charts",
+"images/navigation/Charts1.png"
+)
 
-<img
-src="images/navigation/Charts1.png"
-class="title-icon">
-
-Charts
-</h2>
-
++`
 <div class="grid-3x2">
 
 <button
@@ -1779,18 +1758,14 @@ document.getElementById("chartsBack").onclick = showHome;
 reportsBtn.onclick=()=>{
 setActiveButton(reportsBtn);
 
-showPage(`
+showPage(
 
-<h2 class="page-title">
+pageTitle(
+"Reports",
+"images/navigation/Reports1.png"
+)
 
-<img
-src="images/navigation/Reports1.png"
-class="title-icon">
-
-Reports
-
-</h2>
-
++`
 <div class="grid-3x2">
 
 <button id="expenseMainReports" class="grid-btn">
