@@ -7,7 +7,7 @@ Part 1A.3
 ===================================== */
 
 /* WELCOME SCREEN */
-const API_URL ="https://script.google.com/macros/s/AKfycbzYblwgxrGFDF2MKhiWLvrlSLdJTIgQoplD0Z2-A_tLmwrdUPWsTqzOF9-txnug4DFLpg/exec";
+const API_URL ="https://script.google.com/macros/s/AKfycbzYZn1tDzdlwL7g9GyRqywJpbZABR-J87tD6Po3oyEQQ7TVGA06YbaYSMxEoKvIFhhqvA/exec";
 
 const loginSubmitBtn =
 document.getElementById("loginSubmitBtn");
