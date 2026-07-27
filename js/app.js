@@ -3,9 +3,15 @@
 oneFaMiLe V1
 Part 1A.3
 
+
 ===================================== */
 
 /* WELCOME SCREEN */
+const API_URL ="https://script.google.com/macros/s/AKfycbzYblwgxrGFDF2MKhiWLvrlSLdJTIgQoplD0Z2-A_tLmwrdUPWsTqzOF9-txnug4DFLpg/exec";
+
+const loginSubmitBtn =
+document.getElementById("loginSubmitBtn");
+
 const menuBtn =
 document.getElementById("menuBtn");
 
@@ -21,8 +27,8 @@ document.getElementById("closeMenuBtn");
 const logoutMenuBtn =
 document.getElementById("logoutMenuBtn");
 
-
-
+const passcodeMenuBtn =
+document.getElementById("passcodeMenuBtn");
 
 const welcomeHeading=
 document.getElementById("welcomeHeading");
@@ -77,9 +83,6 @@ document.getElementById("loginBtn");
 
 const signupBtn =
 document.getElementById("signupBtn");
-
-const sendOTPBtn =
-document.getElementById("sendOTPBtn");
 
 const verifyOTPBtn =
 document.getElementById("verifyOTPBtn");
@@ -180,8 +183,9 @@ if(homeHeading){
 }
 function showPage(html){
 
-    homeContent.scrollTop = 0;
+   hideNavigation();
 
+    homeContent.scrollTop = 0;
     window.scrollTo(0,0);
 
     homeContent.innerHTML = html;
@@ -249,7 +253,7 @@ activitiesBtn.onclick = ()=>{
 
 pageTitle(
 "Activities",
-"images/navigation/Activities1.png"
+"images/colorbtns/Activities1.png"
 )
 
 +`
@@ -257,7 +261,7 @@ pageTitle(
 <button class="grid-btn" id="addActivitiesBtn">
 
 <img
-src="images/activities/AddActivities.png"
+src="images/colorbtns/Add1.png"
 class="btn-icon">
 
 <span>
@@ -272,7 +276,7 @@ Add Activity
 <button class="grid-btn" id="reportsActivitiesBtn">
 
 <img
-src="images/activities/ReportsActivities.png"
+src="images/colorbtns/Reports1.png"
 class="btn-icon">
 
 <span>
@@ -287,7 +291,7 @@ Reports
 <button class="grid-btn" id="sensitiveActivitiesBtn">
 
 <img
-src="images/activities/SensitiveActivities.png"
+src="images/colorbtns/SensitiveReports1.png"
 class="btn-icon">
 
 <span>
@@ -302,7 +306,7 @@ Sensitive Reports
 <button class="grid-btn" id="allReportsActivitiesBtn">
 
 <img
-src="images/activities/AllReportsActivities.png"
+src="images/colorbtns/AllReports1.png"
 class="btn-icon">
 
 <span>
@@ -317,7 +321,7 @@ All Reports
 <button class="grid-btn" id="searchActivitiesBtn">
 
 <img
-src="images/activities/SearchActivities.png"
+src="images/colorbtns/CustomSearch1.png"
 class="btn-icon">
 
 <span>
@@ -332,7 +336,7 @@ Custom Search
 <button class="grid-btn" id="aboutActivitiesBtn">
 
 <img
-src="images/activities/AboutActivities.png"
+src="images/colorbtns/About1.png"
 class="btn-icon">
 
 <span>
@@ -360,6 +364,45 @@ class="back-btn">
 
 `);
 
+document.getElementById("reportsActivitiesBtn").onclick = ()=>{
+
+    reportsLayout(
+
+        "Activities Reports",
+
+        ()=>activitiesBtn.click()
+
+    );
+
+};
+
+    
+document.getElementById("sensitiveActivitiesBtn").onclick = ()=>{
+
+    openSensitive(
+
+        "Activities",
+
+        "Sensitive Reports",
+
+        ()=>activitiesBtn.click()
+
+    );
+
+};
+document.getElementById("allReportsActivitiesBtn").onclick = ()=>{
+
+    openSensitive(
+
+        "Activities",
+
+        "All Reports",
+
+        ()=>activitiesBtn.click()
+
+    );
+
+};    
 document.getElementById("activitiesBackBtn").onclick = showHome;
 
 };
@@ -371,7 +414,7 @@ incomeBtn.onclick = ()=>{
 
 pageTitle(
 "Income",
-"images/navigation/Income1.png"
+"images/colorbtns/Income1.png"
 )
 
 +`
@@ -380,7 +423,7 @@ pageTitle(
 <button class="grid-btn" id="addIncomeBtn">
 
 <img
-src="images/income/AddIncome.png"
+src="images/colorbtns/Add1.png"
 class="btn-icon">
 
 <span>
@@ -396,7 +439,7 @@ id="incomeReports"
 class="grid-btn">
 
 <img
-src="images/income/ReportsIncome.png"
+src="images/colorbtns/Reports1.png"
 class="btn-icon">
 
 <span>
@@ -412,7 +455,7 @@ id="incomeSensitive"
 class="grid-btn">
 
 <img
-src="images/income/SensitiveIncome.png"
+src="images/colorbtns/SensitiveReports1.png"
 class="btn-icon">
 
 <span>
@@ -428,7 +471,7 @@ id="incomeAll"
 class="grid-btn">
 
 <img
-src="images/income/AllReportsIncome.png"
+src="images/colorbtns/AllReports1.png"
 class="btn-icon">
 
 <span>
@@ -444,7 +487,7 @@ id="incomeSearch"
 class="grid-btn">
 
 <img
-src="images/income/SearchIncome.png"
+src="images/colorbtns/CustomSearch1.png"
 class="btn-icon">
 
 <span>
@@ -460,7 +503,7 @@ id="incomeAbout"
 class="grid-btn">
 
 <img
-src="images/income/AboutIncome.png"
+src="images/colorbtns/About1.png"
 class="btn-icon">
 
 <span>
@@ -489,25 +532,51 @@ class="back-btn">
 
 document.getElementById("incomeReports").onclick=()=>{
 
-    reportsLayout("Income Reports");
+    reportsLayout(
+
+    "Income Reports",
+
+    ()=>incomeBtn.click()
+
+);
 
 };
 
-document.getElementById("incomeSensitive").onclick=()=>{
+document.getElementById("incomeSensitive").onclick = ()=>{
 
-    openSensitive("Income","Sensitive Reports");
+    openSensitive(
+
+        "Income",
+
+        "Sensitive Reports",
+
+        ()=>incomeBtn.click()
+
+    );
 
 };
 
-document.getElementById("incomeAll").onclick=()=>{
+document.getElementById("incomeAll").onclick = ()=>{
 
-    openSensitive("Income","All Reports");
+    openSensitive(
+
+        "Income",
+
+        "All Reports",
+
+        ()=>incomeBtn.click()
+
+    );
 
 };
 
 document.getElementById("incomeBack").onclick=showHome;
 
-};healthBtn.onclick = ()=>{
+};
+
+
+healthBtn.onclick = ()=>{
+    
 
     setActiveButton(healthBtn);
 
@@ -515,7 +584,7 @@ document.getElementById("incomeBack").onclick=showHome;
 
 pageTitle(
 "Health",
-"images/navigation/Health1.png"
+"images/colorbtns/Health1.png"
 )
 
 +`
@@ -524,7 +593,7 @@ pageTitle(
 <button class="grid-btn" id="addHealthBtn">
 
 <img
-src="images/health/AddHealth.png"
+src="images/colorbtns/Add1.png"
 class="btn-icon">
 
 <span>
@@ -541,7 +610,7 @@ id="healthReports"
 class="grid-btn">
 
 <img
-src="images/health/ReportsHealth.png"
+src="images/colorbtns/Reports1.png"
 class="btn-icon">
 
 <span>
@@ -558,7 +627,7 @@ id="healthSensitive"
 class="grid-btn">
 
 <img
-src="images/health/SensitiveHealth.png"
+src="images/colorbtns/SensitiveReports1.png"
 class="btn-icon">
 
 <span>
@@ -575,7 +644,7 @@ id="healthAll"
 class="grid-btn">
 
 <img
-src="images/health/AllReportsHealth.png"
+src="images/colorbtns/AllReports1.png"
 class="btn-icon">
 
 <span>
@@ -592,7 +661,7 @@ id="healthSearch"
 class="grid-btn">
 
 <img
-src="images/health/SearchHealth.png"
+src="images/colorbtns/CustomSearch1.png"
 class="btn-icon">
 
 <span>
@@ -609,7 +678,7 @@ id="healthAbout"
 class="grid-btn">
 
 <img
-src="images/health/AboutHealth.png"
+src="images/colorbtns/About1.png"
 class="btn-icon">
 
 <span>
@@ -638,22 +707,43 @@ class="back-btn">
 
 document.getElementById("healthReports").onclick = ()=>{
 
-    reportsLayout("Health Reports");
+    reportsLayout(
+
+    "Health Reports",
+
+    ()=>healthBtn.click()
+
+);
 
 };
 
 document.getElementById("healthSensitive").onclick = ()=>{
 
-    openSensitive("Health","Sensitive Reports");
+    openSensitive(
+
+        "Health",
+
+        "Sensitive Reports",
+
+        ()=>healthBtn.click()
+
+    );
 
 };
 
 document.getElementById("healthAll").onclick = ()=>{
 
-    openSensitive("Health","All Reports");
+    openSensitive(
+
+        "Health",
+
+        "All Reports",
+
+        ()=>healthBtn.click()
+
+    );
 
 };
-
 document.getElementById("healthBack").onclick = showHome;
 
 };
@@ -665,7 +755,7 @@ showPage(
 
 pageTitle(
 "Loans",
-"images/navigation/Loans1.png"
+"images/colorbtns/Loans1.png"
 )
 
 +`
@@ -674,7 +764,7 @@ pageTitle(
 <button id="loanBtn" class="grid-btn">
 
 <img
-src="images/navigation/Loans1.png"
+src="images/colorbtns/Loans1.png"
 class="btn-icon">
 
 <span>
@@ -688,7 +778,7 @@ Loans
 <button id="paymentsBtn" class="grid-btn">
 
 <img
-src="images/navigation/Payments.png"
+src="images/colorbtns/Payments1.png"
 class="btn-icon">
 
 <span>
@@ -735,8 +825,7 @@ document.getElementById(
 "loanBack"
 ).onclick = ()=>{
 
-homeBtn.click();
-
+showHome();
 };
 
 };
@@ -749,15 +838,15 @@ showPage(`
 ${pageTitle(
 type,
 type === "Loan"
-? "images/navigation/Loans.png"
-: "images/navigation/Payments.png"
+? "images/colorbtns/Loans1.png"
+: "images/colorbtns/Payments1.png"
 )}
 <div class="grid-2">
 
 <button id="lendBtn" class="grid-btn">
 
 <img
-src="images/loans/Lend.png"
+src="images/colorbtns/Lend1.png"
 class="btn-icon">
 
 <span>
@@ -771,7 +860,7 @@ Lend
 <button id="borrowBtn" class="grid-btn">
 
 <img
-src="images/loans/Borrowed.png"
+src="images/colorbtns/Borrowed1.png"
 class="btn-icon">
 
 <span>
@@ -813,8 +902,8 @@ showPage(`
 ${pageTitle(
 type + " - Lend",
 type === "Loan"
-? "images/navigation/Loans.png"
-: "images/navigation/Payments.png"
+? "images/colorbtns/Loans1.png"
+: "images/colorbtns/Payments1.png"
 )}
 
 <div class="grid-3x2">
@@ -822,7 +911,7 @@ type === "Loan"
 <button class="grid-btn">
 
 <img
-src="images/loans/AddLend.png"
+src="images/colorbtns/Add1.png"
 class="btn-icon">
 
 <span>
@@ -836,7 +925,7 @@ Add Lend
 <button id="lendReports" class="grid-btn">
 
 <img
-src="images/loans/Reports.png"
+src="images/colorbtns/Reports1.png"
 class="btn-icon">
 
 <span>
@@ -850,7 +939,7 @@ Reports
 <button id="lendSensitive" class="grid-btn">
 
 <img
-src="images/loans/SensitiveReports.png"
+src="images/colorbtns/SensitiveReports1.png"
 class="btn-icon">
 
 <span>
@@ -864,7 +953,7 @@ Sensitive Reports
 <button id="lendAll" class="grid-btn">
 
 <img
-src="images/loans/AllReports.png"
+src="images/colorbtns/AllReports1.png"
 class="btn-icon">
 
 <span>
@@ -878,7 +967,7 @@ All Reports
 <button class="grid-btn">
 
 <img
-src="images/loans/CustomSearch.png"
+src="images/colorbtns/CustomSearch1.png"
 class="btn-icon">
 
 <span>
@@ -892,7 +981,7 @@ Custom Search
 <button class="grid-btn">
 
 <img
-src="images/loans/About.png"
+src="images/colorbtns/About1.png"
 class="btn-icon">
 
 <span>
@@ -919,34 +1008,35 @@ class="back-btn">
 
 `);
 
-document.getElementById(
-"lendReports"
-).onclick=()=>{
+document.getElementById("lendReports").onclick = ()=>{
 
-reportsLayout(
-type + " - Lend Reports"
-);
-
-};
-
-document.getElementById("lendSensitive").onclick=()=>{
-
-openSensitive(
-type + " - Lend",
-"Sensitive Reports"
-);
+    reportsLayout(
+        type + " - Lend Reports",
+        ()=>showLendBorrow(type)
+    );
 
 };
 
-document.getElementById("lendAll").onclick=()=>{
+document.getElementById("lendSensitive").onclick = ()=>{
 
-openSensitive(
-type + " - Lend",
-"All Reports"
-);
+    openSensitive(
+        type + " - Lend",
+        "Sensitive Reports",
+        ()=>showLendBorrow(type)
+    );
 
 };
 
+document.getElementById("lendAll").onclick = ()=>{
+
+    openSensitive(
+        type + " - Lend",
+        "All Reports",
+        ()=>showLendBorrow(type)
+    );
+
+};
+    
 document.getElementById(
 "lendBack"
 ).onclick=()=>{
@@ -966,8 +1056,8 @@ showPage(`
 ${pageTitle(
 type + " - Borrowed",
 type === "Loan"
-? "images/navigation/Loans.png"
-: "images/navigation/Payments.png"
+? "images/colorbtns/Loans1.png"
+: "images/colorbtns/Payments.png"
 )}
 
 <div class="grid-3x2">
@@ -975,7 +1065,7 @@ type === "Loan"
 <button class="grid-btn">
 
 <img
-src="images/loans/AddBorrowed.png"
+src="images/colorbtns/Add1.png"
 class="btn-icon">
 
 <span>
@@ -991,7 +1081,7 @@ id="borrowReports"
 class="grid-btn">
 
 <img
-src="images/loans/Reports.png"
+src="images/colorbtns/Reports1.png"
 class="btn-icon">
 
 <span>
@@ -1007,7 +1097,7 @@ id="borrowSensitive"
 class="grid-btn">
 
 <img
-src="images/loans/SensitiveReports.png"
+src="images/colorbtns/SensitiveReports1.png"
 class="btn-icon">
 
 <span>
@@ -1023,7 +1113,7 @@ id="borrowAll"
 class="grid-btn">
 
 <img
-src="images/loans/AllReports.png"
+src="images/colorbtns/AllReports1.png"
 class="btn-icon">
 
 <span>
@@ -1037,7 +1127,7 @@ All Reports
 <button class="grid-btn">
 
 <img
-src="images/loans/CustomSearch.png"
+src="images/colorbtns/CustomSearch1.png"
 class="btn-icon">
 
 <span>
@@ -1051,7 +1141,7 @@ Custom Search
 <button class="grid-btn">
 
 <img
-src="images/loans/About.png"
+src="images/colorbtns/About1.png"
 class="btn-icon">
 
 <span>
@@ -1077,34 +1167,34 @@ class="back-btn">
 
 `);
 
-document.getElementById(
-"borrowReports"
-).onclick=()=>{
+document.getElementById("borrowReports").onclick = ()=>{
 
-reportsLayout(
-type + " - Borrowed Reports"
-);
-
-};
-
-document.getElementById("borrowSensitive").onclick=()=>{
-
-openSensitive(
-type + " - Borrowed",
-"Sensitive Reports"
-);
+    reportsLayout(
+        type + " - Borrowed Reports",
+        ()=>showLendBorrow(type)
+    );
 
 };
 
-document.getElementById("borrowAll").onclick=()=>{
+document.getElementById("borrowSensitive").onclick = ()=>{
 
-openSensitive(
-type + " - Borrowed",
-"All Reports"
-);
+    openSensitive(
+        type + " - Borrowed",
+        "Sensitive Reports",
+        ()=>showLendBorrow(type)
+    );
 
 };
 
+document.getElementById("borrowAll").onclick = ()=>{
+
+    openSensitive(
+        type + " - Borrowed",
+        "All Reports",
+        ()=>showLendBorrow(type)
+    );
+
+};
   
 document.getElementById(
 "borrowBack"
@@ -1169,13 +1259,6 @@ SEND OTP
 
 ====================== */
 
-sendOTPBtn.onclick = ()=>{
-
-loginPage.classList.add("hidden");
-
-otpPage.classList.remove("hidden");
-
-};
 
 backSignupBtn.onclick = ()=>{
 
@@ -1239,15 +1322,117 @@ END
 ====================== */
 
 
-registerBtn.onclick = ()=>{
+registerBtn.onclick = async ()=>{
 
-alert("Registration Successful");
+    const data = {
 
-signupOTPPage.classList.add("hidden");
+        action: "register",
 
-signupPage.classList.add("hidden");
+        loginUserName: document.getElementById("loginUserName").value,
 
-welcomePage.classList.remove("hidden");
+        surName: document.getElementById("surName").value,
+
+        middleName: document.getElementById("middleName").value,
+
+        lastName: document.getElementById("lastName").value,
+
+        email: document.getElementById("emailId").value,
+
+        mobile: document.getElementById("mobileNo").value,
+
+        passCode: document.getElementById("reportPassCode").value.trim()    };
+
+   
+formData.append("action","register");
+formData.append("loginUserName",data.loginUserName);
+formData.append("surName",data.surName);
+formData.append("middleName",data.middleName);
+formData.append("lastName",data.lastName);
+formData.append("email",data.email);
+formData.append("mobile",data.mobile);
+formData.append("passCode",data.passCode);
+
+const response = await fetch(API_URL,{
+
+    method:"POST",
+    body:formData
+
+});
+
+const result = await response.json();
+
+    
+    alert(result.message);
+
+    if(result.status=="success"){
+
+        signupOTPPage.classList.add("hidden");
+        signupPage.classList.add("hidden");
+        welcomePage.classList.remove("hidden");
+
+    }
+
+};
+loginSubmitBtn.onclick = async ()=>{
+
+    const loginId =
+    document.getElementById("loginId").value.trim();
+
+    const passCode =
+    document.getElementById("loginPassCode").value.trim();
+
+    if(loginId==""){
+        alert("Enter Login ID");
+        return;
+    }
+
+    if(passCode==""){
+        alert("Enter Pass Code");
+        return;
+    }
+const formData = new FormData();
+
+    formData.append("action","login");
+    formData.append("loginId",loginId);
+    formData.append("passCode",passCode);
+
+    try{
+
+        const response = await fetch(API_URL,{
+            method:"POST",
+            body:formData
+        });
+
+        const result = await response.json();
+
+        if(result.status=="success"){
+
+            sessionStorage.setItem(
+                "user",
+                JSON.stringify(result)
+            );
+            sessionStorage.setItem(
+        "passCode",
+        passCode
+            );
+            loginPage.classList.add("hidden");
+            welcomePage.classList.add("hidden");
+            dashboard.classList.remove("hidden");
+
+            homeBtn.click();
+
+        }else{
+
+            alert(result.message);
+
+        }
+
+    }catch(err){
+
+        alert("Unable to connect to server.");
+        console.log(err);
+
+    }
 
 };
 expensesBtn.onclick=()=>{
@@ -1257,7 +1442,7 @@ showPage(
 
 pageTitle(
 "Expenses",
-"images/navigation/Expenses1.png"
+"images/colorbtns/Expenses1.png"
 )
 
 +`
@@ -1266,7 +1451,7 @@ pageTitle(
 <button class="grid-btn">
 
 <img
-src="images/expenses/AddExpenses.png"
+src="images/colorbtns/Add1.png"
 class="btn-icon">
 
 <span>
@@ -1283,7 +1468,7 @@ id="expenseReports"
 class="grid-btn">
 
 <img
-src="images/expenses/ReportsExpenses.png"
+src="images/colorbtns/Reports1.png"
 class="btn-icon">
 
 <span>
@@ -1300,7 +1485,7 @@ id="expenseSensitive"
 class="grid-btn">
 
 <img
-src="images/expenses/SensitiveExpenses.png"
+src="images/colorbtns/SensitiveReports1.png"
 class="btn-icon">
 
 <span>
@@ -1317,7 +1502,7 @@ id="expenseAll"
 class="grid-btn">
 
 <img
-src="images/expenses/AllReportsExpenses.png"
+src="images/colorbtns/AllReports1.png"
 class="btn-icon">
 
 <span>
@@ -1331,7 +1516,7 @@ All Reports
 <button class="grid-btn">
 
 <img
-src="images/expenses/SearchExpenses.png"
+src="images/colorbtns/CustomSearch1.png"
 class="btn-icon">
 
 <span>
@@ -1343,7 +1528,7 @@ Custom Search
 <button class="grid-btn">
 
 <img
-src="images/expenses/AboutExpenses.png"
+src="images/colorbtns/About1.png"
 class="btn-icon">
 
 <span>
@@ -1379,7 +1564,9 @@ document.getElementById(
 
 reportsLayout(
 
-"Expenses Reports"
+    "Expenses Reports",
+
+    ()=>expensesBtn.click()
 
 );
 
@@ -1388,13 +1575,29 @@ reportsLayout(
 
 document.getElementById("expenseSensitive").onclick = ()=>{
 
-    openSensitive("Expenses","Sensitive Reports");
+    openSensitive(
+
+        "Expenses",
+
+        "Sensitive Reports",
+
+        ()=>expensesBtn.click()
+
+    );
 
 };
 
 document.getElementById("expenseAll").onclick = ()=>{
 
-    openSensitive("Expenses","All Reports");
+    openSensitive(
+
+        "Expenses",
+
+        "All Reports",
+
+        ()=>expensesBtn.click()
+
+    );
 
 };
 
@@ -1407,8 +1610,8 @@ document.getElementById(
 
 .onclick=()=>{
 
+showHome();
 
-homeBtn.click();
 
 
 };
@@ -1416,6 +1619,7 @@ homeBtn.click();
 
 };
 homeBtn.onclick = ()=>{
+    showNavigation();
 
     setActiveButton(homeBtn);
 
@@ -1427,6 +1631,8 @@ homeBtn.onclick = ()=>{
 
 };
 function showHome(){
+
+    showNavigation();
 
     homeBtn.click();
 
@@ -1440,7 +1646,7 @@ familyBtn.onclick = ()=>{
 
 pageTitle(
 "Family",
-"images/navigation/Family1.png"
+"images/colorbtns/Family1.png"
 )
 
 +`
@@ -1451,7 +1657,7 @@ id="addMemberBtn"
 class="grid-btn">
 
 <img
-src="images/family/AddMember.png"
+src="images/colorbtns/AddMember1.png"
 class="btn-icon">
 
 <span>
@@ -1468,12 +1674,12 @@ id="addFamilyBtn"
 class="grid-btn">
 
 <img
-src="images/family/AddFamily.png"
+src="images/colorbtns/AddFamily1.png"
 class="btn-icon">
 
 <span>
 
-Add Family
+Add Tree
 
 </span>
 
@@ -1485,7 +1691,7 @@ id="searchMemberBtn"
 class="grid-btn">
 
 <img
-src="images/family/SearchMember.png"
+src="images/colorbtns/CustomSearch1.png"
 class="btn-icon">
 
 <span>
@@ -1502,7 +1708,7 @@ id="relationsBtn"
 class="grid-btn">
 
 <img
-src="images/family/Relations.png"
+src="images/colorbtns/Relations1.png"
 class="btn-icon">
 
 <span>
@@ -1519,7 +1725,7 @@ id="treeViewBtn"
 class="grid-btn">
 
 <img
-src="images/family/TreeView.png"
+src="images/colorbtns/TreeView1.png"
 class="btn-icon">
 
 <span>
@@ -1536,7 +1742,7 @@ id="familyAboutBtn"
 class="grid-btn">
 
 <img
-src="images/family/AboutFamily.png"
+src="images/colorbtns/About1.png"
 class="btn-icon">
 
 <span>
@@ -1563,7 +1769,9 @@ class="back-btn">
 
 `);
 
-document.getElementById("familyBack").onclick = showHome;
+document.getElementById("familyBack").onclick = 
+    
+    showHome;
 
 };
 
@@ -1575,7 +1783,7 @@ memoriesBtn.onclick = ()=>{
 
 pageTitle(
 "Memories",
-"images/navigation/Memories1.png"
+"images/colorbtns/Memories1.png"
 )
 
 +`
@@ -1584,7 +1792,7 @@ pageTitle(
 <button class="grid-btn" id="addMemoryBtn">
 
 <img
-src="images/memories/AddMemories.png"
+src="images/colorbtns/Add1.png"
 class="btn-icon">
 
 <span>
@@ -1601,7 +1809,7 @@ id="memoryReports"
 class="grid-btn">
 
 <img
-src="images/memories/ReportsMemories.png"
+src="images/colorbtns/Reports1.png"
 class="btn-icon">
 
 <span>
@@ -1618,7 +1826,7 @@ id="memorySensitive"
 class="grid-btn">
 
 <img
-src="images/memories/SensitiveMemories.png"
+src="images/colorbtns/SensitiveReports1.png"
 class="btn-icon">
 
 <span>
@@ -1635,7 +1843,7 @@ id="memoryAll"
 class="grid-btn">
 
 <img
-src="images/memories/AllReportsMemories.png"
+src="images/colorbtns/AllReports1.png"
 class="btn-icon">
 
 <span>
@@ -1652,7 +1860,7 @@ id="memorySearch"
 class="grid-btn">
 
 <img
-src="images/memories/SearchMemories.png"
+src="images/colorbtns/CustomSearch1.png"
 class="btn-icon">
 
 <span>
@@ -1669,7 +1877,7 @@ id="memoryAbout"
 class="grid-btn">
 
 <img
-src="images/memories/AboutMemories.png"
+src="images/colorbtns/About1.png"
 class="btn-icon">
 
 <span>
@@ -1698,19 +1906,41 @@ class="back-btn">
 
 document.getElementById("memoryReports").onclick = ()=>{
 
-    reportsLayout("Memory Reports");
+    reportsLayout(
+
+    "Memory Reports",
+
+    ()=>memoriesBtn.click()
+
+);
 
 };
 
 document.getElementById("memorySensitive").onclick = ()=>{
 
-    openSensitive("Memory","Sensitive Reports");
+    openSensitive(
+
+        "Memory",
+
+        "Sensitive Reports",
+
+        ()=>memoriesBtn.click()
+
+    );
 
 };
 
 document.getElementById("memoryAll").onclick = ()=>{
 
-    openSensitive("Memory","All Reports");
+    openSensitive(
+
+        "Memory",
+
+        "All Reports",
+
+        ()=>memoriesBtn.click()
+
+    );
 
 };
 
@@ -1727,7 +1957,7 @@ chartsBtn.onclick = ()=>{
 
 pageTitle(
 "Charts",
-"images/navigation/Charts1.png"
+"images/colorbtns/Charts1.png"
 )
 
 +`
@@ -1738,7 +1968,7 @@ id="expensesChartBtn"
 class="grid-btn">
 
 <img
-src="images/charts/ExpensesCharts.png"
+src="images/colorbtns/Expenses1.png"
 class="btn-icon">
 
 <span>
@@ -1754,7 +1984,7 @@ id="activitiesChartBtn"
 class="grid-btn">
 
 <img
-src="images/charts/ActivityCharts.png"
+src="images/colorbtns/Activities1.png"
 class="btn-icon">
 
 <span>
@@ -1770,7 +2000,7 @@ id="incomeChartBtn"
 class="grid-btn">
 
 <img
-src="images/charts/IncomeCharts.png"
+src="images/colorbtns/Income1.png"
 class="btn-icon">
 
 <span>
@@ -1787,7 +2017,7 @@ id="loansChartBtn"
 class="grid-btn">
 
 <img
-src="images/charts/LoansCharts.png"
+src="images/colorbtns/Loans1.png"
 class="btn-icon">
 
 <span>
@@ -1804,7 +2034,7 @@ id="healthChartBtn"
 class="grid-btn">
 
 <img
-src="images/charts/HealthCharts.png"
+src="images/colorbtns/Health1.png"
 class="btn-icon">
 
 <span>
@@ -1823,7 +2053,7 @@ id="chartsAboutBtn"
 class="grid-btn">
 
 <img
-src="images/charts/AboutCharts.png"
+src="images/colorbtns/About1.png"
 class="btn-icon">
 
 <span>
@@ -1864,7 +2094,7 @@ showPage(
 
 pageTitle(
 "Reports",
-"images/navigation/Reports1.png"
+"images/colorbtns/Reports1.png"
 )
 
 +`
@@ -1873,7 +2103,7 @@ pageTitle(
 <button id="expenseMainReports" class="grid-btn">
 
 <img
-src="images/reports/ExpensesReports.png"
+src="images/colorbtns/Expenses1.png"
 class="btn-icon">
 
 <span>
@@ -1887,7 +2117,7 @@ Expenses Reports
 <button id="activityMainReports" class="grid-btn">
 
 <img
-src="images/reports/ActivitiesReports.png"
+src="images/colorbtns/Activities1.png"
 class="btn-icon">
 
 <span>
@@ -1901,7 +2131,7 @@ Activities Reports
 <button id="loanMainReports" class="grid-btn">
 
 <img
-src="images/reports/LoansReports.png"
+src="images/colorbtns/Loans1.png"
 class="btn-icon">
 
 <span>
@@ -1915,7 +2145,7 @@ Loan Reports
 <button id="incomeMainReports" class="grid-btn">
 
 <img
-src="images/reports/IncomeReports.png"
+src="images/colorbtns/Income1.png"
 class="btn-icon">
 
 <span>
@@ -1929,7 +2159,7 @@ Income Reports
 <button id="healthMainReports" class="grid-btn">
 
 <img
-src="images/reports/HealthReports.png"
+src="images/colorbtns/Health1.png"
 class="btn-icon">
 
 <span>
@@ -1943,7 +2173,7 @@ Health Reports
 <button id="memoryMainReports" class="grid-btn">
 
 <img
-src="images/reports/MemoriesReports.png"
+src="images/colorbtns/Memories1.png"
 class="btn-icon">
 
 <span>
@@ -1957,7 +2187,7 @@ Memories Reports
 <button class="grid-btn">
 
 <img
-src="images/reports/ReportsAbout.png"
+src="images/colorbtns/About1.png"
 class="btn-icon">
 
 <span>
@@ -1984,14 +2214,12 @@ class="back-btn">
 `);
 document.getElementById("expenseMainReports").onclick=()=>{
 
-reportCategory("Expenses");
-
+reportCategory("Expenses", true);
 };
 
 document.getElementById("activityMainReports").onclick=()=>{
 
-reportCategory("Activities");
-
+reportCategory("Activities", true);
 };
 
 document.getElementById("loanMainReports").onclick=()=>{
@@ -2002,63 +2230,47 @@ loanReportsMenu();
 
 document.getElementById("incomeMainReports").onclick=()=>{
 
-reportCategory("Income");
-
+reportCategory("Income", true);
 };
 
 document.getElementById("healthMainReports").onclick=()=>{
 
-reportCategory("Health");
-
+reportCategory("Health", true);
 };
 
 document.getElementById("memoryMainReports").onclick=()=>{
 
-reportCategory("Memories");
-
+reportCategory("Memories", true);
 };
 document.getElementById(
 "reportsBack"
 ).onclick=()=>{
-
-homeBtn.click();
-
-};
+    
+showHome();
 
 };
 
-function reportsLayout(title){
+};
 
+function reportsLayout(title, backFunction){
+
+homeContent.scrollTop = 0;
+    window.scrollTo(0,0);
 showPage(`
-
 <h2 class="page-title">
-
 ${title}
-
 </h2>
-
 <div class="report-grid">
-
 <button class="report-btn">
-
 Today
-
 </button>
-
 <button class="report-btn">
-
 This Week
-
 </button>
-
 <button class="report-btn">
-
 This Month
-
 </button>
-
 <button class="report-btn">
-
 This Year
 
 </button>
@@ -2088,7 +2300,6 @@ Yearly
 </button>
 
 <button class="report-btn">
-
 Abstract
 
 </button>
@@ -2109,18 +2320,9 @@ class="back-btn">
 
 `);
 
-document.getElementById(
-"reportBack"
-).onclick=()=>{
+document.getElementById("reportBack").onclick = backFunction;}
 
-homeBtn.click();
-
-};
-
-}
-
-function openSensitive(moduleName, reportType){
-
+function openSensitive(moduleName, reportType, backFunction){
 showPage(`
 
 <h2 class="page-title">
@@ -2136,9 +2338,9 @@ ${reportType}
 </h3>
 
 <input
-id="passCode"
+id="reportPassCode"
 type="password"
-placeholder="Enter Sensitive Pass Code"
+placeholder="Enter Pass Code"
 style="
 width:90%;
 height:50px;
@@ -2148,7 +2350,6 @@ border-radius:10px;
 padding-left:15px;
 font-size:16px;
 ">
-
 <div align="center">
 
 <button
@@ -2156,6 +2357,16 @@ id="verifyPass"
 class="grid-btn">
 
 Verify
+
+</button>
+
+<br><br>
+
+<button
+id="changePassBtn"
+class="grid-btn">
+
+Change Pass Code
 
 </button>
 
@@ -2173,31 +2384,42 @@ class="back-btn">
 
 `);
 
-document.getElementById("verifyPass").onclick=()=>{
+document.getElementById("verifyPass").onclick = () => {
 
-const pass=document.getElementById("passCode").value;
+    const enteredPass =
+        document.getElementById("reportPassCode").value.trim();
 
-if(pass==="123456"){
+    const savedPass =
+        sessionStorage.getItem("passCode");
 
-reportsLayout(moduleName+" - "+reportType);
+    if (enteredPass === "") {
+        alert("Enter Pass Code");
+        return;
+    }
 
-}else{
+    if (enteredPass !== savedPass) {
+        alert("Wrong Pass Code");
+        return;
+    }
 
-alert("Wrong Sensitive Pass Code");
+    reportsLayout(
+        moduleName + " " + reportType,
+        backFunction
+    );
 
-}
+};
+document.getElementById("changePassBtn").onclick = () => {
+
+    openChangeSensitivePassCode();
 
 };
 
-document.getElementById("passBack").onclick=()=>{
-
-homeBtn.click();
-
-};
-
+    
+    document.getElementById("passBack").onclick = backFunction;
 }
 
-function reportCategory(module){
+
+function reportCategory(module, fromBottomReports = false){
 
 showPage(`
 
@@ -2214,7 +2436,7 @@ id="catReports"
 class="grid-btn">
 
 <img
-src="images/reports/Reports.png"
+src="images/colorbtns/Reports1.png"
 class="btn-icon">
 
 <span>
@@ -2230,7 +2452,7 @@ id="catSensitive"
 class="grid-btn">
 
 <img
-src="images/reports/SensitiveReports.png"
+src="images/colorbtns/SensitiveReports1.png"
 class="btn-icon">
 
 <span>
@@ -2246,7 +2468,7 @@ id="catAll"
 class="grid-btn">
 
 <img
-src="images/reports/AllReports.png"
+src="images/colorbtns/AllReports1.png"
 class="btn-icon">
 
 <span>
@@ -2272,30 +2494,69 @@ class="back-btn">
 
 `);
 
-document.getElementById("catReports").onclick=()=>{
+document.getElementById("catReports").onclick = ()=>{
 
-reportsLayout(module+" Reports");
-
-};
-
-document.getElementById("catSensitive").onclick=()=>{
-
-openSensitive(module,"Sensitive Reports");
+    reportsLayout(
+        module + " Reports",
+        ()=>reportCategory(module, fromBottomReports)
+    );
 
 };
 
-document.getElementById("catAll").onclick=()=>{
+document.getElementById("catSensitive").onclick = ()=>{
 
-openSensitive(module,"All Reports");
+    openSensitive(
+        module,
+        "Sensitive Reports",
+        ()=>reportCategory(module, fromBottomReports)
+    );
+
+};
+document.getElementById("catAll").onclick = ()=>{
+
+    openSensitive(
+        module,
+        "All Reports",
+        ()=>reportCategory(module, fromBottomReports)
+    );
 
 };
 
-document.getElementById("catBack").onclick=()=>{
+document.getElementById("catBack").onclick = ()=>{
 
-reportsBtn.click();
+    if(fromBottomReports){
+
+        reportsBtn.click();
+
+    }else{
+
+        switch(module){
+
+            case "Expenses":
+                expensesBtn.click();
+                break;
+
+            case "Activities":
+                activitiesBtn.click();
+                break;
+
+            case "Income":
+                incomeBtn.click();
+                break;
+
+            case "Health":
+                healthBtn.click();
+                break;
+
+            case "Memories":
+                memoriesBtn.click();
+                break;
+
+        }
+
+    }
 
 };
-
 }
 
 
@@ -2385,25 +2646,27 @@ class="back-btn">
 
 document.getElementById("loanLendRpt").onclick=()=>{
 
-reportCategory("Loan - Lend");
+reportCategory("Loan - Lend", true);
+
 
 };
 
 document.getElementById("loanBorrowRpt").onclick=()=>{
 
-reportCategory("Loan - Borrowed");
+reportCategory("Loan - Borrowed", true);
 
 };
 
 document.getElementById("paymentLendRpt").onclick=()=>{
 
-reportCategory("Payments - Lend");
+reportCategory("Payments - Lend", true);
+
 
 };
 
 document.getElementById("paymentBorrowRpt").onclick=()=>{
 
-reportCategory("Payments - Borrowed");
+reportCategory("Payments - Borrowed", true);
 
 };
 
@@ -2560,25 +2823,244 @@ menuOverlay.onclick = ()=>{
 
 };
 
-let logoutTimer;
+passcodeMenuBtn.onclick = (e) => {
 
-logoutMenuBtn.onclick = ()=>{
+    e.stopPropagation();
 
     sideMenu.classList.remove("open");
-
     menuOverlay.classList.remove("show");
 
-    const msg = document.getElementById("logoutMessage");
-
-    msg.style.display = "block";
-
-    clearTimeout(logoutTimer);
-
-    logoutTimer = setTimeout(()=>{
-
-        msg.style.display = "none";
-
-    },2000);
+    openChangeSensitivePassCode();
 
 };
- updateWelcomePage();
+logoutMenuBtn.onclick = ()=>{
+
+    sessionStorage.removeItem("user");
+
+    sideMenu.classList.remove("open");
+    menuOverlay.classList.remove("show");
+
+    dashboard.classList.add("hidden");
+    loginPage.classList.add("hidden");
+    signupPage.classList.add("hidden");
+    signupOTPPage.classList.add("hidden");
+    welcomePage.classList.remove("hidden");
+    const msg = document.getElementById("logoutMessage");
+    msg.style.display = "block";
+    setTimeout(()=>{
+        msg.style.display = "none";
+    },1500);
+};
+function hideNavigation(){
+
+    document.querySelector(".top-container").style.display = "none";
+    document.querySelector(".bottom-container").style.display = "none";
+
+}
+
+function showNavigation(){
+
+    document.querySelector(".top-container").style.display = "flex";
+    document.querySelector(".bottom-container").style.display = "flex";
+
+}
+function openChangeSensitivePassCode(){
+
+    showPage(
+
+        pageTitle(
+            "Change Pass Code",
+            "images/colorbtns/SensitiveReports1.png"
+        )
+
+        +`
+
+<input
+id="oldPassCode"
+type="password"
+maxlength="6"
+placeholder="Enter Old Pass Code"
+style="
+width:90%;
+height:50px;
+margin:15px auto;
+display:block;
+border-radius:10px;
+padding-left:15px;
+font-size:16px;
+">
+
+<input
+id="newPassCode"
+type="password"
+maxlength="6"
+placeholder="Enter New Pass Code"
+style="
+width:90%;
+height:50px;
+margin:15px auto;
+display:block;
+border-radius:10px;
+padding-left:15px;
+font-size:16px;
+">
+
+<input
+id="confirmPassCode"
+type="password"
+maxlength="6"
+placeholder="Confirm New Pass Code"
+style="
+width:90%;
+height:50px;
+margin:15px auto;
+display:block;
+border-radius:10px;
+padding-left:15px;
+font-size:16px;
+">
+
+<div align="center">
+
+<button
+id="savePassCodeBtn"
+class="grid-btn">
+
+Save
+
+</button>
+
+<br><br>
+
+<button
+id="changePassBackBtn"
+class="back-btn">
+
+← Back
+
+</button>
+
+</div>
+
+`
+    );
+
+    
+document.getElementById("savePassCodeBtn").onclick = async () => {
+
+    // Read Values
+    const oldPass =
+        document.getElementById("oldPassCode").value.trim();
+
+    const newPass =
+        document.getElementById("newPassCode").value.trim();
+
+    const confirmPass =
+        document.getElementById("confirmPassCode").value.trim();
+console.log("Old Entered =", oldPass);
+console.log("Session Pass =", sessionStorage.getItem("passCode"));
+    // Validation
+    if (oldPass === "" || newPass === "" || confirmPass === "") {
+        alert("Please fill all the fields.");
+        return;
+    }
+
+    if (oldPass !== sessionStorage.getItem("passCode")) {
+        alert("Old Pass Code is incorrect.");
+        return;
+    }
+
+    if (newPass !== confirmPass) {
+        alert("New Pass Code and Confirm Pass Code do not match.");
+        return;
+    }
+
+    // Logged-in User
+    const user =
+        JSON.parse(sessionStorage.getItem("user"));
+
+    // FormData
+    const formData = new FormData();
+
+    formData.append(
+        "action",
+        "changeSensitivePassCode"
+    );
+
+    formData.append(
+        "loginId",
+        user.loginUserName
+    );
+
+    formData.append(
+        "newPassCode",
+        newPass
+    );
+
+    try {
+
+        const response = await fetch(API_URL, {
+            method: "POST",
+            body: formData
+        });
+
+        const result = await response.json();
+
+        if (result.status == "success") {
+
+            sessionStorage.setItem(
+                "passCode",
+                newPass
+            );
+
+            alert(result.message);
+
+            homeBtn.click();
+
+        } else {
+
+            alert(result.message);
+
+        }
+
+    } catch (err) {
+
+        alert("Unable to connect to server.");
+
+        console.log(err);
+
+    }
+
+};    
+    document.getElementById("changePassBackBtn").onclick = ()=>{
+
+    homeBtn.click();
+
+    };
+
+}
+updateWelcomePage();
+/* ======================
+
+AUTO LOGIN
+
+====================== */
+
+const loggedUser =
+sessionStorage.getItem("user");
+
+if(loggedUser){
+
+    welcomePage.classList.add("hidden");
+
+    loginPage.classList.add("hidden");
+
+    signupPage.classList.add("hidden");
+
+    signupOTPPage.classList.add("hidden");
+
+    dashboard.classList.remove("hidden");
+
+    homeBtn.click();
+
+}
