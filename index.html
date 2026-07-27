@@ -3,9 +3,10 @@
 
 <head>
 
-  <meta charset="UTF-8">
-
-  
+    
+    
+    <meta charset="UTF-8">
+ 
 <meta
 name="viewport"
 content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -86,7 +87,7 @@ oneFaMiLe
 
 <button id="languageMenuBtn">🌐 Language</button>
 
-<button id="passcodeMenuBtn">🔒 Change Sensitive Pass Code</button>
+<button id="passcodeMenuBtn">🔒 Change Pass Code</button>
 
 <button id="backupMenuBtn">💾 Backup</button>
 
@@ -168,20 +169,19 @@ Mobile Number
 
 </h3>
 
+<input
+id="loginId"
+type="password"
+placeholder="Mobile / Email / Login User Name">
 
 <input
+id="loginPassCode"
+type="password"
+maxlength="6"
+placeholder="Pass Code">
 
-type="tel"
-
-placeholder="Enter Mobile Number">
-
-
-<button
-
-id="sendOTPBtn">
-
-Send OTP
-
+<button id="loginSubmitBtn">
+Login
 </button>
 
 
@@ -314,16 +314,16 @@ placeholder="Enter OTP">
 
 
 <input
+id="sensitivePassCode"
 maxlength="6"
 type="password"
-placeholder="Sensitive Pass Code">
-
+placeholder="Enter Pass Code">
 
 <input
+id="registerConfirmPassCode"
 maxlength="6"
 type="password"
 placeholder="Confirm Pass Code">
-
 
 <button
 id="registerBtn">
