@@ -3,11 +3,11 @@
 oneFaMiLe V1
 Part 1A.3
 
-
 ===================================== */
 
+
 /* WELCOME SCREEN */
-const API_URL ="https://script.google.com/macros/s/AKfycbzYZn1tDzdlwL7g9GyRqywJpbZABR-J87tD6Po3oyEQQ7TVGA06YbaYSMxEoKvIFhhqvA/exec";
+const API_URL ="https://script.google.com/macros/s/AKfycbzYblwgxrGFDF2MKhiWLvrlSLdJTIgQoplD0Z2-A_tLmwrdUPWsTqzOF9-txnug4DFLpg/exec";
 
 const loginSubmitBtn =
 document.getElementById("loginSubmitBtn");
@@ -1221,7 +1221,6 @@ loginPage.classList.remove("hidden");
 };
 
 
-
 /* ======================
 
 SIGNUP
@@ -1411,6 +1410,7 @@ const formData = new FormData();
                 "user",
                 JSON.stringify(result)
             );
+            updateMenuButtons();
             sessionStorage.setItem(
         "passCode",
         passCode
@@ -1625,8 +1625,7 @@ homeBtn.onclick = ()=>{
 
     homeContent.innerHTML = homeTemplate;
 
-    console.log(document.getElementById("homeWelcomeHeading"));
-
+    
     updateWelcomePage();
 
 };
@@ -2836,7 +2835,9 @@ passcodeMenuBtn.onclick = (e) => {
 logoutMenuBtn.onclick = ()=>{
 
     sessionStorage.removeItem("user");
-
+    sessionStorage.removeItem("passCode"); 
+    updateMenuButtons();
+    
     sideMenu.classList.remove("open");
     menuOverlay.classList.remove("show");
 
@@ -2957,14 +2958,13 @@ document.getElementById("savePassCodeBtn").onclick = async () => {
 
     const confirmPass =
         document.getElementById("confirmPassCode").value.trim();
-console.log("Old Entered =", oldPass);
-console.log("Session Pass =", sessionStorage.getItem("passCode"));
+    
     // Validation
     if (oldPass === "" || newPass === "" || confirmPass === "") {
         alert("Please fill all the fields.");
         return;
     }
-
+    
     if (oldPass !== sessionStorage.getItem("passCode")) {
         alert("Old Pass Code is incorrect.");
         return;
@@ -2976,9 +2976,7 @@ console.log("Session Pass =", sessionStorage.getItem("passCode"));
     }
 
     // Logged-in User
-    const user =
-        JSON.parse(sessionStorage.getItem("user"));
-
+    
     // FormData
     const formData = new FormData();
 
@@ -2986,6 +2984,7 @@ console.log("Session Pass =", sessionStorage.getItem("passCode"));
         "action",
         "changeSensitivePassCode"
     );
+const user = JSON.parse(sessionStorage.getItem("user"));
 
     formData.append(
         "loginId",
@@ -2999,16 +2998,17 @@ console.log("Session Pass =", sessionStorage.getItem("passCode"));
 
     try {
 
+        
         const response = await fetch(API_URL, {
             method: "POST",
             body: formData
         });
 
         const result = await response.json();
-
         if (result.status == "success") {
 
             sessionStorage.setItem(
+                
                 "passCode",
                 newPass
             );
@@ -3064,3 +3064,12 @@ if(loggedUser){
     homeBtn.click();
 
 }
+function updateMenuButtons() {
+
+    const isLoggedIn = sessionStorage.getItem("user") !== null;
+
+    passcodeMenuBtn.disabled = !isLoggedIn;
+    logoutMenuBtn.disabled = !isLoggedIn;
+
+}
+updateMenuButtons();
